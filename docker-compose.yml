@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend
+    environment:
+      - PORT=4200
+    ports:
+      - 3000:4200 
+  frontend:
+    build: ./FE-structure
+    ports:
+      - 3200:80
+  database:
+    build: ./database
+    ports:
+      - 3300:3306
+    volumes:
+      - ./database/data:/var/lib/mysql
