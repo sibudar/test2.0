@@ -1,0 +1,72 @@
+CREATE database IF NOT EXISTS noveltydb;
+
+USE noveltydb;
+
+DROP TABLE IF EXISTS Business_Idea;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Documents;
+DROP TABLE IF EXISTS Answers;
+DROP TABLE IF EXISTS Questions;
+DROP TABLE IF EXISTS Question_Catergory;
+
+CREATE TABLE IF NOT EXISTS Users (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(20) DEFAULT NULL,
+    last_name VARCHAR(20) DEFAULT NULL,
+    email VARCHAR(64) DEFAULT NULL,
+    user_password VARCHAR(20) DEFAULT NULL,
+
+    PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS Documents (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    doc_name VARCHAR(64) DEFAULT NULL,
+    descript VARCHAR(64) DEFAULT NULL,
+    path_loc VARCHAR(64) DEFAULT NULL,
+
+    PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS Question_Catergory (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    cat_name VARCHAR(64) DEFAULT NULL,
+    PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS Business_Idea (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    busin_name VARCHAR(64) DEFAULT NULL,
+    id_user INT,
+
+    PRIMARY KEY (id),
+    INDEX (id_user),
+
+    FOREIGN KEY (id_user) REFERENCES Users(id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS Questions (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    q_name VARCHAR(64) DEFAULT NULL,
+    cat_name VARCHAR(64),
+    
+    PRIMARY KEY (id),
+
+    INDEX (cat_name),
+
+    FOREIGN KEY (cat_name) REFERENCES Question_Catergory(id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS Answers (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    id_bus INT NOT NULL,
+    id_que INT NOT NULL,
+
+    PRIMARY KEY (id),
+
+    INDEX (id_que),
+    INDEX (id_bus),
+
+    FOREIGN KEY (id_que) REFERENCES Questions(id),
+    FOREIGN KEY (id_bus) REFERENCES Business_Idea(id)
+) ENGINE=INNODB;
