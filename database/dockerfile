@@ -12,4 +12,6 @@ ENV MYSQL_VERSION = 5.7.29-1debian9
 
 ENV MYSQL_ROOT_PASSWORD=novelty1234
 
+COPY noveltydb.sql /docker-entrypoint-initdb.d/
+
 EXPOSE 3306
