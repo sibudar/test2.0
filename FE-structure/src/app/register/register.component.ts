@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, } from '@angular/forms'
+import { PasswordValidation } from './password-validator';
 
 
 
@@ -16,8 +17,10 @@ export interface Tile {
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
 
+
+export class RegisterComponent implements OnInit {
+form:FormGroup;
 
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
@@ -27,9 +30,15 @@ export class RegisterComponent implements OnInit {
   ];
 
   
-  constructor() { }
+  constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      user_password:['',Validators.required],
+      confirm_password:['',Validators.required]
+    },{
+     validator:PasswordValidation.MatchPassword
+    });
   }
 
 }
