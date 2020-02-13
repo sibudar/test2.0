@@ -15,4 +15,13 @@ userRouter.post('/', async (req, res)=>{
   res.status(results.status).send(results);
 })
 
+userRouter.post('/login', async (req, res)=>{
+  const userData = {
+    email :req.body.email,
+    //user_password:bcrypt.hashSync(req.body.user_password,10)
+  }
+  const results = await registerController.login(req.body);
+  res.status(results.status).send(results);
+})
+
 module.exports = userRouter
