@@ -1,65 +1,66 @@
 <mat-card class="card">
-    <mat-grid-list cols="2" rowHeight="500px">
+    <mat-grid-list cols="2" rowHeight="550px">
       <mat-grid-tile class="text-inside-grid">
         <div class="div">
-          <h3>Sign Up</h3>
-          
-          <p>
-            <mat-form-field appearance="legacy">
+          <h3 class="header">Sign Up</h3>
+        
+            <mat-form-field class="dummy-input-field" appearance="legacy">
               <i  matPrefix class="material-icons">
               account_circle
             </i>
               <input matInput placeholder="Name" name="name" required />
             </mat-form-field>
-          </p>
+      
 
-          <p>
-            
             <mat-form-field appearance="legacy">
               <i  matPrefix class="material-icons">
                 perm_contact_calendar
                 </i>
               <input matInput placeholder="Surname" name="last_name" required />
             </mat-form-field>
-          </p>
-          <p>
+         
+      
             
             <mat-form-field appearance="legacy">
               <i matPrefix  class="material-icons">
                 email
                 </i>
-              <input matInput placeholder="Email Address" name="email" required />
+              <input type="email" matInput placeholder="Email Address" name="email" required />
             </mat-form-field>
-          </p>
-          <p>
+         
+          <form >
+          
+              <mat-form-field appearance="legacy">
+                <i matPrefix  class="material-icons">
+                  lock
+                  </i>
+                <input type="password" matInput placeholder="Password" name="user_password"  required />
+              </mat-form-field>
+       
            
-            <mat-form-field appearance="legacy">
-              <i matPrefix  class="material-icons">
-                lock
-                </i>
-              <input matInput placeholder="Password" name="user_password" required />
-            </mat-form-field>
-          </p>
-          <p>
-
-
-            
-           
-            <mat-form-field appearance="legacy">
-              <i matPrefix  class="material-icons">
-                lock
-                </i>
-              <input matInput placeholder="Repeat your Password" name="confirm_password"required />
-            </mat-form-field>
-          </p>
-          <button mat-flat-button color="primary">Sign Up</button>
+              <mat-form-field appearance="legacy">
+                <i matPrefix  class="material-icons">
+                  lock
+                  </i>
+                <input type="password" matInput placeholder="Repeat your Password"  name="confirm_password"required class="text" />
+              </mat-form-field>
+          
+          </form>
+         
+          <button mat-flat-button color="primary" class="btn">Sign Up</button>
           
          
        
         </div>
       </mat-grid-tile>
       <mat-grid-tile>
-        hello
+        <div class="img">
+          <img class="image" src="assets/img/logoB.png">
+          <!-- <hr class="line"> -->
+        </div>
+        <a href="#" class="login">login</a>
+     
+
       </mat-grid-tile>
     </mat-grid-list>
   </mat-card>

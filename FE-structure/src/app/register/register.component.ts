@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, } from '@angular/forms'
 
 
 
@@ -24,6 +25,8 @@ export class RegisterComponent implements OnInit {
     {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
+
+  
   constructor() { }
 
   ngOnInit() {

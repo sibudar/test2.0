@@ -1,8 +1,9 @@
 .card{
-    width: 600px;
+    width: 750px;
     height: 600px;
     margin: auto;
     margin-top: 30px;
+    border-radius: 2%;
 }
 .example-form {
     min-width: 150px;
@@ -13,3 +14,39 @@
   .example-full-width {
     width: 100%;
   }
+.div{
+  padding-left: 85px;
+  padding-top: 30px;
+
+}
+
+.btn{
+  margin-top: 15px;;
+}
+
+.image{
+  height: 270px;
+  width: 170;
+  margin-left: 50px;
+  margin-top: 25px;
+}
+.material-icons {
+  font-size: 18px !important;
+  padding-right: 15px;
+ 
+}
+.login{
+margin-top: 350px;
+margin-left: -150px;
+font-weight: bold;
+font-size: 20px;
+text-decoration: none;
+}
+.header{
+  font-weight: bolder;
+  font-size: xx-large;
+}
+.line{
+   width: 30px;
+  padding-left: 50px;
+}
