@@ -25,10 +25,10 @@
 }
 
 .image{
-  height: 270px;
+  height: 300px;
   width: 170;
-  margin-left: 50px;
-  margin-top: 25px;
+  margin-left: 20px;
+  margin-top: 50px;
 }
 .material-icons {
   font-size: 18px !important;
@@ -36,11 +36,8 @@
  
 }
 .login{
-margin-top: 350px;
-margin-left: -150px;
-font-weight: bold;
-font-size: 20px;
-text-decoration: none;
+padding-left: 30px;
+
 }
 .header{
   font-weight: bolder;
@@ -50,3 +47,19 @@ text-decoration: none;
    width: 30px;
   padding-left: 50px;
 }
+.buttons{
+  display: flex;
+  justify-content: centre;
+  align-items: center;
+}
+#btn{
+  font-size: smaller;
+  width: 25px;
+  height: 35px;
+  text-align: center;
+  padding-left: 12px;
+}
+.img{
+  margin-top: 35px;
+}
+
