@@ -2,7 +2,7 @@
     <mat-grid-list cols="2" rowHeight="550px">
       <mat-grid-tile class="text-inside-grid">
         <div class="div">
-          <h3 class="header">Sign Up</h3>
+          <h3 class="header">Create an account</h3>
           <!-- Form for registration -->
           <form [formGroup]="form">
          <!-- input for the name of user -->
@@ -10,7 +10,7 @@
               <i  matPrefix class="material-icons">
               account_circle
             </i>
-              <input matInput placeholder="Name" name="name" required />
+              <input matInput placeholder="Name"  required formControlName="first_name" />
             </mat-form-field>
       
             <!-- input for the surname of user -->
@@ -18,7 +18,7 @@
               <i  matPrefix class="material-icons">
                 perm_contact_calendar
                 </i>
-              <input matInput placeholder="Surname" name="last_name" required />
+              <input matInput placeholder="Surname"  required  formControlName="last_name"/>
             </mat-form-field>
 
 <!-- input for the email of user  -->
@@ -26,7 +26,7 @@
               <i matPrefix  class="material-icons">
                 email
                 </i>
-              <input type="email" matInput placeholder="Email Address" name="email" required />
+              <input type="email" matInput placeholder="Email Address"  required formControlName="email" />
             </mat-form-field>
          
             <!-- input for confirming password -->
@@ -53,10 +53,10 @@
           <!-- buttons -->
          <div class="buttons">
            <!-- register button -->
-          <button mat-flat-button color="primary" class="btn">Sign Up</button>
+          <button mat-flat-button color="primary" class="btn" type="submit" (click)="submit()">Register</button>
 
        <!-- login button-->
-            <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/login" class="login" >Sign In</button>
+            <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/login" class="login" >Login</button>
          </div>
         </div>
       </mat-grid-tile>
