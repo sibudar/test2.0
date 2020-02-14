@@ -1,26 +1,27 @@
 <mat-card class="card">
-
     <mat-grid-list cols="2" rowHeight="550px">
-
+      <!-- image -->
         <mat-grid-tile>
             <div class="img">
               <img class="image" src="assets/img/login.png">
             </div>
           </mat-grid-tile>
 
+<!-- form to login -->
       <mat-grid-tile class="text-inside-grid" id="form">
-
         <div class="div">
           <h3 class="header">Sign In</h3>
+         
+          <form >
+             <!-- Email that the user has registered with -->
             <mat-form-field appearance="legacy">
               <i matPrefix  class="material-icons">
                 email
                 </i>
               <input type="email" matInput placeholder="Email Address" name="email" required />
             </mat-form-field>
-         
-          <form >
-          
+        
+          <!-- password that a user has registered with -->
               <mat-form-field appearance="legacy">
                 <i matPrefix  class="material-icons">
                   lock
@@ -29,13 +30,18 @@
               </mat-form-field>
           
           </form>
+          <div class="forgot">
+            <a routerLink="/reset">Forgot your password</a>
+          </div>
 
+          <!-- buttons -->
          <div class="buttons">
+           <!-- login button -->
           <button mat-flat-button color="primary" class="btn" routerLink="/login">Sign In</button>
-          <a href="#" id="login"><button 
-            mat-flat-button color="primary" class="btn" id="btn" routerLink="/register">Sign up</button></a>
+          <!-- register button -->
+         <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/register">Sign up</button>
+          
          </div>
-         
         </div>
       </mat-grid-tile>
 

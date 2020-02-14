@@ -3,8 +3,9 @@
       <mat-grid-tile class="text-inside-grid">
         <div class="div">
           <h3 class="header">Sign Up</h3>
-
-          
+          <!-- Form for registration -->
+          <form [formGroup]="form">
+         <!-- input for the name of user -->
             <mat-form-field class="dummy-input-field" appearance="legacy">
               <i  matPrefix class="material-icons">
               account_circle
@@ -12,16 +13,15 @@
               <input matInput placeholder="Name" name="name" required />
             </mat-form-field>
       
-
+            <!-- input for the surname of user -->
             <mat-form-field appearance="legacy">
               <i  matPrefix class="material-icons">
                 perm_contact_calendar
                 </i>
               <input matInput placeholder="Surname" name="last_name" required />
             </mat-form-field>
-         
-      
-            
+
+<!-- input for the email of user  -->
             <mat-form-field appearance="legacy">
               <i matPrefix  class="material-icons">
                 email
@@ -29,39 +29,39 @@
               <input type="email" matInput placeholder="Email Address" name="email" required />
             </mat-form-field>
          
-         
-            <form [formGroup]="form">
-
-              <mat-form-field appearance="legacy">
+            <!-- input for confirming password -->
+              <mat-form-field>
                 <i matPrefix  class="material-icons">
                   lock
                   </i>
-                <input type="password"  matInput placeholder="Enter your Password" formControlName ="user_password"  required />
-                <!-- checks if the input is empty -->
-                <mat-error *ngIf="form.controls['user_password'].invaild">Password is required</mat-error>
+                <input type="password" matInput placeholder="Enter your password" formControlName="user_password" required>
+                <!-- checks if the password is inserted -->
+                <mat-error *ngIf="form.controls['user_password'].invalid">Password is required</mat-error>
               </mat-form-field>
-       
            
-              <mat-form-field   *ngIf="form.controls['user_password'].vaild" >
-                <i matPrefix  class="material-icons">
-                  lock
-                  </i>
-                <input type="password" id="password" matInput placeholder="Repeat your Password"  formControlName ="confirm_password" required class="text" />
-                <!-- checks if passwords match -->
-                <mat-error *ngIf="form.controls['confirm_password'].pristine || form.controls['confirm_password'].errors?.MatchPassword">Password does not match</mat-error>
-              </mat-form-field>
-          
+
+           <mat-form-field *ngIf="form.controls['user_password'].valid">
+            <i matPrefix  class="material-icons">
+              lock
+              </i>
+            <input type="password" matInput placeholder="Confirm your password" formControlName="confirm_password">
+            <!-- checks if passwords and confirm password matches -->
+        <mat-error *ngIf="form.controls['confirm_password'].pristine || form.controls['confirm_password'].errors?.MatchPassword">Password does not match</mat-error>
+          </mat-form-field>
           </form>
+
+          <!-- buttons -->
          <div class="buttons">
+           <!-- register button -->
           <button mat-flat-button color="primary" class="btn">Sign Up</button>
-          <a class="login"><button 
-            mat-flat-button color="primary" class="btn" id="btn" routerLink="/login" >Sign In</button></a>
+
+       <!-- login button-->
+            <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/login" class="login" >Sign In</button>
          </div>
-         
-         
-       
         </div>
       </mat-grid-tile>
+
+      <!-- image -->
       <mat-grid-tile>
         <div class="img">
           <img class="image" src="assets/img/logoB.png">
@@ -72,17 +72,7 @@
 
       </mat-grid-tile>
 
-      <!-- function validate(){
-        const password = document.getElementById('pass').value;
-        const confirmPassword = document.getElementById('password').value;
-        if(password != confirmPassword){
-          alert("Password does not match")
-          return false;
-        }
-        else{
-          return true;
-        }
-      } -->
+   
     </mat-grid-list>
   </mat-card>
   
