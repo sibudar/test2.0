@@ -1,6 +1,7 @@
 const conn = require("../config/db");
 const fieldValidator = require("../Helpers/validate");
 const fieldResponse = require("../Helpers/httpResponse");
+const queryResponse = require("../Helpers/queryFunction");
 const bcrypt = require("bcryptjs");
 
 async function register(data) {
@@ -20,40 +21,37 @@ async function register(data) {
 
   let sql = `INSERT INTO USERS SET ?`;
 
-  try {
-    let result = conn.query(sql, [data]);
-    return fieldResponse(201, "successful", result);
-  } catch (error) {
-    return fieldResponse(400, "unsuccesful", error);
-  }
+  return queryResponse(sql, data)
+    .then(result => {
+      return fieldResponse(201, "successfully created.");
+    })
+    .catch(error => {
+      return fieldResponse(400, "unsuccessful", error.sqlMessage);
+    });
 }
 
 async function login(data) {
+  if (fieldValidator.validate(data.email)) {
+    return fieldResponse(400, "Emaill is required");
+  }
+  if (fieldValidator.validate(data.user_password)) {
+    return fieldResponse(400, "Password is required");
+  }
 
-    if(fieldValidator.validate(data.email)){
-        return fieldResponse(400, 'Emaill is required');
-    }
-    if(fieldValidator.validate(data.user_password)){
-        return fieldResponse(400, 'Password is required');
-    }
+  const sql = "SELECT * FROM users WHERE email = ?";
+  let password = bcrypt.hashSync(data.user_password, 10);
 
-    try {
-        const userData = {
-            email: data.email,
-            user_password: bcrypt.hashSync(data.user_password, 10)
-        }
-        const sql  = 'SELECT `email` FROM `users` WHERE `email` = ?';
-        let result = conn.query(sql, [data], rows);
-        if(rows.length > 0){
-            if(bcrypt.compareSync(user_password,rows[0].user_password)){
-
-            }else{
-
-            }
-        }
-
-    } catch (error) {
-        
-    }
+  return queryResponse(sql, data.email)
+    .then(result => {
+      console.log;
+      if (bcrypt.compareSync(result[0].user_password, password)) {
+        return fieldResponse(200, "logged in.", result);
+      } else {
+        return fieldResponse(401, "password does not match.");
+      }
+    })
+    .catch(error => {
+      return fieldResponse(404, "unable to login", error.sqlMessage);
+    });
 }
 module.exports = { register, login };
