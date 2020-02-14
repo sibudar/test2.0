@@ -9,7 +9,7 @@ services:
       - PORT=4200
       - db=database
     ports:
-      - 3000:4200
+      - 2000:4200
     links:
       - database:database
   frontend:
