@@ -1,15 +1,15 @@
  const mysql = require('mysql');
  const util = require('util')
+ 
 
 require('dotenv').config();
 //create connection
 const connect = mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    //remove db after
-    database: 'registered',
-    password: ''
-    //password: 'novelty1234'
+    host:process.env.host,
+    user:process.env.user,
+    database:process.env.database,
+    password:process.env.password
+    
 });
 
 connect.connect((err) => {
