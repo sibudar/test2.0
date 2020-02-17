@@ -27,7 +27,7 @@
                 email
                 </i>
               <input type="email" matInput placeholder="Email Address"  required formControlName="email" /> 
-      
+              <mat-error *ngIf="form.controls['email'].invalid"> Not a valid email</mat-error>
             </mat-form-field>
          
             <!-- input for confirming password -->

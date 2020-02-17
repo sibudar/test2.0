@@ -24,13 +24,7 @@ export interface Tile {
 export class RegisterComponent implements OnInit {
 
 form:FormGroup;
-email = new FormControl('', [Validators.required, Validators.email]);
 
-getErrorMessage() {
-  return this.email.hasError('required') ? 'You must enter a value' :
-      this.email.hasError('email') ? 'Not a valid email' :
-          '';
-}
 
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
@@ -58,13 +52,12 @@ getErrorMessage() {
   submit(){
 
     let json: any = this.form.value; 
-
     console.log(json)
     delete json.confirm_password;
-
-    // this.register(json);
+     this.register(json);
+  
   }
-
+   
    register(user){
     this.service.adduser(user).subscribe(data =>{
     console.log(data);

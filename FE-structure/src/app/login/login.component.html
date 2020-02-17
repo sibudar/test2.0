@@ -12,23 +12,26 @@
         <div class="div">
           <h3 class="header">Login</h3>
          
-          <form >
-             <!-- Email that the user has registered with -->
+          <form [formGroup]="form">
+            <!-- input for the email of user  -->
             <mat-form-field appearance="legacy">
               <i matPrefix  class="material-icons">
                 email
                 </i>
-              <input type="email" matInput placeholder="Email Address" name="email" required />
+              <input type="email" matInput placeholder="Email Address"  required formControlName="email" /> 
+              <mat-error *ngIf="form.controls['email'].invalid"> Not a valid email</mat-error>
             </mat-form-field>
-        
-          <!-- password that a user has registered with -->
-              <mat-form-field appearance="legacy">
+
+          <!-- input for confirming password -->
+              <mat-form-field>
                 <i matPrefix  class="material-icons">
                   lock
                   </i>
-                <input type="password" matInput placeholder="Password" name="user_password"  required />
+                <input type="password" matInput placeholder="Enter your password" formControlName="user_password" required>
+                <!-- checks if the password is inserted -->
+                <mat-error *ngIf="form.controls['user_password'].invalid">Password is required</mat-error>
               </mat-form-field>
-          
+           
           </form>
           <div class="forgot">
             <a routerLink="/reset">Forgot your password</a>
@@ -37,7 +40,7 @@
           <!-- buttons -->
          <div class="buttons">
            <!-- login button -->
-          <button mat-flat-button color="primary" class="btn" routerLink="/login">Login</button>
+          <button mat-flat-button color="primary" class="btn" routerLink="/login" (click)= "login()">Login</button>
           <!-- register button -->
          <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/register">Register</button>
           
