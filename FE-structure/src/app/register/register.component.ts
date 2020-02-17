@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators, FormControl, } from '@angular/forms'
 import { PasswordValidation } from './password-validator';
+import { RestService } from '../shared/rest.service';
+
 
 
 
@@ -20,7 +22,15 @@ export interface Tile {
 
 
 export class RegisterComponent implements OnInit {
+
 form:FormGroup;
+email = new FormControl('', [Validators.required, Validators.email]);
+
+getErrorMessage() {
+  return this.email.hasError('required') ? 'You must enter a value' :
+      this.email.hasError('email') ? 'Not a valid email' :
+          '';
+}
 
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
@@ -30,15 +40,36 @@ form:FormGroup;
   ];
 
   
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder , private service:RestService) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
       user_password:['',Validators.required],
-      confirm_password:['',Validators.required]
+      confirm_password:['',Validators.required],
+      first_name:['',Validators.required],
+      last_name:['',Validators.required],
+      email:new FormControl('', [Validators.required, Validators.email])
     },{
      validator:PasswordValidation.MatchPassword
     });
+    
+  }
+
+  submit(){
+
+    let json: any = this.form.value; 
+
+    console.log(json)
+    delete json.confirm_password;
+
+    // this.register(json);
+  }
+
+   register(user){
+    this.service.adduser(user).subscribe(data =>{
+    console.log(data);
+    })
+      
   }
 
 }
