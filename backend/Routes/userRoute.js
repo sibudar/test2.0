@@ -13,4 +13,10 @@ userRouter.post("/login", async (req, res) => {
   res.status(result.status).send(result);
 });
 
+userRouter.post("/forgot-password", async(req, res) => {
+  let result = await registerController.forgot(req.body);
+
+  res.status(result.status).send(result);
+});
+
 module.exports = userRouter;
