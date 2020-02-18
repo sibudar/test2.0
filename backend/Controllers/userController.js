@@ -16,13 +16,16 @@ async function register(data) {
   }
 
   if (fieldValidator.validate(data.user_password)) {
+
     return fieldResponse(400, "Password is required");
   }
 
   let sql = `INSERT INTO USERS SET ?`;
+  data.user_password = bcrypt.hashSync(data.user_password, 10); //password is hashed
 
   return queryResponse(sql, data)
     .then(result => {
+      
       return fieldResponse(201, "successfully created.");
     })
     .catch(error => {
@@ -39,7 +42,7 @@ async function login(data) {
   }
 
   const sql = "SELECT * FROM users WHERE email = ?";
-  let password = bcrypt.hashSync(data.user_password, 10);
+  let password = bcrypt.hashSync(data.user_password, 10); //password is hashed
 
   return queryResponse(sql, data.email)
     .then(result => {
