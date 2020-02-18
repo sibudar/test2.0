@@ -1,18 +1,16 @@
-const userRouter = require('express').Router();
-const registerController = require('../Controllers/userController');
-const bcrypt = require('bcryptjs');
+const userRouter = require("express").Router();
+const registerController = require("../Controllers/userController");
 
+userRouter.post("/register", async (req, res) => {
+  result = await registerController.register(req.body);
 
-userRouter.post('/', async (req, res)=>{
-  const userData = {
-    first_name :req.body.first_name,
-    last_name :req.body.last_name,
-    email :req.body.email,
-    user_password:bcrypt.hashSync(req.body.user_password,10)
-  }
-  
-  const results = await registerController.register(userData);
-  res.status(results.status).send(results);
-})
+  res.status(result.status).send(result);
+});
 
-module.exports = userRouter
+userRouter.post("/login", async (req, res) => {
+  let result = await registerController.login(req.body);
+
+  res.status(result.status).send(result);
+});
+
+module.exports = userRouter;
