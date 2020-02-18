@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FE-structure';
+  // public environment = environment.environment;
+  // public SomeAPIKey = environment.APIKeys.SomeAPIKey;
+  // public SomeOtherAPIKey = environment.APIKeys.SomeOtherAPIKey; 
+   constructor(){
+    console.log(environment.production);
+   
+
+  }
 }
+

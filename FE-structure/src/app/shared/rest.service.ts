@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestService {
 
-  url: String = 'http://localhost:5000/api/v1'
+  url: String 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+
+  this.url=environment.api
+
+  }
 
   // adds user 
   public adduser(user) {
