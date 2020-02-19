@@ -1,6 +1,12 @@
 # building an img
 
-FROM node:12.14.1-alpine3.9 as builder
+FROM node:12.14.1-alpine3.9 
+
+# SET ENVIRONMENT VARIABLES
+ENV ENVIRONMENT=production1
+ENV api=$api
+
+
 
 WORKDIR /app
 
@@ -8,16 +14,5 @@ COPY package.json ./
 
 COPY . . 
 
-RUN npm install 
+CMD [ "npm","run","start:prod" ]
 
-RUN npm run build
-
-# serves angular project
-
-FROM nginx
-
-COPY --from=builder /app/dist/FE-structure  /usr/share/nginx/html
-
-EXPOSE 80 
-
-CMD ["nginx", "-g", "daemon off;"]
