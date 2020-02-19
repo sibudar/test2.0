@@ -3,6 +3,7 @@ const fieldValidator = require ('../Helpers/validate');
 const fieldResponse = require ('../Helpers/httpResponse');
 const queryResponse = require ('../Helpers/queryFunction');
 const bcrypt = require ('bcryptjs');
+const mail = require('../Helpers/sendEmail')
 
 async function register (data) {
   if (fieldValidator.validate (data.first_name)) {
@@ -67,8 +68,8 @@ async function forgot (data) {
     .then (result => {
       //check the length instead
       if(result[0].email === data.email) {
-        //send email for reset
-        return fieldResponse (200, 'user email exist');
+        mail.sendEmail(data.email);
+        return fieldResponse (200, "Thank you! Please check your email we've sent you an email");
       }
     })
     .catch (error => {
@@ -79,4 +80,9 @@ async function forgot (data) {
       );
     });
 }
-module.exports = {register, login, forgot};
+
+async function reset(data) {
+  
+}
+
+module.exports = {register, login, forgot, reset};

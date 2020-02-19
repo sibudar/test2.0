@@ -19,4 +19,10 @@ userRouter.post("/forgot-password", async(req, res) => {
   res.status(result.status).send(result);
 });
 
+userRouter.post("/reset-password", async(req, res) => {
+  let result = await registerController.reset(req.body);
+
+  res.status(result.status).send(result);
+});
+
 module.exports = userRouter;
