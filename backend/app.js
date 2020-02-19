@@ -4,8 +4,9 @@ const user = require('./Routes/userRoute.js');
 const cors = require('cors');
 const mail = require('./Helpers/sendEmail')
 
-require('dotenv').config();
 
+require('dotenv').config();
+mail.sendEmail();
 const bodyParser = require('body-parser');
 app.use(cors())
 app.use(express.json());
