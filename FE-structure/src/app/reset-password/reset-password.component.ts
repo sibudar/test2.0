@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { RestService } from '../shared/rest.service';
+import { response } from 'src/models/response';
 
 @Component({
   selector: 'app-reset-password',
@@ -26,7 +27,7 @@ export class ResetPasswordComponent implements OnInit {
 
   forgotpass(){
     let json = {email:this.email.value}
-    this.service.setPassword(json).subscribe(data =>{
+    this.service.setPassword(json).subscribe((data:response) =>{
       console.log(data.message)
       this.msg = data.message
       this.message=true;
