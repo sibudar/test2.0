@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import { RestService } from '../shared/rest.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -7,7 +8,10 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
+
   email = new FormControl('', [Validators.required, Validators.email]);
+  message = false;
+  msg:string 
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
@@ -15,9 +19,24 @@ export class ResetPasswordComponent implements OnInit {
             '';
   }
   
-  constructor() { }
+  constructor( private service:RestService) { }
 
   ngOnInit() {
   }
+
+  forgotpass(){
+    let json = {email:this.email.value}
+    this.service.setPassword(json).subscribe(data =>{
+      console.log(data.message)
+      this.msg = data.message
+      this.message=true;
+    },error =>{
+      console.log(error)
+    });
+   
+    
+  }
+
+
 
 }
