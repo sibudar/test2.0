@@ -1,9 +1,11 @@
 const conn = require ('../config/db');
 const fieldValidator = require ('../Helpers/validate');
 const fieldResponse = require ('../Helpers/httpResponse');
-const queryResponse = require ('../Helpers/queryFunction');
-const bcrypt = require ('bcryptjs');
-const mail = require('../Helpers/sendEmail')
+const queryResponse = require('../Helpers/queryFunction');
+const bcrypt = require('bcryptjs');
+const mail = require('../Helpers/sendEmail');
+const msg = require('../config/bodyMessage');
+const encrypt = require('../Helpers/authToken')
 
 async function register (data) {
   if (fieldValidator.validate (data.first_name)) {
@@ -57,27 +59,24 @@ async function login (data) {
     });
 }
 
-async function forgot (data) {
+async function forgot(data) {
   if (fieldValidator.validate (data.email)) {
     return fieldResponse (400, 'Emaill is required');
   }
+  const sql = 'SELECT first_name, email FROM users WHERE email = ?';
 
-  const sql = 'SELECT email FROM users WHERE email = ?';
-
-  return queryResponse (sql, data.email)
-    .then (result => {
+  return queryResponse (sql, data.email).then (result => {
+    console.log(result[0].email, data.email)
       //check the length instead
       if(result[0].email === data.email) {
-        mail.sendEmail(data.email);
+        let token = encrypt.generateToken({email:data.email});
+        let link = process.env.LINK || 'http://localhost:4200/reset-password/' + token;
+
+        mail.sendEmail(data.email, msg.resetMessage(result[0].first_name, link));
         return fieldResponse (200, "Thank you! Please check your email we've sent you an email");
       }
-    })
-    .catch (error => {
-      return fieldResponse (
-        400,
-        'user email does not exist, try again!',
-        error.sqlMessage
-      );
+    }).catch (error => {
+      return fieldResponse (400,'user email does not exist, try again!', error.sqlMessage);
     });
 }
 
