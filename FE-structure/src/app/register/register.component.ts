@@ -61,6 +61,8 @@ form:FormGroup;
    register(user){
     this.service.adduser(user).subscribe(data =>{
     console.log(data);
+
+    
     })
       
   }
