@@ -1,9 +1,9 @@
 const jwt = require ('jsonwebtoken'); //import jwt
 const fs = require ('fs');
-// const privateKey = fs.readFileSync ('./private.pem', 'utf8');
+//const privateKey = fs.readFileSync('./private.pem', 'utf8');
 
 
-let text = `MIIEpAIBAAKCAQEAyVTQ9QxfutaYXKBbYfZbH2vhIWoIPEjAFSbsy1PZoIcclUQR
+let textKey = `MIIEpAIBAAKCAQEAyVTQ9QxfutaYXKBbYfZbH2vhIWoIPEjAFSbsy1PZoIcclUQR
 hJ8t2m7v47M8eEyYd7EvXTNdoN6CDs0DoNC9KESATZV5SUVr7sk9pOcMrm0VryAd
 h7hQbbHWqyKmOehCt1JdX7gV2i5XnRb5qYQSyoB8sGdfR4SQ9q1XPRIpBP8RYXCP
 WPmwnmtzYjfs+VVMp+ByNWgM8Qvyc3Z13tHKHWfTokbEbJJE0xfFG6CVFZy+T7uq
@@ -32,7 +32,7 @@ dyWl3YlvqO+SUuieGvHISlekblMO/4tcUscmKmo+FgkMroBsePcdEAfcgvkybjyh`
 function generateToken(data) {
   //we need to do try-catch errors
   //create a token
-  const token = jwt.sign(data, text, {
+  const token = jwt.sign(data, textKey, {
     algorithm: 'HS256',
     expiresIn: 120, //expires in 2 minutes
   });
