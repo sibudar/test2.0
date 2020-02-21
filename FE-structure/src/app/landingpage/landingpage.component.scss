@@ -1,0 +1,49 @@
+
+.nav-bar{
+height: 500px;
+margin-top: -20px;
+background-image: url('/assets/img/banner.jpg');
+}
+
+hr{
+width: 30%;  
+margin-top: 0;
+padding-top: 0; 
+color: white;
+}
+.showcase{
+padding-top: 15%;
+text-align: center;
+color: white;  
+}
+.showcase h3{
+font-size: 50px; 
+padding-bottom: 0;
+margin-bottom: 0;
+font-weight: 900;
+font-family: Apple Chancery;   
+}
+.showcase p{
+font-family:serif;
+//font-size: 18px;
+margin-top: 20px; 
+letter-spacing: 2.5px;   
+}
+#section{
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;    
+display: flex;
+justify-content: space-between;
+text-align: center; 
+padding: 10px 20px;
+margin:10px 70px;
+border: 1px 1px  solid grey;  
+font-family: serif;
+}
+#section:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+#section img{
+height: 226px;
+width: 223px;    
+}

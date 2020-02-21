@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { ForgotPsComponent } from './forgot-ps/forgot-ps.component';
 
 
 
@@ -12,9 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'reset', component: ResetPasswordComponent },
-
-
-
+  { path: 'landing', component: LandingpageComponent },
+  { path: 'reset-password/:token', component: ForgotPsComponent },
 
 ];
 

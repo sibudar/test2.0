@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 const jwt = require ('jsonwebtoken');
 const fs = require ('fs');
 
 // private key
 let textKey = `MIIEpAIBAAKCAQEAyVTQ9QxfutaYXKBbYfZbH2vhIWoIPEjAFSbsy1PZoIcclUQR
+=======
+const jwt = require('jsonwebtoken'); //import jwt
+const fs = require('fs');
+//const privateKey = fs.readFileSync('../private.pem','utf8');
+
+let textKey = 
+`MIIEpAIBAAKCAQEAyVTQ9QxfutaYXKBbYfZbH2vhIWoIPEjAFSbsy1PZoIcclUQR
+>>>>>>> 9d7de7dfc5e104ef1fbd037645a1c1c00b421b24
 hJ8t2m7v47M8eEyYd7EvXTNdoN6CDs0DoNC9KESATZV5SUVr7sk9pOcMrm0VryAd
 h7hQbbHWqyKmOehCt1JdX7gV2i5XnRb5qYQSyoB8sGdfR4SQ9q1XPRIpBP8RYXCP
 WPmwnmtzYjfs+VVMp+ByNWgM8Qvyc3Z13tHKHWfTokbEbJJE0xfFG6CVFZy+T7uq

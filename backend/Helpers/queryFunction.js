@@ -1,5 +1,4 @@
 const conn = require ('../config/db');
-const bcrypt = require("bcryptjs");
 
 /**
  * Executes a query.
@@ -7,8 +6,8 @@ const bcrypt = require("bcryptjs");
  * @param {*} data
  * @returns the data executed from a query.
  */
-function queryFunction (sql, data) {
-  return new Promise ((resolve, reject) => {
+function queryFunction(sql, data) {
+  return new Promise((resolve, reject) => {
     try {
       let result = conn.query (sql, [data]);
       resolve (result); // Yay! Everything went well!
