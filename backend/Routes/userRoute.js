@@ -19,7 +19,7 @@ userRouter.post("/forgot-password", async(req, res) => {
   res.status(result.status).send(result);
 });
 
-userRouter.post("/reset-password", async(req, res) => {
+userRouter.post("/reset", async(req, res) => {
   let result = await registerController.reset(req.body);
 
   res.status(result.status).send(result);

@@ -1,9 +1,9 @@
-const jwt = require ('jsonwebtoken'); //import jwt
-const fs = require ('fs');
-//const privateKey = fs.readFileSync('./private.pem', 'utf8');
+const jwt = require('jsonwebtoken'); //import jwt
+const fs = require('fs');
+//const privateKey = fs.readFileSync('../private.pem','utf8');
 
-
-let textKey = `MIIEpAIBAAKCAQEAyVTQ9QxfutaYXKBbYfZbH2vhIWoIPEjAFSbsy1PZoIcclUQR
+let textKey = 
+`MIIEpAIBAAKCAQEAyVTQ9QxfutaYXKBbYfZbH2vhIWoIPEjAFSbsy1PZoIcclUQR
 hJ8t2m7v47M8eEyYd7EvXTNdoN6CDs0DoNC9KESATZV5SUVr7sk9pOcMrm0VryAd
 h7hQbbHWqyKmOehCt1JdX7gV2i5XnRb5qYQSyoB8sGdfR4SQ9q1XPRIpBP8RYXCP
 WPmwnmtzYjfs+VVMp+ByNWgM8Qvyc3Z13tHKHWfTokbEbJJE0xfFG6CVFZy+T7uq
@@ -34,17 +34,17 @@ function generateToken(data) {
   //create a token
   const token = jwt.sign(data, textKey, {
     algorithm: 'HS256',
-    expiresIn: 120, //expires in 2 minutes
+    expiresIn: 800000, //expires in 2 minutes
   });
   return token;
 }
 
-function verifyToken(token) {
+async function verifyToken(token) {
   if(!token) {
     return 'No token provided.';
   }
   //verify token
-  jwt.verify(token, privateKey, (err, data) => {
+  return jwt.verify(token, textKey, (err, data) => {
     if(err) {
       return 'Invalid token.';
     } else {
@@ -53,4 +53,4 @@ function verifyToken(token) {
   });
 }
 
-module.exports = {generateToken, verifyToken};
+module.exports = { generateToken, verifyToken };
