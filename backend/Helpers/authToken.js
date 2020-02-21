@@ -1,8 +1,7 @@
-const jwt = require ('jsonwebtoken'); //import jwt
+const jwt = require ('jsonwebtoken');
 const fs = require ('fs');
-//const privateKey = fs.readFileSync('./private.pem', 'utf8');
 
-
+// private key
 let textKey = `MIIEpAIBAAKCAQEAyVTQ9QxfutaYXKBbYfZbH2vhIWoIPEjAFSbsy1PZoIcclUQR
 hJ8t2m7v47M8eEyYd7EvXTNdoN6CDs0DoNC9KESATZV5SUVr7sk9pOcMrm0VryAd
 h7hQbbHWqyKmOehCt1JdX7gV2i5XnRb5qYQSyoB8sGdfR4SQ9q1XPRIpBP8RYXCP
@@ -29,6 +28,12 @@ i132TIECgYAiDd+OSokfZYi8mqjIoMI946+Hlb7lisb7CXksM69A+oWJrfkCwOMq
 O3tExLbxtd7KZuAg1xH2thimIeT6tuCbCSAFGzr4EWCe7iavVzevHr98ivPLYXte
 dyWl3YlvqO+SUuieGvHISlekblMO/4tcUscmKmo+FgkMroBsePcdEAfcgvkybjyh`
 
+/**
+ * Creates a token.
+ * @param {*} data
+ * data is an email.
+ * @returns a token.
+ */
 function generateToken(data) {
   //we need to do try-catch errors
   //create a token
@@ -39,11 +44,16 @@ function generateToken(data) {
   return token;
 }
 
+/**
+ * Verifies a token.
+ * @param {*} token
+ * @returns verified token. 
+ */
 async function verifyToken(token) {
   if(!token) {
     return 'No token provided.';
   }
-  //verify token
+  // verify token
   return jwt.verify(token, textKey, (err, data) => {
     if(err) {
       return 'Invalid token.';
@@ -53,4 +63,4 @@ async function verifyToken(token) {
   });
 }
 
-module.exports = {generateToken, verifyToken};
+module.exports = { generateToken, verifyToken };
