@@ -31,6 +31,10 @@ export class RestService {
     
   }
 
+  public getToken(user_password){
+    return this.http.post(this.url + '/reset', user_password)
+  }
+  
 
 
 }

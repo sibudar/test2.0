@@ -14,6 +14,7 @@ export class ResetPasswordComponent implements OnInit {
   message = false;
   msg:string 
 
+
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
         this.email.hasError('email') ? 'Not a valid email' :
@@ -35,6 +36,7 @@ export class ResetPasswordComponent implements OnInit {
       console.log(error)
     });
    
+    const token = ''
     
   }
 

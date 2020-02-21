@@ -15,10 +15,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'reset', component: ResetPasswordComponent },
   { path: 'landing', component: LandingpageComponent },
-  { path: 'forgot', component: ForgotPsComponent },
-
-
-
+  { path: 'reset-password/:token', component: ForgotPsComponent },
 
 ];
 
