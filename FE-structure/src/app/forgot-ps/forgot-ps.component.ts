@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PasswordValidation } from '../register/password-validator';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-forgot-ps',
@@ -11,7 +12,9 @@ export class ForgotPsComponent implements OnInit {
 
   form:FormGroup;
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private route: ActivatedRoute, private formBuilder:FormBuilder) { 
+    this.route.params.subscribe( params => console.log(params))
+  }
 
   ngOnInit() {
     this.form = this.formBuilder.group({

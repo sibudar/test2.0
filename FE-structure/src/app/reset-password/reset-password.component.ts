@@ -3,6 +3,7 @@ import {FormControl, Validators} from '@angular/forms';
 import { RestService } from '../shared/rest.service';
 import { response } from 'src/models/response';
 
+
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.component.html',
@@ -21,7 +22,9 @@ export class ResetPasswordComponent implements OnInit {
             '';
   }
   
-  constructor( private service:RestService) { }
+  constructor( private service:RestService) { 
+    
+  }
 
   ngOnInit() {
   }
@@ -36,7 +39,7 @@ export class ResetPasswordComponent implements OnInit {
       console.log(error)
     });
    
-    const token = ''
+   
     
   }
 
