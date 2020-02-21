@@ -35,7 +35,11 @@ form:FormGroup;
   ];
 
   
+<<<<<<< HEAD
   constructor(private formBuilder:FormBuilder , private service:RestService, private toastr: ToastrService) { }
+=======
+  constructor(private formBuilder:FormBuilder , private service:RestService,private toastr: ToastrService) { }
+>>>>>>> 9d7de7dfc5e104ef1fbd037645a1c1c00b421b24
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -55,26 +59,29 @@ form:FormGroup;
     console.log(json)
     delete json.confirm_password;
      this.register(json);
+     
   
   }
    
    register(user){
     this.service.adduser(user).subscribe(data =>{
     console.log(data);
-    this.showToaster()
-    },error =>{
-      this.toastr.error("Unable to register",'Welcome To Novelty',{
-        timeOut: 10000,
+    this.showSuccess()
+    },error=>{
+      this.toastr.error('Unable To Register','Welcome To Novelty',{
+        timeOut: 5000,
         positionClass: 'toast-top-right',
-        });
-    })  
+      })
+    })
+      
   }
 
-  showToaster(){
-    this.toastr.success("You have successfully created an account",'Welcome To Novelty',{
-    timeOut: 10000,
-    positionClass: 'toast-top-right',
-    }); 
-}
+
+  showSuccess() {
+    this.toastr.success('You have successfully created an account', 'Welcome To Novelty',{
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+    });
+  }
 
 }

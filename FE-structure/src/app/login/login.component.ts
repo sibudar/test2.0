@@ -11,12 +11,18 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   form:FormGroup;
+<<<<<<< HEAD
   constructor(private service:RestService, private formBuilder:FormBuilder, private toastr: ToastrService ) { }
+=======
+  constructor(private service:RestService, private formBuilder:FormBuilder,private toastr: ToastrService ) { }
+>>>>>>> 9d7de7dfc5e104ef1fbd037645a1c1c00b421b24
 
 
   loginUser(user){
     this.service.login(user).subscribe(data =>{
+      this.showSuccess();
        console.log(data);
+<<<<<<< HEAD
        this.showToaster();
   
     },error =>{
@@ -24,11 +30,21 @@ export class LoginComponent implements OnInit {
         timeOut: 10000,
         positionClass: 'toast-top-right',
         }); 
+=======
+      
+     
+    },error=>{
+      this.toastr.error('Unable to log in','Welcome To Novelty',{
+        timeOut: 5000,
+        positionClass: 'toast-top-right',
+      })
+>>>>>>> 9d7de7dfc5e104ef1fbd037645a1c1c00b421b24
     })
   }
 
   login(){
     this.loginUser(this.form.value)
+    
   }
 
 
@@ -40,11 +56,20 @@ export class LoginComponent implements OnInit {
    
   }
   
+<<<<<<< HEAD
   showToaster(){
     this.toastr.success("You have successfully logged in ",'Welcome To Novelty',{
     timeOut: 10000,
     positionClass: 'toast-top-right',
     }); 
 }
+=======
+  showSuccess() {
+    this.toastr.success('You have successfully logged in', 'Welcome To Novelty',{
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+    });
+  }
+>>>>>>> 9d7de7dfc5e104ef1fbd037645a1c1c00b421b24
 
 }
