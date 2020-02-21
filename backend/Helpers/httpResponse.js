@@ -1,7 +1,7 @@
 
-function response(status,message,data=[])
+function response(status, message, data=[])
 {
-    return {status,message,data}
+    return {status, message, data}
 }
 
 module.exports = response

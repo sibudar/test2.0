@@ -1,5 +1,5 @@
-const jwt = require ('jsonwebtoken'); //import jwt
-const fs = require ('fs');
+const jwt = require('jsonwebtoken'); //import jwt
+const fs = require('fs');
 //const privateKey = fs.readFileSync('../private.pem','utf8');
 
 let textKey = 
@@ -53,4 +53,4 @@ async function verifyToken(token) {
   });
 }
 
-module.exports = {generateToken, verifyToken};
+module.exports = { generateToken, verifyToken };
