@@ -4,12 +4,11 @@
  * 
  * return boolean
  */
-
-function validate (field) {
+function validate(field) {
   if (field == undefined) {
     return true;
   }
   return false;
 }
 
-module.exports = {validate};
+module.exports = { validate };
