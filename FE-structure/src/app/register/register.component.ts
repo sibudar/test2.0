@@ -61,6 +61,7 @@ form:FormGroup;
    register(user){
     this.service.adduser(user).subscribe(data =>{
     console.log(data);
+<<<<<<< HEAD
     this.showToaster()
     },error =>{
       this.toastr.error("Unable to register",'Welcome To Novelty',{
@@ -68,6 +69,12 @@ form:FormGroup;
         positionClass: 'toast-top-right',
         });
     })  
+=======
+
+    
+    })
+      
+>>>>>>> 4aae34afd49946fe7aa904da5bc0dfecd5798c39
   }
 
   showToaster(){
