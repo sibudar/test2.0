@@ -34,17 +34,17 @@ function generateToken(data) {
   //create a token
   const token = jwt.sign(data, textKey, {
     algorithm: 'HS256',
-    expiresIn: 120, //expires in 2 minutes
+    expiresIn: 800000, //expires in 2 minutes
   });
   return token;
 }
 
-function verifyToken(token) {
+async function verifyToken(token) {
   if(!token) {
     return 'No token provided.';
   }
   //verify token
-  jwt.verify(token, privateKey, (err, data) => {
+  return jwt.verify(token, textKey, (err, data) => {
     if(err) {
       return 'Invalid token.';
     } else {
