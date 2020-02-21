@@ -1,7 +1,7 @@
 <mat-card class="card">
-    <mat-grid-list cols="2" rowHeight="550px">
+    <mat-grid-list cols="2" rowHeight="550px" *ngIf="!message">
       <mat-grid-tile class="text-inside-grid">
-        <div class="div">
+        <div class="div" >
           <h3 class="header">Create an account</h3>
           <!-- Form for registration -->
           <form [formGroup]="form">
@@ -54,26 +54,28 @@
           <!-- buttons -->
          <div class="buttons">
            <!-- register button -->
-          <button mat-flat-button color="primary" class="btn" type="submit" (click)="submit()">Register</button>
+          <button mat-flat-button color="primary" class="btn" type="submit" (click)="submit()"  >Register</button>
 
        <!-- login button-->
             <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/login" class="login" >Login</button>
          </div>
         </div>
       </mat-grid-tile>
-
+      
       <!-- image -->
       <mat-grid-tile>
         <div class="img">
           <img class="image" src="assets/img/logoB.png">
-        
-        </div>
        
-     
-
+        </div>
       </mat-grid-tile>
-
-   
     </mat-grid-list>
+
+    <div class="btn-rest" *ngIf="message">
+      <h3 >{{msg}}</h3>
+      <button mat-flat-button color="primary" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</button>
+    </div>
+          
+
   </mat-card>
   

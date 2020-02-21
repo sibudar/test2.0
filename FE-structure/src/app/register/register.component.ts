@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, } from '@angular/forms'
 import { PasswordValidation } from './password-validator';
 import { RestService } from '../shared/rest.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -34,7 +35,7 @@ form:FormGroup;
   ];
 
   
-  constructor(private formBuilder:FormBuilder , private service:RestService) { }
+  constructor(private formBuilder:FormBuilder , private service:RestService,private toastr: ToastrService) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -55,16 +56,29 @@ form:FormGroup;
     console.log(json)
     delete json.confirm_password;
      this.register(json);
+     
   
   }
    
    register(user){
     this.service.adduser(user).subscribe(data =>{
     console.log(data);
-
-    
+    this.showSuccess()
+    },error=>{
+      this.toastr.error('Unable To Register','Welcome To Novelty',{
+        timeOut: 5000,
+        positionClass: 'toast-top-right',
+      })
     })
       
+  }
+
+
+  showSuccess() {
+    this.toastr.success('You have successfully created an account', 'Welcome To Novelty',{
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+    });
   }
 
 }
