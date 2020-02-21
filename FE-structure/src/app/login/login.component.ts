@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../shared/rest.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -10,18 +11,26 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class LoginComponent implements OnInit {
 
   form:FormGroup;
-  constructor(private service:RestService, private formBuilder:FormBuilder ) { }
+  constructor(private service:RestService, private formBuilder:FormBuilder,private toastr: ToastrService ) { }
 
 
   loginUser(user){
     this.service.login(user).subscribe(data =>{
+      this.showSuccess();
        console.log(data);
+      
      
+    },error=>{
+      this.toastr.error('Unable to log in','Welcome To Novelty',{
+        timeOut: 5000,
+        positionClass: 'toast-top-right',
+      })
     })
   }
 
   login(){
     this.loginUser(this.form.value)
+    
   }
 
 
@@ -33,6 +42,11 @@ export class LoginComponent implements OnInit {
    
   }
   
-  
+  showSuccess() {
+    this.toastr.success('You have successfully logged in', 'Welcome To Novelty',{
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+    });
+  }
 
 }
