@@ -35,11 +35,7 @@ form:FormGroup;
   ];
 
   
-<<<<<<< HEAD
-  constructor(private formBuilder:FormBuilder , private service:RestService, private toastr: ToastrService) { }
-=======
   constructor(private formBuilder:FormBuilder , private service:RestService,private toastr: ToastrService) { }
->>>>>>> 9d7de7dfc5e104ef1fbd037645a1c1c00b421b24
 
   ngOnInit() {
     this.form = this.formBuilder.group({
