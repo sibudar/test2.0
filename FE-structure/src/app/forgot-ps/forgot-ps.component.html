@@ -22,7 +22,7 @@
   <mat-error *ngIf="form.controls['confirm_password'].pristine || form.controls['confirm_password'].errors?.MatchPassword">Password does not match</mat-error>
   </mat-form-field>
   <br>
-  <button mat-flat-button color="primary" class="btn" type="submit" routerLink="/login">Reset</button>
+  <button mat-flat-button color="primary" class="btn" type="submit" routerLink="/login" (click)= 'forgot()'>Reset</button>
   </form>
 
   </mat-card>
