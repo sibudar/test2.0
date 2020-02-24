@@ -1,10 +1,13 @@
-const nodemailer = require('nodemailer');
-require('dotenv').config();
+const nodemailer = require ('nodemailer');
+require ('dotenv').config ();
 
-//forgot password
-async function sendEmail(email, body, _subject) {
-  //let link = 'http://localhost:5000/api/v1/users/reset-password';
-  
+/**
+ * Sending an email to a user.
+ * @param {*} email 
+ * @param {*} body 
+ * @param {*} _subject 
+ */
+async function sendEmail (email, body, _subject) {
   //configuring smtp transport machanism for password reset email
   let transporter = nodemailer.createTransport ({
     service: 'gmail',
@@ -32,4 +35,4 @@ async function sendEmail(email, body, _subject) {
   });
 }
 
-module.exports = { sendEmail }
+module.exports = { sendEmail };
