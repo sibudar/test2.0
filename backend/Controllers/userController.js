@@ -53,9 +53,10 @@ async function login(data) {
 
   const sql = 'SELECT * FROM users WHERE email = ?';
 
-  return queryResponse(sql, data.email).then(async (result) => {
-    let checkPassword = await bcrypt.compareSync(data.user_password, result[0].user_password)
-      if(checkPassword) {
+  return queryResponse(sql, data.email).then( async (result) => {
+
+    let checkPassword = await bcrypt.compare(data.user_password, result[0].user_password) ;
+      if(checkPassword){
         return fieldResponse(200, 'logged in.', result);
       } else {
         return fieldResponse(401, 'password does not match.');
