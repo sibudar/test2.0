@@ -6,6 +6,12 @@ const mail = require('../Helpers/sendEmail');
 const msg = require('../config/bodyMessage');
 const encrypt = require('../Helpers/authToken');
 
+/**
+ * It register a user.
+ * @param {*} data 
+ * data is a body the user inserts.
+ * @returns a queryResponse.
+ */
 async function register(data) {
   if(fieldValidator.validate(data.first_name)) {
     return fieldResponse(400, 'First name required');
@@ -20,7 +26,7 @@ async function register(data) {
     return fieldResponse(400, 'Password is required');
   }
 
-  let sql = `INSERT INTO USERS SET ?`;
+  let sql = `INSERT INTO users SET ?`;
   data.user_password = bcrypt.hashSync(data.user_password, 10); //password is hashed
 
   return queryResponse(sql, data).then((result) => { // <= should be an async function.
@@ -31,6 +37,12 @@ async function register(data) {
   });
 }
 
+/**
+ * Logging in.
+ * @param {*} data
+ * data is a body the user inserts.
+ * @returns a queryResponse.
+ */
 async function login(data) {
   if(fieldValidator.validate(data.email)) {
     return fieldResponse(400, 'Emaill is required');
@@ -52,6 +64,12 @@ async function login(data) {
     });
 }
 
+/**
+ * If the user forgot their password.
+ * @param {*} data 
+ * data is an email [body] the user inserts.
+ * @returns a queryResponse.
+ */
 async function forgot(data) {
   if(fieldValidator.validate(data.email)) {
     return fieldResponse(400, 'Emaill is required');
@@ -59,7 +77,7 @@ async function forgot(data) {
   
   const sql = 'SELECT first_name, email FROM users WHERE email = ?';
 
-  return queryResponse(sql, data.email).then (result => {
+  return queryResponse(sql, data.email).then(result => {
     //check the length instead
     if(result[0].email === data.email) {
       let token = encrypt.generateToken({email: data.email});
@@ -73,12 +91,16 @@ async function forgot(data) {
   });
 }
 
+/**
+ * If the user forgots the password.
+ * User needs to reset their password.
+ * @param {*} data 
+ * @returns a queryResponse.
+ */
 async function reset(data) {
   let resetPass = await encrypt.verifyToken(data.token);
-
   let password = bcrypt.hashSync(data.user_password, 10); //password is hashed
-
-  let sql = `UPDATE Users SET user_password = ? WHERE email = '${resetPass.email}'`;
+  let sql = `UPDATE users SET user_password = ? WHERE email = '${resetPass.email}'`;
 
   return queryResponse(sql, password).then(result => {
     return fieldResponse(200, 'Successfully updated.');
@@ -87,4 +109,4 @@ async function reset(data) {
   });
 }
 
-module.exports = {register, login, forgot, reset};
+module.exports = { register, login, forgot, reset };
