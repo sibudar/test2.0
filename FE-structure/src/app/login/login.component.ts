@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../shared/rest.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from "@angular/router";
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -11,12 +12,13 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   form:FormGroup;
-  constructor(private service:RestService, private formBuilder:FormBuilder,private toastr: ToastrService ) { }
+  constructor(private service:RestService, private formBuilder:FormBuilder,private toastr: ToastrService ,private router: Router) { }
 
 
   loginUser(user){
     this.service.login(user).subscribe(data =>{
       this.showSuccess();
+      this.router.navigate(['/landing'])
        console.log(data);
       
      
