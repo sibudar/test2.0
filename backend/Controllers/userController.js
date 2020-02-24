@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const mail = require('../Helpers/sendEmail');
 const msg = require('../config/bodyMessage');
 const encrypt = require('../Helpers/authToken');
+const validator = require('validator');
 
 /**
  * It register a user.
@@ -19,8 +20,8 @@ async function register(data) {
   if(fieldValidator.validate(data.last_name)) {
     return fieldResponse(400, 'Last name required');
   }
-  if(fieldValidator.validate(data.email)) {
-    return fieldResponse(400, 'Email is required');
+  if(!validator.isEmail(data.email)) {
+    return fieldResponse(400, 'Email is not valid');
   }
   if(fieldValidator.validate(data.user_password)) {
     return fieldResponse(400, 'Password is required');
