@@ -13,4 +13,11 @@ function resetMessage(name, link){
     <p>Please ignore if you didn't try to reset your password on our platform</p>`;
 }
 
-module.exports = { resetMessage };
+/**
+ * @returns a subject.
+ */
+function resetSubject() {
+    return "Novelty | Forgot Password.";
+}
+
+module.exports = { resetMessage, resetSubject };

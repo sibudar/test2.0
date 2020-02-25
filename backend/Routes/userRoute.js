@@ -2,7 +2,7 @@ const userRouter = require("express").Router();
 const registerController = require("../Controllers/userController");
 
 // [post] route to "/register" to register a user.
-userRouter.post("/register", async(req, res) => {
+userRouter.post("/", async(req, res) => {
   result = await registerController.register(req.body);
 
   res.status(result.status).send(result);

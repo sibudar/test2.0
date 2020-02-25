@@ -51,7 +51,6 @@ form:FormGroup;
   }
 
   submit(){
-
     let json: any = this.form.value; 
     console.log(json)
     delete json.confirm_password;

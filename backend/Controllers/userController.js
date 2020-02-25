@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const fieldValidator = require ('../Helpers/validate');
 const fieldResponse = require ('../Helpers/httpResponse');
 const queryResponse = require ('../Helpers/queryFunction');
@@ -6,6 +7,16 @@ const mail = require ('../Helpers/sendEmail');
 const msg = require ('../config/bodyMessage');
 const encrypt = require ('../Helpers/authToken');
 const validator = require ('validator'); //import validator.js
+=======
+const fieldValidator = require('../Helpers/validate');
+const fieldResponse = require('../Helpers/httpResponse');
+const queryResponse = require('../Helpers/queryFunction');
+const bcrypt = require('bcryptjs');
+const mail = require('../Helpers/sendEmail');
+const msg = require('../config/bodyMessage');
+const encrypt = require('../Helpers/authToken');
+const validator = require('validator');
+>>>>>>> cf74005741c1c3121f58ee3e89d88bc37ce49ac1
 
 /**
  * It register a user.
@@ -64,6 +75,7 @@ async function login (data) {
 
   const sql = 'SELECT * FROM users WHERE email = ?';
 
+<<<<<<< HEAD
   return queryResponse (sql, data.email)
     .then (async result => {
 
@@ -71,6 +83,13 @@ async function login (data) {
 
       if (checkPassword) {
         return fieldResponse (200, 'Logged in successfully.', result);
+=======
+  return queryResponse(sql, data.email).then( async (result) => {
+
+    let checkPassword = await bcrypt.compare(data.user_password, result[0].user_password) ;
+      if(checkPassword){
+        return fieldResponse(200, 'logged in.', result);
+>>>>>>> cf74005741c1c3121f58ee3e89d88bc37ce49ac1
       } else {
         return fieldResponse (401, 'Incorrect password entered.');
       }
