@@ -4,13 +4,13 @@
         <div class="div" >
           <h3 class="header">Create an account</h3>
           <!-- Form for registration -->
-          <form [formGroup]="form">
+          <form [formGroup]="form" #loginForm="ngForm" (ngSubmit)="submit(loginForm.value)">
          <!-- input for the name of user -->
             <mat-form-field class="dummy-input-field" appearance="legacy">
               <i  matPrefix class="material-icons">
               account_circle
             </i>
-              <input matInput placeholder="Name"  required formControlName="first_name" />
+              <input matInput placeholder="Name"  required formControlName="first_name" maxlength="15"/>
             </mat-form-field>
       
             <!-- input for the surname of user -->
@@ -18,7 +18,7 @@
               <i  matPrefix class="material-icons">
                 perm_contact_calendar
                 </i>
-              <input matInput placeholder="Surname"  required  formControlName="last_name"/>
+              <input matInput placeholder="Surname"  required  formControlName="last_name" maxlength="25"/>
             </mat-form-field>
 
 <!-- input for the email of user  -->
@@ -26,7 +26,7 @@
               <i matPrefix  class="material-icons">
                 email
                 </i>
-              <input type="email" matInput placeholder="Email Address"  required formControlName="email" /> 
+              <input type="email" matInput placeholder="Email Address"  required formControlName="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" /> 
               <mat-error *ngIf="form.controls['email'].invalid"> Not a valid email</mat-error>
             </mat-form-field>
          
@@ -45,7 +45,7 @@
             <i matPrefix  class="material-icons">
               lock
               </i>
-            <input type="password" matInput placeholder="Confirm your password" formControlName="confirm_password">
+            <input type="password" matInput placeholder="Confirm your password" formControlName="confirm_password" >
             <!-- checks if passwords and confirm password matches -->
         <mat-error *ngIf="form.controls['confirm_password'].pristine || form.controls['confirm_password'].errors?.MatchPassword">Password does not match</mat-error>
           </mat-form-field>
@@ -54,7 +54,7 @@
           <!-- buttons -->
          <div class="buttons">
            <!-- register button -->
-          <button mat-flat-button color="primary" class="btn" type="submit" (click)="submit()"  >Register</button>
+          <button mat-flat-button color="primary" class="btn" type="submit" (click)="submit()" [disabled]="loginForm.invalid" >Register</button>
 
        <!-- login button-->
             <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/login" class="login" >Login</button>
