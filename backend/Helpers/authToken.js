@@ -1,5 +1,6 @@
 const jwt = require ('jsonwebtoken');
 const fs = require ('fs');
+//let privateKey = fs.readFileSync('../Helpers/private.pem', 'utf8');
 
 // private key
 let textKey = `MIIEpAIBAAKCAQEAyVTQ9QxfutaYXKBbYfZbH2vhIWoIPEjAFSbsy1PZoIcclUQR
@@ -31,11 +32,9 @@ dyWl3YlvqO+SUuieGvHISlekblMO/4tcUscmKmo+FgkMroBsePcdEAfcgvkybjyh`
 /**
  * Creates a token.
  * @param {*} data
- * data is an email.
  * @returns a token.
  */
 function generateToken(data) {
-  //we need to do try-catch errors
   //create a token
   const token = jwt.sign(data, textKey, {
     algorithm: 'HS256',
@@ -47,7 +46,7 @@ function generateToken(data) {
 /**
  * Verifies a token.
  * @param {*} token
- * @returns verified token. 
+ * @returns decrypted token. 
  */
 async function verifyToken(token) {
   if(!token) {

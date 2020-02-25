@@ -5,7 +5,7 @@ const bcrypt = require ('bcryptjs');
 const mail = require ('../Helpers/sendEmail');
 const msg = require ('../config/bodyMessage');
 const encrypt = require ('../Helpers/authToken');
-const validator = require ('validator'); //
+const validator = require ('validator'); //import validator.js
 
 /**
  * It register a user.
@@ -35,12 +35,15 @@ async function register (data) {
     .then(result => {
       // <= should be an async function.
       // await mail.sendEmail(data.email, msg.registerMessage(result[0].first_name), msg.registerSubject());
-      return fieldResponse (201, 'Successfully created an account.');
+      return fieldResponse (201, 'Successfully created an account.', result);
     })
     .catch (error => {
-      //if()
-      console.log(error)
-      return fieldResponse (400, 'Email already exist, try a diffrent email adress or request forgot password on login page', error.sqlMessage);
+      //errno === 1062 is Duplicate entry 
+      if(error.errno === 1062) {
+        return fieldResponse (400, 'Email already exist, try a diffrent email adress or request forgot password on login page', error.sqlMessage)
+      }
+      //http status of 500 = internal server error
+      return fieldResponse (500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage );
     });
 }
 
@@ -63,21 +66,17 @@ async function login (data) {
 
   return queryResponse (sql, data.email)
     .then (async result => {
-      let checkPassword = await bcrypt.compareSync (
-        data.user_password,
-        result[0].user_password
-      );
+
+      const checkPassword = await bcrypt.compareSync (data.user_password,result[0].user_password);
 
       if (checkPassword) {
-        console.log ('im in');
-        return fieldResponse (200, 'logged in.', result);
+        return fieldResponse (200, 'Logged in successfully.', result);
       } else {
-        return fieldResponse (401, 'password does not match.');
+        return fieldResponse (401, 'Incorrect password entered.');
       }
     })
     .catch (error => {
-      console.log (error);
-      return fieldResponse (404, 'unable to login', error);
+      return fieldResponse (404, 'Incorrect email adress entered.', error);
     });
 }
 
