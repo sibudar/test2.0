@@ -1,32 +1,20 @@
------------------------------------------------------------
 -- Create a database if it doesn't exist.
------------------------------------------------------------
 CREATE database IF NOT EXISTS noveltydb;
------------------------------------------------------------
 -- Use the database we created.
------------------------------------------------------------
 USE noveltydb;
------------------------------------------------------------
 -- If there's a table that has a foriegn key, 
 -- assign to 0. So it can drop parent tables.
------------------------------------------------------------
 SET FOREIGN_KEY_CHECKS=0; 
------------------------------------------------------------
 -- Drop tables if they exist.
------------------------------------------------------------
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS business_idea;
 DROP TABLE IF EXISTS documents;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS question_catergory;
------------------------------------------------------------
 -- Enable the foriegn keys on the parent tables.
------------------------------------------------------------
 SET FOREIGN_KEY_CHECKS=1;
------------------------------------------------------------
 -- Create Users table.
------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS users (
     id INT(11) NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(50) DEFAULT NULL,
@@ -40,9 +28,7 @@ CREATE TABLE IF NOT EXISTS users (
 
     PRIMARY KEY (id)
 ) ENGINE=INNODB;
------------------------------------------------------------
 -- Create Documents table.
------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS documents (
     id INT(11) NOT NULL AUTO_INCREMENT,
     doc_name VARCHAR(64) DEFAULT NULL,
@@ -55,9 +41,7 @@ CREATE TABLE IF NOT EXISTS documents (
 
     PRIMARY KEY (id)
 ) ENGINE=INNODB;
------------------------------------------------------------
 -- Create Question Catergory table.
------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS question_catergory (
     id INT NOT NULL AUTO_INCREMENT,
     cat_name VARCHAR(64) NOT NULL,
@@ -68,9 +52,7 @@ CREATE TABLE IF NOT EXISTS question_catergory (
 
     PRIMARY KEY (id)
 ) ENGINE=INNODB;
------------------------------------------------------------
 -- Create Business Ideas table.
------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS business_idea (
     id INT NOT NULL AUTO_INCREMENT,
     busin_name VARCHAR(64) DEFAULT NULL,
@@ -87,9 +69,7 @@ CREATE TABLE IF NOT EXISTS business_idea (
 
     FOREIGN KEY (id_user) REFERENCES users(id)
 ) ENGINE=INNODB;
------------------------------------------------------------
 -- Create Questions table.
------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS questions (
     id INT NOT NULL AUTO_INCREMENT,
     q_name VARCHAR(64) DEFAULT NULL,
@@ -106,9 +86,7 @@ CREATE TABLE IF NOT EXISTS questions (
 
     FOREIGN KEY (id_cat) REFERENCES question_catergory(id)
 ) ENGINE=INNODB;
------------------------------------------------------------
 -- Create Answers table.
------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS answers (
     id INT(11) NOT NULL AUTO_INCREMENT,
     user_answer VARCHAR(225),
@@ -128,25 +106,19 @@ CREATE TABLE IF NOT EXISTS answers (
     FOREIGN KEY (id_que) REFERENCES questions(id),
     FOREIGN KEY (id_bus) REFERENCES business_idea(id)
 ) ENGINE=INNODB;
------------------------------------------------------------
 -- Inserting the default category questions for questions.
------------------------------------------------------------
 INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP1', 'System', now(), 'System', now());
 INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP2', 'System', now(), 'System', now());
 INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP3', 'System', now(), 'System', now());
 INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP4', 'System', now(), 'System', now());
 INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP5', 'System', now(), 'System', now());
------------------------------------------------------------
 -- Inserting the default questions for the Users.
------------------------------------------------------------
 INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('What problem is your idea solving?', 'System', now(), 'System', now(), 1);
 INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('What value does your product or service add to someone’s life?', 'System', now(), 'System', now(), 1);
 INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('Who else is doing this?', 'System', now(), 'System', now(), 1);
 INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('How is your product or service different?', 'System', now(), 'System', now(), 1);
 INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('Is this a long or short term goal?', 'System', now(), 'System', now(), 1);
------------------------------------------------------------
 -- Creating stored procedure.
------------------------------------------------------------
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS registerUser $$
