@@ -7,7 +7,8 @@ const options = {
 
         "swagger": "2.0",
         "info": {
-            "title": "Novelty Api"
+            "title": "Novelty Api",
+            "description":""
             
         },
         "host": "localhost:5000",

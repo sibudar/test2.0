@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'FE-structure';
+  title = 'Novelty';
   // public environment = environment.environment;
   // public SomeAPIKey = environment.APIKeys.SomeAPIKey;
   // public SomeOtherAPIKey = environment.APIKeys.SomeOtherAPIKey; 

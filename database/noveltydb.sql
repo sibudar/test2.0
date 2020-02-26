@@ -21,6 +21,10 @@ CREATE TABLE IF NOT EXISTS users (
     last_name VARCHAR(50) DEFAULT NULL,
     email VARCHAR(255) DEFAULT NULL UNIQUE,
     user_password VARCHAR(255) DEFAULT NULL,
+    createdby VARCHAR(255) DEFAULT NULL,
+    createdat DATETIME NOT NULL,
+    modifiedby VARCHAR(255) DEFAULT NULL,
+    modifiedat DATETIME NOT NULL,
 
     PRIMARY KEY (id)
 ) ENGINE=INNODB;
@@ -30,6 +34,10 @@ CREATE TABLE IF NOT EXISTS documents (
     doc_name VARCHAR(64) DEFAULT NULL,
     descript VARCHAR(64) DEFAULT NULL,
     path_loc VARCHAR(64) DEFAULT NULL,
+    createdby VARCHAR(255) DEFAULT NULL,
+    createdat DATETIME NOT NULL,
+    modifiedby VARCHAR(255) DEFAULT NULL,
+    modifiedat DATETIME NOT NULL,
 
     PRIMARY KEY (id)
 ) ENGINE=INNODB;
@@ -37,6 +45,11 @@ CREATE TABLE IF NOT EXISTS documents (
 CREATE TABLE IF NOT EXISTS question_catergory (
     id INT NOT NULL AUTO_INCREMENT,
     cat_name VARCHAR(64) NOT NULL,
+    createdby VARCHAR(255) DEFAULT NULL,
+    createdat DATETIME NOT NULL,
+    modifiedby VARCHAR(255) DEFAULT NULL,
+    modifiedat DATETIME NOT NULL,
+
     PRIMARY KEY (id)
 ) ENGINE=INNODB;
 -- Create Business Ideas table.
@@ -44,6 +57,11 @@ CREATE TABLE IF NOT EXISTS business_idea (
     id INT NOT NULL AUTO_INCREMENT,
     busin_name VARCHAR(64) DEFAULT NULL,
     status_flag VARCHAR(5) DEFAULT TRUE,
+    createdby VARCHAR(255) DEFAULT NULL,
+    createdat DATETIME NOT NULL,
+    modifiedby VARCHAR(255) DEFAULT NULL,
+    modifiedat DATETIME NOT NULL,
+
     id_user INT,
 
     PRIMARY KEY (id),
@@ -55,6 +73,11 @@ CREATE TABLE IF NOT EXISTS business_idea (
 CREATE TABLE IF NOT EXISTS questions (
     id INT NOT NULL AUTO_INCREMENT,
     q_name VARCHAR(64) DEFAULT NULL,
+    createdby VARCHAR(255) DEFAULT NULL,
+    createdat DATETIME NOT NULL,
+    modifiedby VARCHAR(255) DEFAULT NULL,
+    modifiedat DATETIME NOT NULL,
+
     id_cat INT NOT NULL,
     
     PRIMARY KEY (id),
@@ -67,6 +90,11 @@ CREATE TABLE IF NOT EXISTS questions (
 CREATE TABLE IF NOT EXISTS answers (
     id INT(11) NOT NULL AUTO_INCREMENT,
     user_answer VARCHAR(225),
+    createdby VARCHAR(255) DEFAULT NULL,
+    createdat DATETIME NOT NULL,
+    modifiedby VARCHAR(255) DEFAULT NULL,
+    modifiedat DATETIME NOT NULL,
+
     id_bus INT NOT NULL,
     id_que INT NOT NULL,
 
@@ -79,14 +107,48 @@ CREATE TABLE IF NOT EXISTS answers (
     FOREIGN KEY (id_bus) REFERENCES business_idea(id)
 ) ENGINE=INNODB;
 -- Inserting the default category questions for questions.
-INSERT INTO question_catergory (cat_name) VALUES ('STEP1');
-INSERT INTO question_catergory (cat_name) VALUES ('STEP2');
-INSERT INTO question_catergory (cat_name) VALUES ('STEP3');
-INSERT INTO question_catergory (cat_name) VALUES ('STEP4');
-INSERT INTO question_catergory (cat_name) VALUES ('STEP5');
+INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP1', 'System', now(), 'System', now());
+INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP2', 'System', now(), 'System', now());
+INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP3', 'System', now(), 'System', now());
+INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP4', 'System', now(), 'System', now());
+INSERT INTO question_catergory (cat_name, createdby, createdat, modifiedby, modifiedat) VALUES ('STEP5', 'System', now(), 'System', now());
 -- Inserting the default questions for the Users.
-INSERT INTO questions (q_name, id_cat) VALUES ('What problem is your idea solving?', 1);
-INSERT INTO questions (q_name, id_cat) VALUES ('What value does your product or service add to someone’s life?', 1);
-INSERT INTO questions (q_name, id_cat) VALUES ('Who else is doing this?', 1);
-INSERT INTO questions (q_name, id_cat) VALUES ('How is your product or service different?', 1);
-INSERT INTO questions (q_name, id_cat) VALUES ('Is this a long or short term goal?', 1);
+INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('What problem is your idea solving?', 'System', now(), 'System', now(), 1);
+INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('What value does your product or service add to someone’s life?', 'System', now(), 'System', now(), 1);
+INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('Who else is doing this?', 'System', now(), 'System', now(), 1);
+INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('How is your product or service different?', 'System', now(), 'System', now(), 1);
+INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_cat) VALUES ('Is this a long or short term goal?', 'System', now(), 'System', now(), 1);
+-- Creating stored procedure.
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS registerUser $$
+DROP PROCEDURE IF EXISTS loginUser $$
+DROP PROCEDURE IF EXISTS forgotPassword $$
+DROP PROCEDURE IF EXISTS resetPassword $$
+
+CREATE PROCEDURE registerUser(IN f_name NVARCHAR(50), IN l_name NVARCHAR(50), IN u_email NVARCHAR(255), IN u_password NVARCHAR(255))
+BEGIN
+    INSERT INTO users (first_name, last_name, email, user_password, createdby, createdat, modifiedby, modifiedat) 
+    VALUES (f_name, l_name, u_email, u_password, 'System', now(), CONCAT(first_name, ' ', last_name), now());
+END $$
+
+CREATE PROCEDURE loginUser(IN u_email NVARCHAR(255))
+BEGIN
+    SELECT * FROM users 
+    WHERE email = u_email;
+END $$
+
+CREATE PROCEDURE forgotPassword(IN u_email NVARCHAR(255))
+BEGIN
+    SELECT first_name, email FROM users 
+    WHERE email = u_email;
+END $$
+
+CREATE PROCEDURE resetPassword(IN u_email NVARCHAR(255), IN u_password NVARCHAR(255))
+BEGIN
+    UPDATE users 
+    SET user_password = u_password, modifiedby = CONCAT(first_name, ' ', last_name), modifiedat = now()
+    WHERE email = u_email;
+END $$
+
+DELIMITER ;

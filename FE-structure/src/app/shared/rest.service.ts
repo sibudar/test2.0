@@ -18,7 +18,7 @@ export class RestService {
 
   // adds user 
   public adduser(user) {
-    return this.http.post(this.url + '/users/register', user)
+    return this.http.post(this.url + '/users', user)
   }
 
   public login(user){
