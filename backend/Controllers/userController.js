@@ -28,7 +28,7 @@ async function register (data) {
     return fieldResponse (400, 'Please enter a valid email adress');
   }
 
-  let sql = `INSERT INTO users SET ?`;
+  let sql = `CALL registerUser(?)`;
   data.user_password = bcrypt.hashSync (data.user_password, 10); //password is hashed
 
   return queryResponse (sql, data)
@@ -53,7 +53,7 @@ async function register (data) {
  * data is a body the user inserts.
  * @returns a queryResponse.
  */
-async function login (data) {
+async function login(data) {
   //check if the string is an email.
   if (!validator.isEmail (data.email)) {
     return fieldResponse (400, 'Please enter a valid email adress');
@@ -62,7 +62,7 @@ async function login (data) {
     return fieldResponse (400, 'Password is required');
   }
 
-  const sql = 'SELECT * FROM users WHERE email = ?';
+  const sql = `CALL loginUser(?)`;
 
   return queryResponse (sql, data.email)
     .then (async result => {
@@ -86,13 +86,13 @@ async function login (data) {
  * data is an email [body] the user inserts.
  * @returns a queryResponse.
  */
-async function forgot (data) {
+async function forgot(data) {
   //check if the string is an email.
   if (!validator.isEmail (data.email)) {
     return fieldResponse (400, 'Please enter a valid email adress');
   }
 
-  const sql = 'SELECT first_name, email FROM users WHERE email = ?';
+  const sql = `CALL forgotPassword(?)`;
 
   return queryResponse (sql, data.email)
     .then (result => {
@@ -131,7 +131,7 @@ async function forgot (data) {
 async function reset (data) {
   let resetPass = await encrypt.verifyToken (data.token);
   let password = bcrypt.hashSync (data.user_password, 10); //password is hashed
-  let sql = `UPDATE users SET user_password = ? WHERE email = '${resetPass.email}'`;
+  let sql = `CALL resetPassword('${resetPass.email}')`;
 
   return queryResponse (sql, password)
     .then (result => {
