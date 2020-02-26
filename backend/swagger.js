@@ -16,7 +16,7 @@ const options = {
         "tags": [
             {
                 "name": "user",
-                "description": "API for users in the system"
+                "description": "Everything about users "
             },
           
         ],
@@ -24,7 +24,7 @@ const options = {
             "http"
         ],
         "definitions": {
-            "register": {
+            "User": {
                 "properties": {
 
                     "first_name": {
@@ -41,16 +41,7 @@ const options = {
                     }
                 }
             },
-            "login":{
-                "properties":{
-                    "email":{
-                        "type":"string"
-                    },
-                    "user_password":{
-                        "type":"string"
-                    }
-                }
-            }
+          
         }
     },
     apis:['./Routes/*.js']

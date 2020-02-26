@@ -1,31 +1,35 @@
 const userRouter = require("express").Router();
 const registerController = require("../Controllers/userController");
 
+// registers user 
+
 /**
  * @swagger
  * /users:
  *  post:
  *     tags:
  *      - user
- *     description: Create new user in system
+ *     summary: Create User
+ *     description: This can only be done by first time users
  *     consumes:
  *        - application/json
  *     produces:
  *        - application/json
  *     parameters:
  *        - name: user
- *          description: User that we want to create
+ *          description: Created user object
  *          in: body 
  *          schema: 
- *           $ref: '#/definitions/register'
+ *           $ref: '#/definitions/User'
  *     responses:
  *        201:
  *         description: Successfully created an account
  *        400:
- *         description:Unsuccessful
+ *         description: Unsuccessful
  * 
  */
 
+// logins in user
 
  /**
  * @swagger
@@ -33,24 +37,97 @@ const registerController = require("../Controllers/userController");
  *  post:
  *     tags:
  *      - user
- *     description: Create new user in system
+ *     summary: Logs user into the system
+ *     description: This can only be done by users who have registered
+ *     consumes:
+ *        - application/json
  *     produces:
  *        - application/json
  *     parameters:
  *        - name: user
- *          description: User that we want to create
+ *          description: Created user object
  *          in: body 
  *          schema: 
- *           $ref: '#/definitions/login'
+ *           type: object
+ *           properties:
+ *            email:         
+ *              type: string
+ *            user_password:         
+ *              type: string
  *     responses:
  *        200:
- *         description: logged in
+ *         description: Logged in successfully.
  *        401:
- *         description: password does not match
- *        404:
- *         description: unable to login
+ *         description: Incorrect password entered.
+ *     400:
+ *        description: Incorrect email adress entered.
  */
 
+
+ // forgot-password
+
+ /**
+ * @swagger
+ * /users/forgot-password:
+ *  post:
+ *     tags:
+ *      - user
+ *     summary: Sends an email to reset password
+ *     description: This can only be done by users who have registered
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: user
+ *          description: Created user object
+ *          in: body 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            first_name:         
+ *              type: string
+ *            email:         
+ *              type: string
+ *     responses:
+ *        200:
+ *         description: Thank you! Please check your email we've sent you an email.
+ *        401:
+ *         description: User email does not exist, try again!.
+ *     
+ */
+
+ // reset password
+
+ /**
+ * @swagger
+ * /users/reset:
+ *  post:
+ *     tags:
+ *      - user
+ *     summary:  resets password
+ *     description: This can only be done by users who recieved an email to reset password
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: user
+ *          description: Created user object
+ *          in: body 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            user_password:         
+ *              type: string
+ *            
+ *     responses:
+ *        200:
+ *         description: Successfully updated.
+ *        401:
+ *         description: Unsuccessful.
+ *     
+ */
 
 
 // [post] route to "/register" to register a user.
