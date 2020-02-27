@@ -54,7 +54,7 @@
           <!-- buttons -->
          <div class="buttons">
            <!-- register button -->
-          <button mat-flat-button color="primary" class="btn" type="submit" (click)="submit()" [disabled]="loginForm.invalid" >Register</button>
+          <button mat-flat-button color="primary" class="btn" [ngClass]="{'chams':loginForm.invalid}" type="submit" (click)="submit()" [disabled]="loginForm.invalid" >Register</button>
 
        <!-- login button-->
             <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/login" class="login" >Login</button>

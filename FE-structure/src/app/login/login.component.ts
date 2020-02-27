@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
       
      
     },error=>{
-      this.toastr.error('Unable to log in','Welcome To Novelty',{
+      this.toastr.error('Unable to log in','Novelty',
+      {
         timeOut: 5000,
         positionClass: 'toast-top-right',
       })
@@ -45,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
   
   showSuccess() {
-    this.toastr.success('You have successfully logged in', 'Welcome To Novelty',{
+    this.toastr.success('You have successfully logged in', 'Novelty',{
       timeOut: 5000,
       positionClass: 'toast-top-right',
     });

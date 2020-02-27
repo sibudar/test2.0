@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PasswordValidation } from '../register/password-validator';
 import {ActivatedRoute} from "@angular/router";
 import { RestService } from '../shared/rest.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-forgot-ps',
@@ -15,7 +16,7 @@ export class ForgotPsComponent implements OnInit {
   token: string;
   
 
-  constructor(private route: ActivatedRoute, private formBuilder:FormBuilder, private service:RestService) { 
+  constructor(private route: ActivatedRoute, private formBuilder:FormBuilder, private service:RestService,private toastr: ToastrService) { 
     this.route.params.subscribe( params => {
       this.token = params.token;
     }
@@ -36,7 +37,21 @@ forgot(){
 let detail={ token:this.token, user_password:this.form.value.user_password}
 this.service.getToken(detail).subscribe(data=>{
   console.log(data)
-})
+  this.showSuccess()
 
+},error =>{
+  this.toastr.error('Unable to reset your password ','Novelty',{
+    timeOut: 5000,
+    positionClass: 'toast-top-right',
+  })
+})
 }
+
+showSuccess() {
+  this.toastr.success('You have successfully reset your password', 'Novelty',{
+    timeOut: 5000,
+    positionClass: 'toast-top-right',
+  });
+}
+
 }

@@ -22,3 +22,14 @@ margin-left: 20px;
 .logo{
  margin-left: 0; 
 }
+.user button{
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+padding: 17px;
+margin-left: 10px;
+border-radius: 10%;
+outline: none;
+}
+.user button:hover {
+    box-shadow: 0 12px 16px 0 rgba(12, 8, 46, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  

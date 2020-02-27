@@ -25,10 +25,12 @@
   margin-top: 15px;
 
 }
-.btn:hover{
+.chams:hover{
   background-color: #042a43;
   color:white;
+  cursor: not-allowed !important;
 }
+
 
 .image{
   height: 300px;
