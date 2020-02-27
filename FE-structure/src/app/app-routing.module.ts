@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'reset', component: ResetPasswordComponent },
   { path: 'landing', component: LandingpageComponent },
   { path: 'reset-password/:token', component: ForgotPsComponent },
+  { path: '**', redirectTo: '/landing', pathMatch: 'full' },
 
 ];
 
