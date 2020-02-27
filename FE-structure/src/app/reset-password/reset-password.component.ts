@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
 import { RestService } from '../shared/rest.service';
 import { response } from 'src/models/response';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,36 +12,47 @@ import { response } from 'src/models/response';
 })
 export class ResetPasswordComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+
   message = false;
   msg:string 
 
+  form:FormGroup;
 
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
-            '';
-  }
+
+ 
   
-  constructor( private service:RestService) { 
+  constructor( private service:RestService,private formBuilder:FormBuilder,private toastr: ToastrService) { 
     
   }
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      email:new FormControl('', [Validators.required, Validators.email])
+    });
   }
 
   forgotpass(){
-    let json = {email:this.email.value}
+    let json = {email:this.form.value.email}
     this.service.setPassword(json).subscribe((data:response) =>{
       console.log(data.message)
       this.msg = data.message
       this.message=true;
+      this.showSuccess()
     },error =>{
-      console.log(error)
+      this.toastr.error('invalid email address ','Novelty',{
+        timeOut: 5000,
+        positionClass: 'toast-top-right',
+      })
     });
-   
-   
     
+  }
+
+
+  showSuccess() {
+    this.toastr.success('You have successfully created an account', 'Novelty',{
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+    });
   }
 
 
