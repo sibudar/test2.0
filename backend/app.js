@@ -3,8 +3,7 @@ const app = express();
 const user = require('./Routes/userRoute.js');
 const cors = require('cors');
 const  swaggerUi = require('swagger-ui-express');
-      swaggerDocument =  require('./swagger.js');
-
+swaggerDocument =  require('./swagger.js');
 
 require('dotenv').config();
 

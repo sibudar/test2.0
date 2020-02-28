@@ -1,5 +1,5 @@
-const jwt = require ('jsonwebtoken');
-const fs = require ('fs');
+const jwt = require('jsonwebtoken');
+const fs = require('fs');
 //let privateKey = fs.readFileSync('../Helpers/private.pem', 'utf8');
 
 // private key const
@@ -54,11 +54,7 @@ async function verifyToken(token) {
   }
   // verify token
   return jwt.verify(token, textKey, (err, data) => {
-    if(err) {
-      return 'Invalid token.';
-    } else {
-      return data;
-    }
+    if(err) { return 'Invalid token.';} else { return data;}
   });
 }
 

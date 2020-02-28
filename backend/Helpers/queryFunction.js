@@ -1,4 +1,4 @@
-const conn = require ('../config/db');
+const connect = require('../config/db');
 
 /**
  * Executes a query.
@@ -9,7 +9,7 @@ const conn = require ('../config/db');
 function queryFunction(sql, data) {
   return new Promise((resolve, reject) => {
     try {
-      let result = conn.query (sql, [data]);
+      let result = connect.query (sql, [data]);
       resolve (result); // Yay! Everything went well!
     } catch (error) {
       reject (error);
