@@ -4,9 +4,9 @@
  * @param {object} object
  * @return {object}
  */
-function trimObjValues (obj) {
-  return Object.keys (obj).reduce ((acc, curr) => {
-    acc[curr] = obj[curr].trim ();
+function trimObjValues(obj) {
+  return Object.keys(obj).reduce((acc, curr) => {
+    acc[curr] = obj[curr].trim();
     return acc;
   }, {});
 }
@@ -18,7 +18,7 @@ function trimObjValues (obj) {
  * @param {any} key
  * @return {object}
  */
-function lowerObjValue (obj, key) {
+function lowerObjValue(obj, key) {
   obj['' + key] = obj['' + key].toLowerCase ();
   return obj;
 }
@@ -29,8 +29,8 @@ function lowerObjValue (obj, key) {
  * @param {string} string
  * @return {string} 
  */
-function trimString (string) {
-  return string.trim ();
+function trimString(string) {
+  return string.trim();
 }
 
 module.exports = {trimObjValues, lowerObjValue, trimString};

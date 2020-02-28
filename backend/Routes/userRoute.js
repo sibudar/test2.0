@@ -1,8 +1,8 @@
 const userRouter = require("express").Router();
 const registerController = require("../Controllers/userController");
 
-// registers user 
 
+// [post] route to "/register" to register a user.
 /**
  * @swagger
  * /users:
@@ -28,10 +28,14 @@ const registerController = require("../Controllers/userController");
  *         description: Unsuccessful
  * 
  */
+userRouter.post("/", async(req, res) => {
+  result = await registerController.register(req.body);
 
-// logins in user
+  res.status(result.status).send(result);
+});
 
- /**
+// [post] route to "/login" to login.
+/**
  * @swagger
  * /users/login:
  *  post:
@@ -62,11 +66,14 @@ const registerController = require("../Controllers/userController");
  *     400:
  *        description: Incorrect email adress entered.
  */
+userRouter.post("/login", async(req, res) => {
+  let result = await registerController.login(req.body);
 
+  res.status(result.status).send(result);
+});
 
- // forgot-password
-
- /**
+// [post] route to "/forgot-password" to forgot a password.
+/**
  * @swagger
  * /users/forgot-password:
  *  post:
@@ -96,10 +103,14 @@ const registerController = require("../Controllers/userController");
  *         description: User email does not exist, try again!.
  *     
  */
+userRouter.post("/forgot-password", async(req, res) => {
+  let result = await registerController.forgot(req.body);
 
- // reset password
+  res.status(result.status).send(result);
+});
 
- /**
+// [post] route to "/reset" to reset a password.
+/**
  * @swagger
  * /users/reset:
  *  post:
@@ -128,27 +139,6 @@ const registerController = require("../Controllers/userController");
  *         description: Unsuccessful.
  *     
  */
-
-
-// [post] route to "/register" to register a user.
-userRouter.post("/", async(req, res) => {
-  result = await registerController.register(req.body);
-
-  res.status(result.status).send(result);
-});
-// [post] route to "/login" to login.
-userRouter.post("/login", async(req, res) => {
-  let result = await registerController.login(req.body);
-
-  res.status(result.status).send(result);
-});
-// [post] route to "/forgot-password" to forgot a password.
-userRouter.post("/forgot-password", async(req, res) => {
-  let result = await registerController.forgot(req.body);
-
-  res.status(result.status).send(result);
-});
-// [post] route to "/reset" to reset a password.
 userRouter.post("/reset", async(req, res) => {
   let result = await registerController.reset(req.body);
 

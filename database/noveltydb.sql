@@ -126,25 +126,25 @@ DROP PROCEDURE IF EXISTS loginUser $$
 DROP PROCEDURE IF EXISTS forgotPassword $$
 DROP PROCEDURE IF EXISTS resetPassword $$
 
-CREATE PROCEDURE registerUser(IN f_name NVARCHAR(50), IN l_name NVARCHAR(50), IN u_email NVARCHAR(255), IN u_password NVARCHAR(255))
+CREATE PROCEDURE registerUser(IN f_name VARCHAR(50), IN l_name VARCHAR(50), IN u_email VARCHAR(255), IN u_password VARCHAR(255))
 BEGIN
     INSERT INTO users (first_name, last_name, email, user_password, createdby, createdat, modifiedby, modifiedat) 
     VALUES (f_name, l_name, u_email, u_password, 'System', now(), CONCAT(first_name, ' ', last_name), now());
 END $$
 
-CREATE PROCEDURE loginUser(IN u_email NVARCHAR(255))
+CREATE PROCEDURE loginUser(IN u_email VARCHAR(255))
 BEGIN
     SELECT * FROM users 
     WHERE email = u_email;
 END $$
 
-CREATE PROCEDURE forgotPassword(IN u_email NVARCHAR(255))
+CREATE PROCEDURE forgotPassword(IN u_email VARCHAR(255))
 BEGIN
     SELECT first_name, email FROM users 
     WHERE email = u_email;
 END $$
 
-CREATE PROCEDURE resetPassword(IN u_email NVARCHAR(255), IN u_password NVARCHAR(255))
+CREATE PROCEDURE resetPassword(IN u_email VARCHAR(255), IN u_password VARCHAR(255))
 BEGIN
     UPDATE users 
     SET user_password = u_password, modifiedby = CONCAT(first_name, ' ', last_name), modifiedat = now()
