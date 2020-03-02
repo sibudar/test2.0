@@ -66,7 +66,7 @@ form:FormGroup;
     this.router.navigate(['/login'])
     this.showSuccess()
     },error=>{
-      this.toastr.error('Unable To Register','Novelty',{
+      this.toastr.error('Unable To Register,email already exists','Novelty',{
         timeOut: 5000,
         positionClass: 'toast-top-right',
       })
