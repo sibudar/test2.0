@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { ForgotPsComponent } from './forgot-ps/forgot-ps.component';
+import { DisplayInformationComponent } from './display-information/display-information.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ForgotPsComponent } from './forgot-ps/forgot-ps.component';
     LoginComponent,
     ResetPasswordComponent,
     LandingpageComponent,
-    ForgotPsComponent
+    ForgotPsComponent,
+    DisplayInformationComponent
   ],
   imports: [
     BrowserModule,
