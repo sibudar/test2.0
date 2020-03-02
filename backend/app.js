@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const user = require('./Routes/userRoute.js');
+const idea = require('./Routes/ideaRoute');
+const user = require('./Routes/userRoute');
 const cors = require('cors');
 const  swaggerUi = require('swagger-ui-express');
 swaggerDocument =  require('./swagger.js');
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));//
 
 app.use('/api/v1/users', user);
+app.use('/api/v1/ideas', idea);
 
 // default route 
 app.use('/', (req, res, next) => {
