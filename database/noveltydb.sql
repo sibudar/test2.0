@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS question_catergory (
 -- Create Business Ideas table.
 CREATE TABLE IF NOT EXISTS business_idea (
     id INT NOT NULL AUTO_INCREMENT,
-    busin_name VARCHAR(64) DEFAULT NULL,
+    busin_idea VARCHAR(64) DEFAULT NULL,
     status_flag VARCHAR(5) DEFAULT TRUE,
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
@@ -125,6 +125,7 @@ DROP PROCEDURE IF EXISTS registerUser $$
 DROP PROCEDURE IF EXISTS loginUser $$
 DROP PROCEDURE IF EXISTS forgotPassword $$
 DROP PROCEDURE IF EXISTS resetPassword $$
+DROP PROCEDURE IF EXISTS businessIdea $$
 
 CREATE PROCEDURE registerUser(IN f_name VARCHAR(50), IN l_name VARCHAR(50), IN u_email VARCHAR(255), IN u_password VARCHAR(255))
 BEGIN
@@ -149,6 +150,12 @@ BEGIN
     UPDATE users 
     SET user_password = u_password, modifiedby = CONCAT(first_name, ' ', last_name), modifiedat = now()
     WHERE email = u_email;
+END $$
+
+CREATE PROCEDURE businessIdea(IN biz_idea VARCHAR(255), IN iduser INT(11) )
+BEGIN 
+     INSERT INTO business_idea(busin_idea, id_user, createdby, createdat, modifiedby, modifiedat)
+     VALUES(biz_idea, iduser, 'System', now(), iduser, now());
 END $$
 
 DELIMITER ;
