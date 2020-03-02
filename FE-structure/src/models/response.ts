@@ -3,3 +3,7 @@ export interface response{
     message:string;
     data:[];
 }
+export interface questions{
+    id: number;
+    q_name: string;
+  }

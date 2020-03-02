@@ -9,13 +9,22 @@ import { InformationServiceService } from '../informationService/information-ser
 export class DisplayInformationComponent implements OnInit {
 
   //supposed to be an array;
-  public info_questions;
+   info;
 
-  constructor(private information_service:InformationServiceService) {}
-
-  ngOnInit() {
-     this.information_service.getQuestions()
-     .subscribe(data => this.info_questions = data);
+  constructor(private information_service:InformationServiceService) {
+    this.displayQuestions();
   }
 
-}
+  ngOnInit() {
+   
+  }
+  displayQuestions()
+  {
+    this.information_service.getQuestions()
+    .subscribe(data =>{
+      this.info = data
+      console.log(data)
+    })
+  }
+
+ }
