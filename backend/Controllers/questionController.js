@@ -1,9 +1,15 @@
 const fieldResponse = require ('../Helpers/httpResponse');
 const queryResponse = require ('../Helpers/queryFunction');
 
+/**
+ * Gets questions from DB.
+ * @param {*} data
+ * @returns the data stored in the question table.
+ */
+
+ 
 function getQuestions(data){
     
-    // SELECT * FROM questions
     const sql = "CALL getQuestions()";
 
     return queryResponse(sql, data).then((result) => {
