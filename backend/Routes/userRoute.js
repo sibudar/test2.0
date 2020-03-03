@@ -2,14 +2,14 @@ const userRouter = require("express").Router();
 const registerController = require("../Controllers/userController");
 
 
-// [post] route to "/register" to register a user.
+// [post] route  to register a user.
 /**
  * @swagger
  * /users:
  *  post:
  *     tags:
  *      - user
- *     summary: Create User
+ *     summary: Creates User
  *     description: This can only be done by first time users
  *     consumes:
  *        - application/json
