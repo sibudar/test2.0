@@ -49,12 +49,10 @@ export class ResetPasswordComponent implements OnInit {
 
 
   showSuccess() {
-    this.toastr.success('You have successfully created an account', 'Novelty',{
+    this.toastr.success('You have successfully ', 'Novelty',{
       timeOut: 5000,
       positionClass: 'toast-top-right',
     });
   }
-
-
 
 }
