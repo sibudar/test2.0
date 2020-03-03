@@ -29,8 +29,7 @@ const questionController = require("../Controllers/questionController");
  * 
  */
 userRouter.get("/questions", async(req, res) => {
-    result = await questionController.getQuestions(req.body);
-  
+    result = await questionController.getQuestions();
     res.status(result.status).send(result);
   });
 
