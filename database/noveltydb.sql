@@ -126,6 +126,7 @@ DROP PROCEDURE IF EXISTS loginUser $$
 DROP PROCEDURE IF EXISTS forgotPassword $$
 DROP PROCEDURE IF EXISTS resetPassword $$
 DROP PROCEDURE IF EXISTS businessIdea $$
+DROP PROCEDURE IF EXISTS getQuestions $$
 
 CREATE PROCEDURE registerUser(IN f_name VARCHAR(50), IN l_name VARCHAR(50), IN u_email VARCHAR(255), IN u_password VARCHAR(255))
 BEGIN
@@ -157,5 +158,11 @@ BEGIN
      INSERT INTO business_idea(busin_idea, id_user, createdby, createdat, modifiedby, modifiedat)
      VALUES(biz_idea, iduser, 'System', now(), iduser, now());
 END $$
+
+CREATE PROCEDURE getQuestions()
+BEGIN
+    SELECT q_name FROM questions;
+END $$
+
 
 DELIMITER ;

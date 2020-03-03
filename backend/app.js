@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));//
 
 app.use('/api/v1/users', user);
-app.use('/api/v1/users', questions);
+app.use('/api/v1', questions);
 
 // default route 
 app.use('/', (req, res, next) => {
