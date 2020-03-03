@@ -10,6 +10,7 @@ const questionController = require("../Controllers/questionController");
  *      - user
  *     summary: Get questions
  *     description: retrieve questions from th db
+ *     required: true
  *     consumes:
  *        - application/json
  *     produces:
