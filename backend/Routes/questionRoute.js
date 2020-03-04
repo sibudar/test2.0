@@ -30,10 +30,7 @@ const questionController = require("../Controllers/questionController");
  */
 userRouter.get("/questions", async(req, res) => {
     result = await questionController.getQuestions();
-<<<<<<< HEAD
-=======
   
->>>>>>> 5ecf56b1345deb91de756661e21354bfa5bcfdba
     res.status(result.status).send(result);
   });
 

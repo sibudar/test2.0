@@ -161,7 +161,7 @@ END $$
 
 CREATE PROCEDURE getQuestions()
 BEGIN
-    SELECT q_name FROM questions;
+    SELECT id, q_name FROM questions;
 END $$
 
 
