@@ -39,5 +39,5 @@ export class DisplayInformationComponent implements OnInit {
       console.log(this.info);
     })
   }
-
+ 
  }

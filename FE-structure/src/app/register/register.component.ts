@@ -57,7 +57,6 @@ form:FormGroup;
     delete json.confirm_password;
      this.register(json);
      
-  
   }
    
    register(user){
