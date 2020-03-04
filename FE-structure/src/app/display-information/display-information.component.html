@@ -9,7 +9,7 @@
       
         <mat-form-field class="idea-description">
           <mat-label>description</mat-label>
-          <textarea matInput placeholder="Ex. Baking for wedding events..."></textarea>
+          <textarea matInput placeholder="Ex. Baking for wedding events..." [(ngModel)]="descript" [ngModelOptions]="{standalone: true}" ></textarea>
         </mat-form-field>
 
         <!-- <mat-tree>
