@@ -128,6 +128,7 @@ DROP PROCEDURE IF EXISTS resetPassword $$
 DROP PROCEDURE IF EXISTS businessIdea $$
 DROP PROCEDURE IF EXISTS getIdeas $$
 DROP PROCEDURE IF EXISTS getQuestions $$
+Drop PROCEDURE IF EXISTS postAnswers $$
 
 CREATE PROCEDURE registerUser(IN f_name VARCHAR(50), IN l_name VARCHAR(50), IN u_email VARCHAR(255), IN u_password VARCHAR(255))
 BEGIN
@@ -169,8 +170,12 @@ END $$
 
 CREATE PROCEDURE getQuestions()
 BEGIN
-    SELECT q_name FROM questions;
+    SELECT  id , q_name  FROM questions;
 END $$
 
+CREATE PROCEDURE answers (IN u_answer VARCHAR (255), IN  biz_idea INT (11), IN que_id VARCHAR (11) )
+BEGIN 
+    INSERT INTO answers (user_answer , id_bus , id_que , createdby , createdat , modifiedby , modifiedat )
+    VALUES(u_answer , biz_idea , que_id ,'System', now(), iduser, now())
 
 DELIMITER ;

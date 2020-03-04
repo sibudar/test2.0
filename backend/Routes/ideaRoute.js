@@ -20,7 +20,8 @@ const ideaController = require('../Controllers/ideaController');
  *     parameters:
  *        - name: Business Idea
  *          description: Created business idea object
- *          in: body 
+ *          in: body
+ *          required: true 
  *          schema: 
  *           type: object
  *           properties:
@@ -58,12 +59,13 @@ ideaRoute.post('/', async (req, res)=>{
  *        - name: id
  *          description: Gets the business idea by user id
  *          in: path
+ *          required: true
  *          schema: 
  *           type: object
  *           properties:
  *            id:         
  *              type: number
- *          
+ *           
  *     responses:
  *        201:
  *         description: getting all your ideas.
