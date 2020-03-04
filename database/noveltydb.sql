@@ -55,7 +55,8 @@ CREATE TABLE IF NOT EXISTS question_catergory (
 -- Create Business Ideas table.
 CREATE TABLE IF NOT EXISTS business_idea (
     id INT NOT NULL AUTO_INCREMENT,
-    busin_idea VARCHAR(64) DEFAULT NULL,
+    busin_idea VARCHAR(255) DEFAULT NULL,
+    descript VARCHAR(255) DEFAULT NULL,
     status_flag VARCHAR(5) DEFAULT TRUE,
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
@@ -154,10 +155,10 @@ BEGIN
     WHERE email = u_email;
 END $$
 
-CREATE PROCEDURE businessIdea(IN biz_idea VARCHAR(255), IN iduser INT(11) )
+CREATE PROCEDURE businessIdea(IN biz_idea VARCHAR(255), IN biz_descrip VARCHAR(255), IN iduser INT(11))
 BEGIN 
-     INSERT INTO business_idea(busin_idea, id_user, createdby, createdat, modifiedby, modifiedat)
-     VALUES(biz_idea, iduser, 'System', now(), iduser, now());
+     INSERT INTO business_idea(busin_idea, descript, id_user, createdby, createdat, modifiedby, modifiedat)
+     VALUES(biz_idea, biz_descrip, iduser, 'System', now(), iduser, now());
 END $$
 
 CREATE PROCEDURE getIdeas(IN u_id INT)
@@ -171,6 +172,5 @@ CREATE PROCEDURE getQuestions()
 BEGIN
     SELECT q_name FROM questions;
 END $$
-
 
 DELIMITER ;

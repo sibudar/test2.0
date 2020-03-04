@@ -12,19 +12,20 @@ const validator = require('validator');
  */
 async function addIdea(data) {
     if(fieldValidator.validate(data.busin_idea)){
-        return fieldResponse (400,"busin_idea is required");
+        return fieldResponse (400,"business idea is required");
+    }
+    if(fieldValidator.validate(data.descript)){
+        return fieldResponse (400,"business description is required");
     }
 
     let sql = 'CALL businessIdea(?)'
     
-    return queryResponse(sql, [data.busin_idea, data.id_user]).then(result => {
+    return queryResponse(sql, [data.busin_idea, data.descript, data.id_user]).then(result => {
         return fieldResponse(201,'you have successfully added an idea');
     }).catch(error => {
         return fieldResponse(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage );
     });
 }
-
-
 
 /**
  * Execute a query using a stored procedure.
