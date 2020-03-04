@@ -12,7 +12,7 @@ async function getQuestions(){
     return queryResponse(sql, '').then((result) => {
         return fieldResponse(200, 'Here are your questions.', result[0]);
     }).catch(error => {
-        return fieldResponse(200, 'Could not get questions requested.', error.sqlMessage);
+        return fieldResponse(400, 'Could not get questions requested.', error.sqlMessage);
     })
 }
 
