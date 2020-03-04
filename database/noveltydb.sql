@@ -55,7 +55,8 @@ CREATE TABLE IF NOT EXISTS question_catergory (
 -- Create Business Ideas table.
 CREATE TABLE IF NOT EXISTS business_idea (
     id INT NOT NULL AUTO_INCREMENT,
-    busin_idea VARCHAR(64) DEFAULT NULL,
+    busin_idea VARCHAR(255) DEFAULT NULL,
+    descript VARCHAR(255) DEFAULT NULL,
     status_flag VARCHAR(5) DEFAULT TRUE,
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
@@ -155,10 +156,10 @@ BEGIN
     WHERE email = u_email;
 END $$
 
-CREATE PROCEDURE businessIdea(IN biz_idea VARCHAR(255), IN iduser INT(11) )
+CREATE PROCEDURE businessIdea(IN biz_idea VARCHAR(255), IN biz_descrip VARCHAR(255), IN iduser INT(11))
 BEGIN 
-     INSERT INTO business_idea(busin_idea, id_user, createdby, createdat, modifiedby, modifiedat)
-     VALUES(biz_idea, iduser, 'System', now(), iduser, now());
+     INSERT INTO business_idea(busin_idea, descript, id_user, createdby, createdat, modifiedby, modifiedat)
+     VALUES(biz_idea, biz_descrip, iduser, 'System', now(), iduser, now());
 END $$
 
 CREATE PROCEDURE getIdeas(IN u_id INT)
@@ -177,9 +178,12 @@ BEGIN
 >>>>>>> 7c58da191a8fd5835829e006201451c8cf70953f
 END $$
 
+<<<<<<< HEAD
 CREATE PROCEDURE answers (IN u_answer VARCHAR (255), IN  biz_idea INT (11), IN que_id VARCHAR (11) )
 BEGIN 
     INSERT INTO answers (user_answer , id_bus , id_que , createdby , createdat , modifiedby , modifiedat )
     VALUES(u_answer , biz_idea , que_id ,'System', now(), iduser, now())
 
+=======
+>>>>>>> b4fc6d4d34249d39e92430a536a3d480c158a193
 DELIMITER ;
