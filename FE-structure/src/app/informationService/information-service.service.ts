@@ -14,9 +14,9 @@ export class InformationServiceService {
     this.info_url = environment.api;
   }
   //enter business idea
-  public insertBusinessIdea(idea)
+  public insertBusinessIdea(data)
    {
-     return this.http.post(this.info_url + '/ideas' ,idea);
+     return this.http.post(this.info_url + '/ideas' ,data);
    }
    //get questions
    public getQuestions()

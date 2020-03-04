@@ -29,7 +29,7 @@ export class DisplayInformationComponent implements OnInit {
   {
     var userData1 = JSON.parse(this.userData)
     //console.log(userData1);
-    this.information_service.insertBusinessIdea({'busin_idea':this.idea,'descript':this.descript,'id':userData1.id})
+  this.information_service.insertBusinessIdea({'busin_idea':this.idea,'descript':this.descript,'id':userData1.id})
     .subscribe((data:response) =>{
       this.info = data.data;
       console.log(data);
