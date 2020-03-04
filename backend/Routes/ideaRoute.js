@@ -1,8 +1,5 @@
 const ideaRoute = require('express').Router();
 const ideaController = require('../Controllers/ideaController');
-
-
-
  
 // [post] route to add a business to .
 /**
@@ -25,7 +22,9 @@ const ideaController = require('../Controllers/ideaController');
  *          schema: 
  *           type: object
  *           properties:
- *            busin_idea:         
+ *            business idea:         
+ *              type: string
+ *            description:         
  *              type: string
  *            id_user:         
  *              type: number
