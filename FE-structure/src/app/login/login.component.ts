@@ -3,6 +3,7 @@ import { RestService } from '../shared/rest.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from "@angular/router";
 import { ToastrService } from 'ngx-toastr';
+import { response, user } from 'src/models/response';
 
 @Component({
   selector: 'app-login',
@@ -16,11 +17,17 @@ export class LoginComponent implements OnInit {
 
 
   loginUser(user){
-    this.service.login(user).subscribe(data =>{
+
+    var userObj : user;
+    this.service.login(user).subscribe((data:response) =>{
       this.showSuccess();
+      userObj=data.data;
+      localStorage.setItem('id', JSON.stringify(userObj));
       this.router.navigate(['/landing'])
        console.log(data);
       
+      
+
      
     },error=>{
       this.toastr.error('Unable to log in','Novelty',
@@ -50,6 +57,8 @@ export class LoginComponent implements OnInit {
       timeOut: 5000,
       positionClass: 'toast-top-right',
     });
+
+    
   }
 
 }

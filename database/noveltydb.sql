@@ -171,7 +171,11 @@ END $$
 
 CREATE PROCEDURE getQuestions()
 BEGIN
+<<<<<<< HEAD
+    SELECT id, q_name FROM questions;
+=======
     SELECT  id , q_name  FROM questions;
+>>>>>>> 7c58da191a8fd5835829e006201451c8cf70953f
 END $$
 
 <<<<<<< HEAD
