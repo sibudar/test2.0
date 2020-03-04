@@ -2,14 +2,14 @@ const userRouter = require("express").Router();
 const registerController = require("../Controllers/userController");
 
 
-// [post] route to "/register" to register a user.
+// [post] route  to register a user.
 /**
  * @swagger
  * /users:
  *  post:
  *     tags:
  *      - user
- *     summary: Create User
+ *     summary: Creates User
  *     description: This can only be done by first time users
  *     consumes:
  *        - application/json
@@ -33,7 +33,7 @@ userRouter.post("/", async(req, res) => {
 
   res.status(result.status).send(result);
 });
-
+  
 // [post] route to "/login" to login.
 /**
  * @swagger
@@ -139,10 +139,12 @@ userRouter.post("/forgot-password", async(req, res) => {
  *         description: Unsuccessful.
  *     
  */
-userRouter.post("/reset", async(req, res) => {
+userRouter.post("/reset", async (req, res) => {
   let result = await registerController.reset(req.body);
 
   res.status(result.status).send(result);
 });
+
+
 
 module.exports = userRouter;
