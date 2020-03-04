@@ -19,6 +19,7 @@ const registerController = require("../Controllers/userController");
  *        - name: user
  *          description: Created user object
  *          in: body 
+ *          required: true
  *          schema: 
  *           $ref: '#/definitions/User'
  *     responses:
@@ -51,6 +52,7 @@ userRouter.post("/", async(req, res) => {
  *        - name: user
  *          description: Created user object
  *          in: body 
+ *          required: true
  *          schema: 
  *           type: object
  *           properties:
@@ -88,7 +90,8 @@ userRouter.post("/login", async(req, res) => {
  *     parameters:
  *        - name: user
  *          description: Created user object
- *          in: body 
+ *          in: body
+ *          required: true 
  *          schema: 
  *           type: object
  *           properties:
@@ -125,7 +128,8 @@ userRouter.post("/forgot-password", async(req, res) => {
  *     parameters:
  *        - name: user
  *          description: Created user object
- *          in: body 
+ *          in: body
+ *          required: true 
  *          schema: 
  *           type: object
  *           properties:

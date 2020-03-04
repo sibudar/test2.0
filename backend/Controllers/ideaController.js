@@ -14,6 +14,9 @@ async function addIdea(data) {
     if(fieldValidator.validate(data.busin_idea)){
         return fieldResponse (400,"busin_idea is required");
     }
+    if(fieldValidator.validate(data.id_user)){
+        return fieldResponse (400,"id_user is required");
+    }
 
     let sql = 'CALL businessIdea(?)'
     
