@@ -174,12 +174,9 @@ BEGIN
     SELECT  id , q_name  FROM questions;
 END $$
 
-<<<<<<< HEAD
 CREATE PROCEDURE answers (IN u_answer VARCHAR (255), IN  biz_idea INT (11), IN que_id VARCHAR (11) )
 BEGIN 
     INSERT INTO answers (user_answer , id_bus , id_que , createdby , createdat , modifiedby , modifiedat )
     VALUES(u_answer , biz_idea , que_id ,'System', now(), iduser, now())
 
-=======
->>>>>>> b4fc6d4d34249d39e92430a536a3d480c158a193
 DELIMITER ;
