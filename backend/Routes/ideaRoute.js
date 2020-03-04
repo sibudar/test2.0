@@ -38,12 +38,42 @@ ideaRoute.post('/', async (req, res)=>{
     result = await ideaController.addIdea(req.body);
 
     res.status(result.status).send(result);
-
 });
+ 
+// [get] route to get  business ideas .
+/**
+ * @swagger
+ * /ideas/{id}:
+ *  get:
+ *     tags:
+ *      - user
+ *     summary: Gets business ideas by id
+ *     description: This can only be done users who have ideas
+ *     id: getUserById
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: id
+ *          description: Gets the business idea by user id
+ *          in: path
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            id:         
+ *              type: number
+ *          
+ *     responses:
+ *        201:
+ *         description: getting all your ideas.
+ *        400:
+ *         description: cannot get the ideas.
+ */
+ideaRoute.get('/:id',async(req, res)=>{
+    result =  await ideaController.listIdeas(req.params);
 
-// get all ideas 
-
-
-
+    res.status(result.status).send(result);
+});
 
 module.exports = ideaRoute;
