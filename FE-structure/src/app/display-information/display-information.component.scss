@@ -1,0 +1,33 @@
+.b-ground{
+ background-image: url("../../assets/img/thinking.jpeg"); 
+}
+// .insert-idea{
+//   height: 100vh;
+//   margin:100px 250px;
+// }
+.idea-input {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.idea-description{
+  width: 100%;
+}
+.think-img{
+ background-size: cover; 
+ object-fit: cover;
+ width: 600px;
+ height: 450px;
+ border-radius: 45%;
+ align-items:center;
+}
+
+.btn-save{
+  border: 2px solid darkgrey;
+  width: 14%;
+  background-color: darkgrey;
+  border-radius:10% ;
+}
+
+

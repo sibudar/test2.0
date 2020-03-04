@@ -9,16 +9,21 @@ import { environment } from 'src/environments/environment';
 export class InformationServiceService {
 
   info_url : string ;
- 
   constructor(private http : HttpClient) { 
-    this.getQuestions() 
+   
     this.info_url = environment.api;
   }
-  
-    getQuestions()
+  //enter business idea
+  public insertBusinessIdea(idea)
+   {
+     return this.http.post(this.info_url + '/' ,idea)
+   }
+   //get questions
+   public getQuestions()
     {
       //link from countries rest api
       return this.http.get(this.info_url + '/questions');
     }
+
 }
 
