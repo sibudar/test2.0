@@ -16,7 +16,7 @@ export class InformationServiceService {
   //enter business idea
   public insertBusinessIdea(idea)
    {
-     return this.http.post(this.info_url + '/ideas' ,idea)
+     return this.http.post(this.info_url + '/ideas' ,idea);
    }
    //get questions
    public getQuestions()

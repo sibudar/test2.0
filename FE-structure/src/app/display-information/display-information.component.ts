@@ -11,23 +11,28 @@ export class DisplayInformationComponent implements OnInit {
 
   //supposed to be an array;
    info: any;
-   idea : string = '';
+   idea : string = 'Baking';
+   userData: string;
 
   constructor(private information_service:InformationServiceService) {
     this.displayQuestions();
-    this.inserIdea(this.idea);
+    this.userData=localStorage.getItem('id')
+    // this.inserIdea(this.idea);
   }
 
   ngOnInit() {
    
   }
 
-  inserIdea(idea)
+  inserIdea()
   {
-    this.information_service.insertBusinessIdea(this.idea)
+    var userData1 = JSON.parse(this.userData)
+    //console.log(userData1);
+    this.information_service.insertBusinessIdea({'busin_idea':this.idea,'id':userData1.id})
     .subscribe((data:response) =>{
       this.info = data.data;
-      console.log(this.info);
+      console.log(data);
+
     });
   }
   

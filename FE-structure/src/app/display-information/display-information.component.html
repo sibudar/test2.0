@@ -1,10 +1,10 @@
 <form class="idea-input">
        
-        <body style="background-color:moccasin;"></body>
+       
         <!-- <div><img class="think-img" src="assets/img/thinking.jpeg" alt="Card image"></div> -->
         <mat-form-field class="example-full-width">
           <mat-label>Please enter the idea</mat-label>
-          <input matInput placeholder="Ex. Baking" value="Baking">
+          <input matInput placeholder="Ex. Baking" [(ngModel)]="idea" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
       
         <mat-form-field class="idea-description">
@@ -19,7 +19,7 @@
               </mat-tree> -->
               
 
-         <div class ="btn-save" (click)="inserIdea(idea)">
+         <div class ="btn-save" (click)="inserIdea()">
         <button mat-button>Save</button>
     
       </div>
