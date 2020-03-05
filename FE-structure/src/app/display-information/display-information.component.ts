@@ -14,11 +14,19 @@ export class DisplayInformationComponent implements OnInit {
    idea : string ;
   descript: string;
    userData: string;
+   saveIdea: [];
 
   constructor(private information_service:InformationServiceService) {
     this.displayQuestions();
-    this.userData=localStorage.getItem('id')
-    // this.inserIdea(this.idea);
+    this.userData=localStorage.getItem('userdata');
+    // this.saveIdea = [
+
+    //     bsIdea ,
+    //     bsDeescription = ''
+
+    
+    
+     //this.inserIdea(this.idea);
   }
 
   ngOnInit() {
