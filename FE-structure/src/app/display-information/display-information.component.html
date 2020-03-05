@@ -1,41 +1,58 @@
-<form class="idea-input">
-       
-       
-        <!-- <div><img class="think-img" src="assets/img/thinking.jpeg" alt="Card image"></div> -->
-        <mat-form-field class="example-full-width">
-          <mat-label>Please enter the idea</mat-label>
-          <input matInput placeholder="Ex. Baking" [(ngModel)]="idea" [ngModelOptions]="{standalone: true}">
-        </mat-form-field>
-      
-        <mat-form-field class="idea-description">
-          <mat-label>description</mat-label>
-          <textarea matInput placeholder="Ex. Baking for wedding events..." [(ngModel)]="descript" [ngModelOptions]="{standalone: true}" ></textarea>
-        </mat-form-field>
 
-        <!-- <mat-tree>
-                <mat-tree-node> parent node </mat-tree-node>
-                <mat-tree-node> -- child node1 </mat-tree-node>
-                <mat-tree-node> -- child node2 </mat-tree-node>
-              </mat-tree> -->
-              
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">Enter Your Business Idea</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span  class="addBtn">Add</span>
+</div>
 
+<ul id="myUL">
+  <li>First biz Idea</li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form class="idea-input">
+
+         <div class="fields">
+          <mat-form-field class="example-full-width">
+            <mat-label>Please enter the idea</mat-label>
+            <input matInput placeholder="Ex. Baking" [(ngModel)]="idea" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        
+          <mat-form-field class="idea-description">
+            <mat-label>description</mat-label>
+            <textarea matInput placeholder="Ex. Baking for wedding events..." [(ngModel)]="descript" [ngModelOptions]="{standalone: true}" ></textarea>
+          </mat-form-field>
+         </div>
+        
          <div class ="btn-save" (click)="inserIdea()">
-        <button mat-button>Save</button>
-    
-      </div>
-        <!-- <i class="material-icons">
-                add
-                </i> -->
-                
-                   
-                
-                
-      </form>
+          <button mat-button>Save</button>
+        </div> 
+
+</form>
 
 
 
-<!-- <form class="insert-idea" >
-        <div class="b-ground">
+ <form class="insert-idea" >
+          <div class="b-ground">
                 <mat-form-field class="idea">
                         <mat-label>Please enter your business idea</mat-label>
                         <input matInput placeholder="Ex.Baking" value="Ex.Baking">
@@ -50,7 +67,7 @@
 </form> -->
 <!-- <mat-card class="card">
        <h1>hello world</h1>
-       <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
+      <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
        
 
       <!-- <div class ="btn-save">
@@ -60,12 +77,6 @@
 
 <!-- </mat-card>-->
       
-
-
-
-
-
-
 
 
 <!-- <div  class="idea">

@@ -8,42 +8,51 @@ import { response } from 'src/models/response';
   styleUrls: ['./display-information.component.scss']
 })
 export class DisplayInformationComponent implements OnInit {
+  list: string;
+  lists = [];
+
+  //the onclick method to handle the button
+  onClick(){
+    this.lists.push({name: this.list});
+    this.list = '';
+}
 
   //supposed to be an array;
    info: any;
    idea : string ;
-  descript: string;
+   descript: string;
    userData: string;
 
   constructor(private information_service:InformationServiceService) {
-    this.displayQuestions();
-    this.userData=localStorage.getItem('id')
+    // this.displayQuestions();
+    // this.userData=localStorage.getItem('id')
     // this.inserIdea(this.idea);
+   
   }
 
   ngOnInit() {
    
   }
 
-  inserIdea()
-  {
-    var userData1 = JSON.parse(this.userData)
-    //console.log(userData1);
-    this.information_service.insertBusinessIdea({'busin_idea':this.idea,'descript':this.descript,'id':userData1.id})
-    .subscribe((data:response) =>{
-      this.info = data.data;
-      console.log(data);
+  // inserIdea()
+  // {
+  //   var userData1 = JSON.parse(this.userData)
+  //   //console.log(userData1);
+  //   this.information_service.insertBusinessIdea({'busin_idea':this.idea,'descript':this.descript,'id':userData1.id})
+  //   .subscribe((data:response) =>{
+  //     this.info = data.data;
+  //     console.log(data);
 
-    });
-  }
+  //   });
+  // }
   
-  displayQuestions()
-  {
-    this.information_service.getQuestions()
-    .subscribe((data:response) =>{
-      this.info = data.data;
-      console.log(this.info);
-    })
-  }
- 
+  // // displayQuestions()
+  // // {
+  // //   this.information_service.getQuestions()
+  // //   .subscribe((data:response) =>{
+  // //     this.info = data.data;
+  // //     console.log(this.info);
+  // //   })
+  // // }
+  
  }
