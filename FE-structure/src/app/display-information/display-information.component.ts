@@ -17,16 +17,16 @@ export class DisplayInformationComponent implements OnInit {
    saveIdea: [];
 
   constructor(private information_service:InformationServiceService) {
+   
+    this.inserIdea();
+    //this.listOfIdeas();
     this.displayQuestions();
-    this.userData=localStorage.getItem('userdata');
-    // this.saveIdea = [
-
-    //     bsIdea ,
-    //     bsDeescription = ''
+    this.userData=localStorage.getItem('id');
+    
 
     
     
-     //this.inserIdea(this.idea);
+    
   }
 
   ngOnInit() {
@@ -44,7 +44,11 @@ export class DisplayInformationComponent implements OnInit {
 
     });
   }
-  
+  // var userData1 = JSON.parse(this.userData)
+  // listOfIdeas()
+  // {
+
+  // }
   displayQuestions()
   {
     this.information_service.getQuestions()

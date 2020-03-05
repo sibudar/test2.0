@@ -18,6 +18,11 @@ export class InformationServiceService {
    {
      return this.http.post(this.info_url + '/ideas' ,data);
    }
+   //display business idea,description and receives an id
+   public getIdeas(data)
+   {
+     return this.http.get(this.info_url + '/ideas' + data);
+   }
    //get questions
    public getQuestions()
     {
@@ -25,5 +30,6 @@ export class InformationServiceService {
       return this.http.get(this.info_url + '/questions');
     }
 
+   
 }
 
