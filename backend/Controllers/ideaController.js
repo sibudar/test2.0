@@ -6,7 +6,7 @@ const validator = require('validator');
 
 /**
  * adds a business idea
- * @param {*} data 
+ * @param {*} data   
  * data is a body the user inserts.
  * @returns a queryResponse.
  */
@@ -51,4 +51,28 @@ async function listIdeas(data) {
     });
 }
 
-module.exports = {addIdea, listIdeas};
+/**
+ * Execute a query using a stored procedure.
+ * @param {*} data 
+ * data is a params the user inserts.
+ * @returns a queryResponse.
+ */
+async function deleteIdea(data) {
+    if(fieldValidator.validate(data.b_id)){
+        return fieldResponse (400,"business id is required");
+    }
+
+    if(fieldValidator.validate(data.u_id)){
+        return fieldResponse (400,"user id is required");
+    }
+
+    let sql = 'CALL deleteIdea(?)';
+    
+    return queryResponse(sql, [data.b_id , data.u_id]).then(result => {
+        return fieldResponse(201,'You have successfully deleted your idea');
+    }).catch(error => {
+        return fieldResponse(400, 'cannot get the ideas', error);
+    });
+}
+
+module.exports = {addIdea, listIdeas, deleteIdea};
