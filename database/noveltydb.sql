@@ -96,14 +96,17 @@ CREATE TABLE IF NOT EXISTS answers (
     modifiedby VARCHAR(255) DEFAULT NULL,
     modifiedat DATETIME NOT NULL,
 
+    id_user INT NOT NULL,
     id_bus INT NOT NULL,
     id_que INT NOT NULL,
 
     PRIMARY KEY (id),
 
+    INDEX (id_user),
     INDEX (id_que),
     INDEX (id_bus),
 
+    FOREIGN KEY (id_user) REFERENCES users(id),
     FOREIGN KEY (id_que) REFERENCES questions(id),
     FOREIGN KEY (id_bus) REFERENCES business_idea(id)
 ) ENGINE=INNODB;
@@ -164,26 +167,43 @@ END $$
 
 CREATE PROCEDURE getIdeas(IN u_id INT)
 BEGIN
-    SELECT id,busin_idea
+    SELECT id, busin_idea
     FROM business_idea 
-    WHERE business_idea.id_user = u_id;
+    WHERE status_flag = 1 AND business_idea.id_user = u_id;
 END $$
 
 CREATE PROCEDURE getQuestions()
 BEGIN
 <<<<<<< HEAD
+<<<<<<< HEAD
     SELECT id, q_name FROM questions;
 =======
     SELECT  id , q_name  FROM questions;
 >>>>>>> 7c58da191a8fd5835829e006201451c8cf70953f
+=======
+    SELECT id, q_name
+    FROM questions;
+>>>>>>> 8d37f937376c22d8f5a968dc51d5a86820bb73c3
 END $$
 
-<<<<<<< HEAD
-CREATE PROCEDURE answers (IN u_answer VARCHAR (255), IN  biz_idea INT (11), IN que_id VARCHAR (11) )
-BEGIN 
-    INSERT INTO answers (user_answer , id_bus , id_que , createdby , createdat , modifiedby , modifiedat )
-    VALUES(u_answer , biz_idea , que_id ,'System', now(), iduser, now())
+CREATE PROCEDURE postAnswers(IN answer_user VARCHAR(255), IN u_id INT, IN q_id INT, IN b_id INT)
+BEGIN
+     INSERT INTO answers(user_answer, createdby, createdat, modifiedby, modifiedat, id_user, id_que, id_bus)
+     VALUES(answer_user, u_id, now(), u_id, now(), u_id, q_id, b_id);
+END $$
 
-=======
->>>>>>> b4fc6d4d34249d39e92430a536a3d480c158a193
+CREATE PROCEDURE deleteIdea(IN b_id INT, IN u_id INT)
+BEGIN
+    UPDATE business_idea
+    SET status_flag = 0, modifiedby = u_id, modifiedat = now()
+    WHERE business_idea.id_user = u_id;
+END $$
+
+CREATE PROCEDURE updateAnswer(IN answer_user VARCHAR(255), IN b_id INT, IN u_id INT)
+BEGIN
+    UPDATE answers
+    SET user_answer = answer_user, modifiedby = u_id, modifiedat = now()
+    WHERE answers.id = u_id;
+END $$
+
 DELIMITER ;

@@ -16,8 +16,20 @@ const options = {
         "tags": [
             {
                 "name": "user",
-                "description": "Everything about users "
+                "description": "Everything about users"
             },
+            {
+                "name":"ideas",
+                "description":"Everything about ideas"
+            },
+            {
+                "name":"questions",
+                "description":"Everything about questions"
+            },
+            {
+                "name":"answers",
+                "description":"everything about answers"
+            }
           
         ],
         "schemes": [
