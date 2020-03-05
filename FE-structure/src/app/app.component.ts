@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ParticlesConfig } from './particles-config';
 
-declare let particlesJS: any; 
 
 @Component({
   selector: 'app-root',
@@ -12,11 +10,7 @@ declare let particlesJS: any;
 export class AppComponent {
 
   public ngOnInit(): void {
-    this.invokeParticles();
-  }
-
-  public invokeParticles(): void {
-    particlesJS('particles-js', ParticlesConfig, function() {});
+   
   }
 
   title = 'Novelty';

@@ -78,6 +78,7 @@ ul li.checked::before {
   padding: 30px 40px;
   color: white;
   text-align: center;
+  margin: 100px 150px;
 }
 
 /* Clear floats after the header */
@@ -94,7 +95,7 @@ input {
   border-radius: 0;
   width: 75%;
   padding: 10px;
-  float: left;
+  //float: left;
   font-size: 16px;
 }
 
@@ -110,10 +111,26 @@ input {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 0;
+  margin-left: 5px;
 }
 
 .addBtn:hover {
   background-color: #bbb;
 }
 
+.btns{
+align-items: center;  
+justify-content: center;
+padding-top: 10px;
+margin-left: 350px;
+margin-bottom: 70px;
+}
+
+.inputs h2{
+font-family: serif;
+}
+
+#myUL{
+margin: 100px 150px;  
+}
 
