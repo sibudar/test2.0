@@ -1,10 +1,19 @@
 
 <div id="myDIV" class="header">
-  <h2 style="margin:5px">Enter Your Business Idea</h2>
+  <h2 style="margin:5px">Enter Your Business Idea [(ngModel)]= "idea" [ngModelOptions]="{standalone: true}"</h2>
   <input type="text" id="myInput" placeholder="Title...">
  
 </div>
-<span  class="addBtn">Add</span>
+
+<!-- <div id="myDIV" class="header">
+  <h2 style="margin:5px">Enter the description [(ngModel)] = "description" [ngModelOptions]="{standalone: true}"</h2>
+  <input type="text" id="myInput" placeholder="description...">
+ 
+</div>
+
+<button class="addBtn"> (click)=”inserIdea(),getUserIdeas()” type=”button”>Button</button>Save</button> -->
+
+
 <ul id="myUL">
   <li>First biz Idea</li>
   
