@@ -174,22 +174,19 @@ END $$
 
 CREATE PROCEDURE getQuestions()
 BEGIN
-<<<<<<< HEAD
+
     SELECT id, q_name
     FROM questions;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
     SELECT id, q_name FROM questions;
-=======
+
     SELECT  id , q_name  FROM questions;
->>>>>>> 7c58da191a8fd5835829e006201451c8cf70953f
-=======
+
+
     SELECT id, q_name
     FROM questions;
->>>>>>> 8d37f937376c22d8f5a968dc51d5a86820bb73c3
->>>>>>> 7583c519a06ed69d025f4b531a0691491d714be2
+
 END $$
 
 CREATE PROCEDURE answers (IN u_answer VARCHAR (255), IN  biz_idea INT (11), IN que_id VARCHAR (11) )
@@ -216,9 +213,9 @@ BEGIN
     WHERE answers.id = u_id;
 END $$
 
-=======
+
     SELECT  id , q_name  FROM questions;
 END $$
 
->>>>>>> 7d4634e12c5a42c186f2483e928a111581213f46
+
 DELIMITER ;
