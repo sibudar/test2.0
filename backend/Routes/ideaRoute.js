@@ -7,7 +7,7 @@ const ideaController = require('../Controllers/ideaController');
  * /ideas:
  *  post:
  *     tags:
- *      - user
+ *      - ideas
  *     summary: Adds a business idea
  *     description: This can only be done by users who have accounts
  *     consumes:
@@ -22,9 +22,9 @@ const ideaController = require('../Controllers/ideaController');
  *          schema: 
  *           type: object
  *           properties:
- *            business idea:         
+ *            busin_idea:         
  *              type: string
- *            description:         
+ *            descript:         
  *              type: string
  *            id_user:         
  *              type: number
@@ -46,7 +46,7 @@ ideaRoute.post('/', async (req, res)=>{
  * /ideas/{id}:
  *  get:
  *     tags:
- *      - user
+ *      - ideas
  *     summary: Gets business ideas by id
  *     description: This can only be done users who have ideas
  *     id: getUserById
@@ -69,12 +69,53 @@ ideaRoute.post('/', async (req, res)=>{
  *        201:
  *         description: getting all your ideas.
  *        400:
- *         description: cannot get the ideas.
+ *         description: ideas or user id do not exist.
  */
 ideaRoute.get('/:id',async(req, res)=>{
     result =  await ideaController.listIdeas(req.params);
 
     res.status(result.status).send(result);
 });
+
+
+ 
+// [patch] route to  update your status flag .
+/**
+ * @swagger
+ * /ideas:
+ *  patch:
+ *     tags:
+ *      - ideas
+ *     summary: Updates your status flag
+ *     description: This can only be done by users who have business ideas
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: Business Idea
+ *          description: Created business idea object
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            b_id:         
+ *              type: number
+ *            u_id:         
+ *              type: number
+ *           
+ *     responses:
+ *        200:
+ *         description: You have successfully deleted your idea.
+ *        500:
+ *         description: Oops! we\'re experiencing some problems on our servers, please try again later!.
+ */
+ideaRoute.patch('/',async(req, res)=>{
+    result =  await ideaController.deleteIdea(req.body);
+
+    res.status(result.status).send(result);
+});
+
 
 module.exports = ideaRoute;
