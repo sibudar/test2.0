@@ -20,14 +20,11 @@ export class DisplayInformationComponent implements OnInit {
 
   constructor(private information_service:InformationServiceService) {
    
-    this.inserIdea();
-    //this.listOfIdeas();
-    this.displayQuestions();
     this.userData=localStorage.getItem('id');
-    
-
-    
-    
+    this.getUserIdeas()
+    this.displayQuestions();
+   
+   
     
   }
 
