@@ -8,14 +8,7 @@ import { response } from 'src/models/response';
   styleUrls: ['./display-information.component.scss']
 })
 export class DisplayInformationComponent implements OnInit {
-  list: string;
-  lists = [];
-
-  //the onclick method to handle the button
-  onClick(){
-    this.lists.push({name: this.list});
-    this.list = '';
-}
+ 
 
   //supposed to be an array;
    info: any;

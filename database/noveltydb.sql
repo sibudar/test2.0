@@ -176,6 +176,7 @@ CREATE PROCEDURE getQuestions()
 BEGIN
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     SELECT id, q_name FROM questions;
 =======
     SELECT  id , q_name  FROM questions;
@@ -206,4 +207,9 @@ BEGIN
     WHERE answers.id = u_id;
 END $$
 
+=======
+    SELECT  id , q_name  FROM questions;
+END $$
+
+>>>>>>> 7d4634e12c5a42c186f2483e928a111581213f46
 DELIMITER ;
