@@ -20,7 +20,7 @@ export class DisplayInformationComponent implements OnInit {
   constructor(private information_service:InformationServiceService) {
     this.displayQuestions();
     this.userData=localStorage.getItem('id');
-    this.getUserIdeas();
+    // this.getUserIdeas();
     
    
   }
@@ -41,22 +41,22 @@ export class DisplayInformationComponent implements OnInit {
     });
   }
 
-  getUserIdeas()
-  {
-    var userData1 = JSON.parse(this.userData);
-    // this.information_service.getIdeas({'id_user':userData1.id})
-    // .subscribe((data:response)=>{
-    //   this.info = data;
-    //   console.log(data);
-    // });
-    this.information_service.getIdeas({'id_user':userData1.id}).subscribe((data) =>{
-    this.ideas=data ;
-    console.log(data);
+//   getUserIdeas()
+//   {
+//     var userData1 = JSON.parse(this.userData);
+//     this.information_service.getIdeas({'id_user':userData1.id})
+//     .subscribe((data:response)=>{
+//       this.info = data;
+//       console.log(data);
+//     });
+//     // this.information_service.getIdeas({'id_user':userData1.id}).subscribe((data) =>{
+//     // this.ideas=data ;
+//     // console.log(data);
    
 
-    })
+//     //})
 
-  }
+//   }
 
    displayQuestions()
    {

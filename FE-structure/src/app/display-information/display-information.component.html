@@ -3,12 +3,12 @@
   <br>
   <div class="inputs">
     <h2 style="margin:5px">Enter Your Business Idea</h2>
-    <input type="text" id="myInput" [(ngModel)]="idea" placeholder="Title...">
+    <input type="text" id="myInput" [(ngModel)]="idea" [ngModelOptions]="{standalone: true}" placeholder="Title...">
   </div>
   <br><br>
   <div class="inputs">
     <h2 style="margin:5px">Enter Your Business Description</h2>
-    <input type="text" id="myInput" [(ngModel)]="description" placeholder="Desc...">
+    <input type="text" id="myInput" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" placeholder="Desc...">
   </div>
   
   <div class="btns">
