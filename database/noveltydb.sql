@@ -174,8 +174,17 @@ END $$
 
 CREATE PROCEDURE getQuestions()
 BEGIN
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    SELECT id, q_name FROM questions;
+=======
+    SELECT  id , q_name  FROM questions;
+>>>>>>> 7c58da191a8fd5835829e006201451c8cf70953f
+=======
     SELECT id, q_name
     FROM questions;
+>>>>>>> 8d37f937376c22d8f5a968dc51d5a86820bb73c3
 END $$
 
 CREATE PROCEDURE postAnswers(IN answer_user VARCHAR(255), IN u_id INT, IN q_id INT, IN b_id INT)
@@ -198,4 +207,9 @@ BEGIN
     WHERE answers.id = u_id;
 END $$
 
+=======
+    SELECT  id , q_name  FROM questions;
+END $$
+
+>>>>>>> 7d4634e12c5a42c186f2483e928a111581213f46
 DELIMITER ;

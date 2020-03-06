@@ -1,0 +1,127 @@
+
+<div id="myDIV" class="header">
+  <br>
+  <div class="inputs" >
+    <h2 style="margin:5px">Enter Your Business Idea</h2>
+    <input type="text" id="myInput" [(ngModel)]="busin_Idea" [ngModelOptions]="{standalone: true}" placeholder="Title...">
+  </div>
+  <br><br>
+  <div class="inputs">
+    <h2 style="margin:5px">Enter Your Business Description</h2>
+    <input type="text" id="myInput" [(ngModel)]="descript" [ngModelOptions]="{standalone: true}" placeholder="Desc...">
+  </div>
+  
+  <div class="btns">
+    <button class="addBtn" (click)="inserIdea()">Add</button>
+
+  </div>
+  
+</div>
+
+<div class="list-items">
+  <ul id="myUL">
+    <li *ngFor = "let idea of ideas.data; let i = index">
+        {{i + 1}} - {{idea.busin_idea}}
+
+    </li>
+    
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form class="idea-input">
+
+         <div class="fields">
+          <mat-form-field class="example-full-width">
+            <mat-label>Please enter the idea</mat-label>
+            <input matInput placeholder="Ex. Baking" [(ngModel)]="idea" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        
+          <mat-form-field class="idea-description">
+            <mat-label>description</mat-label>
+            <textarea matInput placeholder="Ex. Baking for wedding events..." [(ngModel)]="descript" [ngModelOptions]="{standalone: true}" ></textarea>
+          </mat-form-field>
+         </div>
+        
+         <div class ="btn-save" (click)="inserIdea()">
+          <button mat-button>Save</button>
+        </div> 
+
+</form>
+
+
+
+ <form class="insert-idea" >
+          <div class="b-ground">
+                <mat-form-field class="idea">
+                        <mat-label>Please enter your business idea</mat-label>
+                        <input matInput placeholder="Ex.Baking" value="Ex.Baking">
+                      </mat-form-field>
+                      <img class="think-img" src="assets/img/thinking.jpeg" alt="Card image">
+                      <mat-form-field class="idea-description">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput placeholder="Baking for wedding celebrations "></textarea>
+                      </mat-form-field>
+        </div>
+       
+</form> -->
+<!-- <mat-card class="card">
+       <h1>hello world</h1>
+      <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
+       
+
+      <!-- <div class ="btn-save">
+        <button mat-button>Save</button>
+      </div> -->
+     
+
+<!-- </mat-card>-->
+      
+
+
+<!-- <div  class="idea">
+  
+
+    
+        <label for="idea_user">First Idea:</label>
+        <input type="text" class="idea" id="idea_user">
+</div>
+      
+<div class="idea">
+        <label for="idea_user2">second Idea:</label>
+        <input type="text" class="idea" id="idea_user2">
+ </div> -->
+<!--      
+ <<div *ngFor='let q of info'>
+    {{q.q_name}}
+</div> --> 
+<!-- <div *ngFor='let q of info'>
+{{q.id}}
+{{'. '}}
+{{q.q_name}}
+</div>  -->
+
+
+

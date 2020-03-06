@@ -8,16 +8,22 @@ import { response } from 'src/models/response';
   styleUrls: ['./display-information.component.scss']
 })
 export class DisplayInformationComponent implements OnInit {
+ 
 
   //supposed to be an array;
-   info: any;
-   idea : string = 'Baking';
+   //info: any;
+   busin_Idea: string ;
+   ideas : any ;
+   descript: string;
    userData: string;
+ 
 
   constructor(private information_service:InformationServiceService) {
     this.displayQuestions();
-    this.userData=localStorage.getItem('id')
-    // this.inserIdea(this.idea);
+    this.userData=localStorage.getItem('id');
+    this.getUserIdeas();
+    
+   
   }
 
   ngOnInit() {
@@ -26,23 +32,38 @@ export class DisplayInformationComponent implements OnInit {
 
   inserIdea()
   {
-    var userData1 = JSON.parse(this.userData)
-    //console.log(userData1);
-    this.information_service.insertBusinessIdea({'busin_idea':this.idea,'id':userData1.id})
+    var userData1 = JSON.parse(this.userData);
+    console.log(userData1);
+    this.information_service.insertBusinessIdea({'busin_idea':this.busin_Idea,'descript':this.descript,'id_user':userData1.id})
     .subscribe((data:response) =>{
-      this.info = data.data;
+     // this.ideas = data.data;
+     this.getUserIdeas()
       console.log(data);
 
     });
+
+    
   }
-  
-  displayQuestions()
+
+  getUserIdeas()
   {
-    this.information_service.getQuestions()
+    var userData1 = JSON.parse(this.userData);
+    console.log(userData1.id);
+    this.information_service.getIdeas(userData1.id)
+    .subscribe((data)=>{
+      this.ideas = data;
+      console.log(data);
+    });
+
+ }
+
+   displayQuestions()
+   {
+     this.information_service.getQuestions()
     .subscribe((data:response) =>{
-      this.info = data.data;
-      console.log(this.info);
+     this.ideas = data.data;
+       console.log(this.ideas);
     })
-  }
- 
+   }
+  
  }
