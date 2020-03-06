@@ -3,17 +3,17 @@
   <br>
   <div class="inputs">
     <h2 style="margin:5px">Enter Your Business Idea</h2>
-    <input type="text" id="myInput" placeholder="Title...">
+    <input type="text" id="myInput" [(ngModel)]="idea" placeholder="Title...">
   </div>
   <br><br>
   <div class="inputs">
     <h2 style="margin:5px">Enter Your Business Description</h2>
-    <input type="text" id="myInput" placeholder="Desc...">
+    <input type="text" id="myInput" [(ngModel)]="description" placeholder="Desc...">
   </div>
   
   <div class="btns">
-    <button class="addBtn">Add</button>
-    <button class="addBtn">View</button>
+    <button class="addBtn" (click)="inserIdea()">Add</button>
+    <button class="addBtn" (click)="getUserIdeas()">View</button>
   </div>
   
 </div>
