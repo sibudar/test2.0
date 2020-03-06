@@ -69,7 +69,7 @@ ideaRoute.post('/', async (req, res)=>{
  *        201:
  *         description: getting all your ideas.
  *        400:
- *         description: cannot get the ideas.
+ *         description: ideas or user id do not exist.
  */
 ideaRoute.get('/:id',async(req, res)=>{
     result =  await ideaController.listIdeas(req.params);
