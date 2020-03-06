@@ -23,7 +23,7 @@ export class InformationServiceService {
 
    public getIdeas(user_id)
    {
-     return this.http.get(this.info_url + '/ideas' + user_id)
+     return this.http.get(this.info_url + '/ideas/' + user_id)
    }
    //get questions
    public getQuestions()

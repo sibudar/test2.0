@@ -1,9 +1,9 @@
 
 <div id="myDIV" class="header">
   <br>
-  <div class="inputs">
+  <div class="inputs" >
     <h2 style="margin:5px">Enter Your Business Idea</h2>
-    <input type="text" id="myInput" [(ngModel)]="idea" [ngModelOptions]="{standalone: true}" placeholder="Title...">
+    <input type="text" id="myInput" [(ngModel)]="busin_Idea" [ngModelOptions]="{standalone: true}" placeholder="Title...">
   </div>
   <br><br>
   <div class="inputs">
@@ -13,16 +13,18 @@
   
   <div class="btns">
     <button class="addBtn" (click)="inserIdea()">Add</button>
-    <button class="addBtn" (click)="getUserIdeas()">View</button>
+
   </div>
   
 </div>
 
 <div class="list-items">
   <ul id="myUL">
-    <li>First business Idea</li>
-    <li>Second business Idea</li>
-    <li>Third business Idea</li>
+    <li *ngFor = "let idea of ideas.data; let i = index">
+        {{i + 1}} - {{idea.busin_idea}}
+
+    </li>
+    
     
   </ul>
 </div>
