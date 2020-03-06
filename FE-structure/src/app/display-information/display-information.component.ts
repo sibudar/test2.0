@@ -22,11 +22,13 @@ export class DisplayInformationComponent implements OnInit {
    idea : string ;
    descript: string;
    userData: string;
+   ideas:any;
 
   constructor(private information_service:InformationServiceService) {
-    // this.displayQuestions();
-    // this.userData=localStorage.getItem('id')
-    // this.inserIdea(this.idea);
+    this.displayQuestions();
+    this.userData=localStorage.getItem('id');
+    this.getUserIdeas();
+    
    
   }
 
@@ -34,25 +36,42 @@ export class DisplayInformationComponent implements OnInit {
    
   }
 
-  // inserIdea()
-  // {
-  //   var userData1 = JSON.parse(this.userData)
-  //   //console.log(userData1);
-  //   this.information_service.insertBusinessIdea({'busin_idea':this.idea,'descript':this.descript,'id':userData1.id})
-  //   .subscribe((data:response) =>{
-  //     this.info = data.data;
-  //     console.log(data);
+  inserIdea()
+  {
+    var userData1 = JSON.parse(this.userData);
+    //console.log(userData1);
+    this.information_service.insertBusinessIdea({'busin_idea':this.idea,'descript':this.descript,'id_user':userData1.id})
+    .subscribe((data:response) =>{
+      this.info = data.data;
+      console.log(data);
 
-  //   });
-  // }
-  
-  // // displayQuestions()
-  // // {
-  // //   this.information_service.getQuestions()
-  // //   .subscribe((data:response) =>{
-  // //     this.info = data.data;
-  // //     console.log(this.info);
-  // //   })
-  // // }
+    });
+  }
+
+  getUserIdeas()
+  {
+    var userData1 = JSON.parse(this.userData);
+    // this.information_service.getIdeas({'id_user':userData1.id})
+    // .subscribe((data:response)=>{
+    //   this.info = data;
+    //   console.log(data);
+    // });
+    this.information_service.getIdeas({'id_user':userData1.id}).subscribe((data) =>{
+    this.ideas=data ;
+    console.log(data);
+   
+
+    })
+
+  }
+
+   displayQuestions()
+   {
+     this.information_service.getQuestions()
+    .subscribe((data:response) =>{
+     this.info = data.data;
+       console.log(this.info);
+    })
+   }
   
  }
