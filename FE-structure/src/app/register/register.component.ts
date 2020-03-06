@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 
 
 
+
 export interface Tile {
   color: string;
   cols: number;
