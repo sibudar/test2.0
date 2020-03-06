@@ -167,32 +167,17 @@ END $$
 
 CREATE PROCEDURE getIdeas(IN u_id INT)
 BEGIN
-    SELECT id, busin_idea , descript
+    SELECT id, busin_idea, descript
     FROM business_idea 
     WHERE status_flag = 1 AND business_idea.id_user = u_id;
 END $$
 
 CREATE PROCEDURE getQuestions()
 BEGIN
-
     SELECT id, q_name
     FROM questions;
-
-
-    SELECT id, q_name FROM questions;
-
-    SELECT  id , q_name  FROM questions;
-
-
-    SELECT id, q_name
-    FROM questions;
-
 END $$
 
-CREATE PROCEDURE answers (IN u_answer VARCHAR (255), IN  biz_idea INT (11), IN que_id VARCHAR (11) )
-BEGIN 
-    INSERT INTO answers (user_answer , id_bus , id_que , createdby , createdat , modifiedby , modifiedat )
-    VALUES(u_answer , biz_idea , que_id ,'System', now(), iduser, now())
 CREATE PROCEDURE postAnswers(IN answer_user VARCHAR(255), IN u_id INT, IN q_id INT, IN b_id INT)
 BEGIN
      INSERT INTO answers(user_answer, createdby, createdat, modifiedby, modifiedat, id_user, id_que, id_bus)
@@ -212,10 +197,5 @@ BEGIN
     SET user_answer = answer_user, modifiedby = u_id, modifiedat = now()
     WHERE answers.id = u_id;
 END $$
-
-
-    SELECT  id , q_name  FROM questions;
-END $$
-
 
 DELIMITER ;

@@ -12,24 +12,29 @@ export class DisplayInformationComponent implements OnInit {
 
   //supposed to be an array;
    //info: any;
-   busin_Idea: string ;
+   busin_Idea: string = '' ;
    ideas : any ;
-   descript: string;
+   descript: string = '';
    userData: string;
  
 
   constructor(private information_service:InformationServiceService) {
    
+   
     this.userData=localStorage.getItem('id');
     this.getUserIdeas()
     this.displayQuestions();
-   
+    
    
     
   }
 
   ngOnInit() {
    
+  }
+
+  viewIdea(id) {
+    console.log(id) ;
   }
 
   inserIdea()
@@ -49,10 +54,11 @@ export class DisplayInformationComponent implements OnInit {
 
   getUserIdeas()
   {
+    console.log('found')
     var userData1 = JSON.parse(this.userData);
-    console.log(userData1.id);
     this.information_service.getIdeas(userData1.id)
     .subscribe((data)=>{
+      console.log(data);
       this.ideas = data;
       console.log(data);
     });

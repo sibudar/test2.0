@@ -26,7 +26,7 @@
 
 <div class="list-items">
   <ul id="myUL">
-    <li *ngFor = "let idea of ideas.data; let i = index">
+    <li *ngFor = "let idea of ideas.data; let i = index" (click)="viewIdea(idea.id)"> 
         {{i + 1}} - {{idea.busin_idea}}
 
     </li>
