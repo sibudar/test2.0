@@ -19,7 +19,6 @@ export class AppComponent {
   // public SomeOtherAPIKey = environment.APIKeys.SomeOtherAPIKey; 
    constructor(){
     console.log(environment.production);
-   
   }
 
 

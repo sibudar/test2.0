@@ -49,9 +49,7 @@ import { DisplayInformationComponent } from './display-information/display-infor
     FormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    CommonModule
-   
-   
+    CommonModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
