@@ -14,12 +14,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { ForgotPsComponent } from './forgot-ps/forgot-ps.component';
+import { DisplayInformationComponent } from './display-information/display-information.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ForgotPsComponent } from './forgot-ps/forgot-ps.component';
     LoginComponent,
     ResetPasswordComponent,
     LandingpageComponent,
-    ForgotPsComponent
+    ForgotPsComponent,
+    DisplayInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { ForgotPsComponent } from './forgot-ps/forgot-ps.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    CommonModule
    
    
   ],

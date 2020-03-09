@@ -44,10 +44,12 @@ async function listIdeas(data) {
 
     let sql = 'CALL getIdeas(?)';
     
-    return queryResponse(sql, data.id).then(result => {
-        return fieldResponse(201,'getting all your ideas', result[0]);
+    return queryResponse(sql, data.id).then(async result => {
+        if(result[0][0].id === parseInt(data.id)) {
+            return fieldResponse(201,'getting all your ideas.', result[0]);
+        }
     }).catch(error => {
-        return fieldResponse(400, 'cannot get the ideas', error);
+        return fieldResponse(400, 'ideas or user id do not exist.', error);
     });
 }
 

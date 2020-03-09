@@ -167,7 +167,7 @@ END $$
 
 CREATE PROCEDURE getIdeas(IN u_id INT)
 BEGIN
-    SELECT id, busin_idea
+    SELECT id, busin_idea, descript
     FROM business_idea 
     WHERE status_flag = 1 AND business_idea.id_user = u_id;
 END $$

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 
 
 
+
 export interface Tile {
   color: string;
   cols: number;
@@ -57,7 +58,6 @@ form:FormGroup;
     delete json.confirm_password;
      this.register(json);
      
-  
   }
    
    register(user){

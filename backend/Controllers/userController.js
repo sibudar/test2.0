@@ -73,7 +73,7 @@ async function login(data) {
     }).catch(error => {
       return fieldResponse(404, 'Incorrect email adress entered.', error);
     });
-}
+}   
 
 /**
  * If the user forgot their password.
