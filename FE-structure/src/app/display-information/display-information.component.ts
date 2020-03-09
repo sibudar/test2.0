@@ -136,11 +136,6 @@ export class DisplayInformationComponent implements OnInit {
           })
                    
         }
-
-
-
-
-  
       
         if (result.value) {
           const answers = JSON.stringify(result.value)
