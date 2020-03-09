@@ -37,6 +37,11 @@ export class InformationServiceService {
       return this.http.get(this.info_url + '/questions');
     }
 
+    public postAnswers(data)
+    {
+      return this.http.post(this.info_url + '/questions/answers' ,data)
+    }
+   
    
 }
 
