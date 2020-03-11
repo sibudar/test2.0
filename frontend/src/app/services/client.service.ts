@@ -21,4 +21,9 @@ export class ClientService {
   {
     return this.http.post(this.url + '/users/login', user)
   }
+
+  public forgotPassword(user: any): Observable<any>
+  {
+    return this.http.post(this.url + '/users/forgot-password', user)
+  }
 }

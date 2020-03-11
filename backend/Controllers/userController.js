@@ -102,13 +102,14 @@ async function forgot(data) {
         ).then(handleEmail => {
           return fieldResponse(200, "Thank you! Please check your email, we've sent you an email.");
         }).catch(error => {
+          console.log(error)
           return fieldResponse(500, "Oops, it seems we have a problem with our email server.");
         });
+      } else{
+        return fieldResponse(400, 'User email does not exist, try again!', error.sqlMessage);
       }
     })
-    .catch(error => {
-      return fieldResponse(400, 'User email does not exist, try again!', error.sqlMessage);
-    });
+   
 }
 
 /**
