@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+  constructor() { 
+
+    this.user = JSON.parse(localStorage.getItem('user')) ;
+
+    console.log(this.user);
+  }
 
   ngOnInit() {
   }

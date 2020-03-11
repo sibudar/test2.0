@@ -5,6 +5,7 @@ import { PasswordValidation } from './password-validator';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { UserResponse } from 'src/app/models/user';
+import { ToasterService } from 'src/app/services/toaster.service';
 
 
 export interface Tile {
@@ -30,7 +31,7 @@ export class RegisterComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
-  constructor(private clientService: ClientService,private formBuilder:FormBuilder,private toastr: ToastrService,private router: Router ) { 
+  constructor(private clientService: ClientService,private formBuilder:FormBuilder,private toastr: ToasterService,private router: Router ) { 
  
   }
 
@@ -51,16 +52,12 @@ export class RegisterComponent implements OnInit {
     this.clientService.register(user).
     subscribe((data:UserResponse)=> {
       console.log(data);
-      this.showSuccess();
+      this.toastr.success(data.message,'',2000)
       this.router.navigate(['/client/login'])
  
     },error =>{
-
-        this.toastr.error('Unable To Register,email already exists','Novelty',{
-          timeOut: 5000,
-          positionClass: 'toast-top-right',
-        })
-      
+      this.toastr.error(error.error.message || 'Unable to register, please try again later','',5000)
+       
     });
   }
 
@@ -73,11 +70,6 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  showSuccess(): void {
-    this.toastr.success('You have successfully created an account', 'Novelty',{
-      timeOut: 5000,
-      positionClass: 'toast-top-right',
-    });
-  }
+
 
 }

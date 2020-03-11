@@ -16,4 +16,9 @@ export class ClientService {
     return this.http.post(this.url + '/users', user);
     
   }
+
+  public login(user: any): Observable<any>
+  {
+    return this.http.post(this.url + '/users/login', user)
+  }
 }
