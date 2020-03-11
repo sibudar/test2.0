@@ -10,7 +10,7 @@ import { ForgotPasswordComponent } from 'src/app/components/forgot-password/forg
 import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-password.component';
 
 const routes: Routes = [
-  { path: '', component: ClientComponent },
+  { path: '', component: RegisterComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
   { path: 'display', component: DisplayComponent },

@@ -1,11 +1,11 @@
 
 <mat-card class="card">
-    <mat-grid-list cols="2" rowHeight="550px" *ngIf="!message">
+    <mat-grid-list cols="2" rowHeight="550px" >
       <mat-grid-tile class="text-inside-grid">
         <div class="div" >
           <h3 class="header">Create an account</h3>
           <!-- Form for registration -->
-          <form [formGroup]="form" #loginForm="ngForm" (ngSubmit)="submit(loginForm.value)">
+          <form [formGroup]="form" #loginForm="ngForm">
          <!-- input for the name of user -->
             <mat-form-field class="dummy-input-field" appearance="legacy">
               <i  matPrefix class="material-icons">

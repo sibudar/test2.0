@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material';
 
+
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { ClientRoutingModule } from './client-routing.module';
@@ -19,10 +20,17 @@ import { DisplayComponent } from '../../components/display/display.component';
 import { LandingComponent } from '../../components/landing/landing.component';
 import { ResetPasswordComponent } from '../../components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from '../../components/forgot-password/forgot-password.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [ClientComponent, RegisterComponent, LoginComponent, DisplayComponent, LandingComponent, ResetPasswordComponent, ForgotPasswordComponent],
+  declarations: [ClientComponent, 
+    RegisterComponent, 
+    LoginComponent, 
+    DisplayComponent,
+     LandingComponent, 
+     ResetPasswordComponent, 
+     ForgotPasswordComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
