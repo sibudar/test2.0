@@ -9,12 +9,14 @@ import { LandingComponent } from 'src/app/components/landing/landing.component';
 import { ForgotPasswordComponent } from 'src/app/components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-password.component';
 
+import { AuthGuard } from 'src/app/guards/auth.guard';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
   { path: 'display', component: DisplayComponent },
-  { path: 'home', component: LandingComponent },
+  { path: 'home', component: LandingComponent,canActivate: [AuthGuard]},
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'resetPassword/:token', component: ResetPasswordComponent }
 
