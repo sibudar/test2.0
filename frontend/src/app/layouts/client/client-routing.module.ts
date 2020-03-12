@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'display', component: DisplayComponent },
   { path: 'home', component: LandingComponent },
   { path: 'forgotPassword', component: ForgotPasswordComponent },
-  { path: 'resetPassword', component: ResetPasswordComponent }
+  { path: 'resetPassword/:token', component: ResetPasswordComponent }
 
 ];
 

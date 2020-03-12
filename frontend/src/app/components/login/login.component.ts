@@ -33,11 +33,6 @@ export class LoginComponent implements OnInit {
       this.toastr.success('successfully logged in','novelty',2000)
       localStorage.setItem('user', JSON.stringify(data.data));
       this.router.navigate(['/client/home']); 
-      
-      
-
-
-    
     },error =>{
       console.log(error);
       this.toastr.error(error.error.message || 'Unable to login, please try again later' ,'novelty',10000)

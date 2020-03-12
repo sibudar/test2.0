@@ -24,6 +24,11 @@ export class ClientService {
 
   public forgotPassword(user: any): Observable<any>
   {
-    return this.http.post(this.url + '/users/forgot-password', user)
+    return this.http.post(this.url + '/users/forgotPassword', user)
+  }
+
+  public resetPassword(user: any): Observable<any>
+  {
+    return this.http.post(this.url + '/users/resetPassword', user)
   }
 }
