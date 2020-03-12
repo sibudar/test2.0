@@ -58,7 +58,7 @@
           <button mat-flat-button color="primary" class="btn" [ngClass]="{'chams':loginForm.invalid}" type="submit" (click)="submit()" [disabled]="loginForm.invalid" >Register</button>
 
        <!-- login button-->
-            <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/login" class="login" >Login</button>
+            <button mat-flat-button color="primary" class="btn" id="btn" routerLink="/client/login" class="login" >Login</button>
          </div>
         </div>
       </mat-grid-tile>
@@ -74,7 +74,7 @@
 
     <div class="btn-rest" *ngIf="message">
       <h3 >{{msg}}</h3>
-      <button mat-flat-button color="primary" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</button>
+      <button mat-flat-button color="primary" [routerLink]="['/client/login']" routerLinkActive="router-link-active" >Login</button>
     </div>
           
   </mat-card>
