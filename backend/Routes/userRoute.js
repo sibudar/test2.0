@@ -106,7 +106,7 @@ userRouter.post("/login", async(req, res) => {
  *         description: User email does not exist, try again!.
  *     
  */
-userRouter.post("/forgot-password", async(req, res) => {
+userRouter.post("/forgotPassword", async(req, res) => {
   let result = await registerController.forgot(req.body);
 
   res.status(result.status).send(result);
@@ -143,7 +143,7 @@ userRouter.post("/forgot-password", async(req, res) => {
  *         description: Unsuccessful.
  *     
  */
-userRouter.post("/reset", async (req, res) => {
+userRouter.post("/resetPassword", async (req, res) => {
   let result = await registerController.reset(req.body);
 
   res.status(result.status).send(result);

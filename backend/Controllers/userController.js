@@ -5,6 +5,7 @@ const bcrypt = require ('bcryptjs');
 const mail = require ('../Helpers/sendEmail');
 const msg = require ('../config/bodyMessage');
 const encrypt = require ('../Helpers/authToken');
+const authToken = require('../Helpers/authToken')
 const validator = require ('validator'); //import validator.js
 
 /**
@@ -90,12 +91,13 @@ async function forgot(data) {
   const sql = 'CALL forgotPassword(?)';
 
   return queryResponse(sql, data.email).then(async (result) => {
+    console.log(result[0].length)
       //check the length instead
-      if(result[0][0].email === data.email) {
+      if(result[0].length > 0) {
         let token = encrypt.generateToken({email: data.email});
-        let link = process.env.LINK || 'http://localhost:4200/reset-password/' + token;
+        let link = process.env.LINK || 'http://localhost:4200/client/resetPassword/' + token;
         
-        mail.sendEmail(
+       return mail.sendEmail(
           data.email,
           msg.resetMessage(result[0][0].first_name, link),
           msg.resetSubject()
@@ -105,8 +107,8 @@ async function forgot(data) {
           console.log(error)
           return fieldResponse(500, "Oops, it seems we have a problem with our email server.");
         });
-      } else{
-        return fieldResponse(400, 'User email does not exist, try again!', error.sqlMessage);
+      }else{
+        return fieldResponse(400, 'User email does not exist!, Please enter a registered email address');
       }
     })
    
@@ -120,9 +122,15 @@ async function forgot(data) {
  */
 async function reset(data) {
   let sql = 'CALL resetPassword(?)';
+
+  let userdata = await authToken.verifyToken(data.token)
+  console.log(userdata)
   data.user_password = bcrypt.hashSync(data.user_password, 10);
 
-  return queryResponse(sql, [data.email, data.user_password]).then(result => {
+  
+  console.log(data)
+  return queryResponse(sql, [userdata.email, data.user_password]).then(result => {
+    console.log(result)
       return fieldResponse(200, 'Successfully updated.');
     }).catch(error => {
       return fieldResponse(400, 'Unsuccessful', error.sqlMessage);
