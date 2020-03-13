@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-display',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+
+
+  }
+
 
   ngOnInit() {
   }
+
+ 
 
 }
