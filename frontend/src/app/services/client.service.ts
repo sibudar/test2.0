@@ -31,4 +31,39 @@ export class ClientService {
   {
     return this.http.post(this.url + '/users/resetPassword', user)
   }
+
+  //enter business idea
+  public insertBusinessIdea(data)
+   {
+     return this.http.post(this.url + '/ideas' ,data);
+   }
+  
+
+   //get business ideas and receives id
+
+   public getIdeas(user_id): Observable<any> 
+   {
+     return this.http.get(this.url + '/ideas/' + user_id)
+   }
+
+   public myIdeas(id){
+    return this.http.get(this.url+ '/ideas/' + id)
+   }
+   //get questions
+   public getQuestions()
+    {
+      //link from countries rest api
+      return this.http.get(this.url + '/questions');
+    }
+
+    public postAnswers(data)
+    {
+      return this.http.post(this.url + '/questions/answers' ,data)
+    }
+   
 }
+
+
+  //get business ideas and receives id
+
+  

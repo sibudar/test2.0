@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
       email:new FormControl('', [Validators.required, Validators.email])
     });
   }
-
   login(): void {
     this.clientService.login(this.form.value).subscribe((data: UserResponse) => {
       console.log(data)
