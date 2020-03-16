@@ -28,9 +28,13 @@
     .card{
     margin-bottom: 15px;
     }
+    #card:hover{
+        background-color:  lightblue;
+        cursor: pointer;
+    }
     .header{
         text-align: center;
-        margin-top: 15px;
+        margin-top: 25px;
     }
 
     .float{
@@ -45,25 +49,30 @@
         text-align:center;
         box-shadow: 2px 2px 3px #999;
     }
-    
+    .btn {
+        margin-top:15px;
+        bottom: 100px;
+        /* margin-right: 108px; */
+        left: 1300px;
+    }
     .my-float{
-        margin-top:12px;
+        margin-top:15px;
     }
 
-    .material-icons {
-        font-family: 'Material Icons';
-        font-weight: normal;
-        font-style: normal;
-        font-size: 34px !important;
-        line-height: 1;
-        letter-spacing: normal;
-        text-transform: none;
-        display: inline-block;
-        white-space: nowrap;
-        word-wrap: normal;
-        direction: ltr;
-        -webkit-font-feature-settings: 'liga';
-        -webkit-font-smoothing: antialiased;
-    }
+    // .material-icons {
+    //     font-family: 'Material Icons';
+    //     font-weight: normal;
+    //     font-style: normal;
+    //     font-size: 34px !important;
+    //     line-height: 1;
+    //     letter-spacing: normal;
+    //     text-transform: none;
+    //     display: inline-block;
+    //     white-space: nowrap;
+    //     word-wrap: normal;
+    //     direction: ltr;
+    //     -webkit-font-feature-settings: 'liga';
+    //     -webkit-font-smoothing: antialiased;
+    // }
   
    

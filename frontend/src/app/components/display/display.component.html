@@ -60,14 +60,17 @@
           <img src="https://www.elegantthemes.com/layouts/wp-content/uploads/2018/03/conference_illustration_05.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 aos-init aos-animate " alt="..." data-aos="fade-up" data-aos-delay="100">
             
         </div>
-        <div class="col-12 col-md-5 col-lg-6 order-md-2 ">
+        <div class="col-12 col-md-5 col-lg-6 order-md-2 " >
           <div class="div" *ngIf="found" >
-            <div class="card"  *ngFor = "let idea of ideas.data">
-              <mat-card _ngcontent-wpg-c74="" class="mat-card mat-focus-indicator docs-component-category-list-card" id="card">
-                <mat-card-title _ngcontent-wpg-c74="" class="mat-card-title">{{idea.busin_idea}}</mat-card-title>
+            <div class="card"  *ngFor = "let idea of ideas.data" id="card">
+              <mat-card _ngcontent-wpg-c74="" class="mat-card mat-focus-indicator docs-component-category-list-card" (click)="popup()" id="card">
+                <mat-card-title _ngcontent-wpg-c74="" class="mat-card-title" >{{idea.busin_idea}}</mat-card-title>
                 <mat-card-content _ngcontent-wpg-c74="" class="mat-card-content docs-component-category-list-card-summary">{{idea.descript}}.</mat-card-content>
               </mat-card>
             </div>
+          </div>
+          <div *ngIf="!found">
+           <p>no idea was found</p>
           </div>
       
         </div>
@@ -77,28 +80,11 @@
     </div> <!-- / .container -->
   </section>
 
-
-  <a class="float">
-    <i class="fa fa-plouus my-float"></i>
-    <i class="material-icons my-float">
-      add
-      </i>
-  </a>
-<!--  
-  <div *ngIf="found" class="list-items">
-    <ul id="myUL">
-      <li (click)="popup(idea.id)" *ngFor = "let idea of ideas.data; let i = index" (click)="viewIdea(idea.id)"> 
-          {{i + 1}} - {{idea.busin_idea}} - {{idea.descript}}
-  
-      </li>
-      
-      
-    </ul>
- 
-
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" (click)="openDialog()">
-  Launch demo modal
+<button type="button" class="btn btn-primary" mat-fab data-toggle="modal" (click)="openDialog()">
+  <i class="material-icons">
+    add
+    </i>
 </button>
 
 <!-- Modal -->

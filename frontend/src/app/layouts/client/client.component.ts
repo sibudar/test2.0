@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
+import { UserResponse } from 'src/app/models/user';
 
 @Component({
   selector: 'app-client',
@@ -11,6 +12,7 @@ export class ClientComponent implements OnInit {
   user_id : any;
   userData:string;
   user:string;
+  questions : any [];
   constructor(private clientService:ClientService ) { 
     this.userData=localStorage.getItem('id');
     this.user = JSON.parse(this.userData);
