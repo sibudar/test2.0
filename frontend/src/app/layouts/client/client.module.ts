@@ -21,6 +21,8 @@ import { LandingComponent } from '../../components/landing/landing.component';
 import { ResetPasswordComponent } from '../../components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from '../../components/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogComponent } from '../../components/dialog/dialog.component';
+import {MatDialogModule} from "@angular/material";
 
 
 @NgModule({
@@ -30,13 +32,14 @@ import { HttpClientModule } from '@angular/common/http';
     DisplayComponent,
      LandingComponent, 
      ResetPasswordComponent, 
-     ForgotPasswordComponent],
+     ForgotPasswordComponent, DialogComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
     MatButtonModule,
     MatSliderModule,
     MatCardModule,
+    MatDialogModule,
     MatGridListModule,
     MatFormFieldModule,
     MatIconModule,
@@ -46,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
 
-  ]
+  ],
+  entryComponents: [DialogComponent]
 })
 export class ClientModule { }
