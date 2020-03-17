@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  
+  environment: $ENV.ENVIRONMENT,
+  api:$ENV.api,
 };
