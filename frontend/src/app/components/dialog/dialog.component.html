@@ -1,6 +1,6 @@
 <h1 > Enter your idea</h1>
 
-<mat-dialog-content [formGroup]="form">
+<!-- <mat-dialog-content [formGroup]="form">
 
     <mat-form-field>
         <input matInput
@@ -14,9 +14,29 @@
                formControlName="descript">
     </mat-form-field>
 
-</mat-dialog-content>
+</mat-dialog-content> -->
+
+<form [formGroup]="form" >
+    <!-- input for the email of user  -->
+    <mat-form-field appearance="legacy">
+     
+      <input type="text" matInput placeholder="Business Idea"  required formControlName="busin_idea" /> 
+      <mat-error *ngIf="form.controls['busin_idea'].invalid"> Business Idea is required</mat-error>
+    </mat-form-field>
+    <br>
+  <!-- input for confirming password -->
+      <mat-form-field>
+       
+        <input type="text" matInput placeholder="Description" formControlName="descript" required>
+        <!-- checks if the password is inserted -->
+        <mat-error *ngIf="form.controls['descript'].invalid">Description is required</mat-error>
+      </mat-form-field>
+   
+  </form>
+
 
 <mat-dialog-actions>
     <button class="mat-raised-button" (click)="close()">Close</button>
-    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+    
+    <button class="mat-raised-button mat-primary" (click)="save()" [disabled]="form.invalid">Save</button>
 </mat-dialog-actions>

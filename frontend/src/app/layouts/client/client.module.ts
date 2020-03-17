@@ -23,6 +23,7 @@ import { ForgotPasswordComponent } from '../../components/forgot-password/forgot
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import {MatDialogModule} from "@angular/material";
+import { QuestionComponent } from '../../components/question/question.component';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import {MatDialogModule} from "@angular/material";
     DisplayComponent,
      LandingComponent, 
      ResetPasswordComponent, 
-     ForgotPasswordComponent, DialogComponent],
+     ForgotPasswordComponent, DialogComponent, QuestionComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
@@ -48,8 +49,7 @@ import {MatDialogModule} from "@angular/material";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-
   ],
-  entryComponents: [DialogComponent]
+  entryComponents: [DialogComponent,QuestionComponent]
 })
 export class ClientModule { }

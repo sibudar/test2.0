@@ -10,6 +10,7 @@ import { ForgotPasswordComponent } from 'src/app/components/forgot-password/forg
 import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-password.component';
 
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { QuestionComponent } from 'src/app/components/question/question.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,12 +19,13 @@ const routes: Routes = [
   { path: 'display', component: DisplayComponent },
   { path: 'home', component: LandingComponent,canActivate: [AuthGuard]},
   { path: 'forgotPassword', component: ForgotPasswordComponent },
-  { path: 'resetPassword/:token', component: ResetPasswordComponent }
+  { path: 'resetPassword/:token', component: ResetPasswordComponent },
+  { path: 'question', component: QuestionComponent }
 
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class ClientRoutingModule { }
