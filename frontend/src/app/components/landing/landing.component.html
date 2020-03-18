@@ -38,9 +38,14 @@
         </ul>
 
         <!-- Button -->
-        <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank">
-          Account
-        </a>
+        <div class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank" id="dropdown">
+          
+         <h6>Account</h6>
+          <div class="dropdown-content">
+            <a routerLink="/client/login">Login</a>
+            <a routerLink="/client/register">Register</a>
+          </div>
+        </div>
       </div>
   
     </div>

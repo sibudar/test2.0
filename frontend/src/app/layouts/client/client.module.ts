@@ -8,6 +8,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -49,6 +50,7 @@ import { QuestionComponent } from '../../components/question/question.component'
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatTabsModule
   ],
   entryComponents: [DialogComponent,QuestionComponent]
 })

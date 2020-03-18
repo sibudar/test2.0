@@ -1,3 +1,28 @@
-.Input {
-    display: flex;
+.display {
+display: block;
+padding: 10px 80px;
+}
+.input{
+ width: 50%; 
+}
+#btns{
+margin-left: 280px;    
+}
+#btns button{
+margin: 10px;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .display {
+        width: 100%;
+    } 
+    .input{
+       width: 100%; 
+    }
+    #btns{
+       text-align: center; 
+    }
 }
