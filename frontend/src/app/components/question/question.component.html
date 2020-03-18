@@ -1,21 +1,19 @@
 
-<form [formGroup]="formQuestion" >
+<form [formGroup]="formQuestion" #questionForm="ngForm" >
   <!-- input for confirming password -->
-      <mat-form-field *ngFor="let question of questions; let i = index" >
+      <mat-form-field *ngFor="let question of questions; let i = index"  class="display">
         <mat-label>{{question.q_name}}</mat-label>
-        <input type="text" matInput class="Input" required formControlName="{{question.id}}"/>
+        <input type="text" matInput class="input" required formControlName="{{question.id}}"/>
         <!-- checks if the password is inserted -->
         <!-- <mat-error *ngIf="formQuestion.controls['answers'].invalid">answer is required</mat-error> -->
-      <br><br>
-        
       </mat-form-field>
-<br>
+
    
   </form>
 
 
-<mat-dialog-actions>
+<mat-dialog-actions id="btns">
     <button class="mat-raised-button" (click)="close()">Close</button>
     
-    <button class="mat-raised-button mat-primary" (click)="save()" >Save</button>
+    <button class="mat-raised-button mat-primary" (click)="save()" [disabled]="questionForm.invalid">Save</button>
 </mat-dialog-actions>

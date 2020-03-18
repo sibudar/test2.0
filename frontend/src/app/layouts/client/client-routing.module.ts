@@ -13,7 +13,7 @@ import { AuthGuard } from 'src/app/guards/auth.guard';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LandingComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
   { path: 'display', component: DisplayComponent },
