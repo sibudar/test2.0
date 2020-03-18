@@ -14,11 +14,8 @@ import { QuestionComponent } from 'src/app/components/question/question.componen
 import { LegalComponent } from 'src/app/components/legal/legal.component';
 
 const routes: Routes = [
-<<<<<<< HEAD
   { path: '', component: LegalComponent },
-=======
   { path: '', component: LandingComponent },
->>>>>>> cf5cd3734d997890ff86cf8dca6fe21e4a398576
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
   { path: 'display', component: DisplayComponent },
