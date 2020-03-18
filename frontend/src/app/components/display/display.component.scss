@@ -1,3 +1,6 @@
+#navibar{
+    margin-right: 388px;
+}
 .nav-link{
     font-weight: bolder;    
     }
@@ -9,22 +12,15 @@
     }
     #section{
     background-color: #eceff1;; 
-    padding: 50px;  
-    }
-    #evaluate{
-    margin-top: -100px;    
-    }
-    #para{
-    margin-top: -100px;  
+    height: 70vh;
     }
     #image{
     margin-top: 100px;
     }
-    .hori{
-    width: 20%;
-    color: black;
-    height: 2px;
-    }
+   #image img{
+    height: 400px;
+    width: 380px;   
+   }
     .card{
     margin-bottom: 15px;
     }
@@ -34,7 +30,7 @@
     }
     .header{
         text-align: center;
-        margin-top: 25px;
+        margin-top: 45px;
     }
 
     .float{
@@ -58,21 +54,34 @@
     .my-float{
         margin-top:15px;
     }
-
-    // .material-icons {
-    //     font-family: 'Material Icons';
-    //     font-weight: normal;
-    //     font-style: normal;
-    //     font-size: 34px !important;
-    //     line-height: 1;
-    //     letter-spacing: normal;
-    //     text-transform: none;
-    //     display: inline-block;
-    //     white-space: nowrap;
-    //     word-wrap: normal;
-    //     direction: ltr;
-    //     -webkit-font-feature-settings: 'liga';
-    //     -webkit-font-smoothing: antialiased;
-    // }
   
-   
+    .close {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        padding: 12px 16px;
+        transform: translate(0%, -50%);
+      }
+      
+      .close:hover {background: #bbb;}  
+
+      .grid{
+        width: 75%; 
+        margin: 40px 10% 0 10%; 
+      }
+
+      //media query for responsiveness
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 480px){
+    .display {
+        width: 100%;
+    } 
+    .input{
+       width: 100%; 
+    }
+    #btns{
+       text-align: center; 
+    }
+}

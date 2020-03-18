@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LegalComponent implements OnInit {
   panelOpenState = false;
-  show:boolean = true;
-  
+  // show:boolean = true;
+
 
   constructor() { }
 

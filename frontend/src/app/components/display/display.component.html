@@ -22,7 +22,7 @@
         </button>
   
         <!-- Navigation -->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" id="navibar">
             <a class="nav-link" routerLink="/client/home" aria-haspopup="true" aria-expanded="true">
               Home
             </a>
@@ -37,48 +37,50 @@
             </a>
           </li>
         </ul>
-
-        <!-- Button -->
-        <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank">
-          Account
-        </a>
+        
       </div>
   
     </div>
   </nav>
 
-  <section class="header">
-    <h1>Business Evaluation</h1>
-  </section>
-
-  <section class="pt-4 pt-md-11" id="section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 col-md-5 col-lg-6 order-md-2" id="image">
-  
-          <!-- Image -->
-          <img src="https://www.elegantthemes.com/layouts/wp-content/uploads/2018/03/conference_illustration_05.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 aos-init aos-animate " alt="..." data-aos="fade-up" data-aos-delay="100">
-            
-        </div>
-        <div class="col-12 col-md-5 col-lg-6 order-md-2 " >
-          <div class="div" *ngIf="found" >
-            <div class="card"  *ngFor = "let idea of ideas.data" id="card" (click)="openQuestionDialog(idea.id)">
-              <mat-card _ngcontent-wpg-c74="" class="mat-card mat-focus-indicator docs-component-category-list-card" id="card">
-                <mat-card-title _ngcontent-wpg-c74="" class="mat-card-title" >{{idea.busin_idea}}</mat-card-title>
-                <mat-card-content _ngcontent-wpg-c74="" class="mat-card-content docs-component-category-list-card-summary">{{idea.descript}}.</mat-card-content>
-              </mat-card>
-            </div>
-          </div>
-          <div *ngIf="!found">
-           <p>no idea was found</p>
-          </div>
+  <mat-tab-group animationDuration="2000ms" class="grid">
+    <mat-tab label="Evaluation">Evaluation
+      <section class="pt-4 pt-md-11" id="section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-5 col-lg-6 order-md-2" id="image">
       
-        </div>
-        
-       
-      </div> <!-- / .row -->
-    </div> <!-- / .container -->
-  </section>
+              <!-- Image -->
+              <img src="assets/img/illustration_05.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 aos-init aos-animate " alt="..." data-aos="fade-up" data-aos-delay="100">
+                
+            </div>
+            <div class="col-12 col-md-5 col-lg-6 order-md-2 " >
+              <div class="div" *ngIf="found" >
+                <div class="card"  *ngFor = "let idea of ideas.data" id="card" (click)="openQuestionDialog(idea.id)">
+                  <mat-card _ngcontent-wpg-c74="" class="mat-card mat-focus-indicator docs-component-category-list-card">
+                    <mat-card-title _ngcontent-wpg-c74="" class="mat-card-title" >{{idea.busin_idea}}<span class="close">&times;</span></mat-card-title>
+                    <mat-card-content _ngcontent-wpg-c74="" class="mat-card-content docs-component-category-list-card-summary">{{idea.descript}}.</mat-card-content>
+                  </mat-card>
+                </div>
+              </div>
+              <div *ngIf="!found">
+               <p>no idea was found</p>
+              </div>
+          
+            </div>
+            
+           
+          </div> <!-- / .row -->
+        </div> <!-- / .container -->
+      </section>
+    </mat-tab>
+    <mat-tab label="Legal">Legal</mat-tab>
+    <mat-tab label="Finance">Finance</mat-tab>
+    <mat-tab label="Digital Marketing">Digital Marketing</mat-tab>
+    <mat-tab label="Developers">Developers</mat-tab>
+  </mat-tab-group>
+
+  
 
   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" mat-fab data-toggle="modal" (click)="openDialog()">

@@ -30,7 +30,7 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit() {
     
-    this.dialogRef.updateSize('50%', '50%');
+    this.dialogRef.updateSize('60%', '80%');
     this.formQuestion = this.fb.group({});
     
     this.clientService.getQuestions().subscribe( (data:QuestionsResponse) => {

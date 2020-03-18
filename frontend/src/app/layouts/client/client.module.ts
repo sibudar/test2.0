@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -51,7 +52,8 @@ import { LegalComponent } from '../../components/legal/legal.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule
   ],
   entryComponents: [DialogComponent,QuestionComponent]
 })
