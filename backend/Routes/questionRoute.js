@@ -22,7 +22,7 @@ const questionController = require("../Controllers/questionController");
  * 
  */
 userRouter.get("/", async(req, res) => {
-    result = await questionController.getQuestions();
+    result = await questionController.getQuestions(req.body);
   
     res.status(result.status).send(result);
   });
