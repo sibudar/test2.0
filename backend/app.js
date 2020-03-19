@@ -3,6 +3,7 @@ const app = express();
 const idea = require('./Routes/ideaRoute');
 const user = require('./Routes/userRoute');
 const questions = require('./Routes/questionRoute');
+const content = require('./Routes/contentRoute');
 const cors = require('cors');
 const  swaggerUi = require('swagger-ui-express');
 swaggerDocument =  require('./swagger.js');
@@ -19,9 +20,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));//
 app.use('/api/v1/users', user);
 app.use('/api/v1/ideas', idea);
 app.use('/api/v1/questions', questions);
-
-
-
+app.use('/api/v1/content', content);
 
 // default route 
 app.use('/', (req, res, next) => {
