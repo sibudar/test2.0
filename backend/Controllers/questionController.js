@@ -4,11 +4,15 @@ const{ response,validate,queryFunction} = require('../Helpers');
  * Gets questions from DB.
  * @returns the data stored in the question table.
  */ 
-async function getQuestions(){
+async function getQuestions(data){
     
-    const sql = "CALL getQuestions()";
+    if(validate.validate(data.id_cat)){
+        return response(400,"Category id is required.", data);
+    }
 
-    return queryFunction(sql, '').then((result) => {
+    const sql = "CALL getQuestions(?)";
+
+    return queryFunction(sql, [data.id_cat]).then((result) => {
         return response(200, 'Here are your questions.', result[0]);
     }).catch(error => {
         return response(400, 'Could not get questions requested.', error.sqlMessage);

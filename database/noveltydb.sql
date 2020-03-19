@@ -157,89 +157,44 @@ INSERT INTO questions (q_name, createdby, createdat, modifiedby, modifiedat, id_
 -- Inserting the default legal content
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Business Plan',
-                    'A business plan is a document setting out a business`s future objectives 
-                    and strategies for achieving them; It is formally written document and 
-                    contains business goals, the methods on how these goals can be attained, 
-                    and the time frame within which these goals need to be achieved', 
+                    'A business plan is a document setting out a business`s future objectives and strategies for achieving them; It is formally written document and contains business goals, the methods on how these goals can be attained, and the time frame within which these goals need to be achieved', 
                     'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Register the business',
-                    'The Companies and Intellectual Property Commission (CIPC) should be your 
-                    first point of contact. This organisation has been established in order to 
-                    administer the registration of companies, cooperatives and intellectual 
-                    property rights such as trademarks, patents, designs and copyright. visit 
-                    www.cipc.co.za for more information', 
+                    'The Companies and Intellectual Property Commission (CIPC) should be your first point of contact. This organisation has been established in order to administer the registration of companies, cooperatives and intellectual property rights such as trademarks, patents, designs and copyright. visit www.cipc.co.za for more information', 
                     'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('SARS Registration',
-                    'a legal obligation to pay tax regardless of the size of business being run. 
-                    The law dictates that a business is registered with SARS within 60 days of 
-                    starting operations. For those registered with CIPC the registration is 
-                    automatic except sole proprietors or partners who need to register as 
-                    provisional tax payers directly. visit www.sars.gov.za for more information.', 
+                    'A legal obligation to pay tax regardless of the size of business being run. The law dictates that a business is registered with SARS within 60 days of starting operations. For those registered with CIPC the registration is automatic except sole proprietors or partners who need to register as provisional tax payers directly. visit www.sars.gov.za for more information.', 
                     'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Department of Labour',
-                    'This government department bears the responsibility of ensuring that 
-                    businesses operate under conducive environment and abides by laid down 
-                    legal provisions. Businesses with one or more full time employees are 
-                    therefore required to register in accordance with the Compensation for 
-                    Occupational Injuries and Diseases Act (COIDA).This Act has been put in 
-                    place to safeguard the rights of employees who are injured, contract a 
-                    disease or get killed as a result of their work. visit www.labour.gov.za 
-                    for more information.', 
+                    'This government department bears the responsibility of ensuring that businesses operate under conducive environment and abides by laid down legal provisions. Businesses with one or more full time employees are therefore required to register in accordance with the Compensation for Occupational Injuries and Diseases Act (COIDA).This Act has been put in place to safeguard the rights of employees who are injured, contract a disease or get killed as a result of their work. visit www.labour.gov.za for more information.', 
                     'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Unemployment Insurance Fund',
-                    'Unemployment Insurance Fund (UIF) benefits workers when they can’t work 
-                    due to maternity, adoption leave or illness. UIF registration can be done 
-                    on form UF8 at any SARS office or online. visit www.ufiling.co.za/uif for 
-                    more information.', 
+                    'Unemployment Insurance Fund (UIF) benefits workers when they can’t work due to maternity, adoption leave or illness. UIF registration can be done on form UF8 at any SARS office or online. visit www.ufiling.co.za/uif for more information.', 
                     'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Employee Tax',
-                    'The law demands that if you employ one or more staff 
-                    members who earn over R40,000 per year, you have to register your company for 
-                    Pay As You Earn (PAYE). If your payroll is more than R500,000 a month, you must 
-                    register for skills development levy (SDL). The funds are to be used to develop 
-                    and improve skills of employees. visit www.sars.gov.za/TaxTypes/Paye for more 
-                    information.', 
+                    'The law demands that if you employ one or more staff members who earn over R40,000 per year, you have to register your company for Pay As You Earn (PAYE). If your payroll is more than R500,000 a month, you must register for skills development levy (SDL). The funds are to be used to develop and improve skills of employees. visit www.sars.gov.za/TaxTypes/Paye for more information.', 
                     'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('VAT Vendor',
-                    'If your projected sales per year will exceed R1 million, then you 
-                    need to register as a VAT (Value Added Tax) vendor. VAT vendor registration can 
-                    be done by completing and submitting a VAT101 form, which is available at any 
-                    SARS office. visit www.sars.gov.za/TaxTypes/VAT for more information.', 
-                '   System', now(), 'System', now(), 2);
+                    'If your projected sales per year will exceed R1 million, then you need to register as a VAT (Value Added Tax) vendor. VAT vendor registration can be done by completing and submitting a VAT101 form, which is available at any SARS office. visit www.sars.gov.za/TaxTypes/VAT for more information.', 
+                    'System', now(), 'System', now(), 2);
 -- Inserting the default financial content
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Funds for my business.',
-                    'Ideal to finance developmental projects, business expansion or 
-                    business purchases. Loan repayment period up to 10 years. Flexi 
-                    reserve facility to keep additional funds to be re-used in need. 
-                    Inter-account transfers of available funds from flexi reserve 
-                    facility. Auto-capitalisation to reduce outstanding capital to 
-                    benefit from interest burden. Repayment frequencies: monthly, 
-                    bi-monthly, quarterly, half-yearly and yearly', 
+                    'Ideal to finance developmental projects, business expansion or business purchases. Loan repayment period up to 10 years. Flexi reserve facility to keep additional funds to be re-used in need. Inter-account transfers of available funds from flexi reserve facility. Auto-capitalisation to reduce outstanding capital to benefit from interest burden. Repayment frequencies: monthly, bi-monthly, quarterly, half-yearly and yearly', 
                     'System', now(), 'System', now(), 3);
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Business Account',
-                    'Opening a business account with the ABSA can be considered a bit 
-                    challenging due to the necessary qualifications that are needed to 
-                    meet approval requirements. Also, the demographical criteria is a 
-                    big qualification requirement that rules a lot of business owners 
-                    out of this equation. However, it is possible to open an ABSA 
-                    business account without facing the stumbling blocks that cause 
-                    most people to fail.', 
+                    'Opening a business account with the ABSA can be considered a bit challenging due to the necessary qualifications that are needed to meet approval requirements. Also, the demographical criteria is a big qualification requirement that rules a lot of business owners out of this equation. However, it is possible to open an ABSA business account without facing the stumbling blocks that cause most people to fail.', 
                     'System', now(), 'System', now(), 3);
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Financial Management',
-                    'You’ll need to understand the underlying financial flows of your 
-                    business. That’s key to your understanding of how to manage your 
-                    business. So what we’re going to do in this session is give you 
-                    the tools of startup finance to help you manage and build your 
-                    business.', 
+                    'You’ll need to understand the underlying financial flows of your business. That’s key to your understanding of how to manage your business. So what we’re going to do in this session is give you the tools of startup finance to help you manage and build your business.', 
                     'System', now(), 'System', now(), 3);
 -- Creating stored procedure.
 DELIMITER $$
