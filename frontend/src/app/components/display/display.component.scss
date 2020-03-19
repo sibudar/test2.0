@@ -49,7 +49,8 @@
         margin-top:15px;
         bottom: 100px;
         /* margin-right: 108px; */
-        left: 1300px;
+        margin-left: 1300px;
+       
     }
     .my-float{
         margin-top:15px;
@@ -67,21 +68,78 @@
       .close:hover {background: #bbb;}  
 
       .grid{
-        width: 75%; 
+        width: 70%; 
         margin: 40px 10% 0 10%; 
       }
+      .grid h1{
+          font-family: serif;
+      }
 
-      //media query for responsiveness
+    //   //media query for responsiveness
 
-    /* Extra small devices (phones, 600px and down) */
-    @media only screen and (max-width: 480px){
-    .display {
-        width: 100%;
-    } 
-    .input{
-       width: 100%; 
-    }
-    #btns{
-       text-align: center; 
-    }
-}
+    // /*Extra small devices (phones, 320px and down)*/
+    // @media  (max-width: 320px) {
+    
+    //     .grid{
+    //         width: 100%; 
+           
+    //       }
+    //     .btn {
+    //         display: none;
+    //         margin-top:15px;
+    //         width: 100px;
+            
+    //     }
+    //     #image img{
+    //         height: 200px;
+    //         width: 180px;   
+    //        }
+    //  }
+    //  @media (min-width: 321px) and (max-width: 480px) {
+       
+
+    //     .grid{
+    //         width: 100%; 
+    //         margin: 40px 10% 0 10%; 
+    //       }
+    //     .btn {
+    //         margin-top:15px;
+    //         width: 100px;
+            
+    //     }
+    //     #image img{
+    //         height: 200px;
+    //         width: 180px;   
+    //        }
+    //  }
+
+    //  @media (max-width: 767px)
+    //  {
+    //     html
+    //  {
+    //        font-size:0.38em;
+    //  }
+    //  }
+    // @media (min-width: 768px) and (max-width: 979px)
+    //  {
+    //    html
+    //    {
+    //        font-size:0.65em;
+    //    }
+    //  }
+
+    //  @media (min-width : 980px) and (max-width:1025px)
+    //  {
+    //    html
+    //    {
+    //        font-size:0.7em;
+    //    }
+    //  }
+
+    //  @media (min-width : 1026px) and (max-width:1280px)
+    //  {
+    //    html
+    //    {
+    //        font-size:0.7em;
+    //    }
+    //  }
