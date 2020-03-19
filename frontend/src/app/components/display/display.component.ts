@@ -18,6 +18,8 @@ export class DisplayComponent implements OnInit {
   ideas : any ;
   businessIdea : string;
   description : string;
+  show = false;
+  
   
   constructor( private clientService:ClientService,private dialog: MatDialog) { 
     this.userData=localStorage.getItem('user');
@@ -96,5 +98,9 @@ getUserIdeas() {
     }
     console.log(data);
   });
+}
+
+answer(){
+  this.show = true ;
 }
 }

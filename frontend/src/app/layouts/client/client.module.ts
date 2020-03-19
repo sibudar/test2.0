@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import {MatDialogModule} from "@angular/material";
 import { QuestionComponent } from '../../components/question/question.component';
-import { LegalComponent } from '../../components/legal/legal.component';
+
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { LegalComponent } from '../../components/legal/legal.component';
     DisplayComponent,
      LandingComponent, 
      ResetPasswordComponent, 
-     ForgotPasswordComponent, DialogComponent, QuestionComponent, LegalComponent],
+     ForgotPasswordComponent, DialogComponent, QuestionComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,

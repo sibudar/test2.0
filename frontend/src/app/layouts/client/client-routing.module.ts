@@ -11,10 +11,10 @@ import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-
 
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { QuestionComponent } from 'src/app/components/question/question.component';
-import { LegalComponent } from 'src/app/components/legal/legal.component';
+
 
 const routes: Routes = [
-  { path: '', component: LegalComponent },
+  { path: '', component: LandingComponent },
   { path: '', component: LandingComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},

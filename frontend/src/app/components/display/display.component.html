@@ -37,9 +37,7 @@
             </a>
           </li>
         </ul>
-        
       </div>
-  
     </div>
   </nav>
 
@@ -66,15 +64,34 @@
               <div *ngIf="!found">
                <p>no idea was found</p>
               </div>
-          
             </div>
-            
-           
-          </div> <!-- / .row -->
-        </div> <!-- / .container -->
+          </div> 
+        </div> 
       </section>
     </mat-tab>
-    <mat-tab label="Legal">Legal</mat-tab>
+    <!-- legal -->
+    <mat-tab label="Legal">Legal
+     <div class="container mt-5">
+      <p>1.Have you registered your business?</p>
+      <div class="example-button-row">
+        <button mat-stroked-button>Yes</button>
+        <button mat-stroked-button (click)='answer()'>No</button>
+        </div>
+        <br>
+        <mat-card *ngIf="show">
+          <h5>Register the business</h5>
+          Simple card
+          <br>
+          <br>
+          <a href="#">read more <i class="material-icons">
+            arrow_forward_ios
+            </i></a>
+        </mat-card> 
+     </div>
+    </mat-tab>
+
+
+
     <mat-tab label="Finance">Finance</mat-tab>
     <mat-tab label="Digital Marketing">Digital Marketing</mat-tab>
     <mat-tab label="Developers">Developers</mat-tab>
@@ -108,4 +125,4 @@
       </div>
     </div>
   </div>
-   -->
+   
