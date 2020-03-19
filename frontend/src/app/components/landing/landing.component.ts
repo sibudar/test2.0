@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/services/token.service';
+
 
 @Component({
   selector: 'app-landing',
@@ -8,11 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class LandingComponent implements OnInit {
 
   user: any;
-  constructor() { 
+  constructor(private tokenService:TokenService) { 
 
-    this.user = JSON.parse(localStorage.getItem('user')) ;
+    //this.user = JSON.parse(localStorage.getItem('user')) ;
+     this.tokenService.saveToken('user');
+    this.tokenService.getUser();
 
-    console.log(this.user);
+   // console.log(this.user);
   }
 
   ngOnInit() {

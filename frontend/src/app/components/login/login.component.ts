@@ -5,6 +5,7 @@ import { ClientService } from 'src/app/services/client.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   form:FormGroup;
-  constructor(private formBuilder:FormBuilder, private clientService: ClientService, private toastr: ToasterService,
+  constructor(private formBuilder:FormBuilder, private clientService: ClientService, private toastr: ToasterService,private tokenService:TokenService,
              private router: Router) {
    
    }
@@ -30,7 +31,9 @@ export class LoginComponent implements OnInit {
     this.clientService.login(this.form.value).subscribe((data: UserResponse) => {
       console.log(data)
       this.toastr.success('successfully logged in','novelty',2000)
-      localStorage.setItem('user', JSON.stringify(data.data));
+      this.tokenService.saveToken(JSON.stringify(data.data));
+      this.tokenService.getToken()
+      //localStorage.setItem('user', JSON.stringify(data.data));
       this.router.navigate(['/client/home']); 
     },error =>{
       console.log(error);
