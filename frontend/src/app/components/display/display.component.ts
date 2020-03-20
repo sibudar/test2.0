@@ -5,6 +5,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 import { DialogComponent } from '../dialog/dialog.component';
 import { UserResponse } from 'src/app/models/user';
 import { QuestionComponent } from '../question/question.component';
+import { PassDataService } from 'src/app/services/pass-data.service';
 
 @Component({
   selector: 'app-display',
@@ -19,7 +20,7 @@ export class DisplayComponent implements OnInit {
   businessIdea : string;
   description : string;
   
-  constructor( private clientService:ClientService,private dialog: MatDialog) { 
+  constructor( private clientService:ClientService,private dialog: MatDialog, private passService: PassDataService ) { 
     this.userData=localStorage.getItem('user');
     this.user = JSON.parse(this.userData);
     this.getUserIdeas();

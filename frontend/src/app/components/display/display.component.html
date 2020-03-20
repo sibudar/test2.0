@@ -59,7 +59,7 @@
               <div class="div" *ngIf="found" >
                 <div class="card"  *ngFor = "let idea of ideas.data" id="card" (click)="openQuestionDialog(idea.id)">
                   <mat-card _ngcontent-wpg-c74="" class="mat-card mat-focus-indicator docs-component-category-list-card">
-                    <mat-card-title _ngcontent-wpg-c74="" class="mat-card-title" >{{idea.busin_idea}}<span class="close">&times;</span></mat-card-title>
+                    <mat-card-title _ngcontent-wpg-c74="" class="mat-card-title" >{{idea.busin_idea}}</mat-card-title>
                     <mat-card-content _ngcontent-wpg-c74="" class="mat-card-content docs-component-category-list-card-summary">{{idea.descript}}.</mat-card-content>
                   </mat-card>
                 </div>
@@ -73,7 +73,10 @@
            
           </div> <!-- / .row -->
         </div> <!-- / .container -->
+        
       </section>
+       
+
     </mat-tab>
     <mat-tab label="Legal"><h1>Legal</h1></mat-tab>
     <mat-tab label="Finance"><h1>Finance</h1></mat-tab>
@@ -81,14 +84,13 @@
     <mat-tab label="Developers"><h1>Developers</h1></mat-tab>
   </mat-tab-group>
 
-  
+  <button type="button" class="btn btn-primary" mat-fab data-toggle="modal" (click)="openDialog()">
+    <i class="material-icons">
+      add
+      </i>
+  </button>
 
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" mat-fab data-toggle="modal" (click)="openDialog()">
-  <i class="material-icons">
-    add
-    </i>
-</button>
+ 
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
