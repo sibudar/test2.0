@@ -212,7 +212,7 @@ DROP PROCEDURE IF EXISTS getContent $$
 CREATE PROCEDURE getContent(IN cat_id INT)
 BEGIN
     SELECT * FROM allContent
-    WHERE id_cat = cat_id;
+    WHERE allContent.id_cat = cat_id;
 END $$
 
 CREATE PROCEDURE registerUser(IN f_name VARCHAR(50), IN l_name VARCHAR(50), IN u_email VARCHAR(255), IN u_password VARCHAR(255))
@@ -257,7 +257,7 @@ CREATE PROCEDURE getQuestions(IN cat_id INT)
 BEGIN
     SELECT id, q_name
     FROM questions
-    WHERE id_cat = cat_id;
+    WHERE questions.id_cat = cat_id;
 END $$
 
 CREATE PROCEDURE postAnswers(IN answer_user VARCHAR(255), IN u_id INT, IN q_id INT, IN b_id INT)

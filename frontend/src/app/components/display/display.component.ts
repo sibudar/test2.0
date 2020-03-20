@@ -5,6 +5,8 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 import { DialogComponent } from '../dialog/dialog.component';
 import { UserResponse } from 'src/app/models/user';
 import { QuestionComponent } from '../question/question.component';
+import { QuestionsResponse } from 'src/app/models/questions';
+import { ContentResponse } from 'src/app/models/content';
 
 @Component({
   selector: 'app-display',
@@ -20,13 +22,16 @@ export class DisplayComponent implements OnInit {
   description : string;
   show = false;
   questions:any;
-  // id_cat:any;
+  id_cat:any;
+  content:any;
   
   
   constructor( private clientService:ClientService,private dialog: MatDialog) { 
     this.userData=localStorage.getItem('user');
     this.user = JSON.parse(this.userData);
     this.getUserIdeas();
+    this.Getquestions(this.id_cat);
+    this.Getcontent(this.id_cat);
   
   }
 
@@ -101,27 +106,28 @@ getUserIdeas() {
     console.log(data);
   });
 }
-// Getquestions(id_cat){
-//   this.clientService.getQuestions(id_cat).subscribe((data:UserResponse)=>{
-//     this.questions = data;
-//     console.log(data)
-//     console.log(id_cat);
-//     this.show = true ;
-//   })
-  
-// }
+
+// get questions
 
 Getquestions(id_cat){
-  this.clientService.getQuestions(2).subscribe(data =>{
-    console.log(id_cat)
-    this.questions = data ; 
-   
+  this.clientService.getQuestions(2).subscribe((data:QuestionsResponse) =>{
+    this.questions = data.data 
     console.log(data)
   })
-  // console.log(id_cat)
-  // this.show = true ;
+  
 }
 
+// get content
+Getcontent(id_cat){
+  this.clientService.getContent(2).subscribe((data:ContentResponse) =>{
+  this.content = data.data;
+  console.log(data)
+  })
+}
+
+sam(){
+  this.show = true ; 
+}
 
 
 }

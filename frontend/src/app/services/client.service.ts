@@ -60,6 +60,11 @@ export class ClientService {
       return this.http.post(this.url + '/questions/answers' ,data)
     }
 
+     //get content
+   public getContent(data)
+   {
+     return this.http.get(this.url + '/content/' + data);
+   }
 
    
 }

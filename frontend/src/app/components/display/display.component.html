@@ -73,21 +73,26 @@
     <!-- legal -->
     <mat-tab label="Legal">Legal
      <div class="container mt-5">
-      <p>1.Have you registered your business?</p>
-      <div class="example-button-row">
-        <button mat-stroked-button>Yes</button>
-        <button mat-stroked-button (click)='Getquestions()'>No</button>
-        </div>
+       <div *ngFor="let question of questions">
+        <p>{{question.q_name}}</p>
+        <div class="example-button-row">
+          <button mat-stroked-button>Yes</button>
+          <button mat-stroked-button (click)='sam()'>No</button>
+          </div>
+       </div>
         <br>
-        <mat-card *ngIf="show">
-          <h5>Register the business</h5>
-          Simple card
-          <br>
-          <br>
-          <a href="#">read more <i class="material-icons">
-            arrow_forward_ios
-            </i></a>
-        </mat-card> 
+        <div *ngFor="let c of content">
+          <mat-card *ngIf="show">
+            <h5>{{c.title}}</h5>
+            <p>{{c.content}}</p>
+            <br>
+            <br>
+            <a href="#">read more <i class="material-icons">
+              arrow_forward_ios
+              </i></a>
+          </mat-card> 
+        </div>
+     
      </div>
     </mat-tab>
 
