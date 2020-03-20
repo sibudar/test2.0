@@ -30,7 +30,7 @@ async function register(data) {
 
   return queryFunction(sql, [data.first_name, data.last_name, data.email, data.user_password]).then(result => {
       // await mail.sendEmail(data.email, msg.registerMessage(result[0].first_name), msg.registerSubject());
-      return response(201, 'Successfully created an account.');
+      return response(201, 'Successfully created an account.',generateToken(data));
     })
     .catch(error => {
       //errno === 1062 is Duplicate entry 
@@ -62,7 +62,7 @@ async function login(data) {
   return queryFunction(sql, data.email).then (async result => {
       const checkPassword = await bcrypt.compareSync(data.user_password,result[0][0].user_password);
       if(checkPassword) {
-        return response(200, 'Logged in successfully.', result[0][0]);
+        return response(200, 'Logged in successfully.', generateToken(data));
       } else {
         return response(401, 'Incorrect password entered.');
       }
