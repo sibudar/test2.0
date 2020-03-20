@@ -57,7 +57,7 @@
             </div>
             <div class="col-12 col-md-5 col-lg-6 order-md-2 " >
               <div class="div" *ngIf="found" >
-                <div class="card"  *ngFor = "let idea of ideas.data" id="card" (click)="openQuestionDialog(idea.id)">
+                <div class="card"  *ngFor = "let idea of ideas.data" id="card" (click)="openQuestionDialog(idea.id,idea.busin_idea)">
                   <mat-card _ngcontent-wpg-c74="" class="mat-card mat-focus-indicator docs-component-category-list-card">
                     <mat-card-title _ngcontent-wpg-c74="" class="mat-card-title" >{{idea.busin_idea}}</mat-card-title>
                     <mat-card-content _ngcontent-wpg-c74="" class="mat-card-content docs-component-category-list-card-summary">{{idea.descript}}.</mat-card-content>

@@ -27,11 +27,11 @@ export class QuestionComponent implements OnInit {
       private dialogRef: MatDialogRef<DialogComponent>,
        @Inject(MAT_DIALOG_DATA) data) {
      
-      this.data=data;
+      this.data = data;
   }
 
   ngOnInit() {
-    console.table(this.data)
+    console.table(this.data.value)
     this.dialogRef.updateSize('60%', '80%');
     this.formQuestion = this.fb.group({});
     

@@ -22,8 +22,6 @@ export class AuthGuard implements CanActivate {
       this.toast.error('Please log in first ' , ' ' ,10000);
       return  this.router.parseUrl('/client/login')
     
-
-   
   }
   
 }
