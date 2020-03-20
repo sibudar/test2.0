@@ -7,13 +7,16 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { ToastrService } from 'ngx-toastr';
 import { TokenService } from 'src/app/services/token.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+   userToken : any;
+   isLoggedIn = false;
+   isLoginFailed = false;
   form:FormGroup;
   constructor(private formBuilder:FormBuilder, private clientService: ClientService, private toastr: ToasterService,private tokenService:TokenService,
              private router: Router) {
@@ -26,18 +29,28 @@ export class LoginComponent implements OnInit {
       user_password:['',Validators.required],
       email:new FormControl('', [Validators.required, Validators.email])
     });
+
+    if (this.tokenService.getToken()) {
+      this.isLoggedIn = true;
+    }
   }
   login(): void {
     this.clientService.login(this.form.value).subscribe((data: UserResponse) => {
-      console.log(data)
-      this.toastr.success('successfully logged in','novelty',2000)
+      this.toastr.success('successfully logged in','novelty',2000);
       this.tokenService.saveToken(JSON.stringify(data.data));
-      this.tokenService.getToken()
-      //localStorage.setItem('user', JSON.stringify(data.data));
-      this.router.navigate(['/client/home']); 
+      this.tokenService.saveUser(data);
+      
+      this.userToken = this.tokenService.getToken()
+      console.log(this.userToken)
+
+      // this.isLoginFailed = false;
+      // this.isLoggedIn = true;
+      this.router.navigate(['./client/home']); 
     },error =>{
       console.log(error);
-      this.toastr.error(error.error.message || 'Unable to login, please try again later' ,'novelty',10000)
+      this.toastr.error(error.error.message || 'Unable to login, please try again later' ,'novelty',10000);
+      this.isLoginFailed = true;
+ 
     });
 
   }

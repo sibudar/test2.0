@@ -1,42 +1,42 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
-// const TOKEN_KEY = 'auth-token';
-// const USER_KEY = 'auth-user';
-let user:any;
+const TOKEN_KEY = 'auth-token';
+const USER_KEY = 'auth-user';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   signOut() {
-    //sessionStorage.clear();
-    localStorage.clear();
+    window.sessionStorage.clear();
   }
 
-  public saveToken(user: string) {
-    // sessionStorage.removeItem(TOKEN_KEY);
-    // sessionStorage.setItem(TOKEN_KEY, token);
-    localStorage.removeItem(user);
-    localStorage.setItem('userdata',user);
+  public saveToken(token: string) {
+    window.sessionStorage.removeItem(TOKEN_KEY);
+    window.sessionStorage.setItem(TOKEN_KEY, token);
+    
   }
 
   public getToken(): string {
-    //console.log("the token is the following")
-    return "the token is the following" + localStorage.getItem(user);
+   
+    
+    return  window.sessionStorage.getItem(TOKEN_KEY);
   }
 
   public saveUser(user) {
-    // sessionStorage.removeItem(USER_KEY);
-    // sessionStorage.setItem(USER_KEY, JSON.stringify(user));
-    localStorage.removeItem(user);
-    localStorage.setItem('user', JSON.stringify('user',user));
+    window.sessionStorage.removeItem(USER_KEY);
+    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+    
   }
 
   public getUser() {
-    return JSON.parse(localStorage.getItem('user'));
+    
+   return JSON.parse(sessionStorage.getItem('data'));
   }
 }

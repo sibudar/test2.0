@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
   {
     this.clientService.register(user).
     subscribe((data:UserResponse)=> {
-      console.log(data);
+      //console.log(data);
       this.toastr.success(data.message,'',2000)
       this.router.navigate(['/client/login'])
  

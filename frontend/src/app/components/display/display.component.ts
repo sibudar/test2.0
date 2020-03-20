@@ -28,6 +28,8 @@ export class DisplayComponent implements OnInit {
     //this.user = JSON.parse(this.userData);
     //this.getUserIdeas();
     //this.displayQuestions();
+    this.user = this.tokenService.getToken();
+    console.log(this.user)
   }
 
   ngOnInit() {
