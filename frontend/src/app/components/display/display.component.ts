@@ -19,13 +19,15 @@ export class DisplayComponent implements OnInit {
   businessIdea : string;
   description : string;
   show = false;
+  questions:any;
+  // id_cat:any;
   
   
   constructor( private clientService:ClientService,private dialog: MatDialog) { 
     this.userData=localStorage.getItem('user');
     this.user = JSON.parse(this.userData);
     this.getUserIdeas();
-    //this.displayQuestions();
+  
   }
 
   ngOnInit() {
@@ -99,8 +101,27 @@ getUserIdeas() {
     console.log(data);
   });
 }
+// Getquestions(id_cat){
+//   this.clientService.getQuestions(id_cat).subscribe((data:UserResponse)=>{
+//     this.questions = data;
+//     console.log(data)
+//     console.log(id_cat);
+//     this.show = true ;
+//   })
+  
+// }
 
-answer(){
-  this.show = true ;
+Getquestions(id_cat){
+  this.clientService.getQuestions(2).subscribe(data =>{
+    console.log(id_cat)
+    this.questions = data ; 
+   
+    console.log(data)
+  })
+  // console.log(id_cat)
+  // this.show = true ;
 }
+
+
+
 }

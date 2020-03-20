@@ -50,16 +50,17 @@ export class ClientService {
     return this.http.get(this.url+ '/ideas/' + id)
    }
    //get questions
-   public getQuestions()
+   public getQuestions(data)
     {
-      //link from countries rest api
-      return this.http.get(this.url + '/questions');
+      return this.http.get(this.url + '/questions/' + data);
     }
 
     public postAnswers(data)
     {
       return this.http.post(this.url + '/questions/answers' ,data)
     }
+
+
    
 }
 
