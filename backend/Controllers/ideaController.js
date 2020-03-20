@@ -1,5 +1,6 @@
-const{ response,validate,queryFunction , log} = require('../Helpers');
+const{ response,validate,queryFunction , log,verifyToken} = require('../Helpers');
 const validator = require('validator');
+
 
 
 /**
@@ -9,6 +10,8 @@ const validator = require('validator');
  * @returns a queryResponse.
  */
 async function addIdea(data) {
+   
+
     if(validate.validate(data.busin_idea)){
         return response(400,"business idea is required");
     }
@@ -20,6 +23,12 @@ async function addIdea(data) {
     }
 
     let sql = 'CALL businessIdea(?)'
+    
+    // return queryFunction(sql, [data.busin_idea, data.descript, data.id_user]).then(result => {
+    //     return response(201,'you have successfully added an idea');
+
+    console.log(data.id_user, " im getting token or not?")
+    
     
     return queryFunction(sql, [data.busin_idea, data.descript, data.id_user]).then(result => {
         return response(201,'you have successfully added an idea');
