@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
    isLoggedIn = false;
    isLoginFailed = false;
   form:FormGroup;
-  constructor(private formBuilder:FormBuilder, private clientService: ClientService, private toastr: ToasterService,private tokenService:TokenService,
+  constructor(private formBuilder:FormBuilder, private clientService: ClientService, private toastr: ToasterService,
              private router: Router) {
    
    }
@@ -29,22 +29,13 @@ export class LoginComponent implements OnInit {
       user_password:['',Validators.required],
       email:new FormControl('', [Validators.required, Validators.email])
     });
-
-    if (this.tokenService.getToken()) {
-      this.isLoggedIn = true;
-    }
   }
   login(): void {
     this.clientService.login(this.form.value).subscribe((data: UserResponse) => {
       this.toastr.success('successfully logged in','novelty',2000);
-      this.tokenService.saveToken(JSON.stringify(data.data));
-      this.tokenService.saveUser(data);
       
-      this.userToken = this.tokenService.getToken()
-      console.log(this.userToken)
 
-      // this.isLoginFailed = false;
-      // this.isLoggedIn = true;
+     
       this.router.navigate(['./client/home']); 
     },error =>{
       console.log(error);
