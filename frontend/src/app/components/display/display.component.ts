@@ -21,12 +21,11 @@ export class DisplayComponent implements OnInit {
   description : string;
   
   constructor( private clientService:ClientService, private dialog: MatDialog) { 
-    //this.userData=sessionStorage.getItem('user');
-
-   
-    //this.getUserIdeas();
-    //this.displayQuestions();
-    // console.log(this.user)
+    this.userData=sessionStorage.getItem('user');
+    this.user = JSON.parse(this.userData);
+    this.getUserIdeas();
+   // this.displayQuestions();
+    console.log(this.user)
   }
 
   ngOnInit() {
