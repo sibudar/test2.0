@@ -5,7 +5,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 import { DialogComponent } from '../dialog/dialog.component';
 import { UserResponse } from 'src/app/models/user';
 import { QuestionComponent } from '../question/question.component';
-import { TokenService } from 'src/app/services/token.service';
+
 
 @Component({
   selector: 'app-display',
@@ -20,16 +20,14 @@ export class DisplayComponent implements OnInit {
   businessIdea : string;
   description : string;
   
-  constructor( private clientService:ClientService,private tokenService:TokenService, private dialog: MatDialog) { 
+  constructor( private clientService:ClientService, private dialog: MatDialog) { 
     //this.userData=localStorage.getItem('user');
 
-    //this.tokenService.saveToken('user');
-    //this.tokenService.getToken();
-    //this.user = JSON.parse(this.userData);
+   
     //this.getUserIdeas();
     //this.displayQuestions();
-    this.user = this.tokenService.getToken();
-    console.log(this.user)
+    
+    // console.log(this.userData)
   }
 
   ngOnInit() {
