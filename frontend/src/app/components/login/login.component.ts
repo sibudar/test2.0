@@ -33,10 +33,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.clientService.login(this.form.value).subscribe((data: UserResponse) => {
       this.toastr.success('successfully logged in','novelty',2000);
-      
-
-     
-      this.router.navigate(['./client/home']); 
+      this.router.navigate(['./client/display']); 
     },error =>{
       console.log(error);
       this.toastr.error(error.error.message || 'Unable to login, please try again later' ,'novelty',10000);
