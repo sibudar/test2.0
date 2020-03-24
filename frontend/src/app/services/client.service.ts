@@ -53,7 +53,7 @@ export class ClientService {
    public getQuestions()
     {
       //link from countries rest api
-      return this.http.get(this.url + '/questions');
+      return this.http.get(this.url + '/questions/1');
     }
 
     public postAnswers(data)

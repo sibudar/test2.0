@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
   { path: 'display', component: DisplayComponent },
-  { path: 'home', component: LandingComponent,canActivate: [AuthGuard]},
+  { path: 'home', component: LandingComponent},
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'resetPassword/:token', component: ResetPasswordComponent },
   { path: 'question', component: QuestionComponent }

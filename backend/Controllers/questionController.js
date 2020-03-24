@@ -6,13 +6,13 @@ const{ response,validate,queryFunction} = require('../Helpers');
  */ 
 async function getQuestions(data){
     
-    if(validate.validate(data.id_cat)){
+    if(validate.validate(data.id)){
         return response(400,"Category id is required.", data);
     }
 
     const sql = "CALL getQuestions(?)";
 
-    return queryFunction(sql, [data.id_cat]).then((result) => {
+    return queryFunction(sql, [data.id]).then((result) => {
         return response(200, 'Here are your questions.', result[0]);
     }).catch(error => {
         return response(400, 'Could not get questions requested.', error.sqlMessage);

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.clientService.login(this.form.value).subscribe((data: UserResponse) => {
       this.toastr.success('successfully logged in','novelty',2000);
-      sessionStorage.setItem('user',JSON.stringify(data.data))
+      sessionStorage.setItem('user',JSON.stringify(data.data));
       this.router.navigate(['./client/display']); 
     },error =>{
       console.log(error);
