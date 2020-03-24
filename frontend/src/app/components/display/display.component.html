@@ -77,12 +77,12 @@
         <p>{{question.q_name}}</p>
         <div class="example-button-row">
           <button mat-stroked-button>Yes</button>
-          <button mat-stroked-button (click)='sam()'>No</button>
+          <button mat-stroked-button (click)='Getcontent(id_cat)'>No</button>
           </div>
        </div>
         <br>
-        <div *ngFor="let c of content">
-          <mat-card *ngIf="show">
+        <div *ngFor = 'let c of content'>
+          <mat-card *ngIf="content">
             <h5>{{c.title}}</h5>
             <p>{{c.content}}</p>
             <br>

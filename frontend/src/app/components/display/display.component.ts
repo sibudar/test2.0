@@ -20,18 +20,18 @@ export class DisplayComponent implements OnInit {
   ideas : any ;
   businessIdea : string;
   description : string;
-  show = false;
   questions:any;
   id_cat:any;
   content:any;
   
   
+  
   constructor( private clientService:ClientService,private dialog: MatDialog) { 
     this.userData=localStorage.getItem('user');
     this.user = JSON.parse(this.userData);
-    this.getUserIdeas();
+    //.getUserIdeas();
     this.Getquestions(this.id_cat);
-    this.Getcontent(this.id_cat);
+    //this.Getcontent(this.id_cat);
   
   }
 
@@ -91,21 +91,21 @@ export class DisplayComponent implements OnInit {
   inserIdea(idea) {
     this.clientService.insertBusinessIdea(idea).subscribe((data:UserResponse) =>{
    // this.ideas = data.data;
-    this.getUserIdeas()
+   /// this.getUserIdeas()
     console.log(data);
   });
 }
 
-getUserIdeas() {
-  this.clientService.getIdeas(this.user.id).subscribe((data)=> {
-    console.log(data);
-    this.ideas = data;
-    if(data.data.length > 0) {
-      this.found = true;
-    }
-    console.log(data);
-  });
-}
+// getUserIdeas() {
+//   this.clientService.getIdeas(this.user.id).subscribe((data)=> {
+//     console.log(data);
+//     this.ideas = data;
+//     if(data.data.length > 0) {
+//       this.found = true;
+//     }
+//     console.log(data);
+//   });
+// }
 
 // get questions
 
@@ -118,16 +118,21 @@ Getquestions(id_cat){
 }
 
 // get content
-Getcontent(id_cat){
-  this.clientService.getContent(2).subscribe((data:ContentResponse) =>{
-  this.content = data.data;
+ Getcontent(id_cat){
+ this.clientService.getContent(2).subscribe((data:ContentResponse) =>{
+ this.content = data.data;
   console.log(data)
   })
 }
 
-sam(){
-  this.show = true ; 
-}
+    
+
+  
+   
+
+
+
+
 
 
 }
