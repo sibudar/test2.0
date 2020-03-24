@@ -6,13 +6,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+   userToken : any;
+   isLoggedIn = false;
+   isLoginFailed = false;
   form:FormGroup;
   constructor(private formBuilder:FormBuilder, private clientService: ClientService, private toastr: ToasterService,
              private router: Router) {
@@ -28,13 +32,14 @@ export class LoginComponent implements OnInit {
   }
   login(): void {
     this.clientService.login(this.form.value).subscribe((data: UserResponse) => {
-      console.log(data)
-      this.toastr.success('successfully logged in','novelty',2000)
-      localStorage.setItem('user', JSON.stringify(data.data));
-      this.router.navigate(['/client/home']); 
+      this.toastr.success('successfully logged in','novelty',2000);
+      sessionStorage.setItem('user',JSON.stringify(data.data))
+      this.router.navigate(['./client/display']); 
     },error =>{
       console.log(error);
-      this.toastr.error(error.error.message || 'Unable to login, please try again later' ,'novelty',10000)
+      this.toastr.error(error.error.message || 'Unable to login, please try again later' ,'novelty',10000);
+      this.isLoginFailed = true;
+ 
     });
 
   }
