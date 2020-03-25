@@ -61,8 +61,14 @@ async function login(data) {
 
   return queryFunction(sql, data.email).then (async result => {
       const checkPassword = await bcrypt.compareSync(data.user_password,result[0][0].user_password);
+      let info = {
+        name : result[0][0].first_name ,
+        surname : result[0][0].last_name ,
+        token : generateToken({id : result[0][0].id}) ,
+        id : result[0][0].id 
+      }
       if(checkPassword) {
-        return response(200, 'Logged in successfully.', result[0][0]);
+        return response(200, 'Logged in successfully.' , info);
       } else {
         return response(401, 'Incorrect password entered.');
       }

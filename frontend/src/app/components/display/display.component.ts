@@ -8,6 +8,7 @@ import { QuestionComponent } from '../question/question.component';
 import { QuestionsResponse } from 'src/app/models/questions';
 import { ContentResponse } from 'src/app/models/content';
 
+
 @Component({
   selector: 'app-display',
   templateUrl: './display.component.html',
@@ -26,13 +27,12 @@ export class DisplayComponent implements OnInit {
   
   
   
-  constructor( private clientService:ClientService,private dialog: MatDialog) { 
-    this.userData=localStorage.getItem('user');
+  constructor( private clientService:ClientService, private dialog: MatDialog) { 
+    this.userData=sessionStorage.getItem('user');
     this.user = JSON.parse(this.userData);
-    //.getUserIdeas();
-    this.Getquestions(this.id_cat);
-    //this.Getcontent(this.id_cat);
-  
+    this.getUserIdeas();
+   // this.displayQuestions();
+    console.log(this.user)
   }
 
   ngOnInit() {
@@ -96,16 +96,16 @@ export class DisplayComponent implements OnInit {
   });
 }
 
-// getUserIdeas() {
-//   this.clientService.getIdeas(this.user.id).subscribe((data)=> {
-//     console.log(data);
-//     this.ideas = data;
-//     if(data.data.length > 0) {
-//       this.found = true;
-//     }
-//     console.log(data);
-//   });
-// }
+ getUserIdeas() {
+   this.clientService.getIdeas(this.user.id).subscribe((data)=> {
+    console.log(data);
+     this.ideas = data;
+     if(data.data.length > 0) {
+      this.found = true;
+    }
+    console.log(data);
+  });
+ }
 
 // get questions
 

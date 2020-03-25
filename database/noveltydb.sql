@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS answers (
 CREATE TABLE IF NOT EXISTS allContent (
     id INT(11) NOT NULL AUTO_INCREMENT,
     title VARCHAR(500),
-    content VARCHAR(500),
+    content VARCHAR(1000),
 
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,

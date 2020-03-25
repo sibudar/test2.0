@@ -52,7 +52,8 @@ export class ClientService {
    //get questions
    public getQuestions(data)
     {
-      return this.http.get(this.url + '/questions/' + data);
+      //link from countries rest api
+      return this.http.get(this.url + '/questions/1');
     }
 
     public postAnswers(data)
