@@ -4,10 +4,10 @@ const util = require("util");
 require("dotenv").config();
 // Create connection.
 const connect = mysql.createConnection({
-  host:'localhost',
+  host: 'localhost',
   user: 'root',
   database: 'noveltydb',
-  password: ''
+  password: 'novelty1234'
 });
 // Connect to the database.
 connect.connect(err => {
