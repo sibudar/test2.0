@@ -24,6 +24,8 @@ export class DisplayComponent implements OnInit {
   questions:any;
   id_cat:any;
   content:any;
+  contentShow: any ;
+  show = false ;
   
   
   
@@ -32,6 +34,7 @@ export class DisplayComponent implements OnInit {
     this.user = JSON.parse(this.userData);
     this.getUserIdeas();
     this.Getquestions(this.id_cat);
+    this.Getcontent(2) ;
     console.log(this.user)
   }
 
@@ -119,10 +122,18 @@ Getquestions(id_cat){
 
 // get content
  Getcontent(id_cat){
+
  this.clientService.getContent(2).subscribe((data:ContentResponse) =>{
  this.content = data.data;
   console.log(data)
   })
+}
+
+noClick(index) {
+  
+  this.contentShow = this.content[index] ;
+  this.show = true ;
+  console.log(this.content)
 }
 
     
