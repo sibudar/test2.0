@@ -33,9 +33,9 @@ export class QuestionComponent implements OnInit {
     this.dialogRef.updateSize('60%', '80%');
     this.formQuestion = this.fb.group({});
     
-    this.clientService.getQuestions(1).subscribe( (data) => {
+    this.clientService.getQuestions(1).subscribe((data:QuestionsResponse) => {
     console.log(data);
-      this.questions = data; 
+      this.questions = data.data; 
      
       let i = 0; 
       this.questions.forEach(element => {

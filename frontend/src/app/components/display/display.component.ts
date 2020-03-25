@@ -31,7 +31,7 @@ export class DisplayComponent implements OnInit {
     this.userData=sessionStorage.getItem('user');
     this.user = JSON.parse(this.userData);
     this.getUserIdeas();
-   // this.displayQuestions();
+    this.Getquestions(this.id_cat);
     console.log(this.user)
   }
 
@@ -111,7 +111,7 @@ export class DisplayComponent implements OnInit {
 
 Getquestions(id_cat){
   this.clientService.getQuestions(2).subscribe((data:QuestionsResponse) =>{
-    this.questions = data.data 
+    this.questions = data.data
     console.log(data)
   })
   

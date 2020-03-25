@@ -70,18 +70,19 @@
         </div> 
       </section>
     </mat-tab>
+
     <!-- legal -->
     <mat-tab label="Legal">Legal
      <div class="container mt-5">
-       <div *ngFor="let question of questions">
+        <div *ngFor="let question of questions">
         <p>{{question.q_name}}</p>
         <div class="example-button-row">
           <button mat-stroked-button>Yes</button>
           <button mat-stroked-button (click)='Getcontent(id_cat)'>No</button>
           </div>
        </div>
-        <br>
-        <div *ngFor = 'let c of content'>
+        <br> 
+         <div *ngFor = 'let c of content'>
           <mat-card *ngIf="content">
             <h5>{{c.title}}</h5>
             <p>{{c.content}}</p>
@@ -91,7 +92,8 @@
               arrow_forward_ios
               </i></a>
           </mat-card> 
-        </div>
+        </div> 
+        
      
      </div>
     </mat-tab>
