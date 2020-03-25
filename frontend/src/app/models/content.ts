@@ -3,7 +3,7 @@ export interface ContentResponse {
     message: string;
     data: Content [];
 }
-interface Content {
+export interface Content {
     id: number;
     title: string;
     content:string

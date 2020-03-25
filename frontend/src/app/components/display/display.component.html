@@ -72,30 +72,8 @@
     </mat-tab>
 
     <!-- legal -->
-    <mat-tab label="Legal">Legal
-     <div class="container mt-5">
-        <div *ngFor="let question of questions; let i = index">
-        <p>{{question.q_name}}</p>
-        <div class="example-button-row">
-          <button mat-stroked-button>Yes</button>
-          <button mat-stroked-button (click)='noClick(i)'>No</button>
-          </div>
-       </div>
-        <br>
-         <div *ngIf="show">
-          <mat-card >
-            <h5>{{contentShow.title}}</h5>
-            <p>{{contentShow.content}} <a href="{{contentShow.link}}" target="_blank"> click here.</a></p> 
-            <br>
-            <br>
-            <a>read more <i class="material-icons">
-              arrow_forward_ios
-              </i></a>
-          </mat-card>
-        </div>
-
-
-     </div>
+    <mat-tab label="Legal">
+      <app-legal></app-legal>
     </mat-tab>
 
 
