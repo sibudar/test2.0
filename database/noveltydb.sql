@@ -160,32 +160,32 @@ INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, 
             "A business plan is a document setting out a business\'s future objectives and strategies for achieving them; It is formally written document and contains business goals, the methods on how these goals can be attained, and the time frame within which these goals need to be achieved. for more information about drafting a business checkout this Absa page", 
             'https://www.absa.co.za/business/starting-my-business/setting-up-my-business/drafting-a-business-plan',
             'System', now(), 'System', now(), 2);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Register the business',
             'The Companies and Intellectual Property Commission (CIPC) should be your first point of contact. This organisation has been established in order to administer the registration of companies, cooperatives and intellectual property rights such as trademarks, patents, designs and copyright. for more information',
             'http://www.cipc.co.za/za/',
             'System', now(), 'System', now(), 2);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('SARS Registration',
             'A legal obligation to pay tax regardless of the size of business being run. The law dictates that a business is registered with SARS within 60 days of starting operations. For those registered with CIPC the registration is automatic except sole proprietors or partners who need to register as provisional tax payers directly. find out more information on SARS website',
             'https://www.sars.gov.za/Pages/default.aspx',
             'System', now(), 'System', now(), 2);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Department of Labour',
             'This government department bears the responsibility of ensuring that businesses operate under conducive environment and abides by laid down legal provisions. Businesses with one or more full time employees are therefore required to register in accordance with the Compensation for Occupational Injuries and Diseases Act (COIDA).This Act has been put in place to safeguard the rights of employees who are injured, contract a disease or get killed as a result of their work. for more information',
             'http://www.labour.gov.za/',
             'System', now(), 'System', now(), 2);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Unemployment Insurance Fund',
             'Unemployment Insurance Fund (UIF) benefits workers when they can’t work due to maternity, adoption leave or illness. UIF registration can be done on form UF8 at any SARS office or online, and for addition infor regarding UIF you can',
             'https://www.ufiling.co.za/uif/',
             'System', now(), 'System', now(), 2);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Employee Tax',
             'The law demands that if you employ one or more staff members who earn over R40,000 per year, you have to register your company for Pay As You Earn (PAYE). If your payroll is more than R500,000 a month, you must register for skills development levy (SDL). The funds are to be used to develop and improve skills of employees. for more on Employee Tax infor, make sure to',
             'https://www.sars.gov.za/TaxTypes/Paye/Pages/default.aspx',
             'System', now(), 'System', now(), 2);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('VAT Vendor',
             'If your projected sales per year will exceed R1 million, then you need to register as a VAT (Value Added Tax) vendor. VAT vendor registration can be done by completing and submitting a VAT101 form, which is available at any SARS office. click the link at the end of this line for more information about VAT Vendar',
             'https://www.sars.gov.za/TaxTypes/VAT/Pages/default.aspx',
