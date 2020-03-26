@@ -27,7 +27,7 @@ async function addIdea(data) {
     // return queryFunction(sql, [data.busin_idea, data.descript, data.id_user]).then(result => {
     //     return response(201,'you have successfully added an idea');
 
-    console.log(data.id_user, " im getting token or not?")
+    //console.log(data.id_user, " im getting token or not?")
     
     
     return queryFunction(sql, [data.busin_idea, data.descript, data.id_user]).then(result => {
