@@ -64,7 +64,7 @@ async function login(data) {
       let info = {
         name : result[0][0].first_name ,
         surname : result[0][0].last_name ,
-       //EWAq token : generateToken({id : result[0][0].id}) ,
+        //token : generateToken({id : result[0][0].id}) ,
         id : result[0][0].id 
       }
       if(checkPassword) {

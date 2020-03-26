@@ -33,7 +33,8 @@ export class QuestionComponent implements OnInit {
     this.dialogRef.updateSize('60%', '80%');
     this.formQuestion = this.fb.group({});
     
-    this.clientService.getQuestions().subscribe( (data:QuestionsResponse) => {
+    this.clientService.getQuestions(1).subscribe((data:QuestionsResponse) => {
+    console.log(data);
       this.questions = data.data; 
      
       let i = 0; 
@@ -58,7 +59,7 @@ export class QuestionComponent implements OnInit {
   }
   
   displayQuestions() {
-    return this.clientService.getQuestions()
+    return this.clientService.getQuestions(2)
   }
   
   answerQuestion() {

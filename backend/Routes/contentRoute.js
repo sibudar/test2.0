@@ -21,8 +21,8 @@ const contentController = require("../Controllers/contentController");
  *         description: Could not get content.
  * 
  */
-userRouter.get("/", async(req, res) => {
-    result = await contentController.getContent(req.body);
+userRouter.get("/:id", async(req, res) => {
+    result = await contentController.getContent(req.params);
   
     res.status(result.status).send(result);
 });

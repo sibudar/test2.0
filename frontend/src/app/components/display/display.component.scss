@@ -77,6 +77,31 @@
 
     //   //media query for responsiveness
 
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 480px){
+    .display {
+        width: 100%;
+    } 
+    .input{
+       width: 100%; 
+    }
+    #btns{
+       text-align: center; 
+    }
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.material-icons {
+   
+    font-size: 15px !important;
+    
+    
+   
+
+}
     // /*Extra small devices (phones, 320px and down)*/
     // @media  (max-width: 320px) {
     
