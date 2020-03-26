@@ -117,7 +117,4 @@ Getquestions(id_cat){
   })
   
 }
-
-
-
 }

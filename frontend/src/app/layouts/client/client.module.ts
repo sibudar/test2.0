@@ -27,6 +27,7 @@ import { DialogComponent } from '../../components/dialog/dialog.component';
 import {MatDialogModule} from "@angular/material";
 import { QuestionComponent } from '../../components/question/question.component';
 import { LegalComponent } from '../../components/legal/legal.component';
+import { FinanceComponent } from '../../components/finance/finance.component';
 
 
 
@@ -38,7 +39,7 @@ import { LegalComponent } from '../../components/legal/legal.component';
     DisplayComponent,
      LandingComponent, 
      ResetPasswordComponent, 
-     ForgotPasswordComponent, DialogComponent, QuestionComponent, LegalComponent],
+     ForgotPasswordComponent, DialogComponent, QuestionComponent, LegalComponent, FinanceComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
