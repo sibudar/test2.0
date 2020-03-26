@@ -92,7 +92,7 @@ export class DisplayComponent implements OnInit {
   inserIdea(idea) {
     this.clientService.insertBusinessIdea(idea).subscribe((data:UserResponse) =>{
    // this.ideas = data.data;
-   /// this.getUserIdeas()
+    this.getUserIdeas()
     console.log(data);
   });
 }
