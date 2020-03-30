@@ -225,8 +225,27 @@ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifi
 
  INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Know your audience',
-                    'The more clearly you define your target group, the better you can understand how and where to reach your best prospects. Your target market should be based on audience research, not a gut feeling. Know your audience’s age, where they are located(time-zone also),the amount of money your customer has to spend, what do they like, their stage of life(students,parents).', 
-                    'System', now(), 'System', now(), 4);                
+                    'Don’t make assumptions about where your audience spends their time online. To make sure you’re using social media for business effectively, you’ll need to conduct some research of your own. This will help you to understand how your specific audience spends their time online.', 
+                    'System', now(), 'System', now(), 4); 
+
+ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Expand your audience',
+                    'Once you have a clear picture of who your audience is, you can revisit your social media plan. It’s time to look for ways to reach more people just like them.', 
+                    'System', now(), 'System', now(), 4); 
+
+
+ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Build relationships',
+                    'The unique benefit of social media marketing for small business is that it allows you to talk directly to customers and followers. You can build relationships over time, rather than asking for a sale upfront.', 
+                    'System', now(), 'System', now(), 4); 
+
+                    
+ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Schedule your content to free up more time for engagement',
+                    'We talked about creating a social content calendar way back at the beginning of this article. Once you have that calendar in place, you can create your social posts in advance and use scheduling tools to post them automatically at the right time. This allows you to dedicate one block of time per day or per week to creating your social content. It’s much more effective than letting social posting take you away from other tasks throughout the day.', 
+                    'System', now(), 'System', now(), 4); 
+
+
                     
 -- Creating stored procedure.
 DELIMITER $$
