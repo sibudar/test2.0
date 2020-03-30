@@ -1,4 +1,4 @@
-const { response, validate, domainavailability } = require('../Helpers');
+const { response, validate, checkDomainAvailability } = require('../Helpers');
 
 /**
  * Gets content from DB.
@@ -6,12 +6,12 @@ const { response, validate, domainavailability } = require('../Helpers');
  */
 async function checkDomain(data) {
 
-    if (validate.validate(data)) {
+    if (validate.validate(data.domain)) {
         return response(400, "Domain is required.");
     }
-
-    let results = await domainavailability(data)
-    return response(200, 'Here is the content you requested.', results);
+    
+    let results = await checkDomainAvailability(data.domain)
+    return response(200, results.domainavailability);
 }
 
 module.exports = { checkDomain }
