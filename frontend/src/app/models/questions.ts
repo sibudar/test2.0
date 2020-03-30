@@ -3,7 +3,7 @@ export interface QuestionsResponse {
     message: string;
     data: Questions[];
 }
-interface Questions {
+export interface Questions {
     id: number;
     q_name: string;
 }

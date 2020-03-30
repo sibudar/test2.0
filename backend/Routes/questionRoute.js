@@ -21,8 +21,8 @@ const questionController = require("../Controllers/questionController");
  *         description: Could not get questions requested.
  * 
  */
-userRouter.get("/", async(req, res) => {
-    result = await questionController.getQuestions(req.body);
+userRouter.get("/:id", async(req, res) => {
+    result = await questionController.getQuestions(req.params);
   
     res.status(result.status).send(result);
   });

@@ -12,12 +12,14 @@ import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 
+
 const routes: Routes = [
+  { path: '', component: LandingComponent },
   { path: '', component: LandingComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
   { path: 'display', component: DisplayComponent },
-  { path: 'home', component: LandingComponent,canActivate: [AuthGuard]},
+  { path: 'home', component: LandingComponent},
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'resetPassword/:token', component: ResetPasswordComponent },
   { path: 'question', component: QuestionComponent }

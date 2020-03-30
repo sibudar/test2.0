@@ -64,8 +64,185 @@
           font-family: serif;
       }
 
+      mat-grid-tile {
+        background: lightblue;
+        height: 50px;
+        width: 50px;
+      }
+
+      //Digital Marketing
+
+    //   .wrapper{
+	
+    //     margin: 50px 150px;
+    // }
+    .domain{
+        background-color: #ddd;
+        height: 30vh;
+        margin: 50px 150px;
+    }
+    .domain h2{
+        text-align: center;
+        font-family: serif;
+        font-size: 30px;
+    }
+    
+    /** {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: open sans, sans-serif;
+    }*/
+    .para {
+        margin: 5px 200px 5px 0;
+    }
+    .search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .search input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      width: 60%;
+      background: #f1f1f1;
+    }
+    
+    .search button {
+      width: 15%;
+      padding: 10px;
+      background: #2196F3;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      cursor: pointer;
+    }
+    
+    .search button:hover {
+      background: #0b7dda;
+    }
+    
+    .search ::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    .boxes{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      background: #ddd;
+      color: #000;
+    }
+    
+    .container {
+      position: relative;
+      width: 1000px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .container .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      margin: 5px;
+    }
+    
+    .container .card:nth-child(even) {
+      flex-direction: column-reverse;
+    }
+    
+    .container .card .imgBx {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      background: #ced3dc;
+      margin: 5px;
+    }
+    
+    .container .card .imgBx img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    
+    
+    @media (max-width: 1000px) {
+      .container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        margin: 50px;
+      }
+      .container .card {
+        flex-direction: row;
+        margin: 10px 0;
+      }
+      .container .card:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      .container .card .imgBx,
+      .container .card .content {
+        width: 50px;
+      }
+    }
+    @media (max-width: 600px) {
+      .container .card {
+        flex-direction: column;
+        margin: 10px 0;
+      }
+      .container .card:nth-child(even) {
+        flex-direction: column;
+      }
+      .container .card .imgBx,
+      .container .card .content {
+        width: 100%;
+      }
+      .container .card .content {
+        height: 200px;
+      }
+    }
+    
+
+
+
+
     //   //media query for responsiveness
 
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 480px){
+    .display {
+        width: 100%;
+    } 
+    .input{
+       width: 100%; 
+    }
+    #btns{
+       text-align: center; 
+    }
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.material-icons {
+   
+    font-size: 15px !important;
+    
+    
+   
+
+}
     // /*Extra small devices (phones, 320px and down)*/
     // @media  (max-width: 320px) {
     

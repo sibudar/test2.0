@@ -4,11 +4,11 @@ const util = require("util");
 require("dotenv").config();
 // Create connection.
 const connect = mysql.createConnection({
-  host:process.env.HOST,
-  user:process.env.USER_ONE,
-  database:process.env.DB,
-  password:process.env.PASSWORD
-
+  host: 'localhost',
+  user: 'root',
+  database: 'noveltydb',
+  password: 'novelty1234',
+  port:3307
 });
 // Connect to the database.
 connect.connect(err => {

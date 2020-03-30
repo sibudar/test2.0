@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
-  url : string = 'http://localhost:5000/api/v1';
+  url : string = environment.api;
   constructor(private http : HttpClient) { }
 
 
@@ -50,16 +52,23 @@ export class ClientService {
     return this.http.get(this.url+ '/ideas/' + id)
    }
    //get questions
-   public getQuestions()
+   public getQuestions(data)
     {
       //link from countries rest api
-      return this.http.get(this.url + '/questions');
+      return this.http.get(this.url + '/questions/' + data);
     }
 
     public postAnswers(data)
     {
       return this.http.post(this.url + '/questions/answers' ,data)
     }
+
+     //get content
+   public getContent(data)
+   {
+     return this.http.get(this.url + '/content/' + data);
+   }
+
    
 }
 

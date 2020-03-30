@@ -5,6 +5,8 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 import { DialogComponent } from '../dialog/dialog.component';
 import { UserResponse } from 'src/app/models/user';
 import { QuestionComponent } from '../question/question.component';
+import { QuestionsResponse } from 'src/app/models/questions';
+import { ContentResponse } from 'src/app/models/content';
 
 
 @Component({
@@ -19,13 +21,19 @@ export class DisplayComponent implements OnInit {
   ideas : any ;
   businessIdea : string;
   description : string;
+  questions:any;
+  id_cat:any;
+  content:any;
+  contentShow: any ;
+  show = false ;
+  
+  
   
   constructor( private clientService:ClientService, private dialog: MatDialog) { 
     this.userData=sessionStorage.getItem('user');
     this.user = JSON.parse(this.userData);
     this.getUserIdeas();
-   // this.displayQuestions();
-    console.log(this.user)
+    this.Getquestions(this.id_cat);
   }
 
   ngOnInit() {
@@ -93,14 +101,24 @@ export class DisplayComponent implements OnInit {
   });
 }
 
-getUserIdeas() {
-  this.clientService.getIdeas(this.user.id).subscribe((data)=> {
+ getUserIdeas() {
+   this.clientService.getIdeas(this.user.id).subscribe((data)=> {
     console.log(data);
-    this.ideas = data;
-    if(data.data.length > 0) {
+     this.ideas = data;
+     if(data.data.length > 0) {
       this.found = true;
     }
     console.log(data);
   });
+ }
+
+// get questions
+
+Getquestions(id_cat){
+  this.clientService.getQuestions(2).subscribe((data:QuestionsResponse) =>{
+    this.questions = data.data
+    console.log(data)
+  })
+  
 }
 }
