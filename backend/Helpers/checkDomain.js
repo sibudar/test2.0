@@ -1,25 +1,29 @@
 const isValidDomain = require("is-valid-domain"); //regex domain validator
 const Domain = require("domain-check").Domain;
 
-/**
- * check domain availability
- * @param {*} domain
- * @returns object.
- */
 async function checkDomainAvailability(userDomain) {
-    let domainStatus = { domain_Availability: "Invalid domain entered" };
-    //regex domain validator
-    if (isValidDomain(userDomain)) {
-        //check domain purchase availability
-        if (await Domain.isFree(userDomain)) {
-            domainStatus.domain_Availability = "Domain is AVAILABLE for purchase";
-            return domainStatus;
-        } else {
-            domainStatus.domain_Availability = "Domain is NOT AVAILABLE for purchase";
-            return domainStatus
-        }
-    } else
+  let domainStatus = {
+    domain: userDomain,
+    domain_Availability: "Invalid domain entered"
+  };
+
+  if (isValidDomain(userDomain)) {
+    try {
+      if (await Domain.isFree(userDomain)) {
+        //domain is available
+        domainStatus.domain_Availability = "Domain is AVAILABLE for purchase";
         return domainStatus;
+      } else {
+        //domain is not available
+        domainStatus.domain_Availability = "Domain is NOT AVAILABLE for purchase";
+        return domainStatus;
+      }
+    } catch (error) {
+      return "An error has occured!";
+    }
+  } else {
+    return domainStatus;
+  }
 }
 
 module.exports = { checkDomainAvailability };
