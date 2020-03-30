@@ -20,13 +20,8 @@ export class DisplayComponent implements OnInit {
   businessIdea : string;
   description : string;
   
-<<<<<<< HEAD
-  constructor( private clientService:ClientService,private dialog: MatDialog ) { 
-    this.userData=localStorage.getItem('user');
-=======
   constructor( private clientService:ClientService, private dialog: MatDialog) { 
     this.userData=sessionStorage.getItem('user');
->>>>>>> 8324438bf09703e1e701952cc6fb92f2378a3ab8
     this.user = JSON.parse(this.userData);
     this.getUserIdeas();
    // this.displayQuestions();
