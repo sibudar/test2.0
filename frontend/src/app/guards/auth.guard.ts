@@ -12,11 +12,12 @@ export class AuthGuard implements CanActivate {
 
   constructor(private router:Router , private toast : ToasterService){}
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-      this.toast.error('Please log in first ' , ' ' ,10000);
-      return  this.router.parseUrl('/client/login');
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    if (sessionStorage.getItem("access_token")) {
+      return true;
+    }
+    this.toast.error('Please log in first ' , ' ' ,10000);
+    this.router.parseUrl('/client/login');
+    return false;
   }
 }

@@ -1,5 +1,6 @@
 const userRouter = require("express").Router();
 const registerController = require("../Controllers/userController");
+const verify = require('../Helpers/authToken');
 
 
 // [post] route  to register a user.
@@ -31,7 +32,7 @@ const registerController = require("../Controllers/userController");
  */
 userRouter.post("/", async(req, res) => {
   result = await registerController.register(req.body);
-
+  
   res.status(result.status).send(result);
 });
   
@@ -149,6 +150,10 @@ userRouter.post("/resetPassword", async (req, res) => {
   res.status(result.status).send(result);
 });
 
+userRouter.get("/me", async (req, res) => {
+  let token = await verify.verifyToken(req.headers["x-access-token"]);
 
+  res.status(token.status).send(token);
+})
 
 module.exports = userRouter;

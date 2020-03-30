@@ -114,8 +114,9 @@ CREATE TABLE IF NOT EXISTS answers (
 CREATE TABLE IF NOT EXISTS allContent (
     id INT(11) NOT NULL AUTO_INCREMENT,
     title VARCHAR(500),
-    content VARCHAR(1000),
-    link VARCHAR(1000),
+    content TEXT,
+    link TEXT DEFAULT NULL,
+
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
     modifiedby VARCHAR(255) DEFAULT NULL,
@@ -191,17 +192,20 @@ INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, 
             'https://www.sars.gov.za/TaxTypes/VAT/Pages/default.aspx',
             'System', now(), 'System', now(), 2);
 -- Inserting the default financial content
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Funds for my business.',
                     'Ideal to finance developmental projects, business expansion or business purchases. Loan repayment period up to 10 years. Flexi reserve facility to keep additional funds to be re-used in need. Inter-account transfers of available funds from flexi reserve facility. Auto-capitalisation to reduce outstanding capital to benefit from interest burden. Repayment frequencies: monthly, bi-monthly, quarterly, half-yearly and yearly', 
+                    'https://www.absa.co.za/business/starting-my-business/access-to-finance/',
                     'System', now(), 'System', now(), 3);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Business Account',
                     'Opening a business account with the ABSA can be considered a bit challenging due to the necessary qualifications that are needed to meet approval requirements. Also, the demographical criteria is a big qualification requirement that rules a lot of business owners out of this equation. However, it is possible to open an ABSA business account without facing the stumbling blocks that cause most people to fail.', 
+                    'https://www.absa.co.za/business/bank-my-business/daily-transacting-accounts/explore/',
                     'System', now(), 'System', now(), 3);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Financial Management',
                     'You’ll need to understand the underlying financial flows of your business. That’s key to your understanding of how to manage your business. So what we’re going to do in this session is give you the tools of startup finance to help you manage and build your business.', 
+                    'https://www.absa.co.za/business/bank-my-business/cash-solutions/cash-self-service/',
                     'System', now(), 'System', now(), 3);
 -- Creating stored procedure.
 DELIMITER $$
