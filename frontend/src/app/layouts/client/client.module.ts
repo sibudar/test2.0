@@ -24,22 +24,32 @@ import { ResetPasswordComponent } from '../../components/reset-password/reset-pa
 import { ForgotPasswordComponent } from '../../components/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from '../../components/dialog/dialog.component';
-import {MatDialogModule} from "@angular/material";
+import { MatDialogModule } from "@angular/material";
 import { QuestionComponent } from '../../components/question/question.component';
 import { LegalComponent } from '../../components/legal/legal.component';
 import { FinanceComponent } from '../../components/finance/finance.component';
+import { JwtModule } from "@auth0/angular-jwt";
+import { AuthGuard } from 'src/app/guards/auth.guard';
+import { AuthService } from 'src/app/services/auth.service';
 
-
-
+export function tokenGetter() {
+  return sessionStorage.getItem("access_token");
+}
 
 @NgModule({
-  declarations: [ClientComponent, 
-    RegisterComponent, 
-    LoginComponent, 
+  declarations: [
+    ClientComponent,
+    RegisterComponent,
+    LoginComponent,
     DisplayComponent,
-     LandingComponent, 
-     ResetPasswordComponent, 
-     ForgotPasswordComponent, DialogComponent, QuestionComponent, LegalComponent, FinanceComponent],
+    LandingComponent,
+    ResetPasswordComponent,
+    ForgotPasswordComponent,
+    DialogComponent,
+    QuestionComponent,
+    LegalComponent,
+    FinanceComponent
+  ],
   imports: [
     CommonModule,
     ClientRoutingModule,
@@ -56,8 +66,16 @@ import { FinanceComponent } from '../../components/finance/finance.component';
     FormsModule,
     HttpClientModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ["localhost:5000"],
+        blacklistedRoutes: ["localhost:5000//api/v1/users/login"]
+      }
+    })
   ],
-  entryComponents: [DialogComponent,QuestionComponent]
+  providers: [AuthService, AuthGuard],
+  entryComponents: [DialogComponent, QuestionComponent]
 })
-export class ClientModule { }
+export class ClientModule {}

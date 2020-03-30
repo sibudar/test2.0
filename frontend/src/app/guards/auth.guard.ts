@@ -12,7 +12,9 @@ export class AuthGuard implements CanActivate {
 
   constructor(private router:Router , private toast : ToasterService){}
 
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  canActivate(
+    next: ActivatedRouteSnapshot, 
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (sessionStorage.getItem("access_token")) {
       return true;
     }

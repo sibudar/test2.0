@@ -5,43 +5,41 @@ import { ClientService } from 'src/app/services/client.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
+import { first } from 'rxjs/operators';
 
 
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-   userToken : any;
-   isLoggedIn = false;
-   isLoginFailed = false;
-  form:FormGroup;
-  constructor(private formBuilder:FormBuilder, private clientService: ClientService, private toastr: ToasterService,
-             private router: Router) {
-   
-   }
+  userToken: any;
+  isLoggedIn = false;
+  isLoginFailed = false;
+  form: FormGroup;
+  public error: string;
 
-  
+  constructor(
+    private formBuilder: FormBuilder,
+    private toastr: ToasterService,
+    private router: Router,
+    private auth: AuthService
+  ) {}
+
   ngOnInit() {
     this.form = this.formBuilder.group({
-      user_password:['',Validators.required],
-      email:new FormControl('', [Validators.required, Validators.email])
+      user_password: ["", Validators.required],
+      email: new FormControl("", [Validators.required, Validators.email])
     });
   }
+  
   login(): void {
-    this.clientService.login(this.form.value).subscribe((data: UserResponse) => {
-      this.toastr.success('successfully logged in','novelty',2000);
-      sessionStorage.setItem('user',JSON.stringify(data.data));
-      this.router.navigate(['./client/display']); 
-    },error =>{
-      console.log(error);
-      this.toastr.error(error.error.message || 'Unable to login, please try again later' ,'novelty',10000);
-      this.isLoginFailed = true;
- 
-    });
-
+    this.auth.login(this.form.value).pipe(first()).subscribe(
+      result => this.router.navigate(["./client/display"]),
+      toast => this.toastr.success("successfully logged in", "novelty", 2000)
+      );
   }
-
 }
