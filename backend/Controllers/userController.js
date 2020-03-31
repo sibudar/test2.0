@@ -92,7 +92,7 @@ async function verify(data) {
 
   return verifyToken(data).then(async (id) => {
     return queryFunction(sql, id.id).then(async (user) => {
-      return response(200, "Signature verified, here is the payload data", user);
+      return response(200, "Signature verified, here is the payload data", user[0][0]);
     }).catch(error => {
       return response(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage)
     })
