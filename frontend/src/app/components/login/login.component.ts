@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   form: FormGroup;
-  public error: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,9 +36,13 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.auth.login(this.form.value).pipe(first()).subscribe(
-      result => this.router.navigate(['client/display']),
-      toast => this.toastr.success("successfully logged in", "novelty", 2000)
-      );
+    this.auth.login(this.form.value).subscribe((data) => {
+      this.toastr.success('successfully logged in','novelty',2000);
+      this.router.navigate(['client/display']); 
+    },error =>{
+      console.log(error);
+      this.toastr.error('Unable to login, please try again later' ,'novelty',10000);
+      this.isLoginFailed = true;
+    });
   }
 }

@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from "./guards/auth.guard";
-import { LoginComponent } from './components/login/login.component';
-import { DisplayComponent } from './components/display/display.component';
-
 
 const routes: Routes = [
   { path: 'client', loadChildren: () => import('./layouts/client/client.module').then(m => m.ClientModule) },
