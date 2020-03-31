@@ -32,10 +32,6 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
 
-export function tokenGetter() {
-  return sessionStorage.getItem("access_token");
-}
-
 @NgModule({
   declarations: [
     ClientComponent,
@@ -69,7 +65,6 @@ export function tokenGetter() {
     MatTabsModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter: tokenGetter,
         whitelistedDomains: ["localhost:5000"],
         blacklistedRoutes: ["localhost:5000//api/v1/users/login"]
       }

@@ -35,10 +35,10 @@ export class LoginComponent implements OnInit {
       email: new FormControl("", [Validators.required, Validators.email])
     });
   }
-  
+
   login(): void {
     this.auth.login(this.form.value).pipe(first()).subscribe(
-      result => this.router.navigate(["./client/display"]),
+      result => this.router.navigate(['client/display']),
       toast => this.toastr.success("successfully logged in", "novelty", 2000)
       );
   }
