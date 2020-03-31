@@ -219,6 +219,14 @@ DROP PROCEDURE IF EXISTS getIdeas $$
 DROP PROCEDURE IF EXISTS getQuestions $$
 DROP PROCEDURE IF EXISTS postAnswers $$
 DROP PROCEDURE IF EXISTS getContent $$
+DROP PROCEDURE IF EXISTS getUser $$
+
+CREATE PROCEDURE getUser(IN id_user INT)
+BEGIN
+    SELECT id, first_name,last_name, email
+    FROM users
+    WHERE id = id_user;
+END $$
 
 CREATE PROCEDURE getContent(IN cat_id INT)
 BEGIN
