@@ -12,8 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(user: any): Observable<any> {
-    return this.http.post(this.url + '/users/login', user)
-    .pipe(map(result => {
+    return this.http.post(this.url + '/users/login', user).pipe(map(result => {
       console.log(result);
       sessionStorage.setItem("access_token", JSON.stringify(result));
       return user;
