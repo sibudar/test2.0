@@ -74,7 +74,32 @@ async function login(data) {
     }).catch(error => {
       return response(404, 'Incorrect email adress entered.', error);
     });
-}   
+}
+
+/**
+ * Verifying a token provided by the user
+ * @param {*} data 
+ * data is a token string.
+ * @returns a response if the token is valid or not.
+ */
+async function verify(data) {
+  
+  if(validate.validate(data)) {
+    return response(400, "No token provided.");
+  }
+
+  const sql = "CALL getUser(?)";
+
+  return verifyToken(data).then(async (id) => {
+    return queryFunction(sql, id.id).then(async (user) => {
+      return response(200, "Signature verified, here is the payload data", user);
+    }).catch(error => {
+      return response(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage)
+    })
+  }).catch(error => {
+    return response(400, "Signature is invalid or token provided expired.", error);
+  })
+}
 
 /**
  * If the user forgot their password.
@@ -137,4 +162,4 @@ async function reset(data) {
     });
 }
 
-module.exports = {register, login, forgot, reset};
+module.exports = {register, login, forgot, reset, verify};
