@@ -1,0 +1,394 @@
+#navibar{
+    margin-right: 388px;
+}
+.nav-link{
+    font-weight: bolder;    
+    }
+    .nav-link:hover{
+    background-color: #007bff;;
+    }
+    .nav-item{
+    margin-left: 40px;
+    }
+    #section{
+    background-color: #eceff1;; 
+    height: 70vh;
+    }
+    #image{
+    margin-top: 100px;
+    }
+   #image img{
+    height: 400px;
+    width: 380px;   
+   }
+    .card{
+    margin-bottom: 15px;
+    }
+    #card:hover{
+        background-color:  lightblue;
+        cursor: pointer;
+    }
+    .header{
+        text-align: center;
+        margin-top: 45px;
+    }
+
+    .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#0C9;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        box-shadow: 2px 2px 3px #999;
+    }
+    .btn {
+        margin-top:15px;
+        bottom: 100px;
+        /* margin-right: 108px; */
+        margin-left: 1300px;
+       
+    }
+    .my-float{
+        margin-top:15px;
+    } 
+
+      .grid{
+        width: 70%; 
+        margin: 40px 10% 0 10%; 
+      }
+      .grid h1{
+          font-family: serif;
+      }
+
+     .mark{
+        // background-color: rgba(213, 215, 226, 0.76);
+        background-color: salmon;
+        padding: 10px;
+     }
+     
+     .main h1{
+         margin-bottom: 30px;
+         margin-top: 20px;
+     }
+     .showcase{
+         margin: 10px;
+         padding: 15px;
+     }
+     .showcase h3{
+         margin: 20px 0;
+     }
+      //Digital Marketing
+
+      .wrapper{
+        padding: 10px;
+        margin: 10px;
+    }
+    .domain{
+        background-color: #ddd;
+        height: 30vh;
+        margin: 50px 150px;
+    }
+    .domain h2{
+        text-align: center;
+        font-family: serif;
+        font-size: 30px;
+    }
+    
+    /** {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: open sans, sans-serif;
+    }*/
+    .para {
+        margin: 5px 200px 5px 0;
+    }
+    .search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .search input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      width: 60%;
+      background: #f1f1f1;
+    }
+    
+    .search button {
+      width: 15%;
+      padding: 10px;
+      background: #2196F3;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      cursor: pointer;
+    }
+    
+    .search button:hover {
+      background: #0b7dda;
+    }
+    
+    .search ::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    .boxes{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      background: #ddd;
+      color: #000;
+    }
+    
+    .container {
+      position: relative;
+    //   width: 1000px;
+      display: grid;
+     
+      grid-template-columns: auto auto auto;
+      grid-gap: 10px;
+    //   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    
+    .container .fancy-card {
+      position: relative;
+    //   display: flex;
+    //   flex-direction: column;
+      background:#ddd;
+     
+      margin: 5px 0;
+    }
+    
+    .container .card:nth-child(even) {
+      flex-direction: column-reverse;
+    }
+  
+    
+    
+    
+    @media (max-width: 1000px) {
+      .container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        margin: 50px;
+      }
+      .container .card {
+        flex-direction: row;
+        margin: 10px 0;
+      }
+      .container .card:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      .container .card .imgBx,
+      .container .card .content {
+        width: 50px;
+      }
+    }
+    @media (max-width: 600px) {
+      .container .card {
+        flex-direction: column;
+        margin: 10px 0;
+      }
+      .container .card:nth-child(even) {
+        flex-direction: column;
+      }
+      .container .card .imgBx,
+      .container .card .content {
+        width: 100%;
+      }
+      .container .card .content {
+        height: 200px;
+      }
+    }
+    
+
+    //social media icons
+.fancy-card {
+    margin:10px 0;
+    
+}
+    .fancy-card .top,
+.fancy-card .middle,
+.fancy-card .bottom{
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 270px;
+  height: 280px;
+  transition: transform 300ms linear-out;
+}
+.fancy-card .top{
+  z-index: 3;
+  transform: scale(1.0);
+  transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 1px 3px rgba(25,25,25,0.30);
+}
+.fancy-card .middle{
+  position: absolute;
+  background: #aaa;
+  top: 0px;
+  z-index: 2;
+  transform: rotate(0deg);
+  transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.fancy-card .bottom{
+  position: absolute;
+  background: #ccc;
+  top: 0px;
+  z-index: 1;
+  transform: rotate(0deg);
+  transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.fancy-card .caption{
+  overflow: hidden;
+  background: rgba(255,255,255,0.75);
+  padding: 15px 10px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.fancy-card .caption .title{
+  color: #222;
+  margin: 0px 0px 15px 0px;
+  font-size: 1.4rem;
+}
+.fancy-card .caption .button{
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+  border: solid 1px #555;
+  padding: 7px 13px;
+  background-color: transparent;
+  transition: all 300ms ease-in;
+}
+
+
+/*hovering*/
+.fancy-card:hover .top{
+  transform: scale(1.05);
+}
+.fancy-card:hover .middle{
+ transform: rotate(-7deg);
+ box-shadow: 1px 1px 2px rgba(74, 74, 74, 0.35);
+}
+.fancy-card:hover .bottom{
+  transform: rotate(7deg);
+  box-shadow: 1px 1px 2px rgba(113, 113, 113, 0.35);
+}
+
+.fancy-card:hover .button{
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  border: 0px;
+}
+
+
+
+
+    //   //media query for responsiveness
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 480px){
+    .display {
+        width: 100%;
+    } 
+    .input{
+       width: 100%; 
+    }
+    #btns{
+       text-align: center; 
+    }
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.material-icons {
+   
+    font-size: 15px !important;
+    
+    
+   
+
+}
+    // /*Extra small devices (phones, 320px and down)*/
+    // @media  (max-width: 320px) {
+    
+    //     .grid{
+    //         width: 100%; 
+           
+    //       }
+    //     .btn {
+    //         display: none;
+    //         margin-top:15px;
+    //         width: 100px;
+            
+    //     }
+    //     #image img{
+    //         height: 200px;
+    //         width: 180px;   
+    //        }
+    //  }
+    //  @media (min-width: 321px) and (max-width: 480px) {
+       
+
+    //     .grid{
+    //         width: 100%; 
+    //         margin: 40px 10% 0 10%; 
+    //       }
+    //     .btn {
+    //         margin-top:15px;
+    //         width: 100px;
+            
+    //     }
+    //     #image img{
+    //         height: 200px;
+    //         width: 180px;   
+    //        }
+    //  }
+
+    //  @media (max-width: 767px)
+    //  {
+    //     html
+    //  {
+    //        font-size:0.38em;
+    //  }
+    //  }
+    // @media (min-width: 768px) and (max-width: 979px)
+    //  {
+    //    html
+    //    {
+    //        font-size:0.65em;
+    //    }
+    //  }
+
+    //  @media (min-width : 980px) and (max-width:1025px)
+    //  {
+    //    html
+    //    {
+    //        font-size:0.7em;
+    //    }
+    //  }
+
+    //  @media (min-width : 1026px) and (max-width:1280px)
+    //  {
+    //    html
+    //    {
+    //        font-size:0.7em;
+    //    }
+    //  }

@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   environment: 'development',
-  api: 'http://localhost:5005/api/v1',
+  api: 'http://localhost:5000/api/v1',
  
 
 };

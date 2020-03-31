@@ -28,6 +28,8 @@ import {MatDialogModule} from "@angular/material";
 import { QuestionComponent } from '../../components/question/question.component';
 import { LegalComponent } from '../../components/legal/legal.component';
 import { FinanceComponent } from '../../components/finance/finance.component';
+import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
+
 
 
 
@@ -39,7 +41,7 @@ import { FinanceComponent } from '../../components/finance/finance.component';
     DisplayComponent,
      LandingComponent, 
      ResetPasswordComponent, 
-     ForgotPasswordComponent, DialogComponent, QuestionComponent, LegalComponent, FinanceComponent],
+     ForgotPasswordComponent, DialogComponent, QuestionComponent, LegalComponent, FinanceComponent, DigitalMarketComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
