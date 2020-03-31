@@ -1,5 +1,4 @@
-const { response, validate } = require('../Helpers');
-const domain = require('../Helpers/checkDomain')
+const { response, validate, domain} = require('../Helpers');
 /**
  * Gets content from DB.
  * @returns the data stored in the content table.
@@ -11,7 +10,7 @@ async function domainAvailability(data) {
     }
     let results = await domain.checkDomainAvailability(data.domain);
     //console.log(results)
-    return response(200, results.checkDomainAvailability, results);
+    return response(200, "Domain check response", results);
 }
 
 module.exports = { domainAvailability }

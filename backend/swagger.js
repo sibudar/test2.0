@@ -29,6 +29,10 @@ const options = {
             {
                 "name":"answers",
                 "description":"everything about answers"
+            },
+            {
+                "name": "domain",
+                "description": "everything about domain"
             }
           
         ],
@@ -51,6 +55,13 @@ const options = {
                     "user_password": {
                         "type": "string"
                     }
+                }
+            },
+            "Domain": {
+                "properties": {
+                    "first_name": {
+                        "type": "string"
+                    },
                 }
             },
           
