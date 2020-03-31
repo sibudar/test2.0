@@ -80,7 +80,7 @@ async function login(data) {
  * Verifying a token provided by the user
  * @param {*} data 
  * data is a token string.
- * @returns a response if the token is valid or not.
+ * @returns a response that we have a user or not.
  */
 async function verify(data) {
   
