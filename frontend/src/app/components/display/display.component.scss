@@ -65,21 +65,28 @@
       }
 
      .mark{
-        background-color: rgba(213, 215, 226, 0.76);
+        // background-color: rgba(213, 215, 226, 0.76);
+        background-color: salmon;
+        padding: 10px;
      }
+     
      .main h1{
          margin-bottom: 30px;
          margin-top: 20px;
+     }
+     .showcase{
+         margin: 10px;
+         padding: 15px;
      }
      .showcase h3{
          margin: 20px 0;
      }
       //Digital Marketing
 
-    //   .wrapper{
-	
-    //     margin: 50px 150px;
-    // }
+      .wrapper{
+        padding: 10px;
+        margin: 10px;
+    }
     .domain{
         background-color: #ddd;
         height: 30vh;
