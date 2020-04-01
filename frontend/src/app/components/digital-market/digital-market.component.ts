@@ -8,7 +8,9 @@ import {ContentResponse, Content } from 'src/app/models/content';
   styleUrls: ['./digital-market.component.scss']
 })
 export class DigitalMarketComponent implements OnInit {
-  content: Content[]
+  content: Content[];
+  contentShow: Content;
+  index: number = 0;
 
   constructor(private clientService:ClientService) {
     this.getContent(3);
@@ -21,7 +23,8 @@ getContent(id_cat) :void {
   //console.log("the dm content works");
   this.clientService.getContent(4).subscribe((data:ContentResponse) =>{
     this.content = data.data;
-    console.log(data);
+    //console.log(data);
+    this.contentShow = this.content[this.index];
   });
 }
 
