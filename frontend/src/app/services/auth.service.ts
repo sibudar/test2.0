@@ -21,6 +21,7 @@ export class AuthService {
     return this.http.post(this.url + "/users/login", user).pipe(
       map((result: any) => {
         sessionStorage.setItem("access_token", JSON.stringify(result.data));
+        console.log('Stored succesfully')
       }),
       catchError(error => {
         return throwError(error);
@@ -36,7 +37,7 @@ export class AuthService {
   verifyToken(data) {
     const headers = new HttpHeaders({ "x-access-token": data });
     
-    return this.http.get(this.url + "/users/me", { headers: headers }).subscribe(data => {});
+    return this.http.get(this.url + "/users/me", { headers: headers });
   }
 
   /**
