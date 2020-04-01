@@ -7,8 +7,8 @@ const connect = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'noveltydb',
-  password: 'novelty1234',
-  port:3307
+  password: '',
+  //port:3307
 });
 // Connect to the database.
 connect.connect(err => {
