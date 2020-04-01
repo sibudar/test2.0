@@ -35,6 +35,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  /**
+   * Pass in the form's value to our login service, to give a user token.
+   * Take the user to a specific page.
+   * @throws error if something went wrong.
+   */
   login(): void {
     this.auth.login(this.form.value).subscribe((data) => {
       this.toastr.success('successfully logged in','novelty',2000);
