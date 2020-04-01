@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
 import { ClientService } from 'src/app/services/client.service';
-import {MatDialog, MatDialogConfig} from "@angular/material";
+import { MatDialog, MatDialogConfig } from "@angular/material";
 import { DialogComponent } from '../dialog/dialog.component';
 import { UserResponse } from 'src/app/models/user';
 import { QuestionComponent } from '../question/question.component';
 import { QuestionsResponse } from 'src/app/models/questions';
-import { ContentResponse } from 'src/app/models/content';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -27,11 +25,10 @@ export class DisplayComponent implements OnInit {
   content: any;
   contentShow: any;
   show = false;
+  token: any;
 
   constructor(private clientService: ClientService, private auth: AuthService, private dialog: MatDialog) {
-    this.user = this.verifiedUser();
-    this.getUserIdeas();
-    this.Getquestions(this.id_cat);
+    this.verifiedUser();
   }
 
   ngOnInit() {
@@ -41,7 +38,6 @@ export class DisplayComponent implements OnInit {
    * Opens a pop.
    */
   openDialog() {
-    this.user = this.verifiedUser();
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
@@ -54,12 +50,10 @@ export class DisplayComponent implements OnInit {
     this.dialog.open(DialogComponent, dialogConfig);
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
-
+    
     dialogRef.afterClosed().subscribe(data => {
       if (data != undefined) {
-        console.log(data, 'data');
-        console.log(this.user);
-        data.id_user = this.user.id;
+        data.id_user = this.user.data.id;
         this.inserIdea(data);
       }
       this.dialog.closeAll();
@@ -85,13 +79,13 @@ export class DisplayComponent implements OnInit {
 
     const dialogRef = this.dialog.open(QuestionComponent, dialogConfig);
 
-    dialogRef.componentInstance.userID = this.user.id;
+    dialogRef.componentInstance.userID = this.user.data.id;
 
     dialogRef.componentInstance.busID = id;
 
     dialogRef.afterClosed().subscribe(data => {
       // if(data != undefined ){
-      //   data.id_user = this.user.id;
+      //   data.id_user = this.user.data.id;
       //   this.inserIdea(data);
       // }
       this.dialog.closeAll();
@@ -115,12 +109,11 @@ export class DisplayComponent implements OnInit {
    * Gets all the user's ideas that were added by them.
    */
   getUserIdeas() {
-    this.clientService.getIdeas(this.user.id).subscribe(data => {
+    this.clientService.getIdeas(this.user.data.id).subscribe(data => {
       this.ideas = data;
       if (data.data.length > 0) {
         this.found = true;
       }
-      console.log(data);
     });
   }
 
@@ -135,11 +128,17 @@ export class DisplayComponent implements OnInit {
     });
   }
 
+  /**
+   * Verifies a token.
+   */
   verifiedUser() {
     if(this.auth.loggedIn) {
       this.verified = JSON.parse(sessionStorage.getItem("access_token"));
       if(this.verified.auth) {
-        return this.auth.verifyToken(this.verified.token);
+        this.auth.verifyToken(this.verified.token).subscribe(data => {
+          this.getUserIdeas();
+          this.Getquestions(this.id_cat);
+        });
       }
     }
   }
