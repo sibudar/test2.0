@@ -12,16 +12,9 @@ export class LandingComponent implements OnInit {
   user: any;
   
   constructor(private auth: AuthService) {
-    this.tokenGetter();
     // this.user = JSON.parse(sessionStorage.getItem("user"));
-    console.log(this.user);
+    // console.log(this.user);
   }
 
   ngOnInit() {}
-
-  tokenGetter() {
-    this.token = this.auth.loggedIn;
-    this.user = this.auth.verifyToken(this.token);
-    return this.user;
-  }
 }
