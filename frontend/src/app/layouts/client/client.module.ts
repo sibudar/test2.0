@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -31,6 +31,10 @@ import { FinanceComponent } from '../../components/finance/finance.component';
 import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
+
+export function tokenGetter() {
+  return sessionStorage.getItem("access_token");
+}
 
 @NgModule({
   declarations: [
@@ -65,6 +69,7 @@ import { AuthService } from 'src/app/services/auth.service';
     MatTabsModule,
     JwtModule.forRoot({
       config: {
+        tokenGetter: tokenGetter,
         whitelistedDomains: ["localhost:5000"],
         blacklistedRoutes: ["localhost:5000//api/v1/users/login"]
       }
