@@ -1,7 +1,11 @@
 <div class="wrapper">
 
-    <div class="main">
-        <h1>Why You Should Concider digital Marketing</h1>
+     <div class="main">
+
+
+
+
+         <h1>Why You Should Concider digital Marketing</h1>
         <div class="mark">
             <p>It informs
                 marketing enables your customers to understand the ins-and-outs of
@@ -32,6 +36,10 @@
     </div>
 </div>
 
+<div >
+    <li *ngFor="let cont of contentShow">{{cont.title}}</li>
+
+</div>
 
 <div class="showcase">
     <h3>Advertising Platforms Options</h3>
@@ -44,7 +52,7 @@
                     <img src="assets/img/fb.png" alt="">
                     <div class="caption">
                         <h3 class="title">Facebook</h3>
-                        <a href="" class="button">Create </a>
+                        <a href="http://www.facebook.com/adsmanager" class="button">Create </a>
                     </div>
                 </div>
                 <div class="middle"></div>
@@ -68,7 +76,7 @@
 
             <div class="fancy-card">
                 <div class="top">
-                    <img src="assets/img/gmb.jpg" alt="">
+                    <img class="gmb" src="assets/img/gmb.jpg" alt="">
                     <div class="caption">
                         <h3 class="title"></h3>
                         <a href="" class="button">Create</a>
@@ -80,7 +88,7 @@
 
             <div class="fancy-card">
                 <div class="top">
-                    <img src="assets/img/twitt.jpg" alt="">
+                    <img   class="img" src="assets/img/con3.jpg" alt="">
                     <div class="caption">
                         <h3 class="title">Twitter</h3>
                         <a href="" class="button">Create </a>
@@ -95,7 +103,7 @@
 
             <div class="fancy-card">
                 <div class="top">
-                    <img src="assets/img/web.png" alt="">
+                    <img src="assets/img/web.jpg" alt="">
                     <div class="caption">
                         <h3 class="title">Online Store</h3>
                         <a href="" class="button">Create </a>
@@ -126,13 +134,16 @@
 </div>
 
 
-<div class="domain">
 
-    <h2>Start your domain <br>name search</h2>
+
+<form [formGroup]="form">
+  <div class="form-group">
+
+    <h2>Start your domain name search </h2>
     <div class="search">
-        <input type="text" placeholder="Type the name you want here.." name="search2">
-        <button type="submit"><i class="fa fa-search"></i></button>
+      <input type="text" formControlName="domain" placeholder="Type the name you want here.." required >
+      <button (click)="postDomain()"><i class="fa fa-search"></i></button>
     </div>
 
-
-</div>
+  </div>
+</form>
