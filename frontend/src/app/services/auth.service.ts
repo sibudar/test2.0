@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthService {
   
-  url: string = "http://localhost:5000/api/v1";
+  url: string = environment.api;
 
   constructor(private http: HttpClient) {}
 
@@ -21,7 +22,7 @@ export class AuthService {
     return this.http.post(this.url + "/users/login", user).pipe(
       map((result: any) => {
         sessionStorage.setItem("access_token", JSON.stringify(result.data));
-        console.log('Stored succesfully')
+        console.log("Stored succesfully");
       }),
       catchError(error => {
         return throwError(error);
@@ -36,7 +37,7 @@ export class AuthService {
    */
   verifyToken(data) {
     const headers = new HttpHeaders({ "x-access-token": data });
-    
+
     return this.http.get(this.url + "/users/me", { headers: headers });
   }
 
