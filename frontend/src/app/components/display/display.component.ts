@@ -63,14 +63,18 @@ export class DisplayComponent implements OnInit {
       });
     }
     
-    openQuestionDialog(id) {
+    openQuestionDialog(id,value) {
+
+     
+
       const dialogConfig = new MatDialogConfig();
 
       dialogConfig.disableClose = true;
       dialogConfig.autoFocus = true;
       dialogConfig.data = {
         id: 1,
-        title: 'Angular For Beginners'
+        title: 'Angular For Beginners',
+        value:value
       };
 
       this.dialog.open(QuestionComponent, dialogConfig);

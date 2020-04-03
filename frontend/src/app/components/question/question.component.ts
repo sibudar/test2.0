@@ -20,16 +20,18 @@ export class QuestionComponent implements OnInit {
   userID: string ; 
   busID: string;
   
+  data;//remove
   constructor(
       private clientService:ClientService,
       private fb: FormBuilder,
       private dialogRef: MatDialogRef<DialogComponent>,
-      @Inject(MAT_DIALOG_DATA) data) {
-
+       @Inject(MAT_DIALOG_DATA) data) {
+     
+      this.data = data;
   }
 
   ngOnInit() {
-    
+    console.table(this.data.value)
     this.dialogRef.updateSize('60%', '80%');
     this.formQuestion = this.fb.group({});
     

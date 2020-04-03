@@ -17,6 +17,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       this.toast.error('Please log in first ' , ' ' ,10000);
-      return  this.router.parseUrl('/client/login');
+      return  this.router.parseUrl('/client/login')
+    
   }
 }
