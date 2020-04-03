@@ -3,7 +3,7 @@ const app = require('../app'); //requires app
 
     describe('Testing user endpoints',() => {
 
-//     // register
+    // register
     it('tests register endpoint and returns a success message', async() => {
     
         let response ;
@@ -22,7 +22,7 @@ const app = require('../app'); //requires app
 
 
 
-//     // login
+    // login
     it('tests the login endpoint and returns a success message', async() => {
        
         let response ;
@@ -37,7 +37,7 @@ const app = require('../app'); //requires app
         expect(response.status).toBe(200);
      })
 
-    //forgot password
+//     //forgot password
     it('tests the forgot password endpoint and returns a success message', async() => {
 
         let response ;
@@ -52,7 +52,7 @@ const app = require('../app'); //requires app
         expect(response.status).toBe(200);
     })
 
-  //reset password
+   //reset password
     it('tests the reset password endpoint and returns a success message', async() => {
         let response ;
          await supertest(app).post('/users/reset').send({
@@ -64,4 +64,4 @@ const app = require('../app'); //requires app
         expect(response.message).toBe('Successfully updated.')
         expect(response.status).toBe(200);
     })
-})
+ })

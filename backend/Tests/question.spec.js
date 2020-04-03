@@ -1,21 +1,22 @@
+
 const supertest = require('supertest') //requires supertest
-const app = require('../app') //requires app
+const nock = require('nock');
+const questions = require('../Controllers/questionController')
+const db = require('../config/db');
+
 
  describe('Testing question endpoints', () => {
 
 //     //get questions
-    it('tests get question endpoint and returns a success message', async() => {
-        let response ;
-         await supertest(app).get('/api/v1/questions/{id}').send({
-            id_cat:'1'
-        }).then(res => {
-            response = JSON.parse(res.text); 
-            console.log(response) 
-        })
-        expect(response.message).toBe('Here are your questions.');
-        expect(response.status).toBe(200);
-    })
+    test('tests get question endpoint and returns a success message', async(done) => {
+        
+        const data = await questions.getQuestions({ id: 100})
+        expect(data.message).toEqual('Here are your questions.');
 
+    })
+    
+
+    
     // adds answer
     it('tests add answer endpoint and returns a success message', async() => {
         let  response ;

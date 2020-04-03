@@ -3,7 +3,7 @@ const app = require('../app') //requires app
 
 describe("Testing content endpoints", () => {
   
-  //get content
+//   //get content
     it('tests the get content and returns a success message', async() => {
         let response;
         await supertest(app).get('/api/v1/content/{id}').send({

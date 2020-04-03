@@ -1,9 +1,9 @@
 const supertest = require('supertest'); //requires supertest
 const app = require('../app');
 
-describe("Testing ideas endpoints", () => {
+ describe("Testing ideas endpoints", () => {
     
-   // add business idea
+//    // add business idea
 it('tests add business idea endpoint and returns a success message', async() => {
         let response ;
          await supertest(app).post('/api/v1/ideas').send({
@@ -20,12 +20,10 @@ it('tests add business idea endpoint and returns a success message', async() => 
     })
     
 
-     //gets business idea
+//      //gets business idea
     it('tests get business idea endpoint and returns a success message', async() => {
         let response ;
-        await supertest(app).get('/api/v1/ideas/{id}').send({
-             id_user:1
-        }).then( res => {
+        await supertest(app).get('/api/v1/ideas/' + 1).send().then( res => {
                     response =  JSON.parse(res.text);
                     console.log(response)
                 })
@@ -33,7 +31,7 @@ it('tests add business idea endpoint and returns a success message', async() => 
         expect(response.status).toBe(201);
     })
 
-    //updates a business idea
+//     //updates a business idea
     it('tests update business idea endpoint and returns a success message', async() => {
         let response ;
          await supertest(app).patch('/api/v1/ideas').send({
