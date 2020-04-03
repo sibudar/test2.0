@@ -136,6 +136,7 @@ export class DisplayComponent implements OnInit {
       this.verified = JSON.parse(sessionStorage.getItem("access_token"));
       if(this.verified.auth) {
         this.auth.verifyToken(this.verified.token).subscribe(data => {
+          this.user = data;
           this.getUserIdeas();
           this.Getquestions(this.id_cat);
         });
