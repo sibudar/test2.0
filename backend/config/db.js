@@ -8,7 +8,6 @@ const connect = mysql.createConnection({
   user: 'root',
   database: 'noveltydb',
   password: ''
-
 });
 // Connect to the database.
 connect.connect(err => {
