@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
-  url : string = 'http://localhost:5000/api/v1';
+  url : string = environment.api;
   constructor(private http : HttpClient) { }
 
 
   public register(user:any) : Observable<any>
   {
     return this.http.post(this.url + '/users', user);
-    
+
   }
 
   public login(user: any): Observable<any>
@@ -37,11 +39,11 @@ export class ClientService {
    {
      return this.http.post(this.url + '/ideas' ,data);
    }
-  
+
 
    //get business ideas and receives id
 
-   public getIdeas(user_id): Observable<any> 
+   public getIdeas(user_id): Observable<any>
    {
      return this.http.get(this.url + '/ideas/' + user_id)
    }
@@ -67,10 +69,15 @@ export class ClientService {
      return this.http.get(this.url + '/content/' + data);
    }
 
-   
+  //get post domain
+   public postDomain(domain): Observable<any>
+   {
+     return this.http.post(this.url + '/domain', domain);
+   }
+
+
 }
 
 
   //get business ideas and receives id
 
-  

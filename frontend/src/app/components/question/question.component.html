@@ -1,7 +1,12 @@
 
+
+
+<h1 class="header">{{this.data.value}}</h1>
+<hr>
 <form [formGroup]="formQuestion" #questionForm="ngForm" >
   <!-- input for confirming password -->
       <mat-form-field *ngFor="let question of questions; let i = index"  class="display">
+        
         <mat-label>{{question.q_name}}</mat-label>
         <input type="text" matInput class="input" required formControlName="{{question.id}}"/>
         <!-- checks if the password is inserted -->

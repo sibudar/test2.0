@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from "./services/auth.service";
 import { AuthGuard } from "./guards/auth.guard";
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

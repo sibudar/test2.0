@@ -31,6 +31,8 @@ import { FinanceComponent } from '../../components/finance/finance.component';
 import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
+import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
+
 
 export function tokenGetter() {
   return sessionStorage.getItem("access_token");
@@ -48,7 +50,8 @@ export function tokenGetter() {
     DialogComponent,
     QuestionComponent,
     LegalComponent,
-    FinanceComponent
+    FinanceComponent,
+    DigitalMarketComponent
   ],
   imports: [
     CommonModule,
