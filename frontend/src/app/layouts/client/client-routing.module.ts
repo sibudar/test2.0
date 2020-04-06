@@ -11,6 +11,7 @@ import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-
 
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { QuestionComponent } from 'src/app/components/question/question.component';
+import { DigitalMarketComponent } from 'src/app/components/digital-market/digital-market.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'resetPassword/:token', component: ResetPasswordComponent },
   { path: 'question', component: QuestionComponent }
+  
 
 ];
 @NgModule({

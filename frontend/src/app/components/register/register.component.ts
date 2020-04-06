@@ -31,8 +31,8 @@ export class RegisterComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
-  constructor(private clientService: ClientService,private formBuilder:FormBuilder,private toastr: ToasterService,private router: Router ) { 
- 
+  constructor(private clientService: ClientService,private formBuilder:FormBuilder,private toastr: ToasterService,private router: Router ) {
+
   }
 
   ngOnInit() {
@@ -54,16 +54,16 @@ export class RegisterComponent implements OnInit {
       //console.log(data);
       this.toastr.success(data.message,'',2000)
       this.router.navigate(['/client/login'])
- 
+
     },error =>{
       this.toastr.error(error.error.message || 'Unable to register, please try again later','',5000)
-       
+
     });
   }
 
   submit(): void
   {
-    let userData: any = this.form.value; 
+    let userData: any = this.form.value;
     delete userData.confirm_password;
      this.register(userData);
     //console.log(this.form.value)

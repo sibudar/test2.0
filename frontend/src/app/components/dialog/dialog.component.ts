@@ -27,7 +27,7 @@ export class DialogComponent implements OnInit {
 
   ngOnInit() {
 
-    this.dialogRef.updateSize('50%', '50%');
+    this.dialogRef.updateSize('50%', '70%');
       this.form = this.fb.group({
           descript: [this.descript, []],
           busin_idea: [this.busin_idea, []],

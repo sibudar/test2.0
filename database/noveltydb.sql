@@ -114,8 +114,9 @@ CREATE TABLE IF NOT EXISTS answers (
 CREATE TABLE IF NOT EXISTS allContent (
     id INT(11) NOT NULL AUTO_INCREMENT,
     title VARCHAR(500),
-    content VARCHAR(1000),
-    link VARCHAR(1000),
+    content TEXT,
+    link TEXT DEFAULT NULL,
+
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
     modifiedby VARCHAR(255) DEFAULT NULL,
@@ -191,18 +192,65 @@ INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, 
             'https://www.sars.gov.za/TaxTypes/VAT/Pages/default.aspx',
             'System', now(), 'System', now(), 2);
 -- Inserting the default financial content
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Funds for my business.',
                     'Ideal to finance developmental projects, business expansion or business purchases. Loan repayment period up to 10 years. Flexi reserve facility to keep additional funds to be re-used in need. Inter-account transfers of available funds from flexi reserve facility. Auto-capitalisation to reduce outstanding capital to benefit from interest burden. Repayment frequencies: monthly, bi-monthly, quarterly, half-yearly and yearly', 
+                    'https://www.absa.co.za/business/starting-my-business/access-to-finance/',
                     'System', now(), 'System', now(), 3);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Business Account',
                     'Opening a business account with the ABSA can be considered a bit challenging due to the necessary qualifications that are needed to meet approval requirements. Also, the demographical criteria is a big qualification requirement that rules a lot of business owners out of this equation. However, it is possible to open an ABSA business account without facing the stumbling blocks that cause most people to fail.', 
+                    'https://www.absa.co.za/business/bank-my-business/daily-transacting-accounts/explore/',
                     'System', now(), 'System', now(), 3);
-INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Financial Management',
                     'You’ll need to understand the underlying financial flows of your business. That’s key to your understanding of how to manage your business. So what we’re going to do in this session is give you the tools of startup finance to help you manage and build your business.', 
+                    'https://www.absa.co.za/business/bank-my-business/cash-solutions/cash-self-service/',
                     'System', now(), 'System', now(), 3);
+-- Inserting the default Digital Marketing content
+INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('The significance of digital Marketing',
+                    'It enables your customers to understand the ins-and-outs of your product. Modern marketing is a less expensive than ever before. Marketing solves the question of how to keep a conversation going once your customer has walked out the door.It enables growth ,While your current customers should always be your main priority, marketing efforts can help you expand this base. In essence, marketing secures your business’s future through new and old customer engagement.', 
+                    'System', now(), 'System', now(), 4);
+
+ INSERT INTO allContent (title,createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Digital Marketing tips','System', now(), 'System', now(), 4);
+
+
+INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Start with a plan',
+                    'Social tools are easy to use and you can get started with organic posts for free.Take the time to create a social media plan right upfront. This ensures that all your social efforts support specific business goals.Set social media goals and objectives.Create goals that follow the SMART framework. Base your goals on metrics that will have a real impact on your business. A competitive analysis can help you learn what’s working and what’s not for other businesses like yours.Conduct a social media audit. If you’re already using social media, now’s the time to take a step back and evaluate your existing efforts. Take inspiration from the success of businesses in all industries.Create a social media calendar. A social media calendar helps you post the right content to the right social channels at the right time.', 
+                    'System', now(), 'System', now(), 4);
+
+ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Decide which platforms are right for you',
+                    'Don’t make assumptions about where your audience spends their time online. To make sure you’re using social media for business effectively, you’ll need to conduct some research of your own. This will help you to understand how your specific audience spends their time online.', 
+                    'System', now(), 'System', now(), 4);      
+
+ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Know your audience',
+                    'Don’t make assumptions about where your audience spends their time online. To make sure you’re using social media for business effectively, you’ll need to conduct some research of your own. This will help you to understand how your specific audience spends their time online.', 
+                    'System', now(), 'System', now(), 4); 
+
+ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Expand your audience',
+                    'Once you have a clear picture of who your audience is, you can revisit your social media plan. It’s time to look for ways to reach more people just like them.', 
+                    'System', now(), 'System', now(), 4); 
+
+
+ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Build relationships',
+                    'The unique benefit of social media marketing for small business is that it allows you to talk directly to customers and followers. You can build relationships over time, rather than asking for a sale upfront.', 
+                    'System', now(), 'System', now(), 4); 
+
+                    
+ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Schedule your content to free up more time for engagement',
+                    'We talked about creating a social content calendar way back at the beginning of this article. Once you have that calendar in place, you can create your social posts in advance and use scheduling tools to post them automatically at the right time. This allows you to dedicate one block of time per day or per week to creating your social content. It’s much more effective than letting social posting take you away from other tasks throughout the day.', 
+                    'System', now(), 'System', now(), 4); 
+
+
+                    
 -- Creating stored procedure.
 DELIMITER $$
 
@@ -215,6 +263,14 @@ DROP PROCEDURE IF EXISTS getIdeas $$
 DROP PROCEDURE IF EXISTS getQuestions $$
 DROP PROCEDURE IF EXISTS postAnswers $$
 DROP PROCEDURE IF EXISTS getContent $$
+DROP PROCEDURE IF EXISTS getUser $$
+
+CREATE PROCEDURE getUser(IN id_user INT)
+BEGIN
+    SELECT id, first_name,last_name, email
+    FROM users
+    WHERE id = id_user;
+END $$
 
 CREATE PROCEDURE getContent(IN cat_id INT)
 BEGIN
