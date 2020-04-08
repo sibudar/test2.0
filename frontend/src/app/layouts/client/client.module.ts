@@ -5,14 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatStepperModule, MatDividerModule, MatListModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 
 
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ClientRoutingModule } from './client-routing.module';
 import { ClientComponent } from './client.component';
@@ -32,6 +32,7 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
 import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
+import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 
 
 export function tokenGetter() {
@@ -51,7 +52,8 @@ export function tokenGetter() {
     QuestionComponent,
     LegalComponent,
     FinanceComponent,
-    DigitalMarketComponent
+    DigitalMarketComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
@@ -65,6 +67,11 @@ export function tokenGetter() {
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    MatStepperModule,
+    MatDividerModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
