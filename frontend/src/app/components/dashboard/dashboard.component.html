@@ -1,0 +1,510 @@
+<div class=container-outer>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
+                Novelty
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fe fe-x"></i>
+                </button>
+
+                <!-- Navigation -->
+                <ul class="navbar-nav ml-auto">
+                    <a class="nav-link" routerLink="/landing" aria-haspopup="true" aria-expanded="true">
+                        Home
+                    </a>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" routerLink="/client/display" aria-haspopup="true" aria-expanded="true">
+                            Journey
+                        </a>
+                    </li>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            About Novelty
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Button -->
+                <!-- <div class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank" id="dropdown">
+
+                    <h6>Account</h6>
+                    <div class="dropdown-content">
+                        <a routerLink="/client/login">Login</a>
+                        <a routerLink="/client/register">Register</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-inner">
+        <mat-grid-list cols="2" rowHeight="450px">
+            <mat-grid-tile class="text-inside-grid">
+                <div class="mb-5 mt-11 col-header">
+                    <h1 class="display-4 mb-2">Turn your ideas into a startup</h1>
+                    <p class="lead">You're not alone in this journey of discovery.
+                    </p>
+                    <footer class="blockquote-footer">“I knew that if I failed I wouldn’t regret that, but I knew the
+                        one thing I might regret is not trying.” <cite title="Source Title">
+                            <p>Jeff Bezos, Founder and CEO
+                                of Amazon</p>
+                        </cite></footer>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="img">
+                    <img class="image animated fadeInRight delay-0.5s" src="assets/img/theway-09.png">
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+        </button> -->
+        <mat-horizontal-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Start your Journey</ng-template>
+                    <!-- <h4 class="header">Ideas</h4> -->
+                    <mat-grid-list cols="1" rowHeight="380px">
+                        <mat-grid-tile class="text-inside-grid">
+                            <mat-list>
+                                <mat-list-item>
+                                    <div class="row mx-n2 mx-lg-n3">
+                                        <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate"
+                                            data-aos="fade-up">
+                                            <!-- Card -->
+                                            <a class="card bg-primary text-left h-100 transition-3d-hover"
+                                                href="documentation/index.html">
+                                                <div class="card-body">
+                                                    <div class="mb-5">
+                                                        <h3 class="text-white">Ideas</h3>
+                                                        <p class="text-white">Discover how to build and maintain coding
+                                                            systems using our documentation.</p>
+                                                    </div>
+                                                    <img class="img-fluid w-100"
+                                                        src="assets/svg/illustrations/docs-frame.svg"
+                                                        alt="Image Description">
+                                                </div>
+                                                <div class="card-footer border-0 bg-transparent pt-0">
+                                                    <span class="font-size-1 text-white font-weight-bold">Learn more <i
+                                                            class="fas fa-angle-right fa-sm ml-1"></i></span>
+                                                </div>
+                                            </a>
+                                            <!-- End Card -->
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate"
+                                            data-aos="fade-up" data-aos-delay="150">
+                                            <!-- Card -->
+                                            <a class="card bg-success text-left h-100 transition-3d-hover"
+                                                href="snippets/index.html">
+                                                <div class="card-body">
+                                                    <div class="mb-5">
+                                                        <h3 class="text-white">Digital Marketing</h3>
+                                                        <p class="text-white">Start browsing our snippets pages with
+                                                            copy-to-clipboard snippets to match
+                                                            Bootstrap's level of quality.</p>
+                                                    </div>
+                                                    <img class="img-fluid w-100"
+                                                        src="assets/svg/illustrations/snippets-frame.svg"
+                                                        alt="Image Description">
+                                                </div>
+                                                <div class="card-footer border-0 bg-transparent pt-0">
+                                                    <span class="font-size-1 text-white font-weight-bold">Start building
+                                                        <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+                                                </div>
+                                            </a>
+                                            <!-- End Card -->
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-4 px-2 px-lg-3 aos-init aos-animate"
+                                            data-aos="fade-up" data-aos-delay="200">
+                                            <!-- Card -->
+                                            <a class="js-go-to card bg-warning text-left h-100 transition-3d-hover"
+                                                href="javascript:;">
+                                                <div class="card-body">
+                                                    <div class="mb-5">
+                                                        <h3 class="text-white">Developers</h3>
+                                                        <p class="text-white">Apart from 60+ HTML-pages, the theme comes
+                                                            with 3 ready-to-use and stand-alone
+                                                            demo options.</p>
+                                                    </div>
+                                                    <img class="img-fluid w-100"
+                                                        src="assets/svg/illustrations/layouts-frame.svg"
+                                                        alt="Image Description">
+                                                </div>
+                                                <div class="card-footer border-0 bg-transparent pt-0">
+                                                    <span class="font-size-1 text-white font-weight-bold">View examples
+                                                        <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+                                                </div>
+                                            </a>
+                                            <!-- End Card -->
+                                        </div>
+
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <div>
+                        <button mat-button mat-flat-button color="primary" class="btn" matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Evaluation</ng-template>
+                    <mat-grid-list cols="2" rowHeight="380px">
+                        <mat-grid-tile class="text-inside-grid">
+
+                            <mat-list>
+                                <mat-list-item>
+                                    <mat-card _ngcontent-wpg-c74=""
+                                        class="mat-card card-ideas mat-focus-indicator docs-component-category-list-card">
+                                        <mat-card-header>
+                                            <mat-card-title>Airfan</mat-card-title>
+                                        </mat-card-header>
+                                        <mat-card-content _ngcontent-wpg-c74=""
+                                            class="mat-card-content docs-component-category-list-card-summary">
+                                            <p>
+                                                Online shop that sells airtime, bundles, and convert.
+                                            </p>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-list-item>
+
+                            </mat-list>
+
+                        </mat-grid-tile>
+
+                        <mat-grid-tile>
+                            <div class="img">
+                                <img class="image animated bounceInDown delay-0.5s"
+                                    src="assets/img/illustration_05.png">
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <mat-divider class="divider"></mat-divider>
+                    <div>
+                        <mat-grid-list cols="2" rowHeight="380px">
+                            <mat-grid-tile class="text-inside-grid">
+                                <div class="mb-5 mt-11 col-header">
+                                    <h1 class="display-4 mb-2">Legal</h1>
+                                    <p class="lead">You'll give you tips on how to legalizing your business.</p>
+                                </div>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                <div class="img">
+                                    <img class="image animated fadeInRight delay-0.5s" src="assets/img/relax-08.png">
+                                </div>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+
+                        <p class="paragraph">A business plan is a roadmap of your business. It details how your business
+                            wants to
+                            achieve its goals and should
+                            include its operational, financial and marketing strategies.
+                        </p>
+
+                        <mat-accordion class="example-headers-align">
+                            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Do you have a business plan?
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Click here if you said no
+                                        <mat-icon>timeline</mat-icon>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <h4>Business Plan</h4>
+                                <p>A business plan is a document setting out a business\'s future objectives and
+                                    strategies for achieving them; It is
+                                    formally written document and contains business goals, the methods on how these
+                                    goals can be attained, and the time
+                                    frame within which these goals need to be achieved. For more information about
+                                    drafting a business checkout this Absa page.</p>
+
+                                <mat-action-row>
+                                    <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                </mat-action-row>
+                            </mat-expansion-panel>
+
+                            <p class="paragraph">You’ve drafted a killer business plan and you are ready to venture into
+                                the world of
+                                business. Your next step is to
+                                register your business in accordance with South African legal and statutory
+                                requirements.
+                            </p>
+
+                            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Have you registered your business/company with CIPC?
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Click here if you said no
+                                        <mat-icon>assignment</mat-icon>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+
+                                <h4>Register the business</h4>
+                                <p>The Companies and Intellectual Property Commission (CIPC) should be your first point
+                                    of contact. This organisation has
+                                    been established in order to administer the registration of companies, cooperatives
+                                    and intellectual property rights
+                                    such as trademarks, patents, designs and copyright. For more information.
+                                </p>
+
+                                <mat-action-row>
+                                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                    <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                </mat-action-row>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Have you registered with SARS to pay tax?
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Click here if you said no
+                                        <mat-icon>money</mat-icon>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+
+                                <h4>SARS Registration</h4>
+                                <p>
+                                    A legal obligation to pay tax regardless of the size of business being run. The law
+                                    dictates that a business is
+                                    registered with SARS within 60 days of starting operations. For those registered
+                                    with CIPC the registration is automatic
+                                    except sole proprietors or partners who need to register as provisional tax payers
+                                    directly. find out more information
+                                    on SARS website.</p>
+
+                                <mat-action-row>
+                                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                    <button mat-button color="primary" (click)="nextStep()">End</button>
+                                </mat-action-row>
+                            </mat-expansion-panel>
+
+                        </mat-accordion>
+                    </div>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                    <ng-template matStepLabel>Digital Marketing</ng-template>
+                    <mat-grid-list cols="2" rowHeight="380px">
+                        <mat-grid-tile class="text-inside-grid">
+
+                            <mat-list>
+                                <mat-list-item>
+
+                                </mat-list-item>
+
+                            </mat-list>
+
+                        </mat-grid-tile>
+
+                        <mat-grid-tile>
+                            <div class="img">
+                                <img class="image animated bounceInDown delay-0.5s" src="assets/img/digital-6.png">
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Developers</ng-template>
+                <mat-grid-list cols="1" rowHeight="450px">
+                    <mat-grid-tile class="text-inside-grid">
+                        <div class="row mx-n2 mb-5">
+                            <div class="col-sm-6 col-lg-3 px-2 mb-3">
+                                <!-- Team -->
+                                <div class="card h-100 transition-3d-hover">
+                                    <div class="card-body">
+                                        <div class="avatar avatar-lg avatar-circle mb-4">
+                                            <img class="avatar-img"
+                                                src="https://htmlstream.com/front/assets/img/100x100/img1.jpg"
+                                                alt="Image Description">
+                                        </div>
+
+                                        <span class="d-block small font-weight-bold text-cap mb-1">Software
+                                            Developer</span>
+                                        <h4 class="text-lh-sm">Christina Kray</h4>
+                                        <p class="font-size-1">I am an ambitious workaholic, but apart from that, pretty
+                                            simple person.</p>
+                                    </div>
+
+                                    <div class="card-footer border-0 pt-0">
+                                        <!-- Social Networks -->
+                                        <ul class="list-inline mb-0">
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-google"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- End Social Networks -->
+                                    </div>
+                                </div>
+                                <!-- End Team -->
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3 px-2 mb-3">
+                                <!-- Team -->
+                                <div class="card h-100 transition-3d-hover">
+                                    <div class="card-body">
+                                        <div class="avatar avatar-lg avatar-circle mb-4">
+                                            <img class="avatar-img"
+                                                src="https://htmlstream.com/front/assets/img/100x100/img3.jpg"
+                                                alt="Image Description">
+                                        </div>
+
+                                        <span class="d-block small font-weight-bold text-cap mb-1">Software
+                                            Architecture</span>
+                                        <h4 class="text-lh-sm">Jeff Fisher</h4>
+                                        <p class="font-size-1">I am an ambitious workaholic, but apart from that, pretty
+                                            simple person.</p>
+                                    </div>
+
+                                    <div class="card-footer border-0 pt-0">
+                                        <!-- Social Networks -->
+                                        <ul class="list-inline mb-0">
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-google"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- End Social Networks -->
+                                    </div>
+                                </div>
+                                <!-- End Team -->
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3 px-2 mb-3">
+                                <!-- Team -->
+                                <div class="card h-100 transition-3d-hover">
+                                    <div class="card-body">
+                                        <div class="avatar avatar-lg avatar-circle mb-4">
+                                            <img class="avatar-img"
+                                                src="https://htmlstream.com/front/assets/img/100x100/img11.jpg"
+                                                alt="Image Description">
+                                        </div>
+
+                                        <span class="d-block small font-weight-bold text-cap mb-1">Product
+                                            Designer</span>
+                                        <h4 class="text-lh-sm">Amy Forren</h4>
+                                        <p class="font-size-1">I am an ambitious workaholic, but apart from that, pretty
+                                            simple person.</p>
+                                    </div>
+
+                                    <div class="card-footer border-0 pt-0">
+                                        <!-- Social Networks -->
+                                        <ul class="list-inline mb-0">
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-google"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- End Social Networks -->
+                                    </div>
+                                </div>
+                                <!-- End Team -->
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3 px-2 mb-3">
+                                <!-- Team -->
+                                <div class="card h-100 transition-3d-hover">
+                                    <div class="card-body">
+                                        <div class="avatar avatar-lg avatar-circle mb-4">
+                                            <img class="avatar-img"
+                                                src="https://htmlstream.com/front/assets/img/100x100/img12.jpg"
+                                                alt="Image Description">
+                                        </div>
+
+                                        <span class="d-block small font-weight-bold text-cap mb-1">Looking for someone
+                                            specific?</span>
+                                        <h4 class="text-lh-sm">Take a look</h4>
+                                        <p class="font-size-1">Browse through our list of developers and choose one that
+                                            suits your task.</p>
+                                    </div>
+
+                                    <div class="card-footer border-0 pt-0">
+                                        <a class="btn btn-xs btn-soft-secondary" href="#">View More Developers</a>
+                                    </div>
+                                </div>
+                                <!-- End Team -->
+                            </div>
+                        </div>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                </div>
+            </mat-step>
+
+        </mat-horizontal-stepper>
+    </div>
+</div>
