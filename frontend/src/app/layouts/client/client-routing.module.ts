@@ -12,10 +12,11 @@ import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { DigitalMarketComponent } from 'src/app/components/digital-market/digital-market.component';
+import { ProfileComponent } from 'src/app/components/profile/profile.component';
 
 
 const routes: Routes = [
-  { path: '', component: LandingComponent },
+  { path: '', component: ClientComponent },
   { path: '', component: LandingComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'home', component: LandingComponent},
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'resetPassword/:token', component: ResetPasswordComponent },
-  { path: 'question', component: QuestionComponent }
+  { path: 'question', component: QuestionComponent },
+  { path: 'profile', component: ProfileComponent }
   
 
 ];

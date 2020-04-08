@@ -10,6 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material';
+
+
 
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +36,8 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
 import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
+import { DevelopersComponent } from '../../components/developers/developers.component';
+import { ProfileComponent } from '../../components/profile/profile.component';
 
 
 export function tokenGetter() {
@@ -51,7 +57,9 @@ export function tokenGetter() {
     QuestionComponent,
     LegalComponent,
     FinanceComponent,
-    DigitalMarketComponent
+    DigitalMarketComponent,
+    DevelopersComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -66,6 +74,8 @@ export function tokenGetter() {
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    MatListModule,
+    MatDividerModule,
     FormsModule,
     HttpClientModule,
     MatExpansionModule,
