@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule, MatStepperModule, MatDividerModule, MatListModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -55,7 +56,7 @@ export function tokenGetter() {
     FinanceComponent,
     DigitalMarketComponent,
     DashboardComponent,
-    InstructionsComponent
+    InstructionsComponent,
   ],
   imports: [
     CommonModule,
@@ -79,15 +80,17 @@ export function tokenGetter() {
     HttpClientModule,
     MatExpansionModule,
     MatTabsModule,
+    NgbModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ["localhost:5000"],
-        blacklistedRoutes: ["localhost:5000//api/v1/users/login"]
-      }
-    })
+        blacklistedRoutes: ["localhost:5000//api/v1/users/login"],
+      },
+    }),
   ],
   providers: [AuthService, AuthGuard],
-  entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent]
+  entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
+  bootstrap: [DashboardComponent, InstructionsComponent],
 })
 export class ClientModule {}
