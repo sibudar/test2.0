@@ -172,6 +172,13 @@
                 <form [formGroup]="secondFormGroup">
                     <ng-template matStepLabel>Evaluation</ng-template>
                     <div class="w3-container w3-pale-blue w3-leftbar w3-border-blue">
+                        <p>Firstly, if you don't understand what's happening on this page. Click the info button on your
+                            right.</p>
+                        <div class="btn-add">
+                            <button mat-mini-fab color="primary" mat-raised-button (click)="openDialog()">
+                                <mat-icon>info</mat-icon>
+                            </button>
+                        </div>
                         <p class="font-weight-bold text-left">
                             It all starts with the idea, <span class="text-info">but how do you come up with the next
                                 great
@@ -270,6 +277,7 @@
                         </button>
                     </div>
                     <mat-divider class="divider"></mat-divider>
+                    <!-- LEGAL -->
                     <div>
                         <mat-grid-list cols="2" rowHeight="380px">
                             <mat-grid-tile class="text-inside-grid">
@@ -291,93 +299,167 @@
                             include its operational, financial and marketing strategies.
                         </p>
 
-                        <mat-accordion class="example-headers-align">
-                            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Do you have a business plan?
-                                    </mat-panel-title>
-                                    <mat-panel-description>
-                                        Click here if you said no
-                                        <mat-icon>timeline</mat-icon>
-                                    </mat-panel-description>
-                                </mat-expansion-panel-header>
-                                <h4>Business Plan</h4>
-                                <p>A business plan is a document setting out a business\'s future objectives and
-                                    strategies for achieving them; It is
-                                    formally written document and contains business goals, the methods on how these
-                                    goals can be attained, and the time
-                                    frame within which these goals need to be achieved. For more information about
-                                    drafting a business checkout this Absa page.</p>
+                        <mat-tab-group headerPosition="below">
+                            <mat-tab label="First">
+                                <!-- Expand for business plan -->
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Do you have a business plan?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>timeline</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <h4>Business Plan</h4>
+                                    <p>A business plan is a document setting out a business\'s future objectives and
+                                        strategies for achieving them; It is
+                                        formally written document and contains business goals, the methods on how these
+                                        goals can be attained, and the time
+                                        frame within which these goals need to be achieved. For more information about
+                                        drafting a business checkout this Absa page.</p>
+                                </mat-expansion-panel>
+                            </mat-tab>
 
-                                <mat-action-row>
-                                    <button mat-button color="primary" (click)="nextStep()">Next</button>
-                                </mat-action-row>
-                            </mat-expansion-panel>
-
-                            <p class="paragraph">You’ve drafted a killer business plan and you are ready to venture into
-                                the world of
-                                business. Your next step is to
-                                register your business in accordance with South African legal and statutory
-                                requirements.
-                            </p>
-
-                            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Have you registered your business/company with CIPC?
-                                    </mat-panel-title>
-                                    <mat-panel-description>
-                                        Click here if you said no
-                                        <mat-icon>assignment</mat-icon>
-                                    </mat-panel-description>
-                                </mat-expansion-panel-header>
-
-                                <h4>Register the business</h4>
-                                <p>The Companies and Intellectual Property Commission (CIPC) should be your first point
-                                    of contact. This organisation has
-                                    been established in order to administer the registration of companies, cooperatives
-                                    and intellectual property rights
-                                    such as trademarks, patents, designs and copyright. For more information.
+                            <mat-tab label="Second">
+                                <!-- Paragraph before expand for CIPC -->
+                                <p class="paragraph">You’ve drafted a killer business plan and you are ready to venture
+                                    into
+                                    the world of
+                                    business. Your next step is to
+                                    register your business in accordance with South African legal and statutory
+                                    requirements.
                                 </p>
+                                <!-- Expand for CIPC -->
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Have you registered your business/company with CIPC?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>assignment</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
 
-                                <mat-action-row>
-                                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
-                                    <button mat-button color="primary" (click)="nextStep()">Next</button>
-                                </mat-action-row>
-                            </mat-expansion-panel>
+                                    <h4>Register the business</h4>
+                                    <p>The Companies and Intellectual Property Commission (CIPC) should be your first
+                                        point
+                                        of contact. This organisation has
+                                        been established in order to administer the registration of companies,
+                                        cooperatives
+                                        and intellectual property rights
+                                        such as trademarks, patents, designs and copyright. For more information.
+                                    </p>
+                                </mat-expansion-panel>
+                            </mat-tab>
+                            <!-- Expand for SARS -->
+                            <mat-tab label="Third">
+                                <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Have you registered with SARS to pay tax?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>money</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
 
-                            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Have you registered with SARS to pay tax?
-                                    </mat-panel-title>
-                                    <mat-panel-description>
-                                        Click here if you said no
-                                        <mat-icon>money</mat-icon>
-                                    </mat-panel-description>
-                                </mat-expansion-panel-header>
+                                    <h4>SARS Registration</h4>
+                                    <p>
+                                        A legal obligation to pay tax regardless of the size of business being run. The
+                                        law
+                                        dictates that a business is
+                                        registered with SARS within 60 days of starting operations. For those registered
+                                        with CIPC the registration is automatic
+                                        except sole proprietors or partners who need to register as provisional tax
+                                        payers
+                                        directly. find out more information
+                                        on SARS website.</p>
+                                </mat-expansion-panel>
+                            </mat-tab>
+                            <!-- COIDA -->
+                            <mat-tab label="Fourth">
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Have you registered with the Department Of Labour to abides to Compensation
+                                            for Occupational Injuries and Diseases Act (COIDA)?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>money</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
 
-                                <h4>SARS Registration</h4>
-                                <p>
-                                    A legal obligation to pay tax regardless of the size of business being run. The law
-                                    dictates that a business is
-                                    registered with SARS within 60 days of starting operations. For those registered
-                                    with CIPC the registration is automatic
-                                    except sole proprietors or partners who need to register as provisional tax payers
-                                    directly. find out more information
-                                    on SARS website.</p>
+                                    <h4>Department of Labour</h4>
+                                    <p>
+                                        This government department bears the responsibility of ensuring that businesses
+                                        operate under conducive environment and
+                                        abides by laid down legal provisions. Businesses with one or more full time
+                                        employees are therefore required to register
+                                        in accordance with the Compensation for Occupational Injuries and Diseases Act
+                                        (COIDA).This Act has been put in place to
+                                        safeguard the rights of employees who are injured, contract a disease or get
+                                        killed as a result of their work. For more
+                                        information.
+                                    </p>
+                                </mat-expansion-panel>
+                            </mat-tab>
+                            <!-- PAYE -->
+                            <mat-tab label="Fiveth">
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            You have to register your company for Pay As You Earn (PAYE), have you?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>money</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
 
-                                <mat-action-row>
-                                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
-                                    <button mat-button color="primary" (click)="nextStep()">End</button>
-                                </mat-action-row>
-                            </mat-expansion-panel>
+                                    <h4>Unemployment Insurance Fund</h4>
+                                    <p>
+                                        Unemployment Insurance Fund (UIF) benefits workers when they can’t work due to
+                                        maternity, adoption leave or illness. UIF
+                                        registration can be done on form UF8 at any SARS office or online, and for
+                                        addition infor regarding UIF you can.
+                                    </p>
+                                </mat-expansion-panel>
+                            </mat-tab>
+                            <!-- VAT Vendor -->
+                            <mat-tab label="Sixth">
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            You need to register as a VAT (Value Added Tax) vendor if your projected
+                                            sales per year will exceed R1 million, is your
+                                            business/company registered as a VAT vendor?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>money</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
 
-                        </mat-accordion>
+                                    <h4>VAT Vendor</h4>
+                                    <p>
+                                        If your projected sales per year will exceed R1 million, then you need to
+                                        register as a VAT (Value Added Tax) vendor.
+                                        VAT vendor registration can be done by completing and submitting a VAT101 form,
+                                        which is available at any SARS office. Click the link at the end of this line
+                                        for more information about VAT Vendar.
+                                    </p>
+                                </mat-expansion-panel>
+                            </mat-tab>
+                        </mat-tab-group>
                     </div>
-
                     <mat-divider class="divider"></mat-divider>
+
+                    <!-- FINANCE -->
                     <div>
                         <mat-grid-list cols="2" rowHeight="380px">
                             <mat-grid-tile class="text-inside-grid">
@@ -398,106 +480,91 @@
                                 </div>
                             </mat-grid-tile>
                         </mat-grid-list>
+                        <!-- Tabs start here -->
+                        <mat-tab-group headerPosition="below">
+                            <mat-tab label="First">
+                                <!-- Expand for funds -->
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Do you have funds for your business?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>timeline</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <h4>Funds for my business</h4>
+                                    <p>
+                                        Ideal to finance developmental projects, business expansion or business
+                                        purchases. Loan repayment period up to 10
+                                        years. Flexi reserve facility to keep additional funds to be re-used in need.
+                                        Inter-account transfers of available funds
+                                        from flexi reserve facility. Auto-capitalisation to reduce outstanding capital
+                                        to benefit from interest burden.
+                                        Repayment frequencies: monthly, bi-monthly, quarterly, half-yearly and yearly.
+                                    </p>
+                                </mat-expansion-panel>
+                            </mat-tab>
 
-                        <p class="paragraph">A business plan is a roadmap of your business. It details how your business
-                            wants to
-                            achieve its goals and should
-                            include its operational, financial and marketing strategies.
-                        </p>
+                            <mat-tab label="Second">
+                                <!-- Paragraph before expand for business account -->
+                                <p class="paragraph">
 
-                        <mat-accordion class="example-headers-align">
-                            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Do you have a business plan?
-                                    </mat-panel-title>
-                                    <mat-panel-description>
-                                        Click here if you said no
-                                        <mat-icon>timeline</mat-icon>
-                                    </mat-panel-description>
-                                </mat-expansion-panel-header>
-                                <h4>Business Plan</h4>
-                                <p>A business plan is a document setting out a business\'s future objectives and
-                                    strategies for achieving them; It is
-                                    formally written document and contains business goals, the methods on how these
-                                    goals can be attained, and the time
-                                    frame within which these goals need to be achieved. For more information about
-                                    drafting a business checkout this Absa page.</p>
-
-                                <mat-action-row>
-                                    <button mat-button color="primary" (click)="nextStep()">Next</button>
-                                </mat-action-row>
-                            </mat-expansion-panel>
-
-                            <p class="paragraph">You’ve drafted a killer business plan and you are ready to venture into
-                                the world of
-                                business. Your next step is to
-                                register your business in accordance with South African legal and statutory
-                                requirements.
-                            </p>
-
-                            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Have you registered your business/company with CIPC?
-                                    </mat-panel-title>
-                                    <mat-panel-description>
-                                        Click here if you said no
-                                        <mat-icon>assignment</mat-icon>
-                                    </mat-panel-description>
-                                </mat-expansion-panel-header>
-
-                                <h4>Register the business</h4>
-                                <p>The Companies and Intellectual Property Commission (CIPC) should be your first point
-                                    of contact. This organisation has
-                                    been established in order to administer the registration of companies, cooperatives
-                                    and intellectual property rights
-                                    such as trademarks, patents, designs and copyright. For more information.
                                 </p>
+                                <!-- Expand for business account -->
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Do you have a business account?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>assignment</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
 
-                                <mat-action-row>
-                                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
-                                    <button mat-button color="primary" (click)="nextStep()">Next</button>
-                                </mat-action-row>
-                            </mat-expansion-panel>
+                                    <h4>Business Account</h4>
+                                    <p>
+                                        Opening a business account with the ABSA can be considered a bit challenging due
+                                        to the necessary qualifications that
+                                        are needed to meet approval requirements. Also, the demographical criteria is a
+                                        big qualification requirement that rules
+                                        a lot of business owners out of this equation. However, it is possible to open
+                                        an ABSA business account without facing
+                                        the stumbling blocks that cause most people to fail.
+                                    </p>
+                                </mat-expansion-panel>
+                            </mat-tab>
+                            <!-- Expand for SARS -->
+                            <mat-tab label="Third">
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Have you registered with SARS to pay tax?
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            Click here if you said no
+                                            <mat-icon>money</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
 
-                            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Have you registered with SARS to pay tax?
-                                    </mat-panel-title>
-                                    <mat-panel-description>
-                                        Click here if you said no
-                                        <mat-icon>money</mat-icon>
-                                    </mat-panel-description>
-                                </mat-expansion-panel-header>
-
-                                <h4>SARS Registration</h4>
-                                <p>
-                                    A legal obligation to pay tax regardless of the size of business being run. The law
-                                    dictates that a business is
-                                    registered with SARS within 60 days of starting operations. For those registered
-                                    with CIPC the registration is automatic
-                                    except sole proprietors or partners who need to register as provisional tax payers
-                                    directly. find out more information
-                                    on SARS website.</p>
-
-                                <mat-action-row>
-                                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
-                                    <button mat-button color="primary" (click)="nextStep()">End</button>
-                                </mat-action-row>
-                            </mat-expansion-panel>
-
-                        </mat-accordion>
-                    </div>
-
-                    <div>
-                        <button mat-button matStepperPrevious>Back</button>
-                        <button mat-button matStepperNext>Next</button>
+                                    <h4>Financial Management</h4>
+                                    <p>
+                                        You’ll need to understand the underlying financial flows of your business.
+                                        That’s key to your understanding of how to
+                                        manage your business. So what we’re going to do in this session is give you the
+                                        tools of startup finance to help you
+                                        manage and build your business.
+                                    </p>
+                                </mat-expansion-panel>
+                            </mat-tab>
+                        </mat-tab-group>
                     </div>
                 </form>
             </mat-step>
 
+            <!-- DIGITAL MARKETING -->
             <mat-step [stepControl]="thirdFormGroup">
                 <form [formGroup]="thirdFormGroup">
                     <ng-template matStepLabel>Digital Marketing</ng-template>
