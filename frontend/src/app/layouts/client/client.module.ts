@@ -11,7 +11,8 @@ import { MatInputModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatListModule} from '@angular/material';
+import {MatListModule} from '@angular/material/list';
+
 
 
 
