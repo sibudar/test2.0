@@ -12,6 +12,7 @@ import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { DigitalMarketComponent } from 'src/app/components/digital-market/digital-market.component';
+import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'home', component: LandingComponent},
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'resetPassword/:token', component: ResetPasswordComponent },
-  { path: 'question', component: QuestionComponent }
+  { path: 'question', component: QuestionComponent },
+  { path: 'ideas', component: EvaluationComponent }//to be removed,for testing purpose
   
 
 ];

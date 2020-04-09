@@ -32,6 +32,7 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
 import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
+import { EvaluationComponent } from '../../components/evaluation/evaluation.component';
 
 
 export function tokenGetter() {
@@ -51,7 +52,8 @@ export function tokenGetter() {
     QuestionComponent,
     LegalComponent,
     FinanceComponent,
-    DigitalMarketComponent
+    DigitalMarketComponent,
+    EvaluationComponent
   ],
   imports: [
     CommonModule,
