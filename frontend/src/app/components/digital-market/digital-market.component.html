@@ -135,13 +135,16 @@
 </div>
 
 
-<div class="domain">
 
-    <h2>Start your domain <br>name search</h2>
+
+<form [formGroup]="form">
+  <div class="form-group">
+
+    <h2>Start your domain name search </h2>
     <div class="search">
-        <input type="text" placeholder="Type the name you want here.." name="search2">
-        <button type="submit"><i class="fa fa-search"></i></button>
+      <input type="text" formControlName="domain" placeholder="Type the name you want here.." required >
+      <button (click)="postDomain()"><i class="fa fa-search"></i></button>
     </div>
 
-
-</div>
+  </div>
+</form>

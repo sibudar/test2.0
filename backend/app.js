@@ -4,8 +4,9 @@ const idea = require('./Routes/ideaRoute');
 const user = require('./Routes/userRoute');
 const questions = require('./Routes/questionRoute');
 const content = require('./Routes/contentRoute');
+const domain = require('./Routes/dmRoute')
 const cors = require('cors');
-const  swaggerUi = require('swagger-ui-express');
+const swaggerUi = require('swagger-ui-express');
 swaggerDocument =  require('./swagger.js');
 
 require('dotenv').config();
@@ -21,6 +22,7 @@ app.use('/api/v1/users', user);
 app.use('/api/v1/ideas', idea);
 app.use('/api/v1/questions', questions);
 app.use('/api/v1/content', content);
+app.use('/api/v1/domain', domain);
 
 // default route 
 app.use('/', (req, res, next) => {

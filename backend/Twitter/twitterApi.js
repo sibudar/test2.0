@@ -29,18 +29,19 @@ var twitApp = new Twit({
 // })
 
 //Publish a Tweet with Text & an Image
-const imageData = fs​.​readFileSync​(​'./media/pray.webp')
- 
+
+//const imageData = fs​.​readFileSync​(​'./images.jpeg', {encoding:'base64'}
+ let img = fs
 twitApp.post("media/upload", {media: imageData}, (error, media, response) =>{
   if (error) {
     console.log(error)
   } else {
     const status = {
-      status: "weeping may come through the night but Joy comes with the morning",
+      status: "uploaded from nodejs project",
       media_ids: media.media_id_string
     }
  
-    twitApp.post("statuses/update", status, function(error, tweet, response) {
+    twitApp.post("statuses/update", status, function(error, data, response) {
       if (error) {
         console.log(error)
       } else {

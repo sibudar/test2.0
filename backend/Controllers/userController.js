@@ -30,7 +30,8 @@ async function register(data) {
 
   return queryFunction(sql, [data.first_name, data.last_name, data.email, data.user_password]).then(result => {
       // await mail.sendEmail(data.email, msg.registerMessage(result[0].first_name), msg.registerSubject());
-      return response(201, 'Successfully created an account.');
+      const generatedToken = token.generateToken(result);
+      return response(201, 'Successfully created an account.', generatedToken);
     })
     .catch(error => {
       //errno === 1062 is Duplicate entry 
@@ -62,20 +63,43 @@ async function login(data) {
   return queryFunction(sql, data.email).then (async result => {
       const checkPassword = await bcrypt.compareSync(data.user_password,result[0][0].user_password);
       let info = {
-        name : result[0][0].first_name ,
-        surname : result[0][0].last_name ,
-        //token : generateToken({id : result[0][0].id}) ,
-        id : result[0][0].id 
+        auth : true ,
+        token : generateToken({id : result[0][0].id})
       }
       if(checkPassword) {
         return response(200, 'Logged in successfully.' , info);
       } else {
-        return response(401, 'Incorrect password entered.');
+        return response(401, 'Incorrect password entered.', { auth: false, token: null });
       }
     }).catch(error => {
       return response(404, 'Incorrect email adress entered.', error);
     });
-}   
+}
+
+/**
+ * Verifying a token provided by the user
+ * @param {*} data 
+ * data is a token string.
+ * @returns a response that we have a user or not.
+ */
+async function verify(data) {
+  
+  if(validate.validate(data)) {
+    return response(400, "No token provided.");
+  }
+
+  const sql = "CALL getUser(?)";
+
+  return verifyToken(data).then(async (id) => {
+    return queryFunction(sql, id.id).then(async (user) => {
+      return response(200, "Signature verified, here is the payload data", user[0][0]);
+    }).catch(error => {
+      return response(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage)
+    })
+  }).catch(error => {
+    return response(400, "Signature is invalid or token provided expired.", error);
+  })
+}
 
 /**
  * If the user forgot their password.
@@ -138,4 +162,4 @@ async function reset(data) {
     });
 }
 
-module.exports = {register, login, forgot, reset};
+module.exports = {register, login, forgot, reset, verify};

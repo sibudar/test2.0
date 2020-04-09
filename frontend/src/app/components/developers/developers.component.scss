@@ -1,0 +1,22 @@
+.profiles {
+    display: flex;
+    flex-wrap: wrap;
+}
+// .dev1{
+// margin-left: 100px;
+// color: red;
+// width: 200px;
+// }
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .mat-card-actions .mat-button, .mat-card-actions .mat-raised-button, .mat-card-actions .mat-stroked-button {
+    margin: 0 100px !important;
+    background-color: #3f51b5;
+    color: white !important;
+}

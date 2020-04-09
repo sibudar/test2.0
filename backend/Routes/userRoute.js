@@ -1,5 +1,5 @@
 const userRouter = require("express").Router();
-const registerController = require("../Controllers/userController");
+const userController = require("../Controllers/userController");
 
 
 // [post] route  to register a user.
@@ -30,8 +30,8 @@ const registerController = require("../Controllers/userController");
  * 
  */
 userRouter.post("/", async(req, res) => {
-  result = await registerController.register(req.body);
-
+  result = await userController.register(req.body);
+  
   res.status(result.status).send(result);
 });
   
@@ -69,7 +69,7 @@ userRouter.post("/", async(req, res) => {
  *        description: Incorrect email adress entered.
  */
 userRouter.post("/login", async(req, res) => {
-  let result = await registerController.login(req.body);
+  let result = await userController.login(req.body);
 
   res.status(result.status).send(result);
 });
@@ -107,7 +107,7 @@ userRouter.post("/login", async(req, res) => {
  *     
  */
 userRouter.post("/forgotPassword", async(req, res) => {
-  let result = await registerController.forgot(req.body);
+  let result = await userController.forgot(req.body);
 
   res.status(result.status).send(result);
 });
@@ -144,11 +144,48 @@ userRouter.post("/forgotPassword", async(req, res) => {
  *     
  */
 userRouter.post("/resetPassword", async (req, res) => {
-  let result = await registerController.reset(req.body);
+  let result = await userController.reset(req.body);
 
   res.status(result.status).send(result);
 });
 
+// [get] route to "/me" to get a user.
+/**
+ * @swagger
+ * /users/me:
+ *  get:
+ *     tags:
+ *      - user
+ *     summary:  me
+ *     description: This can only be done by users who recieved an email to reset password
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: user
+ *          description: Created user object
+ *          in: headers
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            token:         
+ *              type: string
+ *            
+ *     responses:
+ *        200:
+ *         description: Signature verified, here is the payload data.
+ *        500:
+ *         description: Oops! we're experiencing some problems on our servers, please try again later!.
+ *        400:
+ *         description: Signature is invalid or token provided expired.
+ *     
+ */
+userRouter.get("/me", async (req, res) => {
+  let token = await userController.verify(req.headers["x-access-token"]);
 
+  res.status(token.status).send(token);
+})
 
 module.exports = userRouter;
