@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule, MatStepperModule, MatDividerModule, MatListModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -33,6 +33,7 @@ import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
 import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
+import { InstructionsComponent } from '../../components/instructions/instructions.component';
 
 
 export function tokenGetter() {
@@ -53,7 +54,8 @@ export function tokenGetter() {
     LegalComponent,
     FinanceComponent,
     DigitalMarketComponent,
-    DashboardComponent
+    DashboardComponent,
+    InstructionsComponent
   ],
   imports: [
     CommonModule,
@@ -86,6 +88,6 @@ export function tokenGetter() {
     })
   ],
   providers: [AuthService, AuthGuard],
-  entryComponents: [DialogComponent, QuestionComponent]
+  entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent]
 })
 export class ClientModule {}
