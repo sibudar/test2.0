@@ -171,23 +171,86 @@
             <mat-step [stepControl]="secondFormGroup">
                 <form [formGroup]="secondFormGroup">
                     <ng-template matStepLabel>Evaluation</ng-template>
-                    <mat-grid-list cols="2" rowHeight="380px">
+                    <div class="w3-container w3-pale-blue w3-leftbar w3-border-blue">
+                        <p class="font-weight-bold text-left">
+                            It all starts with the idea, <span class="text-info">but how do you come up with the next
+                                great
+                                thing</span>?
+                        </p>
+                    </div>
+
+                    <mat-grid-list cols="2" rowHeight="490px">
                         <mat-grid-tile class="text-inside-grid">
 
                             <mat-list>
                                 <mat-list-item>
-                                    <mat-card _ngcontent-wpg-c74=""
-                                        class="mat-card card-ideas mat-focus-indicator docs-component-category-list-card">
-                                        <mat-card-header>
-                                            <mat-card-title>Airfan</mat-card-title>
-                                        </mat-card-header>
-                                        <mat-card-content _ngcontent-wpg-c74=""
-                                            class="mat-card-content docs-component-category-list-card-summary">
-                                            <p>
-                                                Online shop that sells airtime, bundles, and convert.
-                                            </p>
-                                        </mat-card-content>
-                                    </mat-card>
+                                    <div class="card">
+                                        <div class="card-header bg-info text-center text-white" style="width: 30rem;">
+                                            <h4>Ideas</h4>
+                                        </div>
+                                        <div class="scrolling-wrapper">
+                                            <mat-card _ngcontent-wpg-c74=""
+                                                class="mat-card card-ideas mat-focus-indicator docs-component-category-list-card">
+                                                <mat-card-header>
+                                                    <mat-card-title>Airfan</mat-card-title>
+                                                </mat-card-header>
+                                                <mat-card-content _ngcontent-wpg-c74=""
+                                                    class="mat-card-content docs-component-category-list-card-summary">
+                                                    <p>
+                                                        Online shop that sells airtime, bundles, and convert.
+                                                    </p>
+                                                </mat-card-content>
+                                            </mat-card>
+                                            <mat-card _ngcontent-wpg-c74="" class="mat-card card-ideas mat-focus-indicator
+                                        docs-component-category-list-card">
+                                                <mat-card-header>
+                                                    <mat-card-title>Frica</mat-card-title>
+                                                </mat-card-header>
+                                                <mat-card-content _ngcontent-wpg-c74=""
+                                                    class="mat-card-content docs-component-category-list-card-summary">
+                                                    <p>
+                                                        Sells food, and clothes.
+                                                    </p>
+                                                </mat-card-content>
+                                            </mat-card>
+                                            <mat-card _ngcontent-wpg-c74="" class="mat-card card-ideas mat-focus-indicator
+                                        docs-component-category-list-card">
+                                                <mat-card-header>
+                                                    <mat-card-title>Opera</mat-card-title>
+                                                </mat-card-header>
+                                                <mat-card-content _ngcontent-wpg-c74=""
+                                                    class="mat-card-content docs-component-category-list-card-summary">
+                                                    <p>
+                                                        Digital gaming store.
+                                                    </p>
+                                                </mat-card-content>
+                                            </mat-card>
+                                            <mat-card _ngcontent-wpg-c74="" class="mat-card card-ideas mat-focus-indicator
+                                                                                docs-component-category-list-card">
+                                                <mat-card-header>
+                                                    <mat-card-title>Kiti</mat-card-title>
+                                                </mat-card-header>
+                                                <mat-card-content _ngcontent-wpg-c74=""
+                                                    class="mat-card-content docs-component-category-list-card-summary">
+                                                    <p>
+                                                        Hospital for cats.
+                                                    </p>
+                                                </mat-card-content>
+                                            </mat-card>
+                                            <mat-card _ngcontent-wpg-c74="" class="mat-card card-ideas mat-focus-indicator
+                                                                                docs-component-category-list-card">
+                                                <mat-card-header>
+                                                    <mat-card-title>Warca</mat-card-title>
+                                                </mat-card-header>
+                                                <mat-card-content _ngcontent-wpg-c74=""
+                                                    class="mat-card-content docs-component-category-list-card-summary">
+                                                    <p>
+                                                        Store that sportwear.
+                                                    </p>
+                                                </mat-card-content>
+                                            </mat-card>
+                                        </div>
+                                    </div>
                                 </mat-list-item>
 
                             </mat-list>
@@ -201,6 +264,11 @@
                             </div>
                         </mat-grid-tile>
                     </mat-grid-list>
+                    <div class="btn-add">
+                        <button mat-mini-fab color="primary">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
                     <mat-divider class="divider"></mat-divider>
                     <div>
                         <mat-grid-list cols="2" rowHeight="380px">
@@ -308,6 +376,121 @@
 
                         </mat-accordion>
                     </div>
+
+                    <mat-divider class="divider"></mat-divider>
+                    <div>
+                        <mat-grid-list cols="2" rowHeight="380px">
+                            <mat-grid-tile class="text-inside-grid">
+                                <div class="mb-5 mt-11 col-header">
+                                    <h1 class="display-4 mb-2">Finance</h1>
+                                    <p class="lead">You’ll need to understand the underlying financial flows of your
+                                        business.</p>
+                                    <footer class="blockquote-footer">That’s key to your understanding of how to manage
+                                        your business. So what we’re going to do in this session is give you
+                                        the tools of startup finance to help you manage and build your business.
+                                    </footer>
+                                </div>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                <div class="img">
+                                    <img class="image animated fadeInRight delay-0.5s"
+                                        src="assets/img/everything-3.png">
+                                </div>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+
+                        <p class="paragraph">A business plan is a roadmap of your business. It details how your business
+                            wants to
+                            achieve its goals and should
+                            include its operational, financial and marketing strategies.
+                        </p>
+
+                        <mat-accordion class="example-headers-align">
+                            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Do you have a business plan?
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Click here if you said no
+                                        <mat-icon>timeline</mat-icon>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <h4>Business Plan</h4>
+                                <p>A business plan is a document setting out a business\'s future objectives and
+                                    strategies for achieving them; It is
+                                    formally written document and contains business goals, the methods on how these
+                                    goals can be attained, and the time
+                                    frame within which these goals need to be achieved. For more information about
+                                    drafting a business checkout this Absa page.</p>
+
+                                <mat-action-row>
+                                    <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                </mat-action-row>
+                            </mat-expansion-panel>
+
+                            <p class="paragraph">You’ve drafted a killer business plan and you are ready to venture into
+                                the world of
+                                business. Your next step is to
+                                register your business in accordance with South African legal and statutory
+                                requirements.
+                            </p>
+
+                            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Have you registered your business/company with CIPC?
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Click here if you said no
+                                        <mat-icon>assignment</mat-icon>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+
+                                <h4>Register the business</h4>
+                                <p>The Companies and Intellectual Property Commission (CIPC) should be your first point
+                                    of contact. This organisation has
+                                    been established in order to administer the registration of companies, cooperatives
+                                    and intellectual property rights
+                                    such as trademarks, patents, designs and copyright. For more information.
+                                </p>
+
+                                <mat-action-row>
+                                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                    <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                </mat-action-row>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Have you registered with SARS to pay tax?
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Click here if you said no
+                                        <mat-icon>money</mat-icon>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+
+                                <h4>SARS Registration</h4>
+                                <p>
+                                    A legal obligation to pay tax regardless of the size of business being run. The law
+                                    dictates that a business is
+                                    registered with SARS within 60 days of starting operations. For those registered
+                                    with CIPC the registration is automatic
+                                    except sole proprietors or partners who need to register as provisional tax payers
+                                    directly. find out more information
+                                    on SARS website.</p>
+
+                                <mat-action-row>
+                                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                    <button mat-button color="primary" (click)="nextStep()">End</button>
+                                </mat-action-row>
+                            </mat-expansion-panel>
+
+                        </mat-accordion>
+                    </div>
+
                     <div>
                         <button mat-button matStepperPrevious>Back</button>
                         <button mat-button matStepperNext>Next</button>
