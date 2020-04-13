@@ -31,7 +31,10 @@ var twitApp = new Twit({
 //Publish a Tweet with Text & an Image
 
 //const imageData = fs​.​readFileSync​(​'./images.jpeg', {encoding:'base64'}
- let img = fs
+
+
+let imageData = fs.readFileSync('./images.jpeg',{encoding:'base64'} )
+
 twitApp.post("media/upload", {media: imageData}, (error, media, response) =>{
   if (error) {
     console.log(error)
