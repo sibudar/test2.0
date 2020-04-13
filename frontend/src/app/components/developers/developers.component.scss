@@ -1,22 +1,78 @@
-.profiles {
-    display: flex;
-    flex-wrap: wrap;
+
+
+.profile_container{
+	height:600px;
+	width:320px;
+	box-shadow: 0px 6px 10px -6px;
+	border-radius:10px;
+	margin:auto;
+	margin-top:60px;
+	margin-bottom:60px;
+	overflow:hidden;
 }
-// .dev1{
-// margin-left: 100px;
-// color: red;
-// width: 200px;
-// }
-.example-card {
-    max-width: 400px;
+.image_container{
+	height:150px;
+	background:#3f51b5;
+}
+.image{
+	background:white;
+	height:120px;
+	width:120px;
+	padding:5px;
+	border-radius:50%;
+	transform:translate(105px,90px);
+}
+.image img{
+	height:110px;
+	width:110px;
+	border-radius:50%;
+}
+.text_container{
+	height:350px;
+	background:white;
+	padding:20px;
+	padding-top:70px;
+}
+.text_container h3,h4,p{
+	text-align:center;
+}
+.title h4{
+	color:lightcoral;
+}
+
+.mat-stroked-button{
+	background:#3f51b5;
+	border-radius:20px;
+	height:40px;
+  width:140px;
+  //  margin: auto;
+   align-items: center;
+   margin: 0 auto;
+  color:white;
+
+}
+.route{
+	text-align: center;
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  a {
+    text-align: center;
+    border: solid 2px ;
+    width: 75px;
+    padding: 5px 0;
+    border-radius: 5px;
+    &:hover {
+      // background: $accent;
+      color: white;
+      cursor: pointer;
+    }
   }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-  .mat-card-actions .mat-button, .mat-card-actions .mat-raised-button, .mat-card-actions .mat-stroked-button {
-    margin: 0 100px !important;
-    background-color: #3f51b5;
-    color: white !important;
+}
+.company{
+	margin-left: 50px;
 }

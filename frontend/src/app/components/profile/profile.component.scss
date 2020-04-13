@@ -1,208 +1,90 @@
 
-
-* {
-  font-family: sans-serif;
-  box-sizing: border-box;
-  background-color: #FEE9F0;
+body{
+  font-family: Montserrat, sans-serif;
+  background: #28223f;
 }
-
-::selection {
-  background: #FFFDC4;
-}
-
-.card {
-  margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: white;
-  height: 430px;
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 6px grey;
-  overflow: hidden;
-}
-
-.card>p {
-  background-color: white;
-  margin: 16px;
-  font-size: 14px;
-  line-height: 1.6;
+.container{
+  
+   margin: 100px auto;
+  background:white;
+  color: white;
+  border-radius: 5px;
+  width: 800px;
+  height: 800px;
   text-align: center;
-  font-family: 'Inconsolata', monospace;
+ box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
 }
-
-.card h2 {
-  background-color: inherit;
-  text-align: center;
-  font-size: 60px;
-  font-weight: bold;
-  margin: -27px 0px -10px;
-  color: #F64B71;
-  line-height: 1
-}
-
-h2:hover {
-  background-color: inherit;
-  text-shadow: 2px 2px 3px gray;
-}
-
-.card h2 + p {
-  margin-top: 20px;
-}
-
-.header {
-  height: 150px;
-  overflow: hidden;
-}
-
-p + .socialmedia {
-  margin-top: 15px;
-}
-
-img {
+.cover-photo{
+  background: url(https://images.unsplash.com/photo-1540228232483-1b64a7024923?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
+  height: 160px;
   width: 100%;
+  border-radius: 5px 5px 0 0;
 }
-
-.socialmedia {
-  text-align: center;
-  background-color: inherit;
+.profile{
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 93px 0 0 -175px;
+  border: 1px solid #1f1a32;
+  padding: 7px;
+  background: #292343;
 }
-
-.socialmedia img {
-  width: 35px;
-  height: 35px;
-  opacity: 0.85;
-  background-color: inherit;
-  margin: 5px;
-}
-
-.socialmedia a {
-  background-color: inherit;
-}
-
-.socialmedia img:hover {
-  opacity: 0.6;
-  transition-duration: 400ms;
-  transform: scale(1.2);
+.profile-name{
+  font-size: 25px;
+  font-weight: bold;
+   margin: 27px 0 0 150px;
+  color: black;
 }
 
 
-// body{
-//   font-family: Montserrat, sans-serif;
-//   background: #28223f;
-// }
-// .container{
-//   user-select: none;
-//   margin: 100px auto;
-//   background: #231e39;
-//   color: #b3b8cd;
-//   border-radius: 5px;
-//   width: 350px;
-//   text-align: center;
-//   box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
-// }
-// .cover-photo{
-//   background: url(https://images.unsplash.com/photo-1540228232483-1b64a7024923?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
-//   height: 160px;
-//   width: 100%;
-//   border-radius: 5px 5px 0 0;
-// }
-// .profile{
-//   height: 120px;
-//   width: 120px;
-//   border-radius: 50%;
-//   margin: 93px 0 0 -175px;
-//   border: 1px solid #1f1a32;
-//   padding: 7px;
-//   background: #292343;
-// }
-// .profile-name{
-//   font-size: 25px;
-//   font-weight: bold;
-//   margin: 27px 0 0 120px;
-// }
-// .about{
-//   margin-top: 35px;
-//   line-height: 21px;
-// }
-// button{
-//   margin: 10px 0 40px 0;
-// }
-// .msg-btn, .follow-btn{
-//   background: #03bfbc;
-//   border: 1px solid #03bfbc;
-//   padding: 10px 25px;
-//   color: #231e39;
-//   border-radius: 3px;
-//   font-family: Montserrat, sans-serif;
-//   cursor: pointer;
-// }
-// .follow-btn{
-//   margin-left: 10px;
-//   background: transparent;
-//   color: #02899c;
-// }
-// .follow-btn:hover{
-//   color: #231e39;
-//   background: #03bfbc;
-//   transition: .5s;
-// }
-// .container i{
-//   padding-left: 20px;
-//   font-size: 20px;
-//   margin-bottom: 20px;
-//   cursor: pointer;
-//   transition: .5s;
-// }
-// .container i:hover{
-//   color: #03bfbc;
-// }
+.heading{
+  text-align:left ;
+  color:black
+}
+.card1{
+  text-align: left;
+  width: 500px;
+  background-color: #eceff1;
+}
+.uk-text-muted{
+  text-align: right;
+  font-weight: lighter;
+  color: gray;
+}
+.card2{
+  text-align: left;
+  width: 770px;
+  background-color: #eceff1;
+}
+.card3{
+  width: 250px;
+  height: 200px;
+  float:right;
+ margin-top:35px;
+ padding-left: 0px;
+ background-color: #eceff1;
+}
+.list{
+  text-align: left;
+  list-style: none;
+}
+.list li{
+  margin-left: 0px;
+}
+.heading1{
+    text-align: right;
+    color:black;
+    position: relative;
+    top: 40px;
+    right: 160px;
+    padding-bottom: 4px;
 
+}
+.time{
+  font-weight:lighter;
+  color: grey;
+}
+.h2, h2 {
+   font-size: 1.5rem !important; 
+}
 
-// .example-header-image {
-//     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-//     background-size: cover;
-//     width: 250px;
-//     height: 250px;
-//     margin-top:10px;
-//     margin-right: 200px;
-   
-//   }
-//   .info{
-//     text-align: center;
-//   }
-// .intro{
-//   font-weight: bold;
-// }
-// ul{
-//   list-style-type: none;
-// }
-// li{
-
-//   float: left;
-//   margin: 3px;
-  
-// }
-// .list{
-//   margin-left: 180px;
-//   position: relative;
- 
-// }
-// .social{
-//   float: left !important;
-//   padding-right: 50px;
-  
-// }
-// #skills{
-//   margin-left: 100px;
-// }
-
-// .Experience{
-//   float:left
-
-// }
-
-// .details{
-//   margin-top: 50px;
-//   margin-right: 10px;
-// }
