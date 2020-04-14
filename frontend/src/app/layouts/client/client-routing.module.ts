@@ -13,6 +13,7 @@ import { DigitalMarketComponent } from 'src/app/components/digital-market/digita
 import { ProfileComponent } from 'src/app/components/profile/profile.component';
 import { DashboardComponent } from "src/app/components/dashboard/dashboard.component";
 import { ClientComponent } from './client.component';
+import { DevelopersComponent } from 'src/app/components/developers/developers.component';
 
 
 
@@ -27,7 +28,9 @@ const routes: Routes = [
   { path: 'resetPassword/:token', component: ResetPasswordComponent },
   { path: 'question', component: QuestionComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: "dashboard", component: DashboardComponent }
+  { path: "dashboard", component: DashboardComponent },
+  { path: "developers", component: DevelopersComponent }
+
 ];
 
 
