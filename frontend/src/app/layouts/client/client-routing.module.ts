@@ -10,6 +10,7 @@ import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-
 
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { DashboardComponent } from "src/app/components/dashboard/dashboard.component";
+import { IdeasComponent } from 'src/app/components/ideas/ideas.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: "forgotPassword", component: ForgotPasswordComponent },
   { path: "resetPassword/:token", component: ResetPasswordComponent },
   { path: "question", component: QuestionComponent },
-  { path: "dashboard", component: DashboardComponent }
+  { path: "dashboard", component: DashboardComponent },
+  { path: "ideas", component: IdeasComponent }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
