@@ -31,8 +31,13 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .card-ideas:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+  margin-top: 180px;
 }
 
 .mat-form-field {
@@ -86,6 +91,10 @@
   float: right;
 }
 
+.info {
+  margin-bottom: 30px;
+}
+
 .paragraph {
   margin-top: 20px;
 }
@@ -123,12 +132,28 @@
   white-space: nowrap;
 }
 
-.w3-pale-blue, .w3-hover-pale-blue:hover {
-    color: #000!important;
+.w3-pale-blue,
+.w3-hover-pale-blue:hover {
+  color: #000 !important;
 }
+
 .w3-leftbar {
-    border-left: 6px solid !important;
+  border-left: 6px solid !important;
 }
-.w3-container, .w3-panel {
-    padding: 0.01em 16px;
+.w3-container,
+.w3-panel {
+  padding: 0.01em 16px;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.img-dashboard {
+  vertical-align: middle;
+  border-style: none;
+  width: 50% !important;
+  margin-left: auto;
+  margin-right: auto;
 }
