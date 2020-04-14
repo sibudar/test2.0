@@ -80,6 +80,20 @@
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
                     <ng-template matStepLabel>Start your Journey</ng-template>
+                    <div class="w3-container w3-pale-blue w3-leftbar w3-border-blue">
+                        <p>Firstly, if you don't understand what's happening on this page. Click the info button on your
+                            right.</p>
+                        <div class="btn-add">
+                            <button mat-mini-fab color="primary" mat-raised-button (click)="openDialog()">
+                                <mat-icon>info</mat-icon>
+                            </button>
+                        </div>
+                        <p class="font-weight-bold text-left">
+                            It all starts with the idea, <span class="text-info">but how do you come up with the next
+                                great
+                                thing</span>?
+                        </p>
+                    </div>
                     <!-- <h4 class="header">Ideas</h4> -->
                     <mat-grid-list cols="1" rowHeight="380px">
                         <mat-grid-tile class="text-inside-grid">
@@ -94,8 +108,9 @@
                                                 <div class="card-body">
                                                     <div class="mb-5">
                                                         <h3 class="text-white">Ideas</h3>
-                                                        <p class="text-white">Discover how to build and maintain coding
-                                                            systems using our documentation.</p>
+                                                        <p class="text-white">These ideas will be turned into businesses. It all
+                                                            starts with an idea.
+                                                        </p>
                                                     </div>
                                                     <img class="img-fluid w-100"
                                                         src="assets/svg/illustrations/docs-frame.svg"
@@ -117,9 +132,8 @@
                                                 <div class="card-body">
                                                     <div class="mb-5">
                                                         <h3 class="text-white">Digital Marketing</h3>
-                                                        <p class="text-white">Start browsing our snippets pages with
-                                                            copy-to-clipboard snippets to match
-                                                            Bootstrap's level of quality.</p>
+                                                        <p class="text-white">This industry is quickly transitioning from last-touch attribution to multi-touch attribution, which means advertisers
+                                                        are better able to understand the factors influencing people's actions and purchases.</p>
                                                     </div>
                                                     <img class="img-fluid w-100"
                                                         src="assets/svg/illustrations/snippets-frame.svg"
