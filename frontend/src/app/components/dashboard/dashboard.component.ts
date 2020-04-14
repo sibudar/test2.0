@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog, private shepherdService: ShepherdService) {}
+  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) {}
   
   ngAfterViewInit(): void {
     // this.shepherdService.defaultStepOptions = defaultStepOptions;
