@@ -73,116 +73,97 @@
             </mat-grid-tile>
         </mat-grid-list>
 
-        <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-        </button> -->
-        <mat-horizontal-stepper [linear]="isLinear" #stepper>
-            <mat-step [stepControl]="firstFormGroup">
-                <form [formGroup]="firstFormGroup">
-                    <ng-template matStepLabel>Start your Journey</ng-template>
-                    <div class="w3-container w3-pale-blue w3-leftbar w3-border-blue">
-                        <p>Firstly, if you don't understand what's happening on this page. Click the info button on your
-                            right.</p>
-                        <div class="btn-add">
-                            <button mat-mini-fab color="primary" mat-raised-button (click)="openDialog()">
-                                <mat-icon>info</mat-icon>
-                            </button>
-                        </div>
-                        <p class="font-weight-bold text-left">
-                            It all starts with the idea, <span class="text-info">but how do you come up with the next
-                                great
-                                thing</span>?
-                        </p>
-                    </div>
-                    <!-- <h4 class="header">Ideas</h4> -->
-                    <mat-grid-list cols="1" rowHeight="380px">
-                        <mat-grid-tile class="text-inside-grid">
-                            <mat-list>
-                                <mat-list-item>
-                                    <div class="row mx-n2 mx-lg-n3">
-                                        <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate"
-                                            data-aos="fade-up">
-                                            <!-- Card -->
-                                            <a class="card bg-primary text-left h-100 transition-3d-hover"
-                                                href="documentation/index.html">
-                                                <div class="card-body">
-                                                    <div class="mb-5">
-                                                        <h3 class="text-white">Ideas</h3>
-                                                        <p class="text-white">These ideas will be turned into businesses. It all
-                                                            starts with an idea.
-                                                        </p>
-                                                    </div>
-                                                    <img class="img-fluid w-100"
-                                                        src="assets/svg/illustrations/docs-frame.svg"
-                                                        alt="Image Description">
-                                                </div>
-                                                <div class="card-footer border-0 bg-transparent pt-0">
-                                                    <span class="font-size-1 text-white font-weight-bold">Learn more <i
-                                                            class="fas fa-angle-right fa-sm ml-1"></i></span>
-                                                </div>
-                                            </a>
-                                            <!-- End Card -->
-                                        </div>
+        <div class="w3-container w3-pale-blue w3-leftbar w3-border-yellow info">
+            <p>Firstly, if you don't understand what's happening on this page. Click the info button.
+                <button class="btn-add" mat-mini-fab color="primary" mat-raised-button (click)="openDialog()">
+                    <mat-icon>info</mat-icon>
+                </button>
+            </p>
+        </div>
 
-                                        <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate"
-                                            data-aos="fade-up" data-aos-delay="150">
-                                            <!-- Card -->
-                                            <a class="card bg-success text-left h-100 transition-3d-hover"
-                                                href="snippets/index.html">
-                                                <div class="card-body">
-                                                    <div class="mb-5">
-                                                        <h3 class="text-white">Digital Marketing</h3>
-                                                        <p class="text-white">This industry is quickly transitioning from last-touch attribution to multi-touch attribution, which means advertisers
-                                                        are better able to understand the factors influencing people's actions and purchases.</p>
-                                                    </div>
-                                                    <img class="img-fluid w-100"
-                                                        src="assets/svg/illustrations/snippets-frame.svg"
-                                                        alt="Image Description">
-                                                </div>
-                                                <div class="card-footer border-0 bg-transparent pt-0">
-                                                    <span class="font-size-1 text-white font-weight-bold">Start building
-                                                        <i class="fas fa-angle-right fa-sm ml-1"></i></span>
-                                                </div>
-                                            </a>
-                                            <!-- End Card -->
+        <div class="card-container">
+            <mat-list>
+                <mat-list-item>
+                    <div class="container space-2 space-top-xl-3 space-bottom-lg-3">
+                        <div class="row mx-n2 mx-lg-n3">
+                            <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate"
+                                data-aos="fade-up">
+                                <!-- Card -->
+                                <a class="card bg-primary text-left h-100 transition-3d-hover"
+                                    href="documentation/index.html">
+                                    <div class="card-body">
+                                        <div class="mb-5">
+                                            <h3 class="text-white">Ideas</h3>
+                                            <p class="text-white">These ideas will be turned into businesses. It all
+                                                starts with an idea.
+                                            </p>
                                         </div>
-
-                                        <div class="col-sm-6 col-lg-4 px-2 px-lg-3 aos-init aos-animate"
-                                            data-aos="fade-up" data-aos-delay="200">
-                                            <!-- Card -->
-                                            <a class="js-go-to card bg-warning text-left h-100 transition-3d-hover"
-                                                href="javascript:;">
-                                                <div class="card-body">
-                                                    <div class="mb-5">
-                                                        <h3 class="text-white">Developers</h3>
-                                                        <p class="text-white">Apart from 60+ HTML-pages, the theme comes
-                                                            with 3 ready-to-use and stand-alone
-                                                            demo options.</p>
-                                                    </div>
-                                                    <img class="img-fluid w-100"
-                                                        src="assets/svg/illustrations/layouts-frame.svg"
-                                                        alt="Image Description">
-                                                </div>
-                                                <div class="card-footer border-0 bg-transparent pt-0">
-                                                    <span class="font-size-1 text-white font-weight-bold">View examples
-                                                        <i class="fas fa-angle-right fa-sm ml-1"></i></span>
-                                                </div>
-                                            </a>
-                                            <!-- End Card -->
-                                        </div>
-
+                                        <img class="img-dashboard" src="assets/img/ideas-icon.png"
+                                            alt="Image Description">
                                     </div>
-                                </mat-list-item>
-                            </mat-list>
-                        </mat-grid-tile>
-                    </mat-grid-list>
-                    <div>
-                        <button mat-button mat-flat-button color="primary" class="btn" matStepperNext>Next</button>
-                    </div>
-                </form>
-            </mat-step>
+                                    <div class="card-footer border-0 bg-transparent pt-0">
+                                        <span class="font-size-1 text-white font-weight-bold">Load ideas<i
+                                                class="fas fa-angle-right fa-sm ml-1"></i></span>
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                            </div>
 
-            <mat-step [stepControl]="secondFormGroup">
+                            <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate"
+                                data-aos="fade-up" data-aos-delay="150">
+                                <!-- Card -->
+                                <a class="card bg-success text-left h-100 transition-3d-hover"
+                                    href="snippets/index.html">
+                                    <div class="card-body">
+                                        <div class="mb-5">
+                                            <h3 class="text-white">Digital Marketing</h3>
+                                            <p class="text-white">This industry will be able to make you understand
+                                                the
+                                                factors influencing people's actions and purchases.</p>
+                                        </div>
+                                        <img class="img-dashboard" src="assets/img/digital-icon.png"
+                                            alt="Image Description">
+                                    </div>
+                                    <div class="card-footer border-0 bg-transparent pt-0">
+                                        <span class="font-size-1 text-white font-weight-bold">Start connecting
+                                            <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                            </div>
+
+                            <div class="col-sm-6 col-lg-4 px-2 px-lg-3 aos-init aos-animate" data-aos="fade-up"
+                                data-aos-delay="200">
+                                <!-- Card -->
+                                <a class="js-go-to card bg-warning text-left h-100" href="">
+                                    <div class="card-body">
+                                        <div class="mb-5">
+                                            <h3 class="text-white">Developers</h3>
+                                            <p class="text-white">Everything you need to build better websites/apps.
+                                            </p>
+                                        </div>
+                                        <img class="img-dashboard" src="assets/img/genius-icon.png"
+                                            alt="Image Description">
+                                    </div>
+                                    <div class="card-footer border-0 bg-transparent pt-0">
+                                        <span class="font-size-1 text-white font-weight-bold">Let's build
+                                            <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                            </div>
+
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+
+        <!-- <div>
+                        <button mat-button mat-flat-button color="primary" class="btn" matStepperNext>Next</button>
+                    </div> -->
+
+        <!-- <mat-step [stepControl]="secondFormGroup">
                 <form [formGroup]="secondFormGroup">
                     <ng-template matStepLabel>Evaluation</ng-template>
                     <div class="w3-container w3-pale-blue w3-leftbar w3-border-blue">
@@ -290,9 +271,10 @@
                             <mat-icon>add</mat-icon>
                         </button>
                     </div>
-                    <mat-divider class="divider"></mat-divider>
-                    <!-- LEGAL -->
-                    <div>
+                    <mat-divider class="divider"></mat-divider> -->
+
+        <!-- LEGAL -->
+        <!-- <div>
                         <mat-grid-list cols="2" rowHeight="380px">
                             <mat-grid-tile class="text-inside-grid">
                                 <div class="mb-5 mt-11 col-header">
@@ -314,9 +296,10 @@
                         </p>
 
                         <mat-tab-group headerPosition="below">
-                            <mat-tab label="First">
-                                <!-- Expand for business plan -->
-                                <mat-expansion-panel hideToggle>
+                            <mat-tab label="First"> -->
+
+        <!-- Expand for business plan -->
+        <!-- <mat-expansion-panel hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
                                             Do you have a business plan?
@@ -336,17 +319,18 @@
                                 </mat-expansion-panel>
                             </mat-tab>
 
-                            <mat-tab label="Second">
-                                <!-- Paragraph before expand for CIPC -->
-                                <p class="paragraph">You’ve drafted a killer business plan and you are ready to venture
+                            <mat-tab label="Second"> -->
+
+        <!-- Paragraph before expand for CIPC -->
+        <!-- <p class="paragraph">You’ve drafted a killer business plan and you are ready to venture
                                     into
                                     the world of
                                     business. Your next step is to
                                     register your business in accordance with South African legal and statutory
                                     requirements.
-                                </p>
-                                <!-- Expand for CIPC -->
-                                <mat-expansion-panel hideToggle>
+                                </p> -->
+        <!-- Expand for CIPC -->
+        <!-- <mat-expansion-panel hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
                                             Have you registered your business/company with CIPC?
@@ -367,9 +351,10 @@
                                         such as trademarks, patents, designs and copyright. For more information.
                                     </p>
                                 </mat-expansion-panel>
-                            </mat-tab>
-                            <!-- Expand for SARS -->
-                            <mat-tab label="Third">
+                            </mat-tab> -->
+
+        <!-- Expand for SARS -->
+        <!-- <mat-tab label="Third">
                                 <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
@@ -393,9 +378,10 @@
                                         directly. find out more information
                                         on SARS website.</p>
                                 </mat-expansion-panel>
-                            </mat-tab>
-                            <!-- COIDA -->
-                            <mat-tab label="Fourth">
+                            </mat-tab> -->
+
+        <!-- COIDA -->
+        <!-- <mat-tab label="Fourth">
                                 <mat-expansion-panel hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
@@ -421,9 +407,10 @@
                                         information.
                                     </p>
                                 </mat-expansion-panel>
-                            </mat-tab>
-                            <!-- PAYE -->
-                            <mat-tab label="Fiveth">
+                            </mat-tab> -->
+
+        <!-- PAYE -->
+        <!-- <mat-tab label="Fiveth">
                                 <mat-expansion-panel hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
@@ -443,9 +430,10 @@
                                         addition infor regarding UIF you can.
                                     </p>
                                 </mat-expansion-panel>
-                            </mat-tab>
-                            <!-- VAT Vendor -->
-                            <mat-tab label="Sixth">
+                            </mat-tab> -->
+
+        <!-- VAT Vendor -->
+        <!-- <mat-tab label="Sixth">
                                 <mat-expansion-panel hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
@@ -471,10 +459,10 @@
                             </mat-tab>
                         </mat-tab-group>
                     </div>
-                    <mat-divider class="divider"></mat-divider>
+                    <mat-divider class="divider"></mat-divider> -->
 
-                    <!-- FINANCE -->
-                    <div>
+        <!-- FINANCE -->
+        <!-- <div>
                         <mat-grid-list cols="2" rowHeight="380px">
                             <mat-grid-tile class="text-inside-grid">
                                 <div class="mb-5 mt-11 col-header">
@@ -493,12 +481,14 @@
                                         src="assets/img/everything-3.png">
                                 </div>
                             </mat-grid-tile>
-                        </mat-grid-list>
-                        <!-- Tabs start here -->
-                        <mat-tab-group headerPosition="below">
-                            <mat-tab label="First">
-                                <!-- Expand for funds -->
-                                <mat-expansion-panel hideToggle>
+                        </mat-grid-list> -->
+
+        <!-- Tabs start here -->
+        <!-- <mat-tab-group headerPosition="below">
+                            <mat-tab label="First"> -->
+
+        <!-- Expand for funds -->
+        <!-- <mat-expansion-panel hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
                                             Do you have funds for your business?
@@ -521,13 +511,13 @@
                                 </mat-expansion-panel>
                             </mat-tab>
 
-                            <mat-tab label="Second">
-                                <!-- Paragraph before expand for business account -->
-                                <p class="paragraph">
+                            <mat-tab label="Second"> -->
+        <!-- Paragraph before expand for business account -->
+        <!-- <p class="paragraph">
 
-                                </p>
-                                <!-- Expand for business account -->
-                                <mat-expansion-panel hideToggle>
+                                </p> -->
+        <!-- Expand for business account -->
+        <!-- <mat-expansion-panel hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
                                             Do you have a business account?
@@ -549,9 +539,9 @@
                                         the stumbling blocks that cause most people to fail.
                                     </p>
                                 </mat-expansion-panel>
-                            </mat-tab>
-                            <!-- Expand for SARS -->
-                            <mat-tab label="Third">
+                            </mat-tab> -->
+        <!-- Expand for SARS -->
+        <!-- <mat-tab label="Third">
                                 <mat-expansion-panel hideToggle>
                                     <mat-expansion-panel-header>
                                         <mat-panel-title>
@@ -576,10 +566,10 @@
                         </mat-tab-group>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> -->
 
-            <!-- DIGITAL MARKETING -->
-            <mat-step [stepControl]="thirdFormGroup">
+        <!-- DIGITAL MARKETING -->
+        <!-- <mat-step [stepControl]="thirdFormGroup">
                 <form [formGroup]="thirdFormGroup">
                     <ng-template matStepLabel>Digital Marketing</ng-template>
                     <mat-grid-list cols="2" rowHeight="380px">
@@ -605,16 +595,16 @@
                         <button mat-button matStepperNext>Next</button>
                     </div>
                 </form>
-            </mat-step>
+            </mat-step> -->
 
-            <mat-step>
+        <!-- <mat-step>
                 <ng-template matStepLabel>Developers</ng-template>
                 <mat-grid-list cols="1" rowHeight="450px">
                     <mat-grid-tile class="text-inside-grid">
                         <div class="row mx-n2 mb-5">
-                            <div class="col-sm-6 col-lg-3 px-2 mb-3">
-                                <!-- Team -->
-                                <div class="card h-100 transition-3d-hover">
+                            <div class="col-sm-6 col-lg-3 px-2 mb-3"> -->
+        <!-- Team -->
+        <!-- <div class="card h-100 transition-3d-hover">
                                     <div class="card-body">
                                         <div class="avatar avatar-lg avatar-circle mb-4">
                                             <img class="avatar-img"
@@ -629,9 +619,9 @@
                                             simple person.</p>
                                     </div>
 
-                                    <div class="card-footer border-0 pt-0">
-                                        <!-- Social Networks -->
-                                        <ul class="list-inline mb-0">
+                                    <div class="card-footer border-0 pt-0"> -->
+        <!-- Social Networks -->
+        <!-- <ul class="list-inline mb-0">
                                             <li class="list-inline-item">
                                                 <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
                                                     <i class="fab fa-facebook-f"></i>
@@ -647,16 +637,16 @@
                                                     <i class="fab fa-twitter"></i>
                                                 </a>
                                             </li>
-                                        </ul>
-                                        <!-- End Social Networks -->
-                                    </div>
-                                </div>
-                                <!-- End Team -->
-                            </div>
+                                        </ul> -->
+        <!-- End Social Networks -->
+        <!-- </div>
+                                </div> -->
+        <!-- End Team -->
+        <!-- </div>
 
-                            <div class="col-sm-6 col-lg-3 px-2 mb-3">
-                                <!-- Team -->
-                                <div class="card h-100 transition-3d-hover">
+                            <div class="col-sm-6 col-lg-3 px-2 mb-3"> -->
+        <!-- Team -->
+        <!-- <div class="card h-100 transition-3d-hover">
                                     <div class="card-body">
                                         <div class="avatar avatar-lg avatar-circle mb-4">
                                             <img class="avatar-img"
@@ -671,9 +661,9 @@
                                             simple person.</p>
                                     </div>
 
-                                    <div class="card-footer border-0 pt-0">
-                                        <!-- Social Networks -->
-                                        <ul class="list-inline mb-0">
+                                    <div class="card-footer border-0 pt-0"> -->
+        <!-- Social Networks -->
+        <!-- <ul class="list-inline mb-0">
                                             <li class="list-inline-item">
                                                 <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
                                                     <i class="fab fa-facebook-f"></i>
@@ -689,16 +679,16 @@
                                                     <i class="fab fa-twitter"></i>
                                                 </a>
                                             </li>
-                                        </ul>
-                                        <!-- End Social Networks -->
-                                    </div>
-                                </div>
-                                <!-- End Team -->
-                            </div>
+                                        </ul> -->
+        <!-- End Social Networks -->
+        <!-- </div>
+                                </div> -->
+        <!-- End Team -->
+        <!-- </div>
 
-                            <div class="col-sm-6 col-lg-3 px-2 mb-3">
-                                <!-- Team -->
-                                <div class="card h-100 transition-3d-hover">
+                            <div class="col-sm-6 col-lg-3 px-2 mb-3"> -->
+        <!-- Team -->
+        <!-- <div class="card h-100 transition-3d-hover">
                                     <div class="card-body">
                                         <div class="avatar avatar-lg avatar-circle mb-4">
                                             <img class="avatar-img"
@@ -713,9 +703,9 @@
                                             simple person.</p>
                                     </div>
 
-                                    <div class="card-footer border-0 pt-0">
-                                        <!-- Social Networks -->
-                                        <ul class="list-inline mb-0">
+                                    <div class="card-footer border-0 pt-0"> -->
+        <!-- Social Networks -->
+        <!-- <ul class="list-inline mb-0">
                                             <li class="list-inline-item">
                                                 <a class="btn btn-xs btn-icon btn-soft-secondary rounded" href="#">
                                                     <i class="fab fa-facebook-f"></i>
@@ -731,16 +721,16 @@
                                                     <i class="fab fa-twitter"></i>
                                                 </a>
                                             </li>
-                                        </ul>
-                                        <!-- End Social Networks -->
-                                    </div>
-                                </div>
-                                <!-- End Team -->
-                            </div>
+                                        </ul> -->
+        <!-- End Social Networks -->
+        <!-- </div>
+                                </div> -->
+        <!-- End Team -->
+        <!-- </div>
 
-                            <div class="col-sm-6 col-lg-3 px-2 mb-3">
-                                <!-- Team -->
-                                <div class="card h-100 transition-3d-hover">
+                            <div class="col-sm-6 col-lg-3 px-2 mb-3"> -->
+        <!-- Team -->
+        <!-- <div class="card h-100 transition-3d-hover">
                                     <div class="card-body">
                                         <div class="avatar avatar-lg avatar-circle mb-4">
                                             <img class="avatar-img"
@@ -758,17 +748,16 @@
                                     <div class="card-footer border-0 pt-0">
                                         <a class="btn btn-xs btn-soft-secondary" href="#">View More Developers</a>
                                     </div>
-                                </div>
-                                <!-- End Team -->
-                            </div>
+                                </div> -->
+        <!-- End Team -->
+        <!-- </div>
                         </div>
                     </mat-grid-tile>
                 </mat-grid-list>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
                 </div>
-            </mat-step>
+            </mat-step> -->
 
-        </mat-horizontal-stepper>
     </div>
 </div>
