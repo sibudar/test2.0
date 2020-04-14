@@ -35,6 +35,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
+import { IdeasComponent } from '../../components/ideas/ideas.component';
 
 
 export function tokenGetter() {
@@ -57,6 +58,7 @@ export function tokenGetter() {
     DigitalMarketComponent,
     DashboardComponent,
     InstructionsComponent,
+    IdeasComponent,
   ],
   imports: [
     CommonModule,
