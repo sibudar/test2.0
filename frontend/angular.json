@@ -35,7 +35,6 @@
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/animate.css/animate.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/shepherd.js/dist/css/shepherd.css",
               "src/styles.scss"
             ],
             "scripts": []
