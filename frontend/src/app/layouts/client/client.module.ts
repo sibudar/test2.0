@@ -93,6 +93,7 @@ export function tokenGetter() {
   ],
   providers: [AuthService, AuthGuard],
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
-  bootstrap: [DashboardComponent, InstructionsComponent],
+  bootstrap: [DashboardComponent, InstructionsComponent, IdeasComponent],
+  exports: [IdeasComponent],
 })
 export class ClientModule {}
