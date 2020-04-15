@@ -10,38 +10,14 @@ import { JoyrideService } from "ngx-joyride";
   styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent implements OnInit {
-  isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  thirdFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog, private joyride: JoyrideService) {}
+  constructor(private joyride: JoyrideService) {}
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(InstructionsComponent, {
-      width: "650px",
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-    });
-  }
-
-  ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ["", Validators.required],
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ["", Validators.required],
-    });
-    this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ["", Validators.required],
-    });
-  }
+  ngOnInit() {}
 
   tour() {
-    this.joyride.startTour(
-      { steps: ['firstStep']}
+    this.joyride.startTour({ 
+      steps: ['welcomeStep' ,'ideaStep', 'developerStep', 'digitalMarketingStep']}
     )
   }
 }
