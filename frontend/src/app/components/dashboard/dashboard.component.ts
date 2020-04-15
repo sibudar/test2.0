@@ -1,44 +1,21 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { InstructionsComponent } from '../instructions/instructions.component';
 import { MatDialog } from '@angular/material/dialog';
-import Shepherd from "shepherd.js";
+import { JoyrideService } from "ngx-joyride";
 
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.scss"],
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
-  private tour: any;
 
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) {}
-  
-  ngAfterViewInit(): void {
-    this.tour = new Shepherd.Tour({
-      defaultStepOptions: {
-        classes: "shadow-md bg-purple-dark",
-        scrollTo: true,
-      },
-    });
-    this.tour.addStep("example", {
-      title: "Example Shepherd",
-      text: "Creating a Shepherd is easy too! Just create ...",
-      attachTo: ".hero-example bottom",
-      advanceOn: ".docs-link click",
-    });
-    this.tour.start();
-
-    // this.shepherdService.defaultStepOptions = defaultStepOptions;
-    // this.shepherdService.modal = true;
-    // this.shepherdService.confirmCancel = false;
-    // this.shepherdService.addSteps(defaultSteps);
-    // this.shepherdService.start();
-  }
+  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog, private joyride: JoyrideService) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(InstructionsComponent, {
@@ -60,5 +37,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ["", Validators.required],
     });
+  }
+
+  tour() {
+    this.joyride.startTour(
+      { steps: ['firstStep']}
+    )
   }
 }
