@@ -3,8 +3,12 @@
         <div class="container">
             <!-- Brand -->
             <a class="navbar-brand">
-                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
-                Novelty
+                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="..."
+                     joyrideStep="welcomeStep" 
+                     title="Welcome to Novelty" 
+                     text="Novelty is an application, which provide an easy journey 
+                     for entrepreneurs from having a business idea, to starting the journey, running it and 
+                     market it to the wider audience.">Novelty
             </a>
 
             <!-- Toggler -->
@@ -75,7 +79,7 @@
 
         <div class="w3-container w3-pale-blue w3-leftbar w3-border-yellow info">
             <p>Firstly, if you don't understand what's happening on this page. Click the info button.
-                <button class="btn-add" mat-mini-fab color="primary" mat-raised-button (click)="openDialog()">
+                <button class="btn-add" mat-mini-fab color="primary" mat-raised-button (click)="tour()">
                     <mat-icon>info</mat-icon>
                 </button>
             </p>
@@ -90,7 +94,10 @@
                                 data-aos="fade-up">
                                 <!-- Card -->
                                 <a class="card bg-primary text-left h-100 transition-3d-hover"
-                                    href="documentation/index.html">
+                                    href="" 
+                                    joyrideStep="ideaStep" 
+                                    title="Ideas" 
+                                    text="Card for your ideas, when you click on this idea card you'll be taken to the ideas page where you'll be able to add, evaluate and rate your ideas.">
                                     <div class="card-body">
                                         <div class="mb-5">
                                             <h3 class="text-white">Ideas</h3>
@@ -112,7 +119,13 @@
                             <div class="col-sm-6 col-lg-4 px-2 px-lg-3 aos-init aos-animate" data-aos="fade-up"
                                 data-aos-delay="200">
                                 <!-- Card -->
-                                <a class="js-go-to card bg-warning text-left h-100" href="">
+                                <a class="js-go-to card bg-warning text-left h-100" 
+                                    href="" 
+                                    joyrideStep="developerStep" 
+                                    title="Developers" 
+                                    text="Card to hire a developer, when you click on this developer card you'll be introduced to
+                                    developer who can help you reach clients you can't physically. Developers will achieve this by 
+                                    building platforms an entrepreneurs ordered/requested.">
                                     <div class="card-body">
                                         <div class="mb-5">
                                             <h3 class="text-white">Developers</h3>
@@ -133,7 +146,13 @@
                             <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate" data-aos="fade-up"
                             data-aos-delay="150">
                                 <!-- Card -->
-                                <a class="card bg-success text-left h-100 transition-3d-hover" href="snippets/index.html">
+                                <a class="card bg-success text-left h-100 transition-3d-hover" 
+                                    href=""
+                                    joyrideStep="digitalmarketingStep" 
+                                    title="Digital Marketing" 
+                                    text="Card for digital marketing, when you click on the digital marketing card you'll be presented 
+                                    with easier of using digital platform tools, tips on how to use them effectively to grow your
+                                    business in a digital world.">
                                     <div class="card-body">
                                         <div class="mb-5">
                                             <h3 class="text-white">Digital Marketing</h3>
