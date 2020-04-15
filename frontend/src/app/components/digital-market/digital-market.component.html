@@ -1,100 +1,145 @@
-<div class="navbar">
-    <h1>Navigation</h1>
-</div>
-<div class="header">
-    <h2>Take Your Idea to the next level<br>
-        <h4>With Digital Marketing</h4>
-    </h2>
-</div>
+<div class=container-outer>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
+                Novelty
+            </a>
 
-<section id="wraper">
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <mat-grid-list cols="2" rowHeight="450px">
-        <mat-grid-tile class="text-inside-grid">
-            <div class="container ">
-                <p>Chose the Idea to promote.</p>
-                <div class="skills">
-                    <div class="skill-label">
-                        <h3>Animation design</h3>
-                        <span class="percent">87%</span>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="progress" style="width: 87%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <div class="skill-label">
-                        <h3>Book re-seller</h3>
-                        <span class="percent">90%</span>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <div class="skill-label">
-                        <h3>Online solutions</h3>
-                        <span class="percent">80%</span>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <div class="skill-label">
-                        <h3>Logistics</h3>
-                        <span class="percent">72%</span>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="progress" style="width: 72%;"></div>
-                    </div>
-                </div>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fe fe-x"></i>
+                </button>
+
+                <!-- Navigation -->
+                <ul class="navbar-nav ml-auto">
+                    <a class="nav-link" routerLink="/landing" aria-haspopup="true" aria-expanded="true">
+                        Home
+                    </a>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" routerLink="/client/display" aria-haspopup="true" aria-expanded="true">
+                            Journey
+                        </a>
+                    </li>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            About Novelty
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <div class="img">
-                <img class="image animated fadeInRight delay-0.5s" src="assets/img/perfect.png">
-            </div>
-        </mat-grid-tile>
-    </mat-grid-list>
-
-</section>
-
-
-
-<main class="grid">
-    <article>
-        <img src="https://picsum.photos/g/600/400?image=1083" alt="Sample photo">
-        <i class="fa fa-twitter"></i>
-        <div class="text">
-            <h3>HTML5</h3>
-            <p>HTML 5 is a markup language used for structuring and presenting content on the World Wide Web.</p>
-            <a href="#" class="btn btn-primary btn-block">Here's why</a>
         </div>
-    </article>
-    <article>
-        <img src="https://picsum.photos/g/600/400?image=1063" alt="Sample photo">
-        <i class="fa fa-css3"></i>
-        <div class="text">
-            <h3>CSS3</h3>
-            <p>CSS helps Web developers create a uniform look across several pages of a Web site. Instead of defining
-                the style of each table and each block of text within a page's HTML.</p>
-            <a href="https://codepen.io/collection/XdWJOQ/" class="btn btn-primary btn-block">Here's how</a>
-        </div>
-    </article>
-    <article>
-        <img src="https://picsum.photos/g/600/400?image=1056" alt="Sample photo">
-        <i class="fa fa-code"></i>
-        <div class="text">
-            <h3>Source code</h3>
-            <p>In computing, source code is any collection of code, possibly with comments, written using a
-                human-readable programming language.</p>
-            <a href="https://codepen.io/collection/XdWJOQ/" class="btn btn-primary btn-block">Read more</a>
-        </div>
-    </article>
+    </nav>
 
-</main>
+    <div class="container-inner">
+        <div class="header">
+            <h2>Take Your Idea to the next level<br>
+                <h4>With Digital Marketing</h4>
+            </h2>
+        </div>
+
+        <section id="wraper">
+
+            <mat-grid-list cols="2" rowHeight="450px">
+                <mat-grid-tile class="text-inside-grid">
+                    <div class="container-head">
+                        <p>Chose the Idea to promote.</p>
+                        <div class="skills">
+                            <div class="skill-label">
+                                <h3>Animation design</h3>
+                                <span class="percent">87%</span>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress" style="width: 87%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <div class="skill-label">
+                                <h3>Book re-seller</h3>
+                                <span class="percent">90%</span>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <div class="skill-label">
+                                <h3>Online solutions</h3>
+                                <span class="percent">80%</span>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <div class="skill-label">
+                                <h3>Logistics</h3>
+                                <span class="percent">72%</span>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress" style="width: 72%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="img">
+                        <img class="image animated fadeInRight delay-0.5s" src="assets/img/perfect.png">
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+        </section>
+
+
+
+        <main class="grid">
+            <article>
+                <img src="https://picsum.photos/g/600/400?image=1083" alt="Sample photo">
+                <i class="fa fa-twitter"></i>
+                <div class="text">
+                    <h3>HTML5</h3>
+                    <p>HTML 5 is a markup language used for structuring and presenting content on the World Wide Web.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-block">Here's why</a>
+                </div>
+            </article>
+            <article>
+                <img src="https://picsum.photos/g/600/400?image=1063" alt="Sample photo">
+                <i class="fa fa-css3"></i>
+                <div class="text">
+                    <h3>CSS3</h3>
+                    <p>CSS helps Web developers create a uniform look across several pages of a Web site. Instead of
+                        defining
+                        the style of each table and each block of text within a page's HTML.</p>
+                    <a href="https://codepen.io/collection/XdWJOQ/" class="btn btn-primary btn-block">Here's how</a>
+                </div>
+            </article>
+            <article>
+                <img src="https://picsum.photos/g/600/400?image=1056" alt="Sample photo">
+                <i class="fa fa-code"></i>
+                <div class="text">
+                    <h3>Source code</h3>
+                    <p>In computing, source code is any collection of code, possibly with comments, written using a
+                        human-readable programming language.</p>
+                    <a href="https://codepen.io/collection/XdWJOQ/" class="btn btn-primary btn-block">Read more</a>
+                </div>
+            </article>
+
+        </main>
+    </div>
