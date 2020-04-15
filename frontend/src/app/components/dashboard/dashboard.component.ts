@@ -2,8 +2,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { InstructionsComponent } from '../instructions/instructions.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ShepherdService } from "angular-shepherd";
-// import { steps as defaultSteps, defaultStepOptions } from "../data";
+import Shepherd from "shepherd.js";
 
 @Component({
   selector: "app-dashboard",
@@ -15,10 +14,25 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
+  private tour: any;
 
   constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) {}
   
   ngAfterViewInit(): void {
+    this.tour = new Shepherd.Tour({
+      defaultStepOptions: {
+        classes: "shadow-md bg-purple-dark",
+        scrollTo: true,
+      },
+    });
+    this.tour.addStep("example", {
+      title: "Example Shepherd",
+      text: "Creating a Shepherd is easy too! Just create ...",
+      attachTo: ".hero-example bottom",
+      advanceOn: ".docs-link click",
+    });
+    this.tour.start();
+
     // this.shepherdService.defaultStepOptions = defaultStepOptions;
     // this.shepherdService.modal = true;
     // this.shepherdService.confirmCancel = false;
