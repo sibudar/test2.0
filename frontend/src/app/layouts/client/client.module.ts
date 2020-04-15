@@ -37,6 +37,7 @@ import { DevelopersComponent } from '../../components/developers/developers.comp
 import { ProfileComponent } from '../../components/profile/profile.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
+import { EvaluationComponent } from '../../components/evaluation/evaluation.component';
 
 
 export function tokenGetter() {
@@ -61,6 +62,7 @@ export function tokenGetter() {
     ProfileComponent,
     DashboardComponent,
     InstructionsComponent,
+    EvaluationComponent
   ],
   imports: [
     CommonModule,

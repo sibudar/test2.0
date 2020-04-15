@@ -1,77 +1,95 @@
 
-    <div class="container">
-        <div class="cover-photo">
-          <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
+      <div class="dev">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
+                Novelty
+            </a>
+      
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+      
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fe fe-x"></i>
+                </button>
+      
+                <!-- Navigation -->
+                <ul class="navbar-nav ml-auto">
+                    <a class="nav-link" routerLink="/landing" aria-haspopup="true" aria-expanded="true">
+                        Home
+                    </a>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" routerLink="/client/display" aria-haspopup="true" aria-expanded="true">
+                            Journey
+                        </a>
+                    </li>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            About Novelty
+                        </a>
+                    </li>
+                </ul>
+      
         </div>
-        <div class="profile-name">Samkeliswe  Mcholo</div>
-
-        <!-- Skills -->
-        <!-- <h2 class="heading1">Skills</h2> -->
-        
-          <h2 class="heading1">Skills</h2>
-          <mat-card class="card3"> 
-            <ul class="list">
-                <li>Angular</li>
-                <li>Html & Css</li>
-                <li>Node Js</li>
-                <li>Springboot</li>
-                <li>Php</li>
-                <li>Java</li>
-                <li>Javascript</li>
-            </ul>
-                 </mat-card>
-        
-     
-        
-               <!-- work Experience -->   
-        <h2 class="heading">Work Experience</h2>
-            <mat-card class="card1">
-                <div class="work_experience">
-                    <div class="">
-                        <div class="">
-                            <div class="">
-                                <h3>Full Stack Developer</h3>
-                              </div>
-                              <div>
-                                <h3 class="uk-text-muted">Company A</h3>
-                              </div>
-                        </div>
-                    </div>
-                      <div class="">
-                        
-                        <time datetime="March 2019" class='time'>March 2019</time> - Present</div>
-                        <p>Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                </div>
-            </mat-card>
-            
-            <br>
-            <!-- education -->
-             <h2 class="heading">Education</h2>
-            <mat-card class="card2">
-                <div class='education'>
-                    <div class="uk-card uk-card-default uk-card-body uk-margin-bottom">
-                        <div class="uk-flex uk-flex-wrap uk-flex-between">
-                            <div class="">
-                                <h3>Computer Science</h3>
-                              </div>
-                              <div>
-                                <h3 class="uk-text-muted">University Of City</h3>
-                              </div>
-                        </div>
-                        <p class="uk-text-meta uk-margin-remove-top">
-                            
-                            <time datetime="June 2018" class='time'>June 2018</time> - March 2019</p>
-                
-                            <p>Lorem ipsum <a href= "#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </mat-card>
-       
-
-
-
-      </div>
-
-
+      </nav>
       
 
+<!-- profile -->
+        <div class="container-inner">
+
+            <mat-grid-list cols="2" rowHeight="900px">
+                <mat-grid-tile>
+                    <div class="img">
+                        <img class="image animated fadeInRight delay-0.5s" src="assets/img/images5.png">
+                    </div>
+                </mat-grid-tile>
+
+
+                <mat-grid-tile class="text-inside-grid">
+                    <div class="mb-5 mt-11 col-header">
+                        <h1 class="display-4 mb-2">Work Experience</h1>
+                        <p class="lead">WeThinkCode
+                        </p>
+                        <p class="uk-text-meta uk-margin-remove-top">
+                            <time datetime="June 2018" class='time'>June 2018</time> - March 2019</p>
+                            <p>Lorem ipsum <a href= "#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                       <hr>
+    
+                       <h1 class="display-4 mb-2">Education</h1>
+                        <p class="lead">University Of City
+                        </p>
+                        <p class="uk-text-meta uk-margin-remove-top">
+                                
+                            <time datetime="June 2018" class='time'>June 2018</time> - March 2019</p>
+                            <p>Lorem ipsum <a href= "#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                       <hr>
+    
+                       <h1 class="display-4 mb-2">Skills</h1>
+                       <ul class="list">
+                        <li>Angular</li>
+                        <li>Html & Css</li>
+                        <li>Node Js</li>
+                        <li>Springboot</li>
+                        <li>Php</li>
+                        <li>Java</li>
+                        <li>Javascript</li>
+                    </ul>
+                      <hr>
+    
+                    </div> 
+                </mat-grid-tile>
+              </mat-grid-list>
+          </div>
+      </div>
+
+    

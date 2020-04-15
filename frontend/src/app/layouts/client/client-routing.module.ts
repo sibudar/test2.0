@@ -15,6 +15,7 @@ import { DashboardComponent } from "src/app/components/dashboard/dashboard.compo
 import { ClientComponent } from './client.component';
 import { DevelopersComponent } from 'src/app/components/developers/developers.component';
 
+import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,9 @@ const routes: Routes = [
   { path: 'question', component: QuestionComponent },
   { path: 'profile', component: ProfileComponent },
   { path: "dashboard", component: DashboardComponent },
-  { path: "developers", component: DevelopersComponent }
+  { path: "developers", component: DevelopersComponent },
+  { path: 'ideas', component: EvaluationComponent }//to be removed,for testing purpose
+  
 
 ];
 

@@ -26,7 +26,7 @@ app.use('/api/v1/domain', domain);
 
 // default route 
 app.use('/', (req, res, next) => {
-    res.send('Gift: I thought it was suppose to be req');
+    res.status(500).send('Gift: I thought it was suppose to be req');
 });
 
 module.exports = app;
