@@ -7,17 +7,40 @@ body {
   font-family: "MontSerrat", sans-serif;
 }
 #wraper{
-  margin: 10px 40px 0px 40px ;
-  padding: 0px 30px ;
+  margin: 20px 40px 0px 40px ;
+  padding: 4px 30px ;
   background-color: lightness($color: #c7d6e4);
 }
 .header{
-  width: 73%;
+  width: 76%;
   height:80px;
-  margin: 35px auto 0px auto;
-  background-color: lightness($color: #a5c5e4);
+  color: white;
+  margin: 45px auto 0px auto;
+  padding: 3px;
+  background-color:#021f4a;
+  font-size:16px;
+  border-radius: 3px;
 }
 .header h4{
+  color:rgb(202, 202, 143);
+  font-family: serif;
+  font-weight: 800;
+  margin: 10px 0px;
+}
+.header p{
+  color: black;
+
+}
+.header1{
+  width: 76%;
+  height:80px;
+  margin: 45px auto 0px auto;
+  padding: 3px;
+  background-color: rgb(133, 133, 235);
+  font-size:16px;
+  border-radius: 3px;
+}
+.header1 h4{
   color:rgb(202, 202, 143);
 }
 .media{
@@ -113,7 +136,7 @@ body {
   // grid-gap: 3px;
   display: flex;
   justify-content: center;
-  margin:150px;
+  margin: 50px 160px;
   
 }
 
@@ -121,25 +144,25 @@ body {
   border: 1px solid #ccc;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
   text-align: center;
-  padding: 10px;
+ margin: 5px;
 }
 
 .grid > article img {
   max-width: 100%;
 }
 
-.grid > article i {
-  font-size: 48px;
-  line-height: 70px;
-  height: 80px;
-  width: 80px;
-  border: 6px solid white;
-  border-radius: 50%;
-  background-color: #007bff;
-  text-align: center;
-  color: white;
-  margin-top: -36px;
-}
+// .grid > article i {
+//   font-size: 48px;
+//   line-height: 70px;
+//   height: 80px;
+//   width: 80px;
+//   border: 6px solid white;
+//   border-radius: 50%;
+//   background-color: #007bff;
+//   text-align: center;
+//   color: white;
+//   margin-top: -36px;
+// }
 
 .grid .text {
   padding: 16px 20px 30px;
