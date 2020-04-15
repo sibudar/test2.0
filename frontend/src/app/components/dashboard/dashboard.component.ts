@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { InstructionsComponent } from '../instructions/instructions.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -10,21 +10,13 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.scss"],
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) {}
-  
-  ngAfterViewInit(): void {
-    // this.shepherdService.defaultStepOptions = defaultStepOptions;
-    // this.shepherdService.modal = true;
-    // this.shepherdService.confirmCancel = false;
-    // this.shepherdService.addSteps(defaultSteps);
-    // this.shepherdService.start();
-  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(InstructionsComponent, {

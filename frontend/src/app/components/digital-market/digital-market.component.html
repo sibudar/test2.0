@@ -1,73 +1,114 @@
-<div class="navbar">
-    <h1>Navigation</h1>
-</div>
-<div class="header">
-    <h2>Take Your Idea to the next level<br>
-        <h4>With Digital Marketing</h4>
-    </h2>
-    <p>Chose the business idea that you want to<br> promote through online platforms</p>
-</div>
 
-<section id="wraper">
+<div class=container-outer>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
+                Novelty
+            </a>
 
-    <mat-grid-list cols="2" rowHeight="450px">
-        <mat-grid-tile class="text-inside-grid">
-            <div class="container ">
-                <p>Chose the Idea to promote.</p>
-                <div class="skills">
-                    <div class="skill-label">
-                        <h3>Animation design</h3>
-                        <span class="percent">87%</span>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="progress" style="width: 87%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <div class="skill-label">
-                        <h3>Book re-seller</h3>
-                        <span class="percent">90%</span>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <div class="skill-label">
-                        <h3>Online solutions</h3>
-                        <span class="percent">80%</span>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <div class="skill-label">
-                        <h3>Logistics</h3>
-                        <span class="percent">72%</span>
-                        <div style="clear: both;"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="progress" style="width: 72%;"></div>
-                    </div>
-                </div>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fe fe-x"></i>
+                </button>
+
+                <!-- Navigation -->
+                <ul class="navbar-nav ml-auto">
+                    <a class="nav-link" routerLink="/landing" aria-haspopup="true" aria-expanded="true">
+                        Home
+                    </a>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" routerLink="/client/display" aria-haspopup="true" aria-expanded="true">
+                            Journey
+                        </a>
+                    </li>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            About Novelty
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <div class="img">
-                <img class="image animated fadeInRight delay-0.5s" src="assets/img/perfect.png">
-            </div>
-        </mat-grid-tile>
-    </mat-grid-list>
+        </div>
+    </nav>
 
-</section>
+    <div class="header">
+        <h2>Take Your Idea to the next level<br>
+            <h4>With Digital Marketing</h4>
+        </h2>
+        <p>Chose the business idea that you want to<br> promote through online platforms</p>
+    </div>
+
+        <section id="wraper">
+
+            <mat-grid-list cols="2" rowHeight="450px">
+                <mat-grid-tile class="text-inside-grid">
+                    <div class="container-head">
+                        <p>Chose the Idea to promote.</p>
+                        <div class="skills">
+                            <div class="skill-label">
+                                <h3>Animation design</h3>
+                                <span class="percent">87%</span>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress" style="width: 87%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <div class="skill-label">
+                                <h3>Book re-seller</h3>
+                                <span class="percent">90%</span>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <div class="skill-label">
+                                <h3>Online solutions</h3>
+                                <span class="percent">80%</span>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <div class="skill-label">
+                                <h3>Logistics</h3>
+                                <span class="percent">72%</span>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress" style="width: 72%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="img">
+                        <img class="image animated fadeInRight delay-0.5s" src="assets/img/perfect.png">
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+        </section>
 
 <div class="header1">
-    <h3>Select the  <h4>Social Platform</h4> of your choice
-    </h3>
+    <h4>Select the<span> Social Platform</span> <br>Of your choice </h4>
 </div>
 
 <main class="grid">
@@ -102,4 +143,5 @@
         </div>
     </article>
 
-</main>
+        </main>
+    </div>
