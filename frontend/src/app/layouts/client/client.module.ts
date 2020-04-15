@@ -11,7 +11,6 @@ import { MatInputModule, MatStepperModule, MatDividerModule, MatListModule, MatD
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { RouterModule } from "@angular/router";
 import { JoyrideModule } from "ngx-joyride";
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -85,7 +84,6 @@ export function tokenGetter() {
     MatTabsModule,
     NgbModule,
     JoyrideModule.forRoot(),
-    RouterModule.forRoot([]),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
