@@ -10,7 +10,7 @@ const app = require('../app'); //requires app
         await supertest(app).post('/api/v1/users').send({
             first_name:'sam',
             last_name:'mcholo',
-            email:'WORLD1@gmail.com',
+            email:'sam@gmail.com',
             user_password:'123'
         }).then( res => {
             response = JSON.parse(res.text) ;

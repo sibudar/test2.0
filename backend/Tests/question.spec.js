@@ -1,14 +1,15 @@
 
 const supertest = require('supertest') //requires supertest
+const app = require('../app');
 const nock = require('nock');
 const questions = require('../Controllers/questionController')
 const db = require('../config/db');
 
 
+
  describe('Testing question endpoints', () => {
 
-//     //get questions
-    test('tests get question endpoint and returns a success message', async(done) => {
+    test('tests get question endpoint and returns a success message', async() => {
         
         const data = await questions.getQuestions({ id: 100})
         expect(data.message).toEqual('Here are your questions.');
