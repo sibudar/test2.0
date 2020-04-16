@@ -5,79 +5,89 @@ import { environment } from 'src/environments/environment';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ClientService {
+  url: string = environment.api;
+  constructor(private http: HttpClient) {}
 
-  url : string = environment.api;
-  constructor(private http : HttpClient) { }
-
-
-  public register(user:any) : Observable<any>
-  {
-    return this.http.post(this.url + '/users', user);
-
+  public register(user: any): Observable<any> {
+    return this.http.post(this.url + "/users", user);
   }
 
-  public login(user: any): Observable<any>
-  {
-    return this.http.post(this.url + '/users/login', user)
+  public login(user: any): Observable<any> {
+    return this.http.post(this.url + "/users/login", user);
   }
 
-  public forgotPassword(user: any): Observable<any>
-  {
-    return this.http.post(this.url + '/users/forgotPassword', user)
+  public forgotPassword(user: any): Observable<any> {
+    return this.http.post(this.url + "/users/forgotPassword", user);
   }
 
-  public resetPassword(user: any): Observable<any>
-  {
-    return this.http.post(this.url + '/users/resetPassword', user)
+  public resetPassword(user: any): Observable<any> {
+    return this.http.post(this.url + "/users/resetPassword", user);
   }
 
   //enter business idea
-  public insertBusinessIdea(data)
-   {
-     return this.http.post(this.url + '/ideas' ,data);
-   }
+  public insertBusinessIdea(data) {
+    return this.http.post(this.url + "/ideas", data);
+  }
 
+  /**
+   * Gets business ideas on a specific user.
+   * @param user_id
+   * @returns
+   * all ideas with a http request made to the server.
+   */
+  public getIdeas(user_id): Observable<any> {
+    return this.http.get(this.url + "/ideas/" + user_id);
+  }
 
-   //get business ideas and receives id
+  public myIdeas(id) {
+    return this.http.get(this.url + "/ideas/" + id);
+  }
 
-   public getIdeas(user_id): Observable<any>
-   {
-     return this.http.get(this.url + '/ideas/' + user_id)
-   }
+  /**
+   * Gets questions.
+   * @param data an object that has what's required.
+   * @returns
+   * all questions with a http request made to the server.
+   */
+  public getQuestions(data) {
+    return this.http.get(this.url + "/questions/" + data);
+  }
 
-   public myIdeas(id){
-    return this.http.get(this.url+ '/ideas/' + id)
-   }
-   //get questions
-   public getQuestions(data)
-    {
-      //link from countries rest api
-      return this.http.get(this.url + '/questions/' + data);
-    }
+  public postAnswers(data) {
+    return this.http.post(this.url + "/questions/answers", data);
+  }
 
-    public postAnswers(data)
-    {
-      return this.http.post(this.url + '/questions/answers' ,data)
-    }
+  /**
+   * Gets content.
+   * @param data an object that has what's required.
+   * @returns
+   * all questions with a http request made to the server.
+   */
+  public getContent(data) {
+    return this.http.get(this.url + "/content/" + data);
+  }
 
-     //get content
-   public getContent(data)
-   {
-     return this.http.get(this.url + '/content/' + data);
-   }
+  /**
+   * Checks if the domain is available.
+   * @param domain
+   * @returns
+   * all results about the domain with a http request
+   * made to the server.
+   */
+  public postDomain(domain): Observable<any> {
+    return this.http.post(this.url + "/domain", domain);
+  }
 
-  //get post domain
-   public postDomain(domain): Observable<any>
-   {
-     return this.http.post(this.url + '/domain', domain);
-   }
-
-
+  /**
+   * Updates the rate of a business idea.
+   * @param data an object that has what's required.
+   * @returns
+   * updated rate with a http request made to the server.
+   */
+  public updateRatings(data) {
+    return this.http.post(this.url + "/ideas/rate", data);
+  }
 }
-
-
-  //get business ideas and receives id
-
