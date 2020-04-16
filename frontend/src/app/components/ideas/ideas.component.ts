@@ -146,6 +146,18 @@ export class IdeasComponent implements OnInit {
     }
   }
 
+  /**
+   * Updates the rating of a business idea.
+   * @param rate
+   */
+  updateRate(rate) {
+    
+  }
+
+  /**
+   * Executes joyride pop-ups to explain
+   * the journey of the entreneur.
+   */
   tour() {
     this.joyride.startTour({
       steps: ["ideaStep", "rateStep", "addIdeaStep"],
