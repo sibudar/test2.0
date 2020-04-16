@@ -94,7 +94,7 @@
                                 data-aos="fade-up">
                                 <!-- Card -->
                                 <a class="card bg-primary text-left h-100 transition-3d-hover"
-                                    href="" 
+                                    routerLink="/client/ideas"
                                     joyrideStep="ideaStep" 
                                     title="Ideas" 
                                     text="Card for your ideas, when you click on this idea card you'll be taken to the ideas page where you'll be able to add, evaluate and rate your ideas.">
@@ -120,7 +120,7 @@
                                 data-aos-delay="200">
                                 <!-- Card -->
                                 <a class="js-go-to card bg-warning text-left h-100" 
-                                    href="" 
+                                    routerLink="/client/developers"
                                     joyrideStep="developerStep" 
                                     title="Developers" 
                                     text="Card to hire a developer, when you click on this developer card you'll be introduced to
@@ -147,7 +147,7 @@
                             data-aos-delay="150">
                                 <!-- Card -->
                                 <a class="card bg-success text-left h-100 transition-3d-hover" 
-                                    href=""
+                                    routerLink="/client/digital"
                                     joyrideStep="digitalMarketingStep" 
                                     title="Digital Marketing" 
                                     text="Card for digital marketing, when you click on the digital marketing card you'll be presented 
@@ -175,120 +175,6 @@
                 </mat-list-item>
             </mat-list>
         </div>
-
-        <!-- <div>
-                        <button mat-button mat-flat-button color="primary" class="btn" matStepperNext>Next</button>
-                    </div> -->
-
-        <!-- <mat-step [stepControl]="secondFormGroup">
-                <form [formGroup]="secondFormGroup">
-                    <ng-template matStepLabel>Evaluation</ng-template>
-                    <div class="w3-container w3-pale-blue w3-leftbar w3-border-blue">
-                        <p>Firstly, if you don't understand what's happening on this page. Click the info button on your
-                            right.</p>
-                        <div class="btn-add">
-                            <button mat-mini-fab color="primary" mat-raised-button (click)="openDialog()">
-                                <mat-icon>info</mat-icon>
-                            </button>
-                        </div>
-                        <p class="font-weight-bold text-left">
-                            It all starts with the idea, <span class="text-info">but how do you come up with the next
-                                great
-                                thing</span>?
-                        </p>
-                    </div>
-
-                    <mat-grid-list cols="2" rowHeight="490px">
-                        <mat-grid-tile class="text-inside-grid">
-
-                            <mat-list>
-                                <mat-list-item>
-                                    <div class="card">
-                                        <div class="card-header bg-info text-center text-white" style="width: 30rem;">
-                                            <h4>Ideas</h4>
-                                        </div>
-                                        <div class="scrolling-wrapper">
-                                            <mat-card _ngcontent-wpg-c74=""
-                                                class="mat-card card-ideas mat-focus-indicator docs-component-category-list-card">
-                                                <mat-card-header>
-                                                    <mat-card-title>Airfan</mat-card-title>
-                                                </mat-card-header>
-                                                <mat-card-content _ngcontent-wpg-c74=""
-                                                    class="mat-card-content docs-component-category-list-card-summary">
-                                                    <p>
-                                                        Online shop that sells airtime, bundles, and convert.
-                                                    </p>
-                                                </mat-card-content>
-                                            </mat-card>
-                                            <mat-card _ngcontent-wpg-c74="" class="mat-card card-ideas mat-focus-indicator
-                                        docs-component-category-list-card">
-                                                <mat-card-header>
-                                                    <mat-card-title>Frica</mat-card-title>
-                                                </mat-card-header>
-                                                <mat-card-content _ngcontent-wpg-c74=""
-                                                    class="mat-card-content docs-component-category-list-card-summary">
-                                                    <p>
-                                                        Sells food, and clothes.
-                                                    </p>
-                                                </mat-card-content>
-                                            </mat-card>
-                                            <mat-card _ngcontent-wpg-c74="" class="mat-card card-ideas mat-focus-indicator
-                                        docs-component-category-list-card">
-                                                <mat-card-header>
-                                                    <mat-card-title>Opera</mat-card-title>
-                                                </mat-card-header>
-                                                <mat-card-content _ngcontent-wpg-c74=""
-                                                    class="mat-card-content docs-component-category-list-card-summary">
-                                                    <p>
-                                                        Digital gaming store.
-                                                    </p>
-                                                </mat-card-content>
-                                            </mat-card>
-                                            <mat-card _ngcontent-wpg-c74="" class="mat-card card-ideas mat-focus-indicator
-                                                                                docs-component-category-list-card">
-                                                <mat-card-header>
-                                                    <mat-card-title>Kiti</mat-card-title>
-                                                </mat-card-header>
-                                                <mat-card-content _ngcontent-wpg-c74=""
-                                                    class="mat-card-content docs-component-category-list-card-summary">
-                                                    <p>
-                                                        Hospital for cats.
-                                                    </p>
-                                                </mat-card-content>
-                                            </mat-card>
-                                            <mat-card _ngcontent-wpg-c74="" class="mat-card card-ideas mat-focus-indicator
-                                                                                docs-component-category-list-card">
-                                                <mat-card-header>
-                                                    <mat-card-title>Warca</mat-card-title>
-                                                </mat-card-header>
-                                                <mat-card-content _ngcontent-wpg-c74=""
-                                                    class="mat-card-content docs-component-category-list-card-summary">
-                                                    <p>
-                                                        Store that sportwear.
-                                                    </p>
-                                                </mat-card-content>
-                                            </mat-card>
-                                        </div>
-                                    </div>
-                                </mat-list-item>
-
-                            </mat-list>
-
-                        </mat-grid-tile>
-
-                        <mat-grid-tile>
-                            <div class="img">
-                                <img class="image animated bounceInDown delay-0.5s"
-                                    src="assets/img/illustration_05.png">
-                            </div>
-                        </mat-grid-tile>
-                    </mat-grid-list>
-                    <div class="btn-add">
-                        <button mat-mini-fab color="primary">
-                            <mat-icon>add</mat-icon>
-                        </button>
-                    </div>
-                    <mat-divider class="divider"></mat-divider> -->
 
         <!-- LEGAL -->
         <!-- <div>
