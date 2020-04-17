@@ -87,14 +87,14 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ["localhost:5000"],
-        blacklistedRoutes: ["localhost:5000//api/v1/users/login"],
+        whitelistedDomains: ["localhost:5001"],
+        blacklistedRoutes: ["localhost:5001//api/v1/users/login"],
       },
     }),
   ],
   providers: [AuthService, AuthGuard],
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
-  bootstrap: [DashboardComponent, InstructionsComponent, IdeasComponent],
+  bootstrap: [DashboardComponent, IdeasComponent, LegalComponent],
   exports: [IdeasComponent],
 })
 export class ClientModule {}
