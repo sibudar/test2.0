@@ -146,11 +146,11 @@ export class IdeasComponent implements OnInit {
    * @param rate
    */
   updateRate(rate) {
-     this.clientService.updateRatings(rate).subscribe((data) => {
+    //  this.clientService.updateRatings(rate).subscribe((data) => {
 
-     })
-    this.user;
-    this.getUserIdeas();
+    //  })
+    // this.user;
+    // this.getUserIdeas();
   }
 
   /**
