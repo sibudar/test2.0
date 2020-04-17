@@ -74,7 +74,7 @@ export class LegalComponent implements OnInit {
    */
   tour() {
     this.joyride.startTour({
-      steps: ["legalStep", "rateStep", "addIdeaStep"],
+      steps: ["legalStep"],
     });
   }
 }
