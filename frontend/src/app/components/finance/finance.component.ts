@@ -75,7 +75,7 @@ export class FinanceComponent implements OnInit {
    */
   tour() {
     this.joyride.startTour({
-      steps: ["financeStep", "rateStep", "addIdeaStep"],
+      steps: ["financeStep"],
     });
   }
 }
