@@ -82,33 +82,40 @@
 
                 <mat-list>
                     <mat-list-item>
-                        <div joyrideStep="ideaStep" 
-                                title="Ideas" 
-                                text="Card list for your ideas, when you click on an idea a pop-up will be presented to you to evaluate your idea in sets of questions. After you done evaluate your idea, you'll then rate it">
-                        <div class="card">
-                            <div class="scrolling-wrapper">
-                                <mat-card _ngcontent-wpg-c74=""
-                                    class="mat-card card-ideas mat-focus-indicator docs-component-category-list-card">
-                                    <mat-card-header>
-                                        <mat-card-title>Airfan</mat-card-title>
-                                    </mat-card-header>
-                                    <mat-card-content _ngcontent-wpg-c74=""
-                                        class="mat-card-content docs-component-category-list-card-summary">
-                                        <p>
-                                            Online shop that sells airtime, bundles, and convert.
-                                        </p>
-                                        <div>
-                                            <ngb-rating [(rate)]="currentRate" 
-                                                        joyrideStep="rateStep"
+                        <div joyrideStep="ideaStep" title="Ideas"
+                            text="Card list for your ideas, when you click on an idea a pop-up will be presented to you to evaluate your idea in sets of questions. After you done evaluate your idea, you'll then rate it">
+                            <div class="div scrolling-wrapper" *ngIf="found">
+                                <div class="card" *ngFor="let idea of ideas.data" id="card"
+                                    >
+                                        <mat-card _ngcontent-wpg-c74=""
+                                            class="mat-card card-ideas mat-focus-indicator docs-component-category-list-card">
+                                            <mat-card-header>
+                                                <mat-card-title>{{idea.busin_idea}}
+                                                    <button mat-icon-button (click)="openQuestionDialog(idea.id)">
+                                                        <mat-icon>keyboard_arrow_right</mat-icon>
+                                                    </button>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content _ngcontent-wpg-c74=""
+                                                class="mat-card-content docs-component-category-list-card-summary">
+                                                <p>
+                                                    {{idea.descript}}
+                                                </p>
+
+                                                <div>
+                                                    <ngb-rating [(rate)]="currentRate" joyrideStep="rateStep"
                                                         title="Ratings"
                                                         text="Stars represent ratings, when you click the last star it means you rate your idea very good and when you click the first star it mean your idea is very bad.">
-                                            </ngb-rating>
-                                        </div>
-                                        
-                                    </mat-card-content>
-                                </mat-card>
+                                                    </ngb-rating>
+                                                </div>
+
+                                            </mat-card-content>
+                                        </mat-card>
+                                </div>
                             </div>
-                        </div>
+                            <div *ngIf="!found">
+                                <p>no idea was found</p>
+                            </div>
                         </div>
                     </mat-list-item>
 
@@ -122,10 +129,9 @@
             </mat-grid-tile>
         </mat-grid-list>
         <div class="btn-add">
-            <button type="button" mat-mini-fab color="primary" (click)="openDialog()"
-                    joyrideStep="addIdeaStep" 
-                    title="Add Ideas" 
-                    text="Button for adding ideas, when you click on this idea card you'll be presented with a pop-up that input text for an idea and a description. When you're done filling input text you'll click save to save your idea.">
+            <button type="button" mat-mini-fab color="primary" (click)="openDialog()" joyrideStep="addIdeaStep"
+                title="Add Ideas"
+                text="Button for adding ideas, when you click on this idea card you'll be presented with a pop-up that input text for an idea and a description. When you're done filling input text you'll click save to save your idea.">
                 <mat-icon>add</mat-icon>
             </button>
         </div>
