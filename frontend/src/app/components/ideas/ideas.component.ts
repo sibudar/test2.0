@@ -13,8 +13,9 @@ import { JoyrideService } from 'ngx-joyride';
   selector: "app-ideas",
   templateUrl: "./ideas.component.html",
   styleUrls: ["./ideas.component.scss"],
-  providers: [NgbRatingConfig],
+  providers: [],
 })
+
 export class IdeasComponent implements OnInit {
   currentRate: number;
   user: any;
@@ -93,14 +94,12 @@ export class IdeasComponent implements OnInit {
    * @param idea inserted by the user.
    */
   inserIdea(idea) {
-    this.clientService
-      .insertBusinessIdea(idea)
-      .subscribe((data: UserResponse) => {
-        console.log(data);
-        // this.ideas = data.data;
-        this.getUserIdeas();
-        console.log(data);
-      });
+    this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
+      console.log(data);
+      // this.ideas = data.data;
+      this.getUserIdeas();
+      console.log(data);
+    });
   }
 
   /**
@@ -120,7 +119,7 @@ export class IdeasComponent implements OnInit {
    * @param id_cat which question id is requested.
    */
   getQuestions(id_cat) {
-    this.clientService.getQuestions(2).subscribe((data: QuestionsResponse) => {
+    this.clientService.getQuestions(1).subscribe((data: QuestionsResponse) => {
       this.questions = data.data;
       console.log(data);
     });
