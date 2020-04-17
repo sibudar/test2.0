@@ -106,7 +106,8 @@
                                                 </p>
 
                                                 <div>
-                                                    <ngb-rating [(rate)]="currentRate" joyrideStep="rateStep"
+                                                    <ngb-rating [(rate)]="currentRate" (rateChange)="updateRate($event)" 
+                                                        joyrideStep="rateStep"
                                                         title="Ratings"
                                                         text="Stars represent ratings, when you click the last star it means you rate your idea very good and when you click the first star it mean your idea is very bad.">
                                                     </ngb-rating>
