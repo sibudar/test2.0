@@ -77,6 +77,10 @@
             </p>
         </div>
 
+        <div>
+            <h4 class="display-6 ml-xl-5">All ideas</h4>
+        </div>
+
         <mat-grid-list cols="2" rowHeight="490px">
             <mat-grid-tile class="text-inside-grid">
 
@@ -85,8 +89,7 @@
                         <div joyrideStep="ideaStep" title="Ideas"
                             text="Card list for your ideas, when you click on an idea a pop-up will be presented to you to evaluate your idea in sets of questions. After you done evaluate your idea, you'll then rate it">
                             <div class="div scrolling-wrapper" *ngIf="found">
-                                <div class="card" *ngFor="let idea of ideas.data" id="card"
-                                    >
+                                <div class="card" *ngFor="let idea of ideas.data" id="card">
                                         <mat-card _ngcontent-wpg-c74=""
                                             class="mat-card card-ideas mat-focus-indicator docs-component-category-list-card">
                                             <mat-card-header>
@@ -137,20 +140,10 @@
         </div>
         <mat-divider class="divider"></mat-divider>
 
-        <div>
-            <mat-grid-list cols="2" rowHeight="380px">
-                <mat-grid-tile class="text-inside-grid">
-                    <div class="mb-5 mt-11 col-header">
-                        <h1 class="display-4 mb-2">Legal</h1>
-                        <p class="lead">You'll give you tips on how to legalizing your business.</p>
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <div class="img">
-                        <img class="image animated fadeInRight delay-0.5s" src="assets/img/relax-08.png">
-                    </div>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
+        <app-legal></app-legal>
+
+        <mat-divider class="divider"></mat-divider>
+
+        <app-finance></app-finance>
     </div>
 </div>
