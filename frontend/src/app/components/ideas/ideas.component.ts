@@ -74,10 +74,6 @@ export class IdeasComponent implements OnInit {
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.data = {
-      id: 1,
-      title: "Angular For Beginners",
-    };
 
     this.dialog.open(QuestionComponent, dialogConfig);
 
@@ -151,7 +147,11 @@ export class IdeasComponent implements OnInit {
    * @param rate
    */
   updateRate(rate) {
-    
+     this.clientService.updateRatings(rate).subscribe((data) => {
+
+     })
+    this.user;
+    this.getUserIdeas();
   }
 
   /**
