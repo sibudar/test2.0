@@ -26,17 +26,13 @@
 }
 
 .card {
-    position: relative;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
+  max-width: 400px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.mat-card {
+  max-width: 400px;
 }
 
 .card-ideas {
@@ -52,6 +48,27 @@
 
 .card-container {
   margin-top: 180px;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.mat-card {
+    background: #fff;
+    color: rgba(0,0,0,.87);
+}
+
+.mat-card {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 
 .mat-form-field {
