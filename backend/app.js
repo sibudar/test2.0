@@ -24,9 +24,10 @@ app.use('/api/v1/questions', questions);
 app.use('/api/v1/content', content);
 app.use('/api/v1/domain', domain);
 
-// default route 
+// default route
 app.use('/', (req, res, next) => {
-    res.status(500).send('Gift: I thought it was suppose to be req');
+    //This error response is a generic "catch-all" response
+    res.status(500).send('Internal Server Error, cannot process the request for the requested route');
 });
 
 module.exports = app;
