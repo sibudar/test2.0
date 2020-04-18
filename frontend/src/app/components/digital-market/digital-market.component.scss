@@ -52,6 +52,18 @@ body {
 .media{
   margin:20px 40px;
 }
+.nav-link {
+  font-weight: bolder;
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+}
+
+.nav-item {
+  margin-left: 40px;
+}
+
 .container-head {
   position: absolute;
   top: 50%;
