@@ -42,6 +42,8 @@ export class IdeasComponent implements OnInit {
     config.max = 5;
   }
 
+  
+
   ngOnInit() {}
 
   /**
