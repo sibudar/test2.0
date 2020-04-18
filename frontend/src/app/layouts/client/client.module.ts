@@ -42,6 +42,7 @@ import { DevelopersComponent } from '../../components/developers/developers.comp
 import { ProfileComponent } from '../../components/profile/profile.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
+import { DMredesignComponent } from '../../components/dmredesign/dmredesign.component';
 
 
 export function tokenGetter() {
@@ -66,6 +67,7 @@ export function tokenGetter() {
     ProfileComponent,
     DashboardComponent,
     InstructionsComponent,
+    DMredesignComponent,
   ],
   imports: [
     CommonModule,

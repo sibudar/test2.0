@@ -11,11 +11,12 @@ import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { DashboardComponent } from "src/app/components/dashboard/dashboard.component";
 import { DigitalMarketComponent } from 'src/app/components/digital-market/digital-market.component';
+import { DMredesignComponent } from 'src/app/components/dmredesign/dmredesign.component';
 
 
 const routes: Routes = [
   { path: "", component: LandingComponent },
-  { path: "digital", component: DigitalMarketComponent },
+  { path: "", component: LandingComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "display", component: DisplayComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: "forgotPassword", component: ForgotPasswordComponent },
   { path: "resetPassword/:token", component: ResetPasswordComponent },
   { path: "question", component: QuestionComponent },
-  { path: "dashboard", component: DashboardComponent }
+  { path: "dashboard", component: DashboardComponent },
+  { path: "digital", component: DMredesignComponent}
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
