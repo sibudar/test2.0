@@ -7,12 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatStepperModule, MatDividerModule, MatListModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { JoyrideModule } from "ngx-joyride";
 
-
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ClientRoutingModule } from './client-routing.module';
 import { ClientComponent } from './client.component';
@@ -32,7 +33,9 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
 import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
-import { EvaluationComponent } from '../../components/evaluation/evaluation.component';
+import { DashboardComponent } from '../../components/dashboard/dashboard.component';
+import { InstructionsComponent } from '../../components/instructions/instructions.component';
+import { IdeasComponent } from '../../components/ideas/ideas.component';
 
 
 export function tokenGetter() {
@@ -53,7 +56,9 @@ export function tokenGetter() {
     LegalComponent,
     FinanceComponent,
     DigitalMarketComponent,
-    EvaluationComponent
+    DashboardComponent,
+    InstructionsComponent,
+    IdeasComponent,
   ],
   imports: [
     CommonModule,
@@ -67,20 +72,29 @@ export function tokenGetter() {
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    MatStepperModule,
+    MatDividerModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     MatExpansionModule,
     MatTabsModule,
+    NgbModule,
+    JoyrideModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ["localhost:5000"],
-        blacklistedRoutes: ["localhost:5000//api/v1/users/login"]
-      }
-    })
+        whitelistedDomains: ["localhost:5001"],
+        blacklistedRoutes: ["localhost:5001//api/v1/users/login"],
+      },
+    }),
   ],
   providers: [AuthService, AuthGuard],
-  entryComponents: [DialogComponent, QuestionComponent]
+  entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
+  bootstrap: [DashboardComponent, IdeasComponent, LegalComponent],
+  exports: [IdeasComponent],
 })
 export class ClientModule {}

@@ -1,75 +1,34 @@
-<!-- <div *ngFor="let question of questions; let i = index">
-    <p>{{question.q_name}}</p>
-    <div class="example-button-row">
-      <button mat-stroked-button>Yes</button>
-      <button mat-stroked-button (click)='noClick(i)'>No</button>
-      </div>
-   </div>
+<div>
+    <mat-grid-list cols="2" rowHeight="380px" class="col-margin">
+        <mat-grid-tile class="text-inside-grid">
+            <div class="mb-5 mt-11 col-header">
+                <h1 class="display-4 mb-2"
+                    joyrideStep="legalStep"
+                    title="Legal"
+                    text="If you're on this session of the journey it means you've added an idea, evaluated and rated it. Legal,
+                    this part of your journey is meant to inform you by giving useful tips when it comes to Legalizing your business">
+                    Legal</h1>
+                <p class="lead">You'll give you tips on how to legalizing your business.</p>
+                <footer class="blockquote-footer">Not knowing the necessary procedures and rules of engagement 
+                                                can get problematic and, even more importantly, cost a bit
+                                                more than a few initial lessons, says Riki Marais, a manager 
+                                                at accountancy firm Hobbs Sinclair.
+                </footer>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="img">
+                <img class="image animated fadeInRight delay-0.5s" src="assets/img/relax-08.png">
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 
-
-   <div *ngIf="show">
-    <mat-card >
-      <h5>{{contentShow.title}}</h5>
-      <p>{{contentShow.content}} <a href="{{contentShow.link}}" target="_blank"> click here.</a></p> 
-      <br>
-      <br>
-      <a>read more <i class="material-icons">
-        arrow_forward_ios
-    </i></a> -->
-
-
-<!-- 
-<div class="row">
-    <div class="col-3">
-        <img src="../../../assets/img/D5Ui.gif" />
+    <div class="w3-container w3-pale-blue w3-leftbar w3-border-yellow info">
+        <p>Legal wise, if you don't understand what's happening on this page. Click the info button.
+            <button class="btn-add" mat-mini-fab color="primary" mat-raised-button (click)="tour()">
+                <mat-icon>info</mat-icon>
+            </button>
+        </p>
     </div>
-
-    <div class="col">
-        <h3> Hold up Mr CEO   </h3>
-    </div>
-</div>
-
-
-<div class="row">
-<h2>You need to learn about the legal side of business in this section we will help you out</h2>
-</div>
-
-     -->
-
-<div *ngIf="pageLoaded">
-
-
-<div class="container d-flex justify-content-center p-3">
-    <h4>Lets help you understand the legals regarding starting up your business</h4>
-</div>
-
-  
-<div class="container d-flex justify-content-center p-3">
-   
-
-    <mat-card mat-card-actions > 
-        <div  class="d-flex justify-content-center">
-                {{  questions[index].q_name }}
-        </div>
-    
-        <br>
-
-        <div class="d-flex justify-content-center" *ngIf="show">
-            <p>{{contentShow.content}} <a href="{{contentShow.link}}" target="_blank"> click here.</a></p> 
-            <br>
-            <br> 
-        </div>
-
-
-        <div *ngIf="!done" class="d-flex justify-content-center">
-            <button  mat-flat-button  color="primary" (click)="yesClick()">{{button}}</button><button mat-button (click)="noClick()" *ngIf="button==='Yes'">Learn more</button>
-        </div>
-
-        <div *ngIf="done"  class="d-flex justify-content-center">
-            <button  mat-flat-button  color="primary">{{button}}</button>
-        </div>
-        
-    </mat-card>
-</div>
 
 </div>
