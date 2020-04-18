@@ -1,0 +1,150 @@
+<div class=container-outer>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
+                Novelty
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fe fe-x"></i>
+                </button>
+
+                <!-- Navigation -->
+                <ul class="navbar-nav ml-auto">
+                    <a class="nav-link" routerLink="/landing" aria-haspopup="true" aria-expanded="true">
+                        Home
+                    </a>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" routerLink="/client/display" aria-haspopup="true" aria-expanded="true">
+                            Journey
+                        </a>
+                    </li>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            About Novelty
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Button -->
+                <!-- <div class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank" id="dropdown">
+
+                    <h6>Account</h6>
+                    <div class="dropdown-content">
+                        <a routerLink="/client/login">Login</a>
+                        <a routerLink="/client/register">Register</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-inner">
+        <mat-grid-list cols="1" rowHeight="290px">
+            <mat-grid-tile class="text-inside-grid">
+                <div class="mb-5 mt-11 col-header">
+                    <h1 class="display-4 mb-2">An idea is a starting point for any entrepreneur</h1>
+                    <p class="lead">It is essential because it is the beginning of a new life – the life of a business
+                        and the life of an entrepreneur.
+                    </p>
+                </div>
+            </mat-grid-tile>
+            <!-- <mat-grid-tile>
+                <div class="img">
+                    <img class="image animated fadeInRight delay-0.5s" src="assets/img/ideas-header.png">
+                </div>
+            </mat-grid-tile> -->
+        </mat-grid-list>
+
+        <div class="w3-container w3-pale-blue w3-leftbar w3-border-yellow info">
+            <p>Any ideas, if you don't understand what's happening on this page. Click the info button.
+                <button class="btn-add" mat-mini-fab color="primary" mat-raised-button (click)="tour()">
+                    <mat-icon>info</mat-icon>
+                </button>
+            </p>
+        </div>
+
+        <div>
+            <h4 class="display-6 ml-xl-5">All ideas</h4>
+        </div>
+
+        <mat-grid-list cols="2" rowHeight="490px">
+            <mat-grid-tile class="text-inside-grid">
+
+                <mat-list>
+                    <mat-list-item>
+                        <div joyrideStep="ideaStep" title="Ideas"
+                            text="Card list for your ideas, when you click on an idea a pop-up will be presented to you to evaluate your idea in sets of questions. After you done evaluate your idea, you'll then rate it">
+                            <div class="div scrolling-wrapper" *ngIf="found">
+                                <div class="card" *ngFor="let idea of ideas.data" id="card">
+                                        <mat-card _ngcontent-wpg-c74=""
+                                            class="mat-card card-ideas mat-focus-indicator docs-component-category-list-card">
+                                            <mat-card-header>
+                                                <mat-card-title>{{idea.busin_idea}}
+                                                    <button mat-icon-button (click)="openQuestionDialog(idea.id)">
+                                                        <mat-icon>keyboard_arrow_right</mat-icon>
+                                                    </button>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content _ngcontent-wpg-c74=""
+                                                class="mat-card-content docs-component-category-list-card-summary">
+                                                <p>
+                                                    {{idea.descript}}
+                                                </p>
+
+                                                <div>
+                                                    <ngb-rating [(rate)]="currentRate" (rateChange)="updateRate($event)" 
+                                                        joyrideStep="rateStep"
+                                                        title="Ratings"
+                                                        text="Stars represent ratings, when you click the last star it means you rate your idea very good and when you click the first star it mean your idea is very bad.">
+                                                    </ngb-rating>
+                                                </div>
+
+                                            </mat-card-content>
+                                        </mat-card>
+                                </div>
+                            </div>
+                            <div *ngIf="!found">
+                                <p>no idea was found</p>
+                            </div>
+                        </div>
+                    </mat-list-item>
+
+                </mat-list>
+
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="img">
+                    <img class="image animated bounceInDown delay-0.5s" src="assets/img/ideas-header.png">
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <div class="btn-add">
+            <button type="button" mat-mini-fab color="primary" (click)="openDialog()" joyrideStep="addIdeaStep"
+                title="Add Ideas"
+                text="Button for adding ideas, when you click on this idea card you'll be presented with a pop-up that input text for an idea and a description. When you're done filling input text you'll click save to save your idea.">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+        <mat-divider class="divider"></mat-divider>
+
+        <app-legal></app-legal>
+
+        <mat-divider class="divider"></mat-divider>
+
+        <app-finance></app-finance>
+    </div>
+</div>

@@ -36,7 +36,6 @@
               "node_modules/animate.css/animate.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
-              
             ],
             "scripts": []
           },

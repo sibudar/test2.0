@@ -117,5 +117,42 @@ ideaRoute.patch('/',async(req, res)=>{
     res.status(result.status).send(result);
 });
 
+// [post] route to update a rating for a business idea.
+/**
+ * @swagger
+ * /ideas/rate:
+ *  post:
+ *     tags:
+ *      - ideas
+ *     summary: Update a rate status for a business idea
+ *     description: This can only be done by users who have accounts
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: Rate
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            busin_idea_id:         
+ *              type: number
+ *            rate:         
+ *              type: number
+ *            id_user:         
+ *              type: number
+ *     responses:
+ *        200:
+ *         description: You have successfully rated your idea.
+ *        500:
+ *         description: Oops! we\'re experiencing some problems on our servers, please try again later!.
+ */
+ideaRoute.post('/rate', async (req, res)=>{
+    result = await ideaController.rate(req.body);
+
+    res.status(result.status).send(result);
+});
 
 module.exports = ideaRoute;
