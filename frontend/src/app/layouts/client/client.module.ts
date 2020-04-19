@@ -33,9 +33,12 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { AuthService } from 'src/app/services/auth.service';
 import { DigitalMarketComponent } from '../../components/digital-market/digital-market.component';
+import { DevelopersComponent } from '../../components/developers/developers.component';
+import { ProfileComponent } from '../../components/profile/profile.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
 import { IdeasComponent } from '../../components/ideas/ideas.component';
+import { EvaluationComponent } from '../../components/evaluation/evaluation.component';
 
 
 export function tokenGetter() {
@@ -56,9 +59,12 @@ export function tokenGetter() {
     LegalComponent,
     FinanceComponent,
     DigitalMarketComponent,
+    DevelopersComponent,
+    ProfileComponent,
     DashboardComponent,
     InstructionsComponent,
     IdeasComponent,
+    EvaluationComponent
   ],
   imports: [
     CommonModule,
@@ -78,6 +84,8 @@ export function tokenGetter() {
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    MatListModule,
+    MatDividerModule,
     FormsModule,
     HttpClientModule,
     MatExpansionModule,

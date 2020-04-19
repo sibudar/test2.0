@@ -28,14 +28,13 @@ async function register(data) {
   let sql = 'CALL registerUser(?)';
   data.user_password = bcrypt.hashSync(data.user_password, 10); //password is hashed
 
-  return queryFunction(sql, [data.first_name, data.last_name, data.email, data.user_password]).then(result => {
-      // await mail.sendEmail(data.email, msg.registerMessage(result[0].first_name), msg.registerSubject());
-      const generatedToken = token.generateToken(result);
-      return response(201, 'Successfully created an account.', generatedToken);
+  return queryFunction(sql, [data.first_name, data.last_name, data.email, data.user_password]).then( result => {
+    //await mail.sendEmail(data.email, msg.registerMessage(result[0].first_name), msg.registerSubject());
+    return response(201, 'Successfully created an account.');
     })
     .catch(error => {
       //errno === 1062 is Duplicate entry 
-      if(error.errno === 1062) {
+      if (error.errno === 1062) {
         return response(400, 'Email already exist, try a diffrent email adress or request forgot password on login page', error.sqlMessage)
       }
       //http status of 500 = internal server error

@@ -8,7 +8,7 @@
       <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
     </a>
 
-    <!-- Toggler -->
+    <!-- Toggler -->      
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -72,6 +72,14 @@
             <div *ngIf="!found">
               <p>no idea was found</p>
             </div>
+            <div >
+              <mat-card> <h1>Legal</h1>
+                <!-- <button mat-button>check Legal</button>
+                <app-legal></app-legal></mat-card> -->
+                <a routerLink="/client/legal">legal</a>
+                </mat-card>
+            </div>
+
           </div>
         </div>
       </div>
@@ -96,6 +104,7 @@
 
   <mat-tab label="Developers">
     <h1>Developers</h1>
+    <app-developers></app-developers>
   </mat-tab>
 </mat-tab-group>
 
@@ -127,4 +136,4 @@
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
-  </div>
+  </div> 
