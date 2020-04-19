@@ -20,7 +20,7 @@ export class LegalComponent implements OnInit {
   done: boolean = false;
 
   constructor(private clientService: ClientService, private joyride: JoyrideService) {
-    this.getQuestions(2);
+    this.Getquestions(2);
     this.getContent(2);
   }
 
@@ -30,14 +30,17 @@ export class LegalComponent implements OnInit {
    * Gets questions from the server's endpoint base on the id.
    * @param id_cat which question id is requested.
    */
-  getQuestions(id_cat): void {
-    this.clientService.getQuestions(id_cat).subscribe((data: QuestionsResponse) => {
-      this.questions = data.data;
-      console.log(this.questions.length);
-      console.log(data);
-    });
-  }
+  // getQuestions(id_cat): void {
+  //   this.clientService.getQuestions(id_cat).subscribe((data: QuestionsResponse) => {
+  //     this.questions = data.data;
+  //     console.log(this.questions.length);
+  //     console.log(data);
+  //   });
+  // }
 
+  Getquestions(id_cat): void{ this.clientService.getQuestions(2).subscribe((data:QuestionsResponse) =>{ this.questions = data.data 
+    console.log(this.questions.length) 
+    console.log(data) }) }
    /**
    * Gets content from the server's endpoint base on the id.
    * @param id_cat which content id is requested.
@@ -77,4 +80,5 @@ export class LegalComponent implements OnInit {
       steps: ["legalStep"],
     });
   }
+  
 }
