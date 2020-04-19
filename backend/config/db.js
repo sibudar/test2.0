@@ -12,9 +12,9 @@ const connect = mysql.createConnection({
 // Connect to the database.
 connect.connect(err => {
   if(err) {
-  ///   console.log("Connection to database failed.", err);
+    console.log("Connection to database failed.", err);
   } else {
-   // console.log("Connected to database successfully.");
+   console.log("Connected to database successfully.");
   }
 });
 connect.query = util.promisify(connect.query).bind(connect);

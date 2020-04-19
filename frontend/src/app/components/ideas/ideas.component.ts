@@ -46,7 +46,11 @@ export class IdeasComponent implements OnInit {
 
   ngOnInit() {}
 
-  /**
+  evaluation(){
+    console.log('hey');
+  }
+
+   /**
    * Opens a pop.
    */
   openDialog() {
@@ -54,11 +58,16 @@ export class IdeasComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
+    dialogConfig.data = {
+      id: 1,
+      title: "Angular For Beginners"
+    };
+
     this.dialog.open(DialogComponent, dialogConfig);
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe((data) => {
+    
+    dialogRef.afterClosed().subscribe(data => {
       if (data != undefined) {
         data.id_user = this.user.data.id;
         this.inserIdea(data);
@@ -91,18 +100,20 @@ export class IdeasComponent implements OnInit {
     });
   }
 
+
   /**
    * Adds a user's idea.
    * @param idea inserted by the user.
    */
   inserIdea(idea) {
     this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
-      console.log(data);
-      // this.ideas = data.data;
-      this.getUserIdeas();
-      console.log(data);
-    });
+      console.log(data)
+        this.ideas = data.data;
+        this.getUserIdeas();
+        console.log(data);
+      });
   }
+
 
   /**
    * Gets all the user's ideas that were added by them.
@@ -164,4 +175,6 @@ export class IdeasComponent implements OnInit {
       steps: ["ideaStep", "rateStep", "addIdeaStep"],
     });
   }
+
+ 
 }
