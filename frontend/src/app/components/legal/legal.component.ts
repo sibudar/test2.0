@@ -3,6 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { QuestionsResponse , Questions } from 'src/app/models/questions';
 import { ContentResponse, Content } from 'src/app/models/content';
 import { JoyrideService } from "ngx-joyride";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-legal",
@@ -19,7 +20,7 @@ export class LegalComponent implements OnInit {
   pageLoaded: boolean = false;
   done: boolean = false;
 
-  constructor(private clientService: ClientService, private joyride: JoyrideService) {
+  constructor(private clientService: ClientService, private joyride: JoyrideService,private router: Router) {
     this.Getquestions(2);
     this.getContent(2);
   }
@@ -67,7 +68,9 @@ export class LegalComponent implements OnInit {
       this.button = "Yes";
     } else {
       this.button = "Head to finance";
+    
       this.done = true;
+ 
     }
   }
 

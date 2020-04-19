@@ -4,7 +4,6 @@ import { ClientService } from 'src/app/services/client.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { DialogComponent } from '../dialog/dialog.component';
-import { QuestionComponent } from '../question/question.component';
 import { UserResponse } from 'src/app/models/user';
 import { QuestionsResponse } from 'src/app/models/questions';
 import { JoyrideService } from 'ngx-joyride';
@@ -30,6 +29,7 @@ export class IdeasComponent implements OnInit {
   contentShow: any;
   show = false;
   token: any;
+  evaluation: boolean = false;
 
   constructor(
     private config: NgbRatingConfig,
@@ -46,9 +46,6 @@ export class IdeasComponent implements OnInit {
 
   ngOnInit() {}
 
-  evaluation(){
-    console.log('hey');
-  }
 
    /**
    * Opens a pop.
@@ -76,29 +73,7 @@ export class IdeasComponent implements OnInit {
     });
   }
 
-  /**
-   * On the pop, there's a form with question for
-   * the user to evaluate their idea.
-   * @param id which question id is requested.
-   */
-  openQuestionDialog(id) {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(QuestionComponent, dialogConfig);
-
-    const dialogRef = this.dialog.open(QuestionComponent, dialogConfig);
-
-    dialogRef.componentInstance.userID = this.user.data.id;
-
-    dialogRef.componentInstance.busID = id;
-
-    dialogRef.afterClosed().subscribe((data) => {
-      this.dialog.closeAll();
-    });
-  }
+  
 
 
   /**
@@ -176,5 +151,9 @@ export class IdeasComponent implements OnInit {
     });
   }
 
+  change(){
+    this.evaluation = true;
+    
+  }
  
 }

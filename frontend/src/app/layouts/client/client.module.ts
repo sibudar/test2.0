@@ -26,7 +26,6 @@ import { ForgotPasswordComponent } from '../../components/forgot-password/forgot
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { MatDialogModule } from "@angular/material";
-import { QuestionComponent } from '../../components/question/question.component';
 import { LegalComponent } from '../../components/legal/legal.component';
 import { FinanceComponent } from '../../components/finance/finance.component';
 import { JwtModule } from "@auth0/angular-jwt";
@@ -36,6 +35,8 @@ import { DigitalMarketComponent } from '../../components/digital-market/digital-
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
 import { IdeasComponent } from '../../components/ideas/ideas.component';
+import { QuestionComponent } from '../../components/question/question.component';
+
 
 
 export function tokenGetter() {
@@ -52,13 +53,14 @@ export function tokenGetter() {
     ResetPasswordComponent,
     ForgotPasswordComponent,
     DialogComponent,
-    QuestionComponent,
     LegalComponent,
     FinanceComponent,
     DigitalMarketComponent,
     DashboardComponent,
     InstructionsComponent,
     IdeasComponent,
+    QuestionComponent,
+
   ],
   imports: [
     CommonModule,
@@ -93,7 +95,7 @@ export function tokenGetter() {
     }),
   ],
   providers: [AuthService, AuthGuard],
-  entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
+  entryComponents: [DialogComponent,  InstructionsComponent],
   bootstrap: [DashboardComponent, IdeasComponent, LegalComponent],
   exports: [IdeasComponent],
 })

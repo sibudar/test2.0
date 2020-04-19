@@ -11,81 +11,8 @@
   margin-left: 40px;
 }
 
-.mat-stepper-horizontal {
-  margin-top: 8px;
-}
-
-.header {
-  font-weight: bolder;
-  font-size: xx-large;
-}
-
-.col-header {
-  margin-top: 180px;
-}
-
-.card {
-  max-width: 400px;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-.mat-card {
-  max-width: 400px;
-}
-
-.card-ideas {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.card-ideas:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.card-container {
-  margin-top: 180px;
-}
-
-.mat-card:not([class*=mat-elevation-z]) {
-    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
-}
-
-.mat-card {
-    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
-    display: block;
-    position: relative;
-    padding: 16px;
-    border-radius: 4px;
-}
-
-.mat-card {
-    background: #fff;
-    color: rgba(0,0,0,.87);
-}
-
-.mat-card {
-    font-family: Roboto,"Helvetica Neue",sans-serif;
-}
-
 .mat-form-field {
   margin-top: 16px;
-}
-
-.container-inner {
-  position: relative;
-  width: 80%;
-  height: 50%;
-  margin: auto;
-}
-
-.container-outer {
-  background-color: white;
-  width: 100%;
-  height: 120%;
-  overflow: scroll;
 }
 
 .img {
@@ -95,7 +22,7 @@
 .image {
   height: 440px;
   width: 300;
-  margin-left: 20px;
+  // margin-left: 20px;
   margin-top: 10px;
 }
 
@@ -183,12 +110,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-// mat-grid-tile {
-//   background: lightblue;
-// }
-// .container{
-// margin:auto
-// }
+
 .float{
   position:fixed;
   width:60px;
@@ -204,22 +126,21 @@ img {
 .btn {
   margin-top:15px;
   bottom: 100px;
-  /* margin-right: 108px; */
   margin-left: 1300px;
  
 }
 .my-float{
   margin-top:15px;
 } 
-// .container{
-//   padding-top:20px;
-// }
+
 .mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
   background-color: #007bff !important;
 }
-.idea2{
-  font-weight: bold;
-}
+
 .ideas{
   background-color: white;
 }
+li{
+  cursor: pointer;
+}
+
