@@ -1,32 +1,33 @@
 
 .container1 {
 	display: flex;
-	width: 100%;
 	flex-wrap: wrap;
-	margin: 150px 10px;
+	margin: 150px 50px 30px 30px;
+	padding: 15px 0px 15px 30px;
 }
 .grid {
     display: grid;
-    grid-column-gap: 30px;
-    grid-row-gap: 10px;
-    grid-template-columns: 380px 750px;
+    grid-column-gap: 20px;
+    grid-row-gap: 5px;
+    grid-template-columns: 350px 650px 50px;
 }
 
 //styles for marketing
 .marketing{
-	background-color:#dadde0 ;
+	background-color:#ecf2e9;
 	padding: 10px;
 	border-radius: 4px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 .showcase ul{
 	display: flex;
-	justify-content: center;
+	justify-content: left;
+	margin-left:-30px ;
 	
 }
 .showcase li{
 	list-style: none;
-	margin: 10px;
+	margin: 0px 10px 10px 0px;
 }
 .showcase a{
 	font-weight:bolder;
@@ -37,11 +38,15 @@
 // }
 .article li{
 	list-style:none;
-	margin-left: 0;
+	margin-left: -30px;
 }
 //styles for social
 .social{
-    background-color: #ddd;
+	background-color: #ecf2e9;
+	border-radius: 4px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	height: 300px;
+	
 }
 
 //navigation
@@ -313,6 +318,12 @@ background-color:#dddfe2;
 }
 
 
+//styleing the bottom
+
+.analyse{
+	display:flex;
+	justify-content: center;
+}
 
 
 
