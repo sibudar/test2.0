@@ -3,10 +3,7 @@
         <div class="container">
             <!-- Brand -->
             <a class="navbar-brand">
-                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="..." joyrideStep="welcomeStep"
-                    title="Welcome to Novelty" text="Novelty is an application, which provide an easy journey 
-                     for entrepreneurs from having a business idea, to starting the journey, running it and 
-                     market it to the wider audience.">Novelty
+                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">Novelty
             </a>
 
             <!-- Toggler -->
@@ -54,7 +51,9 @@
         </mat-grid-list>
         <div class="column-container">
             <div class="row">
-                <div class="col-5 rounded-left border border-right-1 border-bottom-0 border-top-0 border-left-0">
+                <div class="col-5 rounded-left border border-right-1 border-bottom-0 border-top-0 border-left-0"
+                        joyrideStep="infoStep" title="Tips"
+                        text="This a column for useful tips you'll need to understand Digital Marketing, tools when to attract/influence customers and how to use this tools effectively.">
                     <span class="badge badge-warning ml-1 mt-1">Notice</span>
                     <h5 class="lead pl-4 pt-2">Notice that this information was taken from
                         <span class="text-primary">G</span>
@@ -62,10 +61,19 @@
                         <span class="text-warning">o</span>
                         <span class="text-primary">g</span>
                         <span class="text-success">l</span>
-                        <span class="text-danger">e</span> Digital Skills.</h5>
-                    <span class="badge badge-warning ml-1 mt-1">Useful tips:</span>
+                        <span class="text-danger">e</span> Digital Skills.
+                    </h5>
+                    
+                    <span class="badge badge-warning ml-1 mt-0">Useful tips:</span>
+                    <h5 class="lead pl-4 pt-2">Understand this page more by clicking info.
+                        <button  mat-mini-fab color="primary" (click)="tour()">
+                            <mat-icon>info</mat-icon>
+                        </button>
+                    </h5>
                     <div class="position-absolute button-add">
-                        <button mat-fab class="btn btn-primary">
+                        <button mat-fab class="btn btn-primary"
+                                joyrideStep="btnaddStep" title="Add an Account"
+                                text="Add an account for your idea, when you click it you'll presented with a pop-up giving you a list to choose from, for which social media would you like to add an account so you can start Marketing it.">
                             <mat-icon>add</mat-icon>
                         </button>
                     </div>
@@ -107,14 +115,21 @@
                         <div class="col pl-5">
                             <span class="badge badge-primary mr-1 mb-3">Choose an idea you trust</span>
                             <div class="d-flex justify-content-end">
-                                <div class="searchbar">
+                                <div class="searchbar" 
+                                        joyrideStep="searchStep" title="Search Ideas"
+                                        text="Search input for your ideas, when you hover on it you'll input an idea that you're going for.">
                                     <input class="search_input" type="text" name="" placeholder="Search for your ideas...">
                                     <a href="#" class="search_icon"><mat-icon>search</mat-icon></a>
                                 </div>
                             </div>
-                            <h1 class="display-4 mb-3 mt-3">Plastic, Inc.</h1>
+                            <h1 class="display-4 mb-3 mt-3"
+                                    joyrideStep="chosenStep" title="Chosen Ideas"
+                                    text="An idea that you've choosen is displayed.">
+                                    Plastic, Inc.</h1>
                             
-                            <div class="card gedf-card">
+                            <div class="card gedf-card"
+                                    joyrideStep="postStep" title="Share a Post"
+                                    text="This part is for posting statuses for the idea you've chosen so you can be able to connect with your customers on any social media you've chosen to post to.">
                                 <div class="card-header">
                                     <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                                         <li class="nav-item">
@@ -172,7 +187,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row pl-5">
+                    <div class="row pl-5"
+                            joyrideStep="analyzedStep" title="Analysis for Account"
+                            text="The stats for the account you're logged into is diplayed here to help you understand your business and customers.">
                         <div class="col-md-6">
                             <div class="card widget-flat">
                                 <div class="card-body">
