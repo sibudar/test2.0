@@ -1,0 +1,113 @@
+
+
+.profile_container{
+	height:600px;
+	width:320px;
+	box-shadow: 0px 6px 10px -6px;
+	border-radius:10px;
+	margin:auto;
+	// margin-top:100px;
+	margin-bottom:60px;
+	overflow:hidden;
+}
+.image_container{
+	height:150px;
+	background:#007bff;
+}
+.image{
+	background:white;
+	height:120px;
+	width:120px;
+	padding:5px;
+	border-radius:50%;
+	transform:translate(105px,90px);
+}
+.image img{
+	height:110px;
+	width:110px;
+	border-radius:50%;
+}
+.text_container{
+	height:350px;
+	background:white;
+	padding:20px;
+	padding-top:70px;
+}
+.text_container h3,h4,p{
+	text-align:center;
+}
+.title h4{
+	color:#ffc107;
+}
+
+.mat-stroked-button{
+	background:#007bff;
+	border-radius:20px;
+	height:40px;
+  width:140px;
+  //  margin: auto;
+   align-items: center;
+   margin: 0 auto;
+  color:white;
+
+}
+.route{
+	text-align: center;
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  a {
+    text-align: center;
+    border: solid 2px ;
+    width: 75px;
+    padding: 5px 0;
+    border-radius: 5px;
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+.company{
+	margin-left: 50px;
+}
+.col-header {
+	margin-top: 90px;
+  }
+  
+.nav-link {
+	font-weight: bolder;
+  }
+  
+  .nav-link:hover {
+	background-color: #007bff;
+  }
+  
+  .nav-item {
+	margin-left: 40px;
+	
+  }
+  .lead{
+	  margin-right: 500px;
+  }
+  .image2{
+	background:white;
+	height:100px;
+	width:100px;
+	padding:5px;
+	border-radius:50%;
+	transform:translate(105px,90px);
+}
+// .material-icons{
+// 	color: white !important;
+// 	font-size:30px !important;
+// }
+// .business_name{
+// 	color: white !important;
+// 	margin-left: 10px;
+// 	margin-bottom: 10px;
+// }
