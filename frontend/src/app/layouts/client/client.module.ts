@@ -99,13 +99,8 @@ export function tokenGetter() {
     }),
   ],
   providers: [AuthService, AuthGuard],
-<<<<<<< HEAD
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
   bootstrap: [DashboardComponent, IdeasComponent, LegalComponent, DigitalMarketComponent],
-=======
-  entryComponents: [DialogComponent,  InstructionsComponent],
-  bootstrap: [DashboardComponent, IdeasComponent, LegalComponent],
->>>>>>> 1f1d1ba20c4db07ff1b1966e5dd6ba402ba4fae4
   exports: [IdeasComponent],
 })
 export class ClientModule {}
