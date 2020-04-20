@@ -1,0 +1,146 @@
+@import "~animate.css/animate.min";
+.nav-link {
+  font-weight: bolder;
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+}
+
+.nav-item {
+  margin-left: 40px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.img {
+  margin-top: 180px;
+}
+
+.image {
+  height: 440px;
+  width: 300;
+  // margin-left: 20px;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: centre;
+  align-items: center;
+}
+
+#btn {
+  font-size: smaller;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 15px;
+  padding: 14px 40px;
+}
+
+.btn-add {
+  float: right;
+}
+
+.info {
+  margin-bottom: 30px;
+}
+
+.paragraph {
+  margin-top: 20px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.divider {
+  margin-top: 140px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.scrolling-wrapper {
+  overflow: scroll;
+  height: 400px;
+  white-space: nowrap;
+}
+
+.scrolling-container {
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.w3-pale-blue,
+.w3-hover-pale-blue:hover {
+  color: #000 !important;
+}
+
+.w3-leftbar {
+  border-left: 6px solid !important;
+}
+.w3-container,
+.w3-panel {
+  padding: 0.01em 16px;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.img-dashboard {
+  vertical-align: middle;
+  border-style: none;
+  width: 50% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.float{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  left:100px;
+  background-color:#007bff;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+}
+.btn {
+  margin-top:15px;
+  bottom: 100px;
+  margin-left: 1300px;
+ 
+}
+.my-float{
+  margin-top:15px;
+} 
+
+.mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+  background-color: #007bff !important;
+}
+
+.ideas{
+  background-color: white;
+}
+li{
+  cursor: pointer;
+}
+

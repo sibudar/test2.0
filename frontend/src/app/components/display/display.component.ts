@@ -3,7 +3,6 @@ import { ClientService } from 'src/app/services/client.service';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { DialogComponent } from '../dialog/dialog.component';
 import { UserResponse } from 'src/app/models/user';
-import { QuestionComponent } from '../question/question.component';
 import { QuestionsResponse } from 'src/app/models/questions';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -65,32 +64,32 @@ export class DisplayComponent implements OnInit {
    * the user to evaluate their idea.
    * @param id which question id is requested.
    */
-  openQuestionDialog(id) {
-    const dialogConfig = new MatDialogConfig();
+  // openQuestionDialog(id) {
+  //   const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.data = {
-      id: 1,
-      title: "Angular For Beginners"
-    };
+  //   dialogConfig.disableClose = true;
+  //   dialogConfig.autoFocus = true;
+  //   dialogConfig.data = {
+  //     id: 1,
+  //     title: "Angular For Beginners"
+  //   };
 
-    this.dialog.open(QuestionComponent, dialogConfig);
+  //   this.dialog.open(QuestionCompon, dialogConfig);
 
-    const dialogRef = this.dialog.open(QuestionComponent, dialogConfig);
+  //   const dialogRef = this.dialog.open(QuestionComponent, dialogConfig);
 
-    dialogRef.componentInstance.userID = this.user.data.id;
+  //   dialogRef.componentInstance.userID = this.user.data.id;
 
-    dialogRef.componentInstance.busID = id;
+  //   dialogRef.componentInstance.busID = id;
 
-    dialogRef.afterClosed().subscribe(data => {
-      // if(data != undefined ){
-      //   data.id_user = this.user.data.id;
-      //   this.inserIdea(data);
-      // }
-      this.dialog.closeAll();
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(data => {
+  //     // if(data != undefined ){
+  //     //   data.id_user = this.user.data.id;
+  //     //   this.inserIdea(data);
+  //     // }
+  //     this.dialog.closeAll();
+  //   });
+  // }
 
   /**
    * Adds a user's idea.

@@ -10,7 +10,6 @@ const validator = require('validator');
  * @returns a queryResponse.
  */
 async function addIdea(data) {
-   
 
     if(validate.validate(data.busin_idea)){
         return response(400,"business idea is required");
@@ -84,4 +83,31 @@ async function deleteIdea(data) {
     });
 }
 
-module.exports = {addIdea, listIdeas, deleteIdea};
+/**
+ * update ratings of a business idea
+ * @param {*} data   
+ * data is a body the user inserts.
+ * @returns a queryResponse.
+ */
+async function rate(data) {
+   
+    if(validate.validate(data.busin_id)){
+        return response(400,"business id is required");
+    }
+    if(validate.validate(data.rate)){
+        return response (400,"rate is required");
+    }
+    if(validate.validate(data.id_user)){
+        return response (400,"id_user is required");
+    }
+
+    let sql = 'CALL rateBusinessIdea(?)'
+    
+    return queryFunction(sql, [data.busin_id, data.rate, data.id_user]).then(result => {
+        return response(201,'You have successfully rated your idea.');
+    }).catch(error => {
+        return fieldResponse(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage );
+    });
+}
+
+module.exports = {addIdea, listIdeas, deleteIdea, rate};

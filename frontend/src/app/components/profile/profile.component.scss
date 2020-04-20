@@ -1,0 +1,63 @@
+
+
+.time{
+  font-weight:lighter;
+  color: lightgrey;
+}
+.h2, h2 {
+   font-size: 1.5rem !important; 
+}
+@import "~animate.css/animate.min";
+
+.nav-link {
+  font-weight: bolder;
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+}
+
+.nav-item {
+  margin-left: 40px;
+}
+
+
+.header {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.col-header {
+  margin-top: 180px;
+}
+.header {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.col-header {
+  margin-top: 180px;
+}
+.container-inner {
+  position: relative;
+  width: 80%;
+  height: 50%;
+  margin: auto;
+
+}
+.dev{
+  background-color: white;
+  overflow: scroll;
+}
+
+.img {
+  margin-top: 10px;
+}
+
+.image {
+  height: 600px;
+  width:300;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
