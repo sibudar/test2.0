@@ -13,10 +13,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 
-
-
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-
+import { JoyrideModule } from "ngx-joyride";
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -31,7 +29,6 @@ import { ForgotPasswordComponent } from '../../components/forgot-password/forgot
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { MatDialogModule } from "@angular/material";
-import { QuestionComponent } from '../../components/question/question.component';
 import { LegalComponent } from '../../components/legal/legal.component';
 import { FinanceComponent } from '../../components/finance/finance.component';
 import { JwtModule } from "@auth0/angular-jwt";
@@ -43,6 +40,9 @@ import { ProfileComponent } from '../../components/profile/profile.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
 import { DMredesignComponent } from '../../components/dmredesign/dmredesign.component';
+import { IdeasComponent } from '../../components/ideas/ideas.component';
+import { QuestionComponent } from 'src/app/components/question/question.component';
+import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
 
 
 export function tokenGetter() {
@@ -59,7 +59,6 @@ export function tokenGetter() {
     ResetPasswordComponent,
     ForgotPasswordComponent,
     DialogComponent,
-    QuestionComponent,
     LegalComponent,
     FinanceComponent,
     DigitalMarketComponent,
@@ -68,6 +67,9 @@ export function tokenGetter() {
     DashboardComponent,
     InstructionsComponent,
     DMredesignComponent,
+    IdeasComponent,
+    QuestionComponent,
+    EvaluationComponent,
   ],
   imports: [
     CommonModule,
@@ -94,16 +96,23 @@ export function tokenGetter() {
     MatExpansionModule,
     MatTabsModule,
     NgbModule,
+    JoyrideModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ["localhost:5000"],
-        blacklistedRoutes: ["localhost:5000//api/v1/users/login"],
+        whitelistedDomains: ["localhost:5001"],
+        blacklistedRoutes: ["localhost:5001//api/v1/users/login"],
       },
     }),
   ],
   providers: [AuthService, AuthGuard],
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
-  bootstrap: [DashboardComponent, InstructionsComponent],
+  bootstrap: [
+    DashboardComponent,
+    IdeasComponent,
+    LegalComponent,
+    DigitalMarketComponent,
+  ],
+  exports: [IdeasComponent],
 })
 export class ClientModule {}

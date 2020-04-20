@@ -1,5 +1,4 @@
 @import "~animate.css/animate.min";
-
 .nav-link {
   font-weight: bolder;
 }
@@ -12,60 +11,18 @@
   margin-left: 40px;
 }
 
-.mat-stepper-horizontal {
-  margin-top: 8px;
-}
-
-.header {
-  font-weight: bolder;
-  font-size: xx-large;
-}
-
-.col-header {
-  margin-top: 180px;
-}
-
-.card-ideas {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.card-ideas:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.card-container {
-  margin-top: 180px;
-}
-
 .mat-form-field {
   margin-top: 16px;
 }
 
-.container-inner {
-  position: relative;
-  width: 80%;
-  height: 50%;
-  margin: auto;
-}
-
-.container-outer {
-  background-color: white;
-  width: 100%;
-  height: 120%;
-  overflow: scroll;
-}
-
 .img {
-  margin-top: 10px;
+  margin-top: 180px;
 }
 
 .image {
-  height: 300px;
-  width: 170;
-  margin-left: 20px;
+  height: 440px;
+  width: 300;
+  // margin-left: 20px;
   margin-top: 10px;
 }
 
@@ -87,10 +44,6 @@
   float: right;
 }
 
-.btn-info {
-  float: right;
-}
-
 .info {
   margin-bottom: 30px;
 }
@@ -104,7 +57,7 @@
 }
 
 .divider {
-  margin-top: 76px;
+  margin-top: 140px;
 }
 
 .example-headers-align .mat-expansion-panel-header-title,
@@ -157,3 +110,37 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+.float{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  left:100px;
+  background-color:#007bff;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+}
+.btn {
+  margin-top:15px;
+  bottom: 100px;
+  margin-left: 1300px;
+ 
+}
+.my-float{
+  margin-top:15px;
+} 
+
+.mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+  background-color: #007bff !important;
+}
+
+.ideas{
+  background-color: white;
+}
+li{
+  cursor: pointer;
+}
+

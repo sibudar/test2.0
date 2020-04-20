@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS business_idea (
     id INT NOT NULL AUTO_INCREMENT,
     busin_idea VARCHAR(255) DEFAULT NULL,
     descript VARCHAR(255) DEFAULT NULL,
+    rate VARCHAR(2) DEFAULT 0,
     status_flag VARCHAR(5) DEFAULT TRUE,
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
@@ -264,6 +265,14 @@ DROP PROCEDURE IF EXISTS getQuestions $$
 DROP PROCEDURE IF EXISTS postAnswers $$
 DROP PROCEDURE IF EXISTS getContent $$
 DROP PROCEDURE IF EXISTS getUser $$
+DROP PROCEDURE IF EXISTS rateBusinessIdea $$
+
+CREATE PROCEDURE rateBusinessIdea(IN rate_idea INT, IN b_id INT, IN u_id INT)
+BEGIN
+    UPDATE business_idea
+    SET rate = rate_idea, modifiedby = u_id, modifiedat = now()
+    WHERE business_idea.id_user = u_id;
+END $$
 
 CREATE PROCEDURE getUser(IN id_user INT)
 BEGIN
@@ -305,13 +314,13 @@ END $$
 
 CREATE PROCEDURE businessIdea(IN biz_idea VARCHAR(255), IN biz_descrip VARCHAR(255), IN iduser INT(11))
 BEGIN 
-     INSERT INTO business_idea(busin_idea, descript, id_user, createdby, createdat, modifiedby, modifiedat)
-     VALUES(biz_idea, biz_descrip, iduser, 'System', now(), iduser, now());
+     INSERT INTO business_idea(busin_idea, descript, rate, id_user, createdby, createdat, modifiedby, modifiedat)
+     VALUES(biz_idea, biz_descrip, rate, iduser, 'System', now(), iduser, now());
 END $$
 
 CREATE PROCEDURE getIdeas(IN u_id INT)
 BEGIN
-    SELECT id, busin_idea, descript
+    SELECT id, busin_idea, descript, rate
     FROM business_idea 
     WHERE status_flag = 1 AND business_idea.id_user = u_id;
 END $$

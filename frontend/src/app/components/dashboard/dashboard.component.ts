@@ -4,6 +4,7 @@ import { InstructionsComponent } from '../instructions/instructions.component';
 import { MatDialog } from '@angular/material/dialog';
 
 // import { steps as defaultSteps, defaultStepOptions } from "../data";
+import { JoyrideService } from "ngx-joyride";
 
 @Component({
   selector: "app-dashboard",
@@ -11,32 +12,14 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent implements OnInit {
-  isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  thirdFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) {}
+  constructor(private joyride: JoyrideService) {}
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(InstructionsComponent, {
-      width: "650px",
-    });
+  ngOnInit() {}
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-    });
-  }
-
-  ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ["", Validators.required],
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ["", Validators.required],
-    });
-    this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ["", Validators.required],
-    });
+  tour() {
+    this.joyride.startTour({ 
+      steps: ['welcomeStep' ,'ideaStep', 'developerStep', 'digitalMarketingStep']}
+    )
   }
 }

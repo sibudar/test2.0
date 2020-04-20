@@ -1,55 +1,30 @@
 
-body{
-  font-family: Montserrat, sans-serif;
-  background: #28223f;
+
+.time{
+  font-weight:lighter;
+  color: lightgrey;
 }
-.container{
-  
-   margin: 100px auto;
-  background:white;
-  color: white;
-  border-radius: 5px;
-  width: 800px;
-  height: 800px;
-  text-align: center;
- box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
+.h2, h2 {
+   font-size: 1.5rem !important; 
 }
-.cover-photo{
-  background: url(https://images.unsplash.com/photo-1540228232483-1b64a7024923?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
-  height: 160px;
-  width: 100%;
-  border-radius: 5px 5px 0 0;
+@import "~animate.css/animate.min";
+
+.nav-link {
+  font-weight: bolder;
 }
-.profile{
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  margin: 93px 0 0 -175px;
-  border: 1px solid #1f1a32;
-  padding: 7px;
-  background: #292343;
+
+.nav-link:hover {
+  background-color: #007bff;
 }
-.profile-name{
-  font-size: 25px;
-  font-weight: bold;
-   margin: 27px 0 0 150px;
-  color: black;
+
+.nav-item {
+  margin-left: 40px;
 }
 
 
-.heading{
-  text-align:left ;
-  color:black
-}
-.card1{
-  text-align: left;
-  width: 500px;
-  background-color: #eceff1;
-}
-.uk-text-muted{
-  text-align: right;
-  font-weight: lighter;
-  color: gray;
+.header {
+  font-weight: bolder;
+  font-size: xx-large;
 }
 .card2{
   text-align: left;
@@ -84,7 +59,37 @@ body{
   font-weight:lighter;
   color: grey;
 }
-.h2, h2 {
-   font-size: 1.5rem !important; 
+.col-header {
+  margin-top: 180px;
+}
+.header {
+  font-weight: bolder;
+  font-size: xx-large;
 }
 
+.col-header {
+  margin-top: 180px;
+}
+.container-inner {
+  position: relative;
+  width: 80%;
+  height: 50%;
+  margin: auto;
+
+}
+.dev{
+  background-color: white;
+  overflow: scroll;
+}
+
+.img {
+  margin-top: 10px;
+}
+
+.image {
+  height: 600px;
+  width:300;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}

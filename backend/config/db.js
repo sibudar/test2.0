@@ -20,3 +20,4 @@ connect.connect(err => {
 });
 connect.query = util.promisify(connect.query).bind(connect);
 module.exports = connect;
+ 

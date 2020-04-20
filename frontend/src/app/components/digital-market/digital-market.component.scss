@@ -147,6 +147,8 @@ body {
 
 
 // styles added
+@import "~animate.css/animate.min";
+
 .nav-link {
   font-weight: bolder;
 }
@@ -180,6 +182,10 @@ body {
 }
 .card-ideas:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+  margin-top: 180px;
 }
 
 .mat-form-field {
@@ -302,4 +308,185 @@ body {
 .example-large-box {
   height: 300px;
   width: 300px;
+}
+.img {
+  margin-top: 10px;
+}
+
+.image {
+  height: 300px;
+  width: 170;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: centre;
+  align-items: center;
+}
+
+#btn {
+  font-size: smaller;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 15px;
+  padding: 14px 40px;
+}
+
+.btn-add {
+  float: right;
+}
+
+.btn-info {
+  float: right;
+}
+
+.info {
+  margin-bottom: 30px;
+}
+
+.paragraph {
+  margin-top: 20px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.divider {
+  margin-top: 76px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.scrolling-wrapper {
+  overflow: scroll;
+  height: 400px;
+  white-space: nowrap;
+}
+
+.scrolling-container {
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.w3-pale-blue,
+.w3-hover-pale-blue:hover {
+  color: #000 !important;
+}
+
+.w3-leftbar {
+  border-left: 6px solid !important;
+}
+.w3-container,
+.w3-panel {
+  padding: 0.01em 16px;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.img-dashboard {
+  vertical-align: middle;
+  border-style: none;
+  width: 50% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchbar {
+  height: 60px;
+  background-color: #007bff;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.search_input::placeholder {
+  color: white;
+}
+
+.searchbar:hover > .search_input {
+  padding: 0 10px;
+  width: 450px;
+  caret-color: red;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+  background: white;
+  color: #e74c3c;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.tab-icon {
+  margin-right: 8px;
+}
+
+.stretched-tabs {
+  max-width: 800px;
+}
+
+.button-add {
+   margin-left: 450px;
+   margin-top: 150px;
+}
+
+mat-card {
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+.gedf-main {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.gedf-card {
+  margin-bottom: 2.77rem;
+}
+
+.dropdown-toggle::after {
+  content: none;
+  display: none;
 }
