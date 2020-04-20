@@ -59,12 +59,15 @@
 
     <mat-grid-list cols="3" rowHeight="1:1">
         <mat-grid-tile>
+            <h3>My ideas</h3>
+           <div >  
         <ol *ngIf="found">
-            <li *ngFor="let idea of ideas.data" (click)="change()"  >{{idea.busin_idea}} : {{idea.descript}} </li>
+            <li class="idea" *ngFor="let idea of ideas.data" (click)="change()"  >{{idea.busin_idea}} <br/> {{idea.descript}} </li>
         </ol>
         <div *ngIf="!found">
             <p>no idea was found</p>
           </div>
+        </div> 
         </mat-grid-tile>
 
         <mat-grid-tile>
