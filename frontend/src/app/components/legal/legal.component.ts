@@ -3,6 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { QuestionsResponse , Questions } from 'src/app/models/questions';
 import { ContentResponse, Content } from 'src/app/models/content';
 import { JoyrideService } from "ngx-joyride";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-legal",
@@ -19,8 +20,8 @@ export class LegalComponent implements OnInit {
   pageLoaded: boolean = false;
   done: boolean = false;
 
-  constructor(private clientService: ClientService, private joyride: JoyrideService) {
-    this.getQuestions(2);
+  constructor(private clientService: ClientService, private joyride: JoyrideService,private router: Router) {
+    this.Getquestions(2);
     this.getContent(2);
   }
 
@@ -30,14 +31,17 @@ export class LegalComponent implements OnInit {
    * Gets questions from the server's endpoint base on the id.
    * @param id_cat which question id is requested.
    */
-  getQuestions(id_cat): void {
-    this.clientService.getQuestions(id_cat).subscribe((data: QuestionsResponse) => {
-      this.questions = data.data;
-      console.log(this.questions.length);
-      console.log(data);
-    });
-  }
+  // getQuestions(id_cat): void {
+  //   this.clientService.getQuestions(id_cat).subscribe((data: QuestionsResponse) => {
+  //     this.questions = data.data;
+  //     console.log(this.questions.length);
+  //     console.log(data);
+  //   });
+  // }
 
+  Getquestions(id_cat): void{ this.clientService.getQuestions(2).subscribe((data:QuestionsResponse) =>{ this.questions = data.data 
+    console.log(this.questions.length) 
+    console.log(data) }) }
    /**
    * Gets content from the server's endpoint base on the id.
    * @param id_cat which content id is requested.
@@ -64,7 +68,9 @@ export class LegalComponent implements OnInit {
       this.button = "Yes";
     } else {
       this.button = "Head to finance";
+    
       this.done = true;
+ 
     }
   }
 
@@ -77,4 +83,5 @@ export class LegalComponent implements OnInit {
       steps: ["legalStep"],
     });
   }
+  
 }

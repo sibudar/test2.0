@@ -4,7 +4,6 @@ import { ClientService } from 'src/app/services/client.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { DialogComponent } from '../dialog/dialog.component';
-import { QuestionComponent } from '../question/question.component';
 import { UserResponse } from 'src/app/models/user';
 import { QuestionsResponse } from 'src/app/models/questions';
 import { JoyrideService } from 'ngx-joyride';
@@ -30,6 +29,7 @@ export class IdeasComponent implements OnInit {
   contentShow: any;
   show = false;
   token: any;
+  evaluation: boolean = false;
 
   constructor(
     private config: NgbRatingConfig,
@@ -42,9 +42,12 @@ export class IdeasComponent implements OnInit {
     config.max = 5;
   }
 
+  
+
   ngOnInit() {}
 
-  /**
+
+   /**
    * Opens a pop.
    */
   openDialog() {
@@ -52,11 +55,16 @@ export class IdeasComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
+    dialogConfig.data = {
+      id: 1,
+      title: "Angular For Beginners"
+    };
+
     this.dialog.open(DialogComponent, dialogConfig);
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe((data) => {
+    
+    dialogRef.afterClosed().subscribe(data => {
       if (data != undefined) {
         data.id_user = this.user.data.id;
         this.inserIdea(data);
@@ -65,29 +73,8 @@ export class IdeasComponent implements OnInit {
     });
   }
 
-  /**
-   * On the pop, there's a form with question for
-   * the user to evaluate their idea.
-   * @param id which question id is requested.
-   */
-  openQuestionDialog(id) {
-    const dialogConfig = new MatDialogConfig();
+  
 
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(QuestionComponent, dialogConfig);
-
-    const dialogRef = this.dialog.open(QuestionComponent, dialogConfig);
-
-    dialogRef.componentInstance.userID = this.user.data.id;
-
-    dialogRef.componentInstance.busID = id;
-
-    dialogRef.afterClosed().subscribe((data) => {
-      this.dialog.closeAll();
-    });
-  }
 
   /**
    * Adds a user's idea.
@@ -95,12 +82,13 @@ export class IdeasComponent implements OnInit {
    */
   inserIdea(idea) {
     this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
-      console.log(data);
-      // this.ideas = data.data;
-      this.getUserIdeas();
-      console.log(data);
-    });
+      console.log(data)
+        this.ideas = data.data;
+        this.getUserIdeas();
+        console.log(data);
+      });
   }
+
 
   /**
    * Gets all the user's ideas that were added by them.
@@ -162,4 +150,10 @@ export class IdeasComponent implements OnInit {
       steps: ["ideaStep", "rateStep", "addIdeaStep"],
     });
   }
+
+  change(){
+    this.evaluation = true;
+    
+  }
+ 
 }

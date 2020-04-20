@@ -26,7 +26,6 @@ import { ForgotPasswordComponent } from '../../components/forgot-password/forgot
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { MatDialogModule } from "@angular/material";
-import { QuestionComponent } from '../../components/question/question.component';
 import { LegalComponent } from '../../components/legal/legal.component';
 import { FinanceComponent } from '../../components/finance/finance.component';
 import { JwtModule } from "@auth0/angular-jwt";
@@ -38,7 +37,7 @@ import { ProfileComponent } from '../../components/profile/profile.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
 import { IdeasComponent } from '../../components/ideas/ideas.component';
-import { EvaluationComponent } from '../../components/evaluation/evaluation.component';
+import { QuestionComponent } from 'src/app/components/question/question.component';
 
 
 export function tokenGetter() {
@@ -55,7 +54,6 @@ export function tokenGetter() {
     ResetPasswordComponent,
     ForgotPasswordComponent,
     DialogComponent,
-    QuestionComponent,
     LegalComponent,
     FinanceComponent,
     DigitalMarketComponent,
@@ -64,7 +62,7 @@ export function tokenGetter() {
     DashboardComponent,
     InstructionsComponent,
     IdeasComponent,
-    EvaluationComponent
+    QuestionComponent
   ],
   imports: [
     CommonModule,
@@ -101,8 +99,13 @@ export function tokenGetter() {
     }),
   ],
   providers: [AuthService, AuthGuard],
+<<<<<<< HEAD
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
   bootstrap: [DashboardComponent, IdeasComponent, LegalComponent, DigitalMarketComponent],
+=======
+  entryComponents: [DialogComponent,  InstructionsComponent],
+  bootstrap: [DashboardComponent, IdeasComponent, LegalComponent],
+>>>>>>> 1f1d1ba20c4db07ff1b1966e5dd6ba402ba4fae4
   exports: [IdeasComponent],
 })
 export class ClientModule {}
