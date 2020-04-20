@@ -1,204 +1,241 @@
+
+<link href="https://fonts.googleapis.com/css?family=Courgette|Neuton" rel="stylesheet"> 
+
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
   <div class="container">
-      <!-- Brand  -->
-      <a class="navbar-brand">
-          <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
-          Novelty
-      </a>
+    <!-- Brand  -->
+    <a class="navbar-brand">
+      <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
+      Novelty
+    </a>
 
-       <!-- Toggler  -->
+    <!-- Toggler  -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapse  -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <!-- Toggler  -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fe fe-x"></i>
       </button>
 
-       <!-- Collapse  -->
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- Navigation  -->
+      <ul class="navbar-nav ml-auto">
+        <a class="nav-link" routerLink="/client" aria-haspopup="true" aria-expanded="true">
+          Home
+        </a>
+        <li class="nav-item hovered">
+          <a class="nav-link" routerLink="/client/dashboard" aria-haspopup="true" aria-expanded="true">
+            Journey
+          </a>
+        </li>
+        <li class="nav-item hovered">
+          <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            About Novelty
+          </a>
+        </li>
+        <!-- name of the business idea -->
+        <li class="nav-item hovered">
+          <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Cakes
+          </a>
 
-           <!-- Toggler  -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fe fe-x"></i>
-          </button>
-
-           <!-- Navigation  -->
-          <ul class="navbar-nav ml-auto">
-              <a class="nav-link" routerLink="/client" aria-haspopup="true" aria-expanded="true">
-                  Home
-              </a>
-              <li class="nav-item hovered">
-                  <a class="nav-link" routerLink="/client/dashboard" aria-haspopup="true" aria-expanded="true">
-                      Journey
-                  </a>
-              </li>
-              <li class="nav-item hovered">
-                  <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      About Novelty
-                  </a>
-              </li>
-              <!-- name of the business idea -->
-              <li class="nav-item hovered">
-                <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Cakes
-                </a>
-               
-            </li>
-          </ul>
-      </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<div class=container>
-  <div class=" col-header ">
-    <h1 class="display-4 ">Developers</h1>
-    <p class="lead">You’ll need a developer to do all the technical staff  of your
-        business.</p> 
-    
+<div class=wraper>
+  <div class="header ">
+    <h1><span>Developers</span> site</h1>
+    <h5>Why Web Development Is Essential To Your Business?</h5>
+    <p >The rapidly changing business trends have made the business owners realize the importance of having a website and register their online presence. 
+      Due to this, they are hiring the best web developers who can make the best sites for them and help them to expand their business from all the clients.
+     Apart from that having a website also helps the people to understand the value of the products and why they need to invest money in the products and services</p>
   </div>
-
+  <h5>Here are some of the benefits of having an online presence:</h5>
+  <ul>
+    <li>It means your business can be accessed anytime</li>
+    <li>More people will be aware of the products as well as the services.</li>
+    <li>Clients can search and find your products online</li>
+   
+  </ul>
+  <p>To keep the website in a good condition it is very important to keep on updating the contents of the websites.
+    For most start-up entreprenuers this can be donting tasks therefore it is advisable to find a developer who will take care of the technical staff you focus on the running of the business.
+     The first step is choosing a domain name for your business then browsing through a list of developers to find one that suits your business needs.</p>
 </div>
-  
+
+<div class="wrapper">
+  <div class="main">
+    <h2>Start your domain name search</h2>
+    <div id="input" class="input-group">
+      <input id="searchTerm" class="form-control">
+      <div class="input-group-btn">
+        <button id="searchBtn" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+   
+  </div>
+</div>
+
+
+<div class="select">
+  <h3>Select the developer that best suit your business needs</h3>
+</div>
 
 
 
- <mat-grid-list cols="1" rowHeight="800px">
+<mat-grid-list cols="1" rowHeight="800px">
   <mat-grid-tile class="text-inside-grid">
-      <div class="row mx-n2 mb-5">
-          <div class="col-sm-6 col-lg-3 px-2 mb-3">
-              
-            <div class="profile_container">
-              <div class="image_container" >
-                <div class="image">
-                  <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80">
-                </div>
-              </div>
-              <div class="text_container">
-                <div class="title">
-                  <h3>Samkelisiwe Mcholo</h3><br>
-                  <h4>Frontend Developer</h4>
-                  <h6 class="company">@The Digital Academy</h6><br>
-                </div>
-                <div class="objective">
-                  <p>To secure a challenging and rewarding position as Android Developer with an established organization that can utilize my skills and experience.</p>
-                </div>
-                <div class="route" >
-                  <button mat-stroked-button  routerLink="/client/profile" >View Profile</button>
-                 </div>
-                
-                <br>
-                
-                <div class="social">
-                  <a>GitHub</a>
-                  <a>Twitter</a>
-                  <a>LinkedIn</a>
-                  <!-- <a>Facebook</a>
+    <div class="row mx-n2 mb-5">
+      <div class="col-sm-6 col-lg-3 px-2 mb-3">
+
+        <div class="profile_container">
+          <div class="image_container">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80">
+            </div>
+          </div>
+          <div class="text_container">
+            <div class="title">
+              <h3>Samkelisiwe Mcholo</h3><br>
+              <h4>Frontend Developer</h4>
+              <h6 class="company">@The Digital Academy</h6><br>
+            </div>
+            <div class="objective">
+              <p>To secure a challenging and rewarding position as Android Developer with an established organization
+                that can utilize my skills and experience.</p>
+            </div>
+            <div class="route">
+              <button mat-stroked-button routerLink="/client/profile">View Profile</button>
+            </div>
+
+            <br>
+
+            <div class="social">
+              <a>GitHub</a>
+              <a>Twitter</a>
+              <a>LinkedIn</a>
+              <!-- <a>Facebook</a>
                   <a>Instagram</a>
                   <a>Youtube</a> -->
-                </div>
-              </div>
-              </div>
-            
+            </div>
           </div>
+        </div>
 
-          <div class="col-sm-6 col-lg-3 px-2 mb-3">
-            <div class="profile_container">
-              <div class="image_container" >
-                <div class="image">
-                  <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80">
-                </div>
-              </div>
-              <div class="text_container">
-                <div class="title">
-                  <h3>Sonwabo khumalo</h3><br>
-                  <h4>Full Stack Developer</h4>
-                  <h6 class="company">@Amazon</h6><br>
-                </div>
-                <div class="objective">
-                  <p>To secure a challenging and rewarding position as Android Developer with an established organization that can utilize my skills and experience.</p>
-                </div>
-                <div class="route" >
-                  <button mat-stroked-button  routerLink="/client/profile" >View Profile</button>
-                 </div>
-                
-                <br>
-                
-                <div class="social">
-                  <a>GitHub</a>
-                  <a>Twitter</a>
-                  <a>LinkedIn</a>
-                </div>
-              </div>
-              </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3 px-2 mb-3">
-              
-            
-                
-            <div class="profile_container">
-              <div class="image_container" >
-                <div class="image">
-                  <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80">
-                </div>
-              </div>
-              <div class="text_container">
-                <div class="title">
-                  <h3>Nomaseko Mhlanga</h3><br>
-                  <h4>Backend Developer</h4>
-                  <h6 class="company">@IBM</h6><br>
-                </div>
-                <div class="objective">
-                  <p>To secure a challenging and rewarding position as Android Developer with an established organization that can utilize my skills and experience.</p>
-                </div>
-                <div class="route" >
-                  <button mat-stroked-button  routerLink="/client/profile" >View Profile</button>
-                 </div>
-                
-                <br>
-                
-                <div class="social">
-                  <a>GitHub</a>
-                  <a>Twitter</a>
-                  <a>LinkedIn</a>
-                </div>
-              </div>
-              </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3 px-2 mb-3">
-        
-                  
-
-            <div class="profile_container">
-              <div class="image_container" >
-                <div class="image">
-                  <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80">
-                </div>
-              </div>
-              <div class="text_container">
-                <div class="title">
-                  <h3>Andile Phula</h3><br>
-                  <h4>Full Stack Developer</h4>
-                  <h6 class="company">@General Dynamics</h6><br>
-                </div>
-                <div class="objective">
-                  <p>To secure a challenging and rewarding position as Android Developer with an established organization that can utilize my skills and experience.</p>
-                </div>
-                <div class="route" >
-                  <button mat-stroked-button  routerLink="/client/profile" >View Profile</button>
-                 </div>
-                
-                <br>
-                
-                <div class="social">
-                  <a>GitHub</a>
-                  <a>Twitter</a>
-                  <a>LinkedIn</a>
-                </div>
-              </div>
-              </div>
-          </div>
       </div>
+
+      <div class="col-sm-6 col-lg-3 px-2 mb-3">
+        <div class="profile_container">
+          <div class="image_container">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80">
+            </div>
+          </div>
+          <div class="text_container">
+            <div class="title">
+              <h3>Sonwabo khumalo</h3><br>
+              <h4>Full Stack Developer</h4>
+              <h6 class="company">@Amazon</h6><br>
+            </div>
+            <div class="objective">
+              <p>To secure a challenging and rewarding position as Android Developer with an established organization
+                that can utilize my skills and experience.</p>
+            </div>
+            <div class="route">
+              <button mat-stroked-button routerLink="/client/profile">View Profile</button>
+            </div>
+
+            <br>
+
+            <div class="social">
+              <a>GitHub</a>
+              <a>Twitter</a>
+              <a>LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3 px-2 mb-3">
+
+
+
+        <div class="profile_container">
+          <div class="image_container">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80">
+            </div>
+          </div>
+          <div class="text_container">
+            <div class="title">
+              <h3>Nomaseko Mhlanga</h3><br>
+              <h4>Backend Developer</h4>
+              <h6 class="company">@IBM</h6><br>
+            </div>
+            <div class="objective">
+              <p>To secure a challenging and rewarding position as Android Developer with an established organization
+                that can utilize my skills and experience.</p>
+            </div>
+            <div class="route">
+              <button mat-stroked-button routerLink="/client/profile">View Profile</button>
+            </div>
+
+            <br>
+
+            <div class="social">
+              <a>GitHub</a>
+              <a>Twitter</a>
+              <a>LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3 px-2 mb-3">
+
+
+
+        <div class="profile_container">
+          <div class="image_container">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80">
+            </div>
+          </div>
+          <div class="text_container">
+            <div class="title">
+              <h3>Andile Phula</h3><br>
+              <h4>Full Stack Developer</h4>
+              <h6 class="company">@General Dynamics</h6><br>
+            </div>
+            <div class="objective">
+              <p>To secure a challenging and rewarding position as Android Developer with an established organization
+                that can utilize my skills and experience.</p>
+            </div>
+            <div class="route">
+              <button mat-stroked-button routerLink="/client/profile">View Profile</button>
+            </div>
+
+            <br>
+
+            <div class="social">
+              <a>GitHub</a>
+              <a>Twitter</a>
+              <a>LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </mat-grid-tile>
 </mat-grid-list>
-
