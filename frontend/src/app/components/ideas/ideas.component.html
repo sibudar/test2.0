@@ -57,13 +57,13 @@
 <br>
 
 
-    <mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-list cols="3" rowHeight="1:1" [gutterSize]="'40px'">
         <mat-grid-tile>
-            <h3>My ideas</h3>
-           <div >  
-        <ol *ngIf="found">
-            <li class="idea" *ngFor="let idea of ideas.data" (click)="change()"  >{{idea.busin_idea}} <br/> {{idea.descript}} </li>
-        </ol>
+           <div *ngIf="found">
+            <h3>My ideas</h3> 
+         
+            <div class="idea"  *ngFor="let idea of ideas.data" (click)="change()"  >{{idea.busin_idea}} <br/> {{idea.descript}} </div>
+       
         <div *ngIf="!found">
             <p>no idea was found</p>
           </div>
@@ -76,10 +76,9 @@
             </div>
         <div *ngIf="!evaluation">
             <div class="mb-5">
-                <h3 >Add your Idea</h3>
-                <p >These ideas will be turned into businesses. It all
-                    starts with an idea.
-                </p>
+                <h3 >About Ideas</h3>
+                <p>The first step to any sucessful business is to have an idea, that is of what the business is about.In here you will add your idea,an idea written down may never be forgotten.</p>
+            <p>The key to understand an idea is through describing it, there are questions which your answers to them will help to further describe it.</p>
             </div>
         </div>
         </mat-grid-tile>
