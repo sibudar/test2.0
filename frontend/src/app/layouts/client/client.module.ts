@@ -38,6 +38,7 @@ import { DashboardComponent } from '../../components/dashboard/dashboard.compone
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
 import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
+import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
 
 
 export function tokenGetter() {
@@ -62,7 +63,8 @@ export function tokenGetter() {
     DashboardComponent,
     InstructionsComponent,
     IdeasComponent,
-    QuestionComponent
+    QuestionComponent,
+    EvaluationComponent,
   ],
   imports: [
     CommonModule,
@@ -100,7 +102,12 @@ export function tokenGetter() {
   ],
   providers: [AuthService, AuthGuard],
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
-  bootstrap: [DashboardComponent, IdeasComponent, LegalComponent, DigitalMarketComponent],
+  bootstrap: [
+    DashboardComponent,
+    IdeasComponent,
+    LegalComponent,
+    DigitalMarketComponent,
+  ],
   exports: [IdeasComponent],
 })
 export class ClientModule {}
