@@ -12,7 +12,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { JoyrideModule } from "ngx-joyride";
-
+import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ClientRoutingModule } from './client-routing.module';
@@ -87,6 +87,7 @@ export function tokenGetter() {
     MatListModule,
     MatDividerModule,
     FormsModule,
+    AngularFontAwesomeModule,
     HttpClientModule,
     MatExpansionModule,
     MatTabsModule,
