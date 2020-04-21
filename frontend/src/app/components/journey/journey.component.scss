@@ -189,3 +189,21 @@ svg {
   stroke-dashoffset: 100;
   transition: 0.6s ease-out;
 }
+
+@media screen and (max-width:414px) {
+  .display-4 {
+    margin-bottom: 10px;
+    font-size: xx-large;
+  }
+
+  .para-idea {
+    margin-top: 25px;
+  }
+
+  .image {
+    height: 100%;
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+}
