@@ -14,8 +14,8 @@ async function sendEmail(email, body, _subject) {
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: "gift@thedigitalacademy.co.za",//process.env.EMAIL, // your gmail address
-      pass: "1Smallworld@"//process.env.EMAIL_PASSWORD // your gmail password
+      user: process.env.EMAIL || 'gift@thedigitalacademy.co.za', // your gmail address
+      pass: process.env.EMAIL_PASSWORD || '1Smallworld@' // your gmail password
     }
   });
 
