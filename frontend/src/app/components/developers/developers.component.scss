@@ -17,7 +17,7 @@ span{
 	width:80%;
 }
 .select{
-	margin: 5px 100px;
+	margin: 50px 100px;
 }
 
 .profile_container{
@@ -166,3 +166,37 @@ span{
 	  outline:none;
 	  background: #ffffff;
   }
+
+  //media query..Responsiveness
+
+	/*Extra small devices (phones, 320px and down)*/
+	  @media (max-width: 767px)
+     {
+	
+     }
+   
+     @media (min-width: 321px) and (max-width: 480px) {
+	
+     }
+
+    //  @media (max-width: 767px)
+    //  {
+    
+    //  }
+    // @media (min-width: 768px) and (max-width: 979px)
+    //  {
+      
+    //  }
+
+    //  @media (min-width : 980px) and (max-width:1025px)
+    //  {
+      
+    //  }
+
+    //  @media (min-width : 1026px) and (max-width:1280px)
+    //  {
+      
+	//  }
+	@media  (max-width: 320px) {
+	
+     }
