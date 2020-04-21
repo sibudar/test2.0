@@ -62,6 +62,23 @@
   margin-top: 0.625rem;
 }
 
+.idea {
+    
+  padding:15px 40px;
+  background-color: #fafafa;
+  border-left: 10px solid  #007bff;
+  // border-color: #007bff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  
+}
+
+.idea:hover {
+ 
+  background-color: #007bff;
+  color: white;
+}
+
 .image {
   height: 28rem;
   width: 30rem;
