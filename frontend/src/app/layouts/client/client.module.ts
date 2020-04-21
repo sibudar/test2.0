@@ -39,6 +39,8 @@ import { InstructionsComponent } from '../../components/instructions/instruction
 import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
+import { JourneyComponent } from '../../components/journey/journey.component';
+import { RatingsComponent } from '../../components/ratings/ratings.component';
 
 
 export function tokenGetter() {
@@ -65,6 +67,8 @@ export function tokenGetter() {
     IdeasComponent,
     QuestionComponent,
     EvaluationComponent,
+    JourneyComponent,
+    RatingsComponent,
   ],
   imports: [
     CommonModule,
