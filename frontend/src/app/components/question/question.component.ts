@@ -40,8 +40,9 @@ export class QuestionComponent implements OnInit {
         this.show = false;
         this.button = "Next";
       } else {
-        this.button = "Head to Legal"; 
+        this.button = "Rate your Idea"; 
         this.done = true;
+        this.show = true;
         
       }
 }

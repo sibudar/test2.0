@@ -3,24 +3,31 @@
         Evaluate your business
     <span class="text-primary text-uppercase"> idea</span></h2>
 
-<div class="container d-flex justify-content-center p-1">
-    <mat-card mat-card-actions>
-        <div class="d-flex justify-content-center">
+<div class="container d-flex">
+    <mat-card class="full-width">
+        <div class="d-flex justify-content-center" *ngIf="!show">
             {{questions[index].q_name }}
         </div>
         <br>
-        <mat-form-field class="example-full-width">
+        <mat-form-field *ngIf="!show"  class="example-full-width">
             <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
         </mat-form-field>
+        
+        <div *ngIf="show" class="d-flex justify-content-center">
+            On which scale do you rate your business idea?
+        </div>
 
-
-        <div *ngIf="!done" class="d-flex justify-content-center">
+        <div *ngIf="show" class="d-flex justify-content-center">
+            <app-ratings></app-ratings>  
+        </div>
+        
+        <div *ngIf="!done" class="d-flex ">
             <button mat-flat-button color="primary" (click)="yesClick()">{{button}}</button>
         </div>
 
         <div *ngIf="done" class="d-flex justify-content-center">
             <button mat-flat-button color="primary">{{button}}</button>
         </div>
-
+        
     </mat-card>
 </div>
