@@ -5,11 +5,10 @@ require("dotenv").config();
 // Create connection.
 const connect = mysql.createConnection({
   host: "localhost",
-  user: "ruty",
-  database: "noveltydb",
-  password: "",
-  port: process.env.SQLPORT,
-  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
+  user:'root',
+  database:'noveltydb',
+  password:''
+  
 });
 // Connect to the database.
 connect.connect(err => {

@@ -23,6 +23,7 @@ export class JourneyComponent implements OnInit {
   constructor(
     private clientService: ClientService, private auth: AuthService) {
       this.verifiedUser();
+      this.change();
     }
 
   ngOnInit() {}
