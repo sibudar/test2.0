@@ -1,101 +1,113 @@
-<!-- 
 <div class=container-outer>
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-    <div class="container">
-     Brand 
-        <a class="navbar-brand">
-            <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
-            Novelty
-        </a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
+                Novelty
+            </a>
 
-          Toggler  
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-         Collapse  
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-
-            Toggler 
+            <!-- Toggler  -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fe fe-x"></i>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
-             Navigation 
-            <ul class="navbar-nav ml-auto">
-                <a class="nav-link" routerLink="/client" aria-haspopup="true" aria-expanded="true">
-                    Home
-                </a>
-                <li class="nav-item hovered">
-                    <a class="nav-link" routerLink="/client/dashboard" aria-haspopup="true" aria-expanded="true">
-                        Journey
-                    </a>
-                </li>
-                <li class="nav-item hovered">
-                    <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        About Novelty
-                    </a>
-                </li>
-            </ul>
+            <!-- Collapse  -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
 
-     Button  
-             <div class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank" id="dropdown">
+                <!-- Toggler  -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fe fe-x"></i>
+                </button>
 
-                <h6>Account</h6>
-                <div class="dropdown-content">
-                    <a routerLink="/client/login">Login</a>
-                    <a routerLink="/client/register">Register</a>
+                <!-- Navigation  -->
+                <ul class="navbar-nav ml-auto">
+                    <a class="nav-link" routerLink="/client" aria-haspopup="true" aria-expanded="true">
+                        Home
+                    </a>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" routerLink="/client/dashboard" aria-haspopup="true" aria-expanded="true">
+                            Journey
+                        </a>
+                    </li>
+                    <li class="nav-item hovered">
+                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            About Novelty
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Button  -->
+                <!-- <div class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank" id="dropdown">
+
+                    <h6>Account</h6>
+                    <div class="dropdown-content">
+                        <a routerLink="/client/login">Login</a>
+                        <a routerLink="/client/register">Register</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-inner">
+        <mat-grid-list cols="1" rowHeight="230px">
+            <mat-grid-tile class="text-inside-grid">
+                <div class="mb-5 mt-11 col-header">
+                    <h6 class="display-4 mb-5">B U S I N E S S <span class="text-primary"> I D E A S</span></h6>
                 </div>
-            </div> 
+            </mat-grid-tile>
+        </mat-grid-list>
+        
+        <div class="row">
+            <div class="col-sm-3 rounded-left border border-right-1 border-bottom-0 border-top-0 border-left-0">
+                <span class="badge badge-primary mb-2">Ideas:</span>
+                <h5 class="lead mb-2">All your business ideas</h5>
+                <div class="position-absolute button-add">
+                    <button type="button" class="btn btn-primary" class="float" mat-fab data-toggle="modal" (click)="openDialog()">
+                        <i class="material-icons">add</i>
+                    </button>
+                </div>
+                <div *ngIf="found">
+                    <div class="card mt-2 pl-2 pr-4" *ngFor="let idea of ideas.data" (click)="change()">
+                        <h3 class="title">{{idea.busin_idea}}</h3>
+                        <div class="bar">
+                            <div class="emptybar">
+                            </div>
+                            <p class="description mt-1">{{idea.descript}}</p>
+                            <div class="filledbar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!found">
+                    <p>No idea was found</p>
+                </div>
+            </div>
+            <div class="col-sm pl-5">
+                <div *ngIf="evaluation">
+                    <app-question></app-question>
+                </div>
+                <div *ngIf="!evaluation">
+                    <div class="mb-5">
+                        <h2 class="lead mb-2 h3"><span class="text-primary">I D E A S</span></h2>
+                        <p>There's no doubt that successful businesses start with brilliant ideas. After all, in today's fiercely competitive
+                            environment, innovation is the ammunition entrepreneurs need to stand out in the crowd. 
+                            <br><br>
+                            The first step to any sucessful business is to have an idea, that is of what the business is about. In here you'll able to add your business ideas cause a business idea written down may never be forgotten, each and every
+                            bsuiness idea you'll have to evalaute it, there are questions which your answers to them will help you to know which of the business ideas is most likely to succeed.
+                            <br><br>
+                            We wish you all the best, and you're not alone we will be with you throughout your journey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="img">
+                    <img class="image animated fadeInRight delay-0.5s" src="assets/img/ideas-header.png">
+                </div>
+            </div>
         </div>
     </div>
-</nav>
-<br>
-<br>
-<br>
-
-
-    <mat-grid-list cols="3" rowHeight="1:1">
-        <mat-grid-tile>
-        <ol *ngIf="found">
-            <li *ngFor="let idea of ideas.data" (click)="change()"  >{{idea.busin_idea}} : {{idea.descript}} </li>
-        </ol>
-        <div *ngIf="!found">
-            <p>no idea was found</p>
-          </div>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-            <div *ngIf="evaluation">
-                <app-question></app-question>
-            </div>
-        <div *ngIf="!evaluation">
-            <div class="mb-5">
-                <h3 >Add your Idea</h3>
-                <p >These ideas will be turned into businesses. It all
-                    starts with an idea.
-                </p>
-            </div>
-        </div>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-            <div class="img">
-                <img class="image animated fadeInRight delay-0.5s" src="assets/img/ideas-header.png">
-            </div>
-        </mat-grid-tile>
-      </mat-grid-list>
 </div>
-
-Button trigger modal 
-<button type="button" class="btn btn-primary" class="float" mat-fab data-toggle="modal" (click)="openDialog()">
-    <i class="material-icons">
-      add
-    </i>
-  </button> -->
-
-
-
-  

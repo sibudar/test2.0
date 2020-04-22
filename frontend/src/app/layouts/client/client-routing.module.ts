@@ -34,7 +34,6 @@ const routes: Routes = [
   { path: "ideas", component: IdeasComponent },
   { path: "legal", component: LegalComponent },
   { path: "finance", component: IdeasComponent }
-
 ];
 
 @NgModule({
