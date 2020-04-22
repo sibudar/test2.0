@@ -20,12 +20,14 @@ export class JourneyComponent implements OnInit {
   verified: any;
   id_cat: 1;
   evaluation: boolean;
+  selected: any;
+  hovered = 0;
+  readonly = true;
 
-  constructor(
-    private clientService: ClientService, private auth: AuthService) {
-      this.verifiedUser();
-      this.change();
-    }
+  constructor(private clientService: ClientService, private auth: AuthService) {
+    this.verifiedUser();
+    this.change();
+  }
 
   ngOnInit() {}
 
@@ -68,7 +70,7 @@ export class JourneyComponent implements OnInit {
       }
     }
   }
-  
+
   change() {
     this.evaluation = true;
   }
