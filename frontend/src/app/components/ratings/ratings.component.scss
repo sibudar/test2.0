@@ -1,3 +1,49 @@
- .full-width {
+.full-width {
+  width: 100%;
+}
+
+.star {
+  width: 20px;
+  font-size: 4rem;
+  color: #b0c4de;
+}
+.filled {
+  color: #ffa600;
+}
+.bad {
+  color: #deb0b0;
+}
+.filled.bad {
+  color: #ff1e1e;
+}
+
+.QnE5Md {
+  cursor: default;
+  box-sizing: border-box;
+  display: flex;
+  box-pack: justify;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.QnE5Md .qBrLkf {
+  margin-right: 16px;
+}
+
+.DGSref .qBrLkf,
+.DGSref .yZ71kd {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+@media screen and (max-width: 414px) {
+  .star {
     width: 100%;
+    font-size: 2rem;
   }
+
+  .qBrLkf, .yZ71kd {
+    font-size: 11px;
+  }
+}
