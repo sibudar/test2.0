@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ClientService } from 'src/app/services/client.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,8 +13,8 @@ import { JoyrideService } from 'ngx-joyride';
   templateUrl: "./ideas.component.html",
   styleUrls: ["./ideas.component.scss"],
   providers: [],
+  encapsulation: ViewEncapsulation.None,
 })
-
 export class IdeasComponent implements OnInit {
   currentRate: number;
   user: any;
@@ -42,12 +42,9 @@ export class IdeasComponent implements OnInit {
     config.max = 5;
   }
 
-  
-
   ngOnInit() {}
 
-
-   /**
+  /**
    * Opens a pop.
    */
   openDialog() {
@@ -57,14 +54,14 @@ export class IdeasComponent implements OnInit {
 
     dialogConfig.data = {
       id: 1,
-      title: "Angular For Beginners"
+      title: "Angular For Beginners",
     };
 
     this.dialog.open(DialogComponent, dialogConfig);
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
-    
-    dialogRef.afterClosed().subscribe(data => {
+
+    dialogRef.afterClosed().subscribe((data) => {
       if (data != undefined) {
         data.id_user = this.user.data.id;
         this.inserIdea(data);
@@ -73,22 +70,20 @@ export class IdeasComponent implements OnInit {
     });
   }
 
-  
-
-
   /**
    * Adds a user's idea.
    * @param idea inserted by the user.
    */
   inserIdea(idea) {
-    this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
-      console.log(data)
+    this.clientService
+      .insertBusinessIdea(idea)
+      .subscribe((data: UserResponse) => {
+        console.log(data);
         this.ideas = data.data;
         this.getUserIdeas();
         console.log(data);
       });
   }
-
 
   /**
    * Gets all the user's ideas that were added by them.
@@ -135,7 +130,6 @@ export class IdeasComponent implements OnInit {
    */
   updateRate(rate) {
     //  this.clientService.updateRatings(rate).subscribe((data) => {
-
     //  })
     // this.user;
     // this.getUserIdeas();
@@ -151,9 +145,7 @@ export class IdeasComponent implements OnInit {
     });
   }
 
-  change(){
+  change() {
     this.evaluation = true;
-    
   }
- 
 }
