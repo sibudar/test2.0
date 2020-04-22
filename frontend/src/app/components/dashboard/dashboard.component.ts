@@ -1,4 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { InstructionsComponent } from '../instructions/instructions.component';
+import { MatDialog } from '@angular/material/dialog';
+
+// import { steps as defaultSteps, defaultStepOptions } from "../data";
 import { JoyrideService } from "ngx-joyride";
 
 @Component({

@@ -7,9 +7,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule, MatStepperModule, MatDividerModule, MatListModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatInputModule, MatStepperModule, MatDatepickerModule, MatNativeDateModule, MatToolbarModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { JoyrideModule } from "ngx-joyride";
 import { AngularFontAwesomeModule } from "angular-font-awesome";
@@ -36,11 +39,16 @@ import { DevelopersComponent } from '../../components/developers/developers.comp
 import { ProfileComponent } from '../../components/profile/profile.component';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
+import { DMredesignComponent } from '../../components/dmredesign/dmredesign.component';
 import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
+<<<<<<< HEAD
 import { JourneyComponent } from '../../components/journey/journey.component';
 import { RatingsComponent } from '../../components/ratings/ratings.component';
+=======
+import {MatToolbarModule} from '@angular/material/toolbar'
+>>>>>>> 9d8ccb4a088b3eb416b2ea3a0705625325d93f15
 
 
 export function tokenGetter() {
@@ -64,6 +72,7 @@ export function tokenGetter() {
     ProfileComponent,
     DashboardComponent,
     InstructionsComponent,
+    DMredesignComponent,
     IdeasComponent,
     QuestionComponent,
     EvaluationComponent,
@@ -77,6 +86,7 @@ export function tokenGetter() {
     MatSliderModule,
     MatCardModule,
     MatDialogModule,
+    MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
     MatIconModule,
