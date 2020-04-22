@@ -8,15 +8,15 @@ import { JourneyComponent } from '../journey/journey.component';
   styleUrls: ["./ratings.component.scss"],
 })
 export class RatingsComponent implements OnInit {
-  selected: number = 0;
+  selected: any;
   hovered = 0;
   readonly = false;
   id_business: any;
   descript: any;
   user_id: any;
+  hide: boolean;
 
   constructor(private clientService: ClientService, private ratings: JourneyComponent) {
-    console.log(this.selected);
   }
 
   ngOnInit() {}
@@ -26,13 +26,14 @@ export class RatingsComponent implements OnInit {
    * @param rate
    */
   updateRate() {
+    console.log(this.selected);
     let data = {
       rate: this.selected,
-      busin_id: 6,
+      busin_id: this.ratings.ideas.data[0].id,
       id_user: this.ratings.user.data.id,
     };
     this.clientService.updateRatings(data).subscribe((results) => {
-      console.log(results);
+      this.hide = true;
     });
   }
 }
