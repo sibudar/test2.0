@@ -5,6 +5,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { UserResponse } from 'src/app/models/user';
 import { QuestionsResponse } from 'src/app/models/questions';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,8 +26,9 @@ export class DisplayComponent implements OnInit {
   contentShow: any;
   show = false;
   token: any;
+  userName = '';
 
-  constructor(private clientService: ClientService, private auth: AuthService, private dialog: MatDialog) {
+  constructor(private clientService: ClientService, private auth: AuthService, private dialog: MatDialog,private router: Router) {
     this.verifiedUser();
   }
 
@@ -97,6 +99,7 @@ export class DisplayComponent implements OnInit {
    */
   inserIdea(idea) {
     this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
+      this.router.navigate(['client/ideas']);
       console.log(data)
         // this.ideas = data.data;
         this.getUserIdeas();
@@ -138,6 +141,8 @@ export class DisplayComponent implements OnInit {
           this.user = data;
           this.getUserIdeas();
           this.Getquestions(this.id_cat);
+          this.userName = this.user.data.first_name;
+          //console.log('you are logged in as: ' + this.userName);
         });
       }
     }
