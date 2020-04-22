@@ -26,7 +26,39 @@
   font-weight: bolder;
   font-size: xx-large;
 }
+.card2{
+  text-align: left;
+  width: 770px;
+  background-color: #eceff1;
+}
+.card3{
+  width: 250px;
+  height: 200px;
+  float:right;
+ margin-top:35px;
+ padding-left: 0px;
+ background-color: #eceff1;
+}
+.list{
+  text-align: left;
+  list-style: none;
+}
+.list li{
+  margin-left: 0px;
+}
+.heading1{
+    text-align: right;
+    color:black;
+    position: relative;
+    top: 40px;
+    right: 160px;
+    padding-bottom: 4px;
 
+}
+.time{
+  font-weight:lighter;
+  color: grey;
+}
 .col-header {
   margin-top: 180px;
 }

@@ -1,4 +1,24 @@
-
+.wraper{
+	margin:130px 100px 10px 100px;
+}
+.header h1{
+	letter-spacing:8px;
+	font-size:55px;
+	margin:20px 0;
+}
+span{
+	color:blue;
+}
+.wraper ul{
+	// list-style:none;
+	margin-left: -26px;
+}
+.wraper p{
+	width:80%;
+}
+.select{
+	margin: 50px 100px;
+}
 
 .profile_container{
 	height:600px;
@@ -33,7 +53,7 @@
 	padding:20px;
 	padding-top:70px;
 }
-.text_container h3,h4,p{
+.text_container h3,.text_container h4,.text_container p{
 	text-align:center;
 }
 .title h4{
@@ -75,9 +95,7 @@
 .company{
 	margin-left: 50px;
 }
-.col-header {
-	margin-top: 90px;
-  }
+
   
 .nav-link {
 	font-weight: bolder;
@@ -91,9 +109,7 @@
 	margin-left: 40px;
 	
   }
-  .lead{
-	  margin-right: 500px;
-  }
+  
   .image2{
 	background:white;
 	height:100px;
@@ -102,12 +118,85 @@
 	border-radius:50%;
 	transform:translate(105px,90px);
 }
-// .material-icons{
-// 	color: white !important;
-// 	font-size:30px !important;
-// }
-// .business_name{
-// 	color: white !important;
-// 	margin-left: 10px;
-// 	margin-bottom: 10px;
-// }
+
+//styles for search bar
+
+ 
+.box{
+	margin: 50px 100px;
+	width: 300px;
+	height: 50px;
+  }
+  
+  .container-1{
+	width: 500px;
+	vertical-align: middle;
+	white-space: nowrap;
+	position: relative;
+  }
+  
+  .container-1 input#search{
+	width: 500px;
+	height: 50px;
+	background: #2b303b;
+	border: none;
+	font-size: 10pt;
+	float: left;
+	color: #63717f;
+	padding-left: 45px;
+	border-radius: 5px;
+	transition: background .55s ease;
+  }
+  
+  .container-1 .icon{
+	position: absolute;
+	top: 50%;
+	margin-left: 17px;
+	margin-top: 17px;
+	z-index: 1;
+	color: #4f5b66;
+  }
+  
+  .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+	  outline:none;
+	  background: #ffffff;
+	}
+  
+  .container-1:hover #search {
+	  outline:none;
+	  background: #ffffff;
+  }
+
+  //media query..Responsiveness
+
+	/*Extra small devices (phones, 320px and down)*/
+	  @media (max-width: 767px)
+     {
+	
+     }
+   
+     @media (min-width: 321px) and (max-width: 480px) {
+	
+     }
+
+    //  @media (max-width: 767px)
+    //  {
+    
+    //  }
+    // @media (min-width: 768px) and (max-width: 979px)
+    //  {
+      
+    //  }
+
+    //  @media (min-width : 980px) and (max-width:1025px)
+    //  {
+      
+    //  }
+
+    //  @media (min-width : 1026px) and (max-width:1280px)
+    //  {
+      
+	//  }
+	@media  (max-width: 320px) {
+	
+     }
