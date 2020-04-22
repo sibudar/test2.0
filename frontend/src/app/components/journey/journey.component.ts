@@ -5,6 +5,7 @@ import { QuestionsResponse } from 'src/app/models/questions';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { DialogComponent } from '../dialog/dialog.component';
 import { QuestionComponent } from '../question/question.component';
+import { RatingsComponent } from '../ratings/ratings.component';
 
 @Component({
   selector: "app-journey",
@@ -56,14 +57,11 @@ export class JourneyComponent implements OnInit {
    */
   verifiedUser() {
     if (this.auth.loggedIn) {
-      // checks if you've logged in
       this.verified = JSON.parse(sessionStorage.getItem("access_token"));
       if (this.verified.auth) {
         // checks if the auth is "true" on the token
         this.auth.verifyToken(this.verified.token).subscribe((data) => {
-          // go the service for decryp
-          this.user = data; // assign what you got to this.user: user's details
-          console.log(this.user);
+          this.user = data;
           this.getUserIdeas();
           this.getQuestions(this.id_cat);
         });
