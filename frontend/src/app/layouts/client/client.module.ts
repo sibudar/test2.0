@@ -43,12 +43,8 @@ import { DMredesignComponent } from '../../components/dmredesign/dmredesign.comp
 import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
-<<<<<<< HEAD
-import { JourneyComponent } from '../../components/journey/journey.component';
-import { RatingsComponent } from '../../components/ratings/ratings.component';
-=======
-import {MatToolbarModule} from '@angular/material/toolbar'
->>>>>>> 9d8ccb4a088b3eb416b2ea3a0705625325d93f15
+import { JourneyComponent } from 'src/app/components/journey/journey.component';
+import { RatingsComponent } from 'src/app/components/ratings/ratings.component';
 
 
 export function tokenGetter() {
