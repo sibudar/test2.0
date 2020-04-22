@@ -8,7 +8,9 @@
     <div class="container d-flex">
         <mat-card class="full-width">
             <div class="d-flex justify-content-center" *ngIf="!show">
-                {{questions[index].q_name }}
+                <h5 class="lead text-center mb-3">
+                   {{questions[index].q_name }} 
+                </h5>
             </div>
             <br>
             <mat-form-field *ngIf="!show" class="example-full-width">
@@ -16,11 +18,28 @@
             </mat-form-field>
 
             <div *ngIf="show" class="d-flex justify-content-center">
-                On which scale do you rate your business idea?
+                <h5 class="lead text-center mb-3">
+                    You've answered the questions
+                </h5>
             </div>
 
-            <div *ngIf="show" class="d-flex justify-content-center">
-                <app-ratings></app-ratings>
+            <div *ngIf="show" class="d-flex justify-content-center mt-3 mb-2">
+                <button mat-flat-button color="primary" class="mb-3">Retake</button>
+                <h5 class="lead text-center ml-3 pt-1">
+                    If you're skeptical.
+                </h5>
+            </div>
+
+            <div *ngIf="show" class="w3-container w3-border w3-round-xlarge mb-2">
+                <div *ngIf="show" class="d-flex justify-content-center mt-3 mb-2">
+                    <h5 class="lead text-center mb-1">
+                        On which scale do you rate your business idea?
+                    </h5>
+                </div>
+                
+                <div *ngIf="show" class="d-flex justify-content-center">
+                    <app-ratings></app-ratings>
+                </div>
             </div>
 
             <div *ngIf="!done" class="d-flex ">
@@ -29,7 +48,6 @@
 
             <div *ngIf="done" class="d-flex justify-content-center">
                 <button mat-flat-button color="primary">{{button}}</button>
-                <a routerLink="/client/legal"></a>
             </div>
 
         </mat-card>
