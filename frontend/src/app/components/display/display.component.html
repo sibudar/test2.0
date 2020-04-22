@@ -1,84 +1,105 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand">
+            <img src="./assets/img/logo.png" class="navbar-brand-img " alt="..."
+                 joyrideStep="welcomeStep" 
+                 title="Welcome to Novelty" 
+                 text="Novelty is an application, which provide an easy journey 
+                 for entrepreneurs from having a business idea, to starting the journey, running it and 
+                 market it to the wider audience.">Novelty
+        </a>
 
-<div class=container-outer>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-        <div class="container">
-             <!-- Brand  -->
-            <a class="navbar-brand">
-                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="..."
-                     joyrideStep="welcomeStep" 
-                     title="Welcome to Novelty" 
-                     text="Novelty is an application, which provide an easy journey 
-                     for entrepreneurs from having a business idea, to starting the journey, running it and 
-                     market it to the wider audience.">Novelty
-            </a>
-    
-             <!-- Toggler  -->
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
             </button>
-    
-             <!-- Collapse  -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-    
-                <!-- Toggler  -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fe fe-x"></i>
-                </button>
-    
-                 <!-- Navigation  -->
-                <ul class="navbar-nav ml-auto">
-                    <a class="nav-link" routerLink="/client" aria-haspopup="true" aria-expanded="true">
-                        Home
+
+            <!-- Navigation -->
+            <ul class="navbar-nav ml-auto">
+                <a class="nav-link" routerLink="/client" aria-haspopup="true" aria-expanded="true">
+                    Home
+                </a>
+                <li class="nav-item hovered">
+                    <a class="nav-link" routerLink="/client/dashboard" aria-haspopup="true" aria-expanded="true">
+                        Journey
                     </a>
-                    <li class="nav-item hovered">
-                        <a class="nav-link" routerLink="/client/dashboard" aria-haspopup="true" aria-expanded="true">
-                            Journey
-                        </a>
-                    </li>
-                    <li class="nav-item hovered">
-                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            About Novelty
-                        </a>
-                    </li>
-                </ul>
-    
-                <!-- Button  -->
-             <!-- <div class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank" id="dropdown">
-    
-                    <h6>Account</h6>
-                    <div class="dropdown-content">
-                        <a routerLink="/client/login">Login</a>
-                        <a routerLink="/client/register">Register</a>
-                    </div>
-                </div>  -->
-            </div>
-        </div>
-    </nav>
+                </li>
+                <li class="nav-item hovered">
+                    <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        About Novelty
+                    </a>
+                </li>
+            </ul>
 
-    <div class="container-inner">
-        <mat-grid-list cols="2" rowHeight="450px">
+            <!-- Button -->
+            <!-- <div class="navbar-btn btn btn-sm btn-primary lift ml-auto" target="_blank" id="dropdown">
 
-            <mat-grid-tile class="text-inside-grid">
-         <div class="text_container">
-            <h3 ng-if="userName.length">Hi {{ userName|titlecase}} </h3><br>
-          <div class="objective">
-            <p>Do You have a business idea ?</p>
-          </div>
-          <div class="route" >
-            <button mat-stroked-button  (click)="openDialog()" >YES</button>
-           </div>
-        </div>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <div class="img">
-                    <img class="image animated fadeInRight delay-0.5s" src="assets/img/survey-research-illustration_90558-16.jpg">
+                <h6>Account</h6>
+                <div class="dropdown-content">
+                    <a routerLink="/client/login">Login</a>
+                    <a routerLink="/client/register">Register</a>
                 </div>
-            </mat-grid-tile>
-            
-        </mat-grid-list>
-
+            </div> -->
+        </div>
     </div>
+</nav>
+
+<br>
+<br>
+
+<div class="row justify-content-center animated fadeInDown " style="margin-top: 75px;">
+
+   <h3 style="margin-top: 10px;" class=""> Hello {{ userName|titlecase}} </h3>
 </div>
+
+<div class="row justify-content-center animated fadeInRight">
+
+    <img src="../../../assets/img/8c7012.png" width="300" />
+</div>
+
+
+<div class="row justify-content-center animated fadeInLeft ">
+    <h3 class="display-3 text-center text-md-left" >
+        Let's turn your <span class="text-primary">IDEA</span> to a business.<br>
+    </h3>
+</div>
+
+
+<div class="row justify-content-center animated fadeInLeft ">
+
+    <form class="example-form" [formGroup]="form">
+        <mat-form-field class="example-full-width">
+            <mat-label>What's the name of your business idea? </mat-label>
+            <input matInput required formControlName="busin_idea">
+          </mat-form-field>
+
+  <mat-form-field class="example-full-width" >
+    <mat-label>Tell us more about your idea? </mat-label>
+    <textarea matInput formControlName="descript" required placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+</form>
+
+
+
+</div>
+
+
+<div class="row justify-content-center animated fadeInUp delay-0.5s">
+
+    <button mat-raised-button color="primary" (click)="continue()">Continue</button>
+
+
+</div>
+
+
+

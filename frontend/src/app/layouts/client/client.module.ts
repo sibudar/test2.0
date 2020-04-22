@@ -43,6 +43,7 @@ import { DMredesignComponent } from '../../components/dmredesign/dmredesign.comp
 import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
+import {MatToolbarModule} from '@angular/material/toolbar'
 
 
 export function tokenGetter() {
@@ -78,6 +79,7 @@ export function tokenGetter() {
     MatSliderModule,
     MatCardModule,
     MatDialogModule,
+    MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
     MatIconModule,
