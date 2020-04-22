@@ -16,6 +16,8 @@ import { DigitalMarketComponent } from 'src/app/components/digital-market/digita
 import { DevelopersComponent } from 'src/app/components/developers/developers.component';
 import { LegalComponent } from 'src/app/components/legal/legal.component';
 
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component'; //legal componet for journey
+
 const routes: Routes = [
   { path: "", component: LandingComponent },
   { path: "", component: LandingComponent },
@@ -33,7 +35,8 @@ const routes: Routes = [
   { path: "dashboard", component: DashboardComponent },
   { path: "ideas", component: IdeasComponent },
   { path: "legal", component: LegalComponent },
-  { path: "finance", component: IdeasComponent }
+  { path: "finance", component: IdeasComponent },
+  { path: "legalJourney", component: LegalJourneyComponent }
 ];
 
 @NgModule({
