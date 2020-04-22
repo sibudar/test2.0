@@ -105,7 +105,7 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, JourneyComponent],
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
   bootstrap: [
     DashboardComponent,
