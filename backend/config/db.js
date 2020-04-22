@@ -4,11 +4,12 @@ const util = require("util");
 require("dotenv").config();
 // Create connection.
 const connect = mysql.createConnection({
-  host:'localhost',
-  user:'root',
-  database:'noveltydb',
-  password:''
-
+  host: "localhost",
+  user: "ruty",
+  database: "noveltydb",
+  password: "",
+  port: process.env.SQLPORT,
+  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
 });
 // Connect to the database.
 connect.connect(err => {
