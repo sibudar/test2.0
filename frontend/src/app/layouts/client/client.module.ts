@@ -43,8 +43,12 @@ import { DMredesignComponent } from '../../components/dmredesign/dmredesign.comp
 import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
-
+import { FlexLayoutModule } from "@angular/flex-layout";
 export function tokenGetter() {
   return sessionStorage.getItem("access_token");
 }
@@ -70,6 +74,7 @@ export function tokenGetter() {
     IdeasComponent,
     QuestionComponent,
     EvaluationComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
@@ -78,8 +83,12 @@ export function tokenGetter() {
     MatSliderModule,
     MatCardModule,
     MatDialogModule,
+    MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
+    MatMenuModule,
+    FlexLayoutModule,
+    MatSidenavModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,

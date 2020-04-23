@@ -19,24 +19,28 @@ import { DigitalMarketComponent } from 'src/app/components/digital-market/digita
 import { DevelopersComponent } from 'src/app/components/developers/developers.component';
 import { LegalComponent } from 'src/app/components/legal/legal.component';
 import { FinanceComponent } from 'src/app/components/finance/finance.component';
+import { ClientComponent } from './client.component';
 
 const routes: Routes = [
-  { path: "", component: LandingComponent },
-  { path: "register", component: RegisterComponent },
-  { path: "login", component: LoginComponent },
-  { path: "display", component: DisplayComponent },
-  { path: "home", component: LandingComponent },
-  { path: "forgotPassword", component: ForgotPasswordComponent },
-  { path: "resetPassword/:token", component: ResetPasswordComponent },
-  { path: "question", component: QuestionComponent },
-  { path: "digitalm", component: DMredesignComponent},
-  { path: 'profile', component: ProfileComponent },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "digital", component: DigitalMarketComponent },
-  { path: "developers", component: DevelopersComponent },
-  { path: "ideas", component: IdeasComponent },
-  { path: "legal", component: LegalComponent },
-  { path: "finance", component: FinanceComponent }
+  { path: "", component: ClientComponent , children: [
+    { path: "register", component: RegisterComponent },
+    { path: "login", component: LoginComponent },
+    { path: "display", component: DisplayComponent },
+    { path: "home", component: LandingComponent },
+    { path: "forgotPassword", component: ForgotPasswordComponent },
+    { path: "resetPassword/:token", component: ResetPasswordComponent },
+    { path: "question", component: QuestionComponent },
+    { path: "digitalm", component: DMredesignComponent},
+    { path: 'profile', component: ProfileComponent },
+    { path: "dashboard", component: DashboardComponent },
+    { path: "digital", component: DigitalMarketComponent },
+    { path: "developers", component: DevelopersComponent },
+    { path: "ideas", component: IdeasComponent },
+    { path: "legal", component: LegalComponent },
+    { path: "finance", component: FinanceComponent }
+  ]},
+
+
 ];
 
 @NgModule({
