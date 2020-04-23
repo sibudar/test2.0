@@ -192,8 +192,10 @@ svg {
 
 .star {
   width: 20px;
-  font-size: 4rem;
+  font-size: 1.1rem;
   color: #b0c4de;
+  position: relative;
+  bottom: 7.1px;
 }
 .filled {
   color: #ffa600;
@@ -232,6 +234,7 @@ svg {
   .star {
     width: 20px;
     font-size: 1rem;
-    padding-bottom: 30px;
+    position: relative;
+    bottom: 7.1px;
   }
 }
