@@ -43,8 +43,9 @@ import { DMredesignComponent } from '../../components/dmredesign/dmredesign.comp
 import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
-import { JourneyComponent } from 'src/app/components/journey/journey.component';
-import { RatingsComponent } from 'src/app/components/ratings/ratings.component';
+import { JourneyComponent } from "src/app/components/journey/journey.component";
+import { RatingsComponent } from "src/app/components/ratings/ratings.component";
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
 
 
 export function tokenGetter() {
@@ -74,6 +75,7 @@ export function tokenGetter() {
     EvaluationComponent,
     JourneyComponent,
     RatingsComponent,
+    LegalJourneyComponent,
   ],
   imports: [
     CommonModule,
@@ -118,6 +120,7 @@ export function tokenGetter() {
     IdeasComponent,
     LegalComponent,
     DigitalMarketComponent,
+    LegalJourneyComponent,
   ],
   exports: [IdeasComponent],
 })

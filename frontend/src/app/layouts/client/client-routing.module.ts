@@ -21,6 +21,8 @@ import { LegalComponent } from 'src/app/components/legal/legal.component';
 import { FinanceComponent } from 'src/app/components/finance/finance.component';
 import { JourneyComponent } from 'src/app/components/journey/journey.component';
 
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component'; //legal componet for journey
+
 const routes: Routes = [
   { path: "", component: LandingComponent },
   { path: "register", component: RegisterComponent },
@@ -39,6 +41,8 @@ const routes: Routes = [
   { path: "legal", component: LegalComponent },
   { path: "finance", component: FinanceComponent },
   { path: "journey", component: JourneyComponent },
+  { path: "legalJourney", component: LegalJourneyComponent }
+
 ];
 
 @NgModule({
