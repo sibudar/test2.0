@@ -47,6 +47,8 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
+
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 export function tokenGetter() {
@@ -75,6 +77,7 @@ export function tokenGetter() {
     QuestionComponent,
     EvaluationComponent,
     NavbarComponent,
+    LegalJourneyComponent,
   ],
   imports: [
     CommonModule,
@@ -122,6 +125,7 @@ export function tokenGetter() {
     IdeasComponent,
     LegalComponent,
     DigitalMarketComponent,
+    LegalJourneyComponent,
   ],
   exports: [IdeasComponent],
 })

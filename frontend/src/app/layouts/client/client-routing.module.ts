@@ -21,6 +21,8 @@ import { LegalComponent } from 'src/app/components/legal/legal.component';
 import { FinanceComponent } from 'src/app/components/finance/finance.component';
 import { ClientComponent } from './client.component';
 
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component'; //legal componet for journey
+
 const routes: Routes = [
   { path: "", component: ClientComponent , children: [
     { path: "register", component: RegisterComponent },
