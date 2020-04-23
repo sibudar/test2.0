@@ -3,7 +3,6 @@ import { QuestionsResponse, Questions } from 'src/app/models/questions';
 import { ClientService } from '../../services/client.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RatingsComponent } from '../ratings/ratings.component';
 
 
 @Component({
@@ -22,7 +21,7 @@ export class QuestionComponent implements OnInit {
   formQuestion: FormGroup;
   frmControlNames: string[] = [];
 
-  constructor(private clientService: ClientService, private fb: FormBuilder, private router: Router, private ratings: RatingsComponent) {
+  constructor(private clientService: ClientService, private fb: FormBuilder, private router: Router) {
     this.Getquestions(1);
   }
 
@@ -49,9 +48,5 @@ export class QuestionComponent implements OnInit {
       this.done = true;
       this.show = true;
     }
-  }
-
-  retakeQuestions() {
-    this.ratings.hide = false;
   }
 }

@@ -1,15 +1,15 @@
-<div class="question">
+<div *ngIf="!show" class="question">
     <h2 class="lead mb-2 h3 text-uppercase">
         <mat-icon class="text-primary">question_answer</mat-icon>
         Evaluate your business
         <span class="text-primary text-uppercase"> idea</span>
     </h2>
 
-    <div class="container d-flex">
+    <div *ngIf="!show" class="container d-flex">
         <mat-card class="full-width">
             <div class="d-flex justify-content-center" *ngIf="!show">
                 <h5 class="lead text-center mb-3">
-                   {{questions[index].q_name }} 
+                    {{questions[index].q_name }}
                 </h5>
             </div>
             <br>
@@ -17,20 +17,26 @@
                 <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
             </mat-form-field>
 
-            <div *ngIf="show" class="w3-container w3-border w3-round-xlarge mb-2">
-                <div *ngIf="show" class="d-flex justify-content-center">
-                    <app-ratings></app-ratings>
-                </div>
-            </div>
 
             <div *ngIf="!done" class="d-flex ">
                 <button mat-flat-button color="primary" (click)="yesClick()">{{button}}</button>
             </div>
 
-            <div *ngIf="done" class="d-flex justify-content-center">
-                <button mat-flat-button color="primary">{{button}}</button>
-            </div>
-
         </mat-card>
+    </div>
+</div>
+<div *ngIf="show done" class="question">
+    <h2 class="lead mb-2 h3 text-uppercase">
+        <mat-icon class="text-primary">question_answer</mat-icon>
+        Evaluate your business
+        <span class="text-primary text-uppercase"> idea</span>
+    </h2>
+    <div *ngIf="show" class="w3-container w3-border w3-round-xlarge mb-2">
+        <div *ngIf="show" class="d-flex justify-content-center">
+            <app-ratings></app-ratings>
+        </div>
+    </div>
+    <div *ngIf="done" class="d-flex justify-content-center">
+        <button mat-flat-button color="primary">{{button}}</button>
     </div>
 </div>
