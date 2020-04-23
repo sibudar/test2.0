@@ -44,6 +44,7 @@ import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
 import {MatToolbarModule} from '@angular/material/toolbar'
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
 
 
 export function tokenGetter() {
@@ -71,6 +72,7 @@ export function tokenGetter() {
     IdeasComponent,
     QuestionComponent,
     EvaluationComponent,
+    LegalJourneyComponent,
   ],
   imports: [
     CommonModule,
@@ -115,6 +117,7 @@ export function tokenGetter() {
     IdeasComponent,
     LegalComponent,
     DigitalMarketComponent,
+    LegalJourneyComponent,
   ],
   exports: [IdeasComponent],
 })

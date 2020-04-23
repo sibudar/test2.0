@@ -20,6 +20,8 @@ import { DevelopersComponent } from 'src/app/components/developers/developers.co
 import { LegalComponent } from 'src/app/components/legal/legal.component';
 import { FinanceComponent } from 'src/app/components/finance/finance.component';
 
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component'; //legal componet for journey
+
 const routes: Routes = [
   { path: "", component: LandingComponent },
   { path: "register", component: RegisterComponent },
@@ -36,7 +38,8 @@ const routes: Routes = [
   { path: "developers", component: DevelopersComponent },
   { path: "ideas", component: IdeasComponent },
   { path: "legal", component: LegalComponent },
-  { path: "finance", component: FinanceComponent }
+  { path: "finance", component: FinanceComponent },
+  { path: "legalJourney", component: LegalJourneyComponent }
 ];
 
 @NgModule({

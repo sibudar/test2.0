@@ -163,7 +163,7 @@ INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, 
             'https://www.absa.co.za/business/starting-my-business/setting-up-my-business/drafting-a-business-plan',
             'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
-            VALUES ('Register the business',
+            VALUES ('CIPC Business Registration',
             'The Companies and Intellectual Property Commission (CIPC) should be your first point of contact. This organisation has been established in order to administer the registration of companies, cooperatives and intellectual property rights such as trademarks, patents, designs and copyright. for more information',
             'http://www.cipc.co.za/za/',
             'System', now(), 'System', now(), 2);
@@ -173,7 +173,7 @@ INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, 
             'https://www.sars.gov.za/Pages/default.aspx',
             'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
-            VALUES ('Department of Labour',
+            VALUES ('Department of Labour COIDA',
             'This government department bears the responsibility of ensuring that businesses operate under conducive environment and abides by laid down legal provisions. Businesses with one or more full time employees are therefore required to register in accordance with the Compensation for Occupational Injuries and Diseases Act (COIDA).This Act has been put in place to safeguard the rights of employees who are injured, contract a disease or get killed as a result of their work. for more information',
             'http://www.labour.gov.za/',
             'System', now(), 'System', now(), 2);
@@ -183,7 +183,7 @@ INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, 
             'https://www.ufiling.co.za/uif/',
             'System', now(), 'System', now(), 2);
 INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
-            VALUES ('Employee Tax',
+            VALUES ('Employee Tax (PAYE)',
             'The law demands that if you employ one or more staff members who earn over R40,000 per year, you have to register your company for Pay As You Earn (PAYE). If your payroll is more than R500,000 a month, you must register for skills development levy (SDL). The funds are to be used to develop and improve skills of employees. for more on Employee Tax infor, make sure to',
             'https://www.sars.gov.za/TaxTypes/Paye/Pages/default.aspx',
             'System', now(), 'System', now(), 2);
