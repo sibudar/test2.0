@@ -103,7 +103,7 @@ async function rate(data) {
 
     let sql = 'CALL rateBusinessIdea(?)'
     
-    return queryFunction(sql, [data.busin_id, data.rate, data.id_user]).then(result => {
+    return queryFunction(sql, [data.rate, data.busin_id, data.id_user]).then(result => {
         return response(201,'You have successfully rated your idea.');
     }).catch(error => {
         return fieldResponse(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage );
