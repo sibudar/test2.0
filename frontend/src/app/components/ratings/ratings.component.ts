@@ -19,10 +19,8 @@ export class RatingsComponent implements OnInit {
   user_id: any;
   hide: boolean;
 
-  constructor(private clientService: ClientService, private ratings: JourneyComponent, private router: Router, private question: QuestionComponent, private location: Location) {
-    
-  }
-
+  constructor(private clientService: ClientService, private journey: JourneyComponent, private router: Router,private question: QuestionComponent, private location: Location
+  ) {}
   ngOnInit() {}
 
   /**
@@ -33,21 +31,21 @@ export class RatingsComponent implements OnInit {
     console.log(this.selected);
     let data = {
       rate: this.selected,
-      busin_id: this.ratings.ideas.data[0].id,
-      id_user: this.ratings.user.data.id,
+      busin_id: this.journey.ideas.data[0].id,
+      id_user: this.journey.user.data.id,
     };
     this.clientService.updateRatings(data).subscribe((results) => {
       this.hide = true;
     });
   }
-  
+
   retakeQuestions() {
     this.question.done = false;
     this.question.show = false;
     this.hide = false;
 
     this.router.navigateByUrl("client/question", { skipLocationChange: true }).then(() => {
-      this.router.navigate([decodeURI(this.location.path())]);
-    })
+        this.router.navigate([decodeURI(this.location.path())]);
+      });
   }
 }
