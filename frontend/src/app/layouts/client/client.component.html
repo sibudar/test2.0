@@ -12,8 +12,9 @@
         
         <div fxShow="true" fxHide.lt-md>
             <mat-menu #appMenu="matMenu">
-                <button mat-menu-item>Login</button>
-                <button mat-menu-item>Register</button>
+                <button mat-menu-item routerLink="/client/login" *ngIf="!loggedIn" >Login</button>
+                <button mat-menu-item routerLink="/client/login" *ngIf="loggedIn" >Logout</button>
+                <button mat-menu-item  routerLink="/client/register" >Register</button>
               </mat-menu>
               
 
@@ -27,7 +28,7 @@
     </mat-toolbar>
   
     <mat-sidenav-container fxFlexFill>
-      <mat-sidenav #sidenav >
+      <mat-sidenav #sidenav mode="push" >
           <div class="container" style="width: 220px;">
 
           </div>
@@ -37,33 +38,33 @@
 
         <img src="../../../assets/img/2L-Logo-svg (b).svg" alt="" width="80">
         <br>
-         <h4>Hello</h4>
+         
 
         </div>
         
-      
-          <div class="row">
-           
-          </div>
-          
-          <div class="row">
-            
-          </div>
-
-
-
-        <div class="row justify-content-center">
-          <button mat-flat-button>About</button>
-            <!-- <a (click)="sidenav.toggle()" mat-list-item>Close</a> -->
-            
+        <div class="row justify-content-center" *ngIf="loggedIn" >
+            <h4 > {{user.first_name }} {{user.last_name }}</h4>
         </div>
+
+           <hr>
+
           
-          <a href="#" mat-list-item>Menu Item 1</a>
-          <a href="#" mat-list-item>Menu Item 2</a>
-          <a href="#" mat-list-item>Menu Item 3</a>
-          <a href="#" mat-list-item>Menu Item 4</a>
-          <a href="#" mat-list-item>Menu Item 5</a>
-          <a href="#"mat-list-item>Menu Item 6</a>
+            <a routerLink="/client"   (click)="sidenav.toggle()" mat-list-item style="padding-left: 35%;">Home</a>
+            <a routerLink="/client/login"  (click)="sidenav.toggle()" mat-list-item style="padding-left: 35%;">Login</a>
+            <a routerLink="/client/register"  (click)="sidenav.toggle()" mat-list-item style="padding-left: 35%;">Register</a>
+            <a mat-list-item style="padding-left: 35%;">About</a>
+            
+
+
+
+
+        <!-- <div class="row justify-content-center">
+          <button mat-flat-button>About</button>
+           <a (click)="sidenav.toggle()" mat-list-item>Close</a> 
+            
+        </div> -->
+          
+
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>

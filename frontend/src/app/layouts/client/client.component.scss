@@ -32,10 +32,14 @@ button {
     outline:none !important;
   }
 
-.mat-toolbar.mat-primary {
-    background-color: #007bff;
-}
+// .mat-toolbar.mat-primary {
+//     background-color: #007bff;
+// }
 
 // .mat-drawer {
-//   background-color: #31a4e3;
+//   background-color:#397665;
 // }
+
+.mat-list-base .mat-list-item .mat-list-item-content {
+  padding-left: 40% !important;
+}

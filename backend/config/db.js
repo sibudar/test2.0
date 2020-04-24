@@ -5,11 +5,10 @@ require("dotenv").config();
 // Create connection.
 const connect = mysql.createConnection({
   
-    host: '129.232.211.166',
+    host: 'localhost',
     user: 'root',
     database: 'noveltydb',
-    password: 'novelty1234',
-    port: 5506
+    password: 'novelty1234'
   
 
 });
