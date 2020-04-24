@@ -49,4 +49,8 @@ export class QuestionComponent implements OnInit {
       this.show = true;
     }
   }
+
+  continueToLegal() {
+    this.router.navigate(['client/legalJourney'])
+  }
 }
