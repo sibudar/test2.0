@@ -40,7 +40,7 @@ export class DisplayComponent implements OnInit {
    */
   inserIdea(idea) {
     this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
-      this.router.navigate(['client/ideas']);
+      this.router.navigate(['client/journey']);
  
       });
   }
