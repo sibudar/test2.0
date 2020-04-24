@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { QuestionsResponse } from 'src/app/models/questions';
-import { MatDialogConfig, MatDialog } from '@angular/material';
-import { DialogComponent } from '../dialog/dialog.component';
-import { QuestionComponent } from '../question/question.component';
-import { RatingsComponent } from '../ratings/ratings.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-journey",
@@ -14,13 +11,14 @@ import { RatingsComponent } from '../ratings/ratings.component';
 })
 export class JourneyComponent implements OnInit {
   ideas: any;
+  changeRate: any;
   user: any;
   found: boolean;
   questions: any;
   verified: any;
   id_cat: 1;
   evaluation: boolean;
-  selected: any;
+  selected: number = 0;
   hovered = 0;
   readonly = true;
 
@@ -37,6 +35,8 @@ export class JourneyComponent implements OnInit {
   getUserIdeas() {
     this.clientService.getIdeas(this.user.data.id).subscribe((data) => {
       this.ideas = data;
+      this.changeRate = this.ideas.data[0];
+      this.selected = Number(this.changeRate.rate);
       if (data.data.length > 0) {
         this.found = true;
       }
