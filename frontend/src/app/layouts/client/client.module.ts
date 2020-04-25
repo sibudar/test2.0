@@ -51,6 +51,7 @@ import { LegalJourneyComponent } from '../../components/legal-journey/legal-jour
 
 
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { EvaluateComponent } from '../../components/evaluate/evaluate.component';
 export function tokenGetter() {
   return sessionStorage.getItem("access_token");
 }
@@ -78,6 +79,7 @@ export function tokenGetter() {
     EvaluationComponent,
     NavbarComponent,
     LegalJourneyComponent,
+    EvaluateComponent,
   ],
   imports: [
     CommonModule,
