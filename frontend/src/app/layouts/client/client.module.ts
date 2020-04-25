@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule, MatStepperModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatInputModule, MatStepperModule, MatDatepickerModule, MatNativeDateModule, MatToolbarModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
@@ -15,7 +15,7 @@ import {MatListModule} from '@angular/material/list';
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { JoyrideModule } from "ngx-joyride";
-
+import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ClientRoutingModule } from './client-routing.module';
@@ -43,6 +43,9 @@ import { DMredesignComponent } from '../../components/dmredesign/dmredesign.comp
 import { IdeasComponent } from '../../components/ideas/ideas.component';
 import { QuestionComponent } from 'src/app/components/question/question.component';
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
+import { JourneyComponent } from "src/app/components/journey/journey.component";
+import { RatingsComponent } from "src/app/components/ratings/ratings.component";
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
 
 
 export function tokenGetter() {
@@ -70,6 +73,9 @@ export function tokenGetter() {
     IdeasComponent,
     QuestionComponent,
     EvaluationComponent,
+    JourneyComponent,
+    RatingsComponent,
+    LegalJourneyComponent,
   ],
   imports: [
     CommonModule,
@@ -78,6 +84,7 @@ export function tokenGetter() {
     MatSliderModule,
     MatCardModule,
     MatDialogModule,
+    MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
     MatIconModule,
@@ -92,6 +99,7 @@ export function tokenGetter() {
     MatListModule,
     MatDividerModule,
     FormsModule,
+    AngularFontAwesomeModule,
     HttpClientModule,
     MatExpansionModule,
     MatTabsModule,
@@ -105,13 +113,14 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, JourneyComponent, RatingsComponent],
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
   bootstrap: [
     DashboardComponent,
     IdeasComponent,
     LegalComponent,
     DigitalMarketComponent,
+    LegalJourneyComponent,
   ],
   exports: [IdeasComponent],
 })

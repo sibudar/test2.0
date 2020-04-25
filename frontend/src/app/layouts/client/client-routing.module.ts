@@ -18,9 +18,12 @@ import { IdeasComponent } from "src/app/components/ideas/ideas.component";
 import { DigitalMarketComponent } from 'src/app/components/digital-market/digital-market.component';
 import { DevelopersComponent } from 'src/app/components/developers/developers.component';
 import { LegalComponent } from 'src/app/components/legal/legal.component';
+import { FinanceComponent } from 'src/app/components/finance/finance.component';
+import { JourneyComponent } from 'src/app/components/journey/journey.component';
+
+import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component'; //legal componet for journey
 
 const routes: Routes = [
-  { path: "", component: LandingComponent },
   { path: "", component: LandingComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
@@ -29,16 +32,17 @@ const routes: Routes = [
   { path: "forgotPassword", component: ForgotPasswordComponent },
   { path: "resetPassword/:token", component: ResetPasswordComponent },
   { path: "question", component: QuestionComponent },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "digitalm", component: DMredesignComponent},
-  { path: 'profile', component: ProfileComponent },
+  { path: "digitalm", component: DMredesignComponent },
+  { path: "profile", component: ProfileComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "digital", component: DigitalMarketComponent },
   { path: "developers", component: DevelopersComponent },
-  { path: "dashboard", component: DashboardComponent },
   { path: "ideas", component: IdeasComponent },
   { path: "legal", component: LegalComponent },
-  { path: "finance", component: IdeasComponent }
+  { path: "finance", component: FinanceComponent },
+  { path: "journey", component: JourneyComponent },
+  { path: "legalJourney", component: LegalJourneyComponent }
+
 ];
 
 @NgModule({
