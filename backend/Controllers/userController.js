@@ -161,4 +161,47 @@ async function reset(data) {
     });
 }
 
-module.exports = {register, login, forgot, reset, verify};
+/**
+ * If the user forgots the password.
+ * User needs to reset their password.
+ * @param {*} data 
+ * @returns a queryResponse.
+ */
+async function tracking(data) {
+  if(validate.validate(data.user_id)) {
+    return response(400, 'user id required');
+  }
+  if(validate.validate(data.link)) {
+    return response(400, 'link required');
+  }
+
+  let sql = "CALL tracking(?)";
+
+  return queryFunction(sql, [data.user_id, data.link]).then(result => {
+      return response(200, 'Successfully updated.');
+    }).catch(error => {
+      return response(400, 'Unsuccessful, could not update.', error.sqlMessage);
+    });
+}
+
+/**
+ * If the user forgots the password.
+ * User needs to reset their password.
+ * @param {*} data 
+ * @returns a queryResponse.
+ */
+async function notNew(data) {
+  if(validate.validate(data.user_id)) {
+    return response(400, 'user id required');
+  }
+
+  let sql = "CALL notNewUser(?)";
+
+  return queryFunction(sql, data.user_id).then(result => {
+      return response(200, 'Successfully updated.');
+    }).catch(error => {
+      return response(400, "Unsuccessful, could not update.", error.sqlMessage);
+    });
+}
+
+module.exports = { register, login, forgot, reset, verify, tracking, notNew };
