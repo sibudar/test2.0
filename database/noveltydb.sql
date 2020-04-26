@@ -21,6 +21,8 @@ CREATE TABLE IF NOT EXISTS users (
     last_name VARCHAR(50) DEFAULT NULL,
     email VARCHAR(255) DEFAULT NULL UNIQUE,
     user_password VARCHAR(255) DEFAULT NULL,
+    new_user VARCHAR(5) DEFAULT TRUE,
+
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
     modifiedby VARCHAR(255) DEFAULT NULL,
@@ -130,6 +132,22 @@ CREATE TABLE IF NOT EXISTS allContent (
     INDEX (id_cat),
 
     FOREIGN KEY (id_cat) REFERENCES question_catergory(id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS tracking (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    id_user INT NOT NULL,
+    link TEXT DEFAULT NULL,
+
+    createdby VARCHAR(255) DEFAULT NULL,
+    createdat DATETIME NOT NULL,
+    modifiedby VARCHAR(255) DEFAULT NULL,
+    modifiedat DATETIME NOT NULL,
+
+    INDEX (id_user),
+    
+
+    FOREIGN KEY (id_user) REFERENCES users(id)
 ) ENGINE=INNODB;
 
 -- Inserting the default category questions for questions.
@@ -266,6 +284,23 @@ DROP PROCEDURE IF EXISTS postAnswers $$
 DROP PROCEDURE IF EXISTS getContent $$
 DROP PROCEDURE IF EXISTS getUser $$
 DROP PROCEDURE IF EXISTS rateBusinessIdea $$
+DROP PROCEDURE IF EXISTS tracking $$
+DROP PROCEDURE IF EXISTS notNewUser $$
+
+
+CREATE PROCEDURE tracking(IN u_id INT, IN currentLink VARCHAR(50))
+BEGIN
+    UPDATE tracking
+    SET link = currentLink, modifiedby = u_id, modifiedat = now()
+    WHERE tracking.id_user = u_id;
+END $$
+
+CREATE PROCEDURE notNewUser(IN u_id INT)
+BEGIN
+    UPDATE users
+    SET new_user = 0, modifiedby = u_id, modifiedat = now()
+    WHERE users.id = u_id;
+END $$
 
 CREATE PROCEDURE rateBusinessIdea(IN rate_idea INT, IN b_id INT, IN u_id INT)
 BEGIN
