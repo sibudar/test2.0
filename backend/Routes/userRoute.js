@@ -188,4 +188,76 @@ userRouter.get("/me", async (req, res) => {
   res.status(token.status).send(token);
 })
 
+// [post] route to "/track" to update a user's progress.
+/**
+ * @swagger
+ * /users/track:
+ *  post:
+ *     tags:
+ *      - user
+ *     summary:  tracking a user's progress.
+ *     description: This is an automated procedure that the application serve.
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: id
+ *          description: Gets the user by an id.
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            user_id:         
+ *              type: integer
+ *            link:
+ *              type: string
+ *     responses:
+ *        200:
+ *         description: Successfully updated.
+ *        401:
+ *         description: Unsuccessful.
+ */
+userRouter.post("/track", async (req, res) => {
+  let result = await userController.tracking(req.body);
+
+  res.status(result.status).send(result);
+});
+
+// [post] route to "/notnew" to update a user's status.
+/**
+ * @swagger
+ * /users/notnew:
+ *  post:
+ *     tags:
+ *      - user
+ *     summary:  updates user's status.
+ *     description: This is updates the user's status of being a new user.
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: id
+ *          description: Gets the user by an id.
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            user_id:         
+ *              type: integer
+ *     responses:
+ *        200:
+ *         description: Successfully updated.
+ *        401:
+ *         description: Unsuccessful.
+ */
+userRouter.post("/notnew", async (req, res) => {
+  let result = await userController.notNew(req.body);
+
+  res.status(result.status).send(result);
+});
+
 module.exports = userRouter;
