@@ -90,4 +90,24 @@ export class ClientService {
   public updateRatings(data) {
     return this.http.post(this.url + "/ideas/rate", data);
   }
+
+  /**
+   * Updates user's progress.
+   * @param data an object that has what's required.
+   * @returns
+   * Updated user's progress with a http request made to the server.
+   */
+  public tracking(data) {
+    return this.http.post(this.url + "/users/track", data);
+  }
+
+  /**
+   * Updates  user's status.
+   * @param data an object that has what's required.
+   * @returns
+   * Updated user's status with a http request made to the server.
+   */
+  public notNewUers(data) {
+    return this.http.post(this.url + "/users/notnew", data);
+  }
 }
