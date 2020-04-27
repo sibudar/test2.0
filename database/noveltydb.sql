@@ -252,23 +252,23 @@ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifi
 
  INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Copy of ID (per business member/individual member and or director).', 
-                    'System', now(), 'System', now(), 5; 
+                    'System', now(), 'System', now(), 5); 
 
  INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Proof of address(personal) and Proof of physical address of business.', 
-                    'System', now(), 'System', now(), 5; 
+                    'System', now(), 'System', now(), 5); 
 
  INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Business owner to submit three months bank account statements on a personal account.', 
-                    'System', now(), 'System', now(), 5; 
+                    'System', now(), 'System', now(), 5); 
                    
  INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('Company registration documents (not required for sole proprietors).', 
-                    'System', now(), 'System', now(), 5; 
+                    'System', now(), 'System', now(), 5); 
 
  INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('A detailed business plan .', 
-                    'System', now(), 'System', now(), 5;                    
+                    'System', now(), 'System', now(), 5);                    
                                      
 
 

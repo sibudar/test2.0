@@ -1,13 +1,13 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Courgette|Neuton" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Courgette|Neuton" rel="stylesheet">
 
 
 <div class=wraper>
   <div class="header ">
     <h1><span>Developers</span> site</h1>
     <h5>Why Web Development Is Essential To Your Business?</h5>
-    <p >The rapidly changing business trends have made the business owners realize the importance of having a website and register their online presence. 
+    <p >The rapidly changing business trends have made the business owners realize the importance of having a website and register their online presence.
       Due to this, they are hiring the best web developers who can make the best sites for them and help them to expand their business from all the clients.
      </p>
   </div>
@@ -16,19 +16,21 @@
     <li>It means your business can be accessed anytime</li>
     <li>More people will be aware of the products as well as the services.</li>
     <li>Clients can search and find your products online</li>
-   
+
   </ul>
   <p>To keep the website in a good condition it is very important to keep on updating the contents of the websites.
      The first thing to do is choose a domain name for your business then browsing through a list of developers to find one that suits your business needs.</p>
 </div>
-
+<form>
 <div class="box">
   <h5>Check Domain Availability</h5>
   <div class="container-1">
       <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" placeholder="Search..." />
+      <input type="search" id="search" formControlName="domain" placeholder="Search..." />
+      <button (click)="postDomain()"><i class="fa fa-search"></i></button>
   </div>
 </div>
+</form>
 
 <div class="select">
   <h3>Select the developer that best suit your business needs</h3>
@@ -192,7 +194,7 @@
      <br>
     </div>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a class="btn btn-primary" routerLink="/client/profile">View Profile</a>
     <div class="socialm">
       <a>GitHub</a>
       <a>Twitter</a>
