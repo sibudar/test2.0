@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS answers (
 -- Create Content table.
 CREATE TABLE IF NOT EXISTS allContent (
     id INT(11) NOT NULL AUTO_INCREMENT,
-    title VARCHAR(500) NULL,
+    title VARCHAR(500),
     content TEXT,
     link TEXT DEFAULT NULL,
 
