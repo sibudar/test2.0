@@ -23,6 +23,7 @@ import { ClientComponent } from './client.component';
 
 import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component'; //legal componet for journey
 import { EvaluateComponent } from 'src/app/components/evaluate/evaluate.component';
+import { PlanningComponent } from 'src/app/components/planning/planning.component';
 
 const routes: Routes = [
   { path: "", component: ClientComponent , children: [
@@ -41,7 +42,8 @@ const routes: Routes = [
     { path: "ideas", component: IdeasComponent },
     { path: "legal", component: LegalComponent },
     { path: "finance", component: FinanceComponent },
-    { path: "evaluate", component: EvaluateComponent }
+    { path: "evaluate", component: EvaluateComponent },
+    { path: "planning", component: PlanningComponent }
   ]},
 
 
