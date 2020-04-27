@@ -68,19 +68,15 @@
     <div class="headline">
         <h4>Here is a checklist of the documents you'll need.</h4>
         <ul>
-            <li>Copy of ID (per business member/individual member and or director).</li>
-            <li>Proof of address(personal) and Proof of physical address of business.</li>
-            <li>Business owner to submit three months' bank account statements on a personal account.</li>
-            <li>Company registration documents (not required for sole proprietors).</li>
-            <li>A detailed business plan .</li>
+            <li *ngFor="let doc of document">{{doc.content}}</li>
         </ul>
     </div>
-    <div class="divider" *ngFor="let cont of financeContent">
-        <div class="card" style="width: 18rem;">
+    <div class="divider" >
+        <div class="card" style="width: 18rem;" *ngFor="let cont of financeContent">
             <div class="card-body">
-              <h5 class="card-title">{{cont.title"</h5>
+              <h5 class="card-title">{{cont.title}}</h5>
               <p class="card-text">{{cont.content}}</p>
-              <a href="{{cont.link" class="card-link">Create with ABSA</a>
+              <a href="{{cont.link}}" target="_blank" class="card-link">Click here</a>
             </div>
           </div>
     </div>
