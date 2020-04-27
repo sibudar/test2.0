@@ -45,9 +45,15 @@ import { QuestionComponent } from 'src/app/components/question/question.componen
 import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.component';
 import { JourneyComponent } from "src/app/components/journey/journey.component";
 import { RatingsComponent } from "src/app/components/ratings/ratings.component";
+import { NavbarComponent } from '../../components/navbar/navbar.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
 
 
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { EvaluateComponent } from '../../components/evaluate/evaluate.component';
+import { PlanningComponent } from '../../components/planning/planning.component';
 export function tokenGetter() {
   return sessionStorage.getItem("access_token");
 }
@@ -75,7 +81,10 @@ export function tokenGetter() {
     EvaluationComponent,
     JourneyComponent,
     RatingsComponent,
+    NavbarComponent,
     LegalJourneyComponent,
+    EvaluateComponent,
+    PlanningComponent,
   ],
   imports: [
     CommonModule,
@@ -87,6 +96,9 @@ export function tokenGetter() {
     MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
+    MatMenuModule,
+    FlexLayoutModule,
+    MatSidenavModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,
