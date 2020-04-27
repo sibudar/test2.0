@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS documents;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS question_catergory;
+DROP TABLE IF EXISTS tracking;
 -- Enable the foriegn keys on the parent tables.
 SET FOREIGN_KEY_CHECKS=1;
 -- Create Users table.
@@ -137,13 +138,15 @@ CREATE TABLE IF NOT EXISTS allContent (
 CREATE TABLE IF NOT EXISTS tracking (
     id INT(11) NOT NULL AUTO_INCREMENT,
     id_user INT NOT NULL,
-    link TEXT DEFAULT NULL,
+    link VARCHAR(255),
 
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
     modifiedby VARCHAR(255) DEFAULT NULL,
     modifiedat DATETIME NOT NULL,
 
+    PRIMARY KEY (id),
+    
     INDEX (id_user),
     
 
@@ -283,15 +286,31 @@ DROP PROCEDURE IF EXISTS getQuestions $$
 DROP PROCEDURE IF EXISTS postAnswers $$
 DROP PROCEDURE IF EXISTS getContent $$
 DROP PROCEDURE IF EXISTS getUser $$
+DROP PROCEDURE IF EXISTS deleteIdea $$
+DROP PROCEDURE IF EXISTS updateAnswer $$
 DROP PROCEDURE IF EXISTS rateBusinessIdea $$
 DROP PROCEDURE IF EXISTS tracking $$
 DROP PROCEDURE IF EXISTS notNewUser $$
+DROP PROCEDURE IF EXISTS startTrack $$
+DROP PROCEDURE IF EXISTS getLink $$
 
+CREATE PROCEDURE startTrack(IN u_id INT, IN currentLink VARCHAR(50))
+BEGIN
+    INSERT INTO tracking (id_user, link, createdby, createdat, modifiedby, modifiedat)
+    VALUES (u_id, currentLink, 'System', now(), u_id, now());
+END $$
 
 CREATE PROCEDURE tracking(IN u_id INT, IN currentLink VARCHAR(50))
 BEGIN
     UPDATE tracking
     SET link = currentLink, modifiedby = u_id, modifiedat = now()
+    WHERE tracking.id_user = u_id;
+END $$
+
+CREATE PROCEDURE getLink(IN u_id INT)
+BEGIN
+    SELECT id, id_user,link
+    FROM tracking
     WHERE tracking.id_user = u_id;
 END $$
 
@@ -311,7 +330,7 @@ END $$
 
 CREATE PROCEDURE getUser(IN id_user INT)
 BEGIN
-    SELECT id, first_name,last_name, email
+    SELECT id, first_name,last_name, email, new_user
     FROM users
     WHERE id = id_user;
 END $$
