@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS question_catergory;
 DROP TABLE IF EXISTS tracking;
+DROP TABLE IF EXISTS allContent;
 -- Enable the foriegn keys on the parent tables.
 SET FOREIGN_KEY_CHECKS=1;
 -- Create Users table.
@@ -271,8 +272,7 @@ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifi
                     'We talked about creating a social content calendar way back at the beginning of this article. Once you have that calendar in place, you can create your social posts in advance and use scheduling tools to post them automatically at the right time. This allows you to dedicate one block of time per day or per week to creating your social content. It’s much more effective than letting social posting take you away from other tasks throughout the day.', 
                     'System', now(), 'System', now(), 4); 
 
-
-                    
+     
 -- Creating stored procedure.
 DELIMITER $$
 
