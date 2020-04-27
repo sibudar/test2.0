@@ -185,9 +185,9 @@ span{
 	  }
 	}
   }
-  .btn-primary{
+  #primary{
 	 margin-left:55px;
-	 border-radius: 20%;
+	 border-radius: 50%;
   }
   .final-card{
 	  display:flex;
@@ -197,6 +197,11 @@ span{
 	  margin: 10px;
 	  box-shadow: 0px 6px 10px -6px;
   }
+  .route-btn{
+	  text-align: center;
+	  margin: 20px auto;
+  }
+  
 
   //media query..Responsiveness
 
