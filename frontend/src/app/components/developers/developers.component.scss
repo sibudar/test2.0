@@ -56,8 +56,14 @@ span{
 .text_container h3,.text_container h4,.text_container p{
 	text-align:center;
 }
+.title{
+	text-align: center;
+}
 .title h4{
 	color:#ffc107;
+}
+.title h6{
+	color: black;
 }
 
 .mat-stroked-button{
@@ -179,8 +185,16 @@ span{
 	}
   }
   .btn-primary{
-	 margin-left:50px;
-	 border-radius: 10%;
+	 margin-left:55px;
+	 border-radius: 20%;
+  }
+  .final-card{
+	  display:flex;
+	  justify-content:center;
+  }
+  .card{
+	  margin: 10px;
+	  box-shadow: 0px 6px 10px -6px;
   }
 
   //media query..Responsiveness

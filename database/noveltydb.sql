@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS documents;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS question_catergory;
+DROP TABLE IF EXISTS allContent;
 -- Enable the foriegn keys on the parent tables.
 SET FOREIGN_KEY_CHECKS=1;
 -- Create Users table.
@@ -114,7 +115,7 @@ CREATE TABLE IF NOT EXISTS answers (
 -- Create Content table.
 CREATE TABLE IF NOT EXISTS allContent (
     id INT(11) NOT NULL AUTO_INCREMENT,
-    title VARCHAR(500) NULL,
+    title VARCHAR(500),
     content TEXT,
     link TEXT DEFAULT NULL,
 
@@ -269,10 +270,7 @@ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifi
  INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
             VALUES ('A detailed business plan .', 
                     'System', now(), 'System', now(), 5);                    
-                                     
 
-
-                    
 -- Creating stored procedure.
 DELIMITER $$
 
@@ -284,6 +282,8 @@ DROP PROCEDURE IF EXISTS businessIdea $$
 DROP PROCEDURE IF EXISTS getIdeas $$
 DROP PROCEDURE IF EXISTS getQuestions $$
 DROP PROCEDURE IF EXISTS postAnswers $$
+DROP PROCEDURE IF EXISTS deleteIdea $$
+DROP PROCEDURE IF EXISTS updateAnswer $$
 DROP PROCEDURE IF EXISTS getContent $$
 DROP PROCEDURE IF EXISTS getUser $$
 DROP PROCEDURE IF EXISTS rateBusinessIdea $$
