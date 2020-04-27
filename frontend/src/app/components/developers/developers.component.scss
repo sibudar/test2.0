@@ -131,11 +131,11 @@ span{
   .container-1 input#search{
 	width: 500px;
 	height: 50px;
-	background: #2b303b;
+	background: #04207a;
 	border: none;
 	font-size: 10pt;
 	float: left;
-	color: #63717f;
+	color: #ffffff;
 	padding-left: 45px;
 	border-radius: 5px;
 	transition: background .55s ease;
@@ -152,12 +152,13 @@ span{
   
   .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
 	  outline:none;
-	  background: #ffffff;
+	  background: #030327;
+	  color: white;
 	}
   
   .container-1:hover #search {
 	  outline:none;
-	  background: #ffffff;
+	  background: #817ff7;
   }
 
   //styling the card
