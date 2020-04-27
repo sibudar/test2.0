@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS documents;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS question_catergory;
+DROP TABLE IF EXISTS allContent;
 -- Enable the foriegn keys on the parent tables.
 SET FOREIGN_KEY_CHECKS=1;
 -- Create Users table.
