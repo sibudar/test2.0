@@ -92,6 +92,16 @@ export class ClientService {
   }
 
   /**
+   * Start tracking.
+   * @param data an object that has what's required.
+   * @returns
+   * Added the tracking with a http request made to the server.
+   */
+  public start(data) {
+    return this.http.post(this.url + "/users/start", data);
+  }
+
+  /**
    * Updates user's progress.
    * @param data an object that has what's required.
    * @returns
@@ -109,5 +119,15 @@ export class ClientService {
    */
   public notNewUers(data) {
     return this.http.post(this.url + "/users/notnew", data);
+  }
+
+  /**
+   * Gets  user's link.
+   * @param data an object that has what's required.
+   * @returns
+   * List user's link with a http request made to the server.
+   */
+  public getLink(data) {
+    return this.http.get(this.url + "/users/link/" + data);
   }
 }
