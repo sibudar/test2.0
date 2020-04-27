@@ -10,8 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule, MatStepperModule, MatDatepickerModule, MatNativeDateModule, MatToolbarModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { JoyrideModule } from "ngx-joyride";
@@ -46,6 +47,7 @@ import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.co
 import { JourneyComponent } from "src/app/components/journey/journey.component";
 import { RatingsComponent } from "src/app/components/ratings/ratings.component";
 import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
+import { BridgeSpinnerComponent } from '../../components/bridge-spinner/bridge-spinner.component';
 
 
 export function tokenGetter() {
@@ -76,6 +78,7 @@ export function tokenGetter() {
     JourneyComponent,
     RatingsComponent,
     LegalJourneyComponent,
+    BridgeSpinnerComponent,
   ],
   imports: [
     CommonModule,
@@ -98,6 +101,7 @@ export function tokenGetter() {
     ReactiveFormsModule,
     MatListModule,
     MatDividerModule,
+    MatProgressSpinnerModule,
     FormsModule,
     AngularFontAwesomeModule,
     HttpClientModule,
