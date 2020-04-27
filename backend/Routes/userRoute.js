@@ -188,6 +188,43 @@ userRouter.get("/me", async (req, res) => {
   res.status(token.status).send(token);
 })
 
+// [post] route to "/start" to post a user's progress.
+/**
+ * @swagger
+ * /users/track:
+ *  post:
+ *     tags:
+ *      - user
+ *     summary:  tracking a user's progress.
+ *     description: This is an automated procedure that the application serve.
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: id
+ *          description: Gets the user by an id.
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            user_id:         
+ *              type: integer
+ *            link:
+ *              type: string
+ *     responses:
+ *        200:
+ *         description: Successfully updated.
+ *        401:
+ *         description: Unsuccessful.
+ */
+userRouter.post("/start", async (req, res) => {
+  let result = await userController.start(req.body);
+
+  res.status(result.status).send(result);
+});
+
 // [post] route to "/track" to update a user's progress.
 /**
  * @swagger
@@ -256,6 +293,41 @@ userRouter.post("/track", async (req, res) => {
  */
 userRouter.post("/notnew", async (req, res) => {
   let result = await userController.notNew(req.body);
+
+  res.status(result.status).send(result);
+});
+
+// [get] route to "/link" to get user's link.
+/**
+ * @swagger
+ * /users/link:
+ *  get:
+ *     tags:
+ *      - user
+ *     summary: Checks the link that the user have.
+ *     description: This gets the user's link.
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: id
+ *          description: Gets the user's link by an id.
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            user_id:         
+ *              type: integer
+ *     responses:
+ *        200:
+ *         description: Successfully have a link to the user.
+ *        401:
+ *         description: Unsuccessful, could not get any links..
+ */
+userRouter.get("/link/:id", async (req, res) => {
+  let result = await userController.getLink(req.params);
 
   res.status(result.status).send(result);
 });
