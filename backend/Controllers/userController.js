@@ -162,8 +162,31 @@ async function reset(data) {
 }
 
 /**
- * If the user forgots the password.
- * User needs to reset their password.
+ * Start point for tracking.
+ * Add information on where is the user.
+ * @param {*} data 
+ * @returns a queryResponse.
+ */
+async function start(data) {
+  if(validate.validate(data.user_id)) {
+    return response(400, 'user id required');
+  }
+  if(validate.validate(data.link)) {
+    return response(400, 'link required');
+  }
+
+  let sql = "CALL startTrack(?)";
+
+  return queryFunction(sql, [data.user_id, data.link]).then(result => {
+      return response(200, 'Successfully updated.', data);
+    }).catch(error => {
+      return response(400, 'Unsuccessful, could not update.', error.sqlMessage);
+    });
+}
+
+/**
+ * Updates the information as the user navigates.
+ * Current routes updated
  * @param {*} data 
  * @returns a queryResponse.
  */
@@ -178,15 +201,15 @@ async function tracking(data) {
   let sql = "CALL tracking(?)";
 
   return queryFunction(sql, [data.user_id, data.link]).then(result => {
-      return response(200, 'Successfully updated.');
+      return response(200, 'Successfully updated.', data);
     }).catch(error => {
       return response(400, 'Unsuccessful, could not update.', error.sqlMessage);
     });
 }
 
 /**
- * If the user forgots the password.
- * User needs to reset their password.
+ * Update to an old user.
+ * User won't go to the journey again.
  * @param {*} data 
  * @returns a queryResponse.
  */
@@ -204,4 +227,23 @@ async function notNew(data) {
     });
 }
 
-module.exports = { register, login, forgot, reset, verify, tracking, notNew };
+/**
+ * Checks the link that the user have.
+ * @param {*} data 
+ * @returns a queryResponse.
+ */
+async function getLink(data) {
+  if(validate.validate(data.id)) {
+    return response(400, 'user id required');
+  }
+
+  let sql = "CALL getLink(?)";
+
+  return queryFunction(sql, [data.id]).then(result => {
+      return response(200, "Successfully have a link to the user.", result[0]);
+    }).catch(error => {
+      return response(400, 'Unsuccessful, could not get any links.', error.sqlMessage);
+    });
+}
+
+module.exports = { register, login, forgot, reset, verify, start, getLink, tracking, notNew };
