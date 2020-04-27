@@ -1,49 +1,4 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<!-- 
-<div class=container-outer>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-        <div class="container">
-           
-            <a class="navbar-brand">
-                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
-                Novelty
-            </a>
-
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-
-               
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fe fe-x"></i>
-                </button>
-
-            
-                <ul class="navbar-nav ml-auto">
-                    <a class="nav-link" routerLink="/landing" aria-haspopup="true" aria-expanded="true">
-                        Home
-                    </a>
-                    <li class="nav-item hovered">
-                        <a class="nav-link" routerLink="/client/display" aria-haspopup="true" aria-expanded="true">
-                            Journey
-                        </a>
-                    </li>
-                    <li class="nav-item hovered">
-                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            About Novelty
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div> -->
 
 <div class="wrapper">
     <div class="inside-wrap">
@@ -74,7 +29,7 @@
     <div class="divider" >
         <div class="card" style="width: 18rem;" *ngFor="let cont of financeContent">
             <div class="card-body">
-              <h5 class="card-title">{{cont.title}}</h5>
+              <h5 class="card-title">{{cont.title[0]}}</h5>
               <p class="card-text">{{cont.content}}</p>
               <a href="{{cont.link}}" target="_blank" class="card-link">Click here</a>
             </div>

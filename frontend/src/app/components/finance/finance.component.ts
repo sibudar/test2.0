@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ClientService } from "../../services/client.service";
-import { QuestionsResponse, Questions } from "src/app/models/questions";
 import { ContentResponse, Content } from "src/app/models/content";
-import { JoyrideService } from "ngx-joyride";
+
 
 @Component({
   selector: "app-finance",
@@ -15,7 +14,7 @@ export class FinanceComponent implements OnInit {
   document: any;
   financeContent: any;
 
-  constructor(private clientService: ClientService, private joyride: JoyrideService) {
+  constructor(private clientService: ClientService) {
     this.getDocuments(5);
     this.getContent(3);
   }
