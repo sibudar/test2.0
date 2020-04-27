@@ -1,47 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
-import { MatDialog, MatDialogConfig } from "@angular/material";
-import { DialogComponent } from '../dialog/dialog.component';
 import { UserResponse } from 'src/app/models/user';
-import { QuestionsResponse } from 'src/app/models/questions';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { filter } from "rxjs/operators";
 
 
 @Component({
   selector: "app-display",
   templateUrl: "./display.component.html",
-  styleUrls: ["./display.component.scss"]
+  styleUrls: ["./display.component.scss"],
 })
 export class DisplayComponent implements OnInit {
   user: any;
   verified: any;
   token: any;
-  userName = '';
+  userName = "";
   form: FormGroup;
+  link: unknown;
 
-  constructor(private fb: FormBuilder, private clientService: ClientService, private auth: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private clientService: ClientService,
+    private auth: AuthService,
+    private router: Router
+  ) {
     this.verifiedUser();
   }
 
   ngOnInit() {
     this.form = this.fb.group({
-      descript: ['', []],
-      busin_idea: ['', []],
-
-  });
+      descript: ["", []],
+      busin_idea: ["", []],
+    });
   }
-
 
   /**
    * Adds a user's idea.
    * @param idea inserted by the user.
    */
   inserIdea(idea) {
-    this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
-      this.router.navigate(['client/journey']);
- 
+    this.clientService
+      .insertBusinessIdea(idea)
+      .subscribe((data: UserResponse) => {
+        this.router.navigate(["client/journey"]);
       });
   }
 
@@ -49,22 +52,19 @@ export class DisplayComponent implements OnInit {
    * Verifies a token.
    */
   verifiedUser() {
-    if(this.auth.loggedIn) {
+    if (this.auth.loggedIn) {
       this.verified = JSON.parse(sessionStorage.getItem("access_token"));
-      if(this.verified.auth) {
-        this.auth.verifyToken(this.verified.token).subscribe(data => {
+      if (this.verified.auth) {
+        this.auth.verifyToken(this.verified.token).subscribe((data) => {
           this.user = data;
           this.userName = this.user.data.first_name;
-          //console.log('you are logged in as: ' + this.userName);
         });
       }
     }
   }
 
-
   continue(): void {
-    
-    let idea = this.form.value ; 
+    let idea = this.form.value;
 
     idea.id_user = this.user.data.id;
 
