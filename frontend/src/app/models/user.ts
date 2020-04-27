@@ -8,5 +8,12 @@ export interface LoginResponse {
     id : number,
     first_name : string,
     last_name : string,
-    email : string  
+    email : string,
+    new_user: number
+}
+
+export interface TrackResponse {
+  id: number;
+  id_user: number;
+  link: string;
 }
