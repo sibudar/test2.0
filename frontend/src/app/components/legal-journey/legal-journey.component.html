@@ -1,6 +1,6 @@
 
 
-  
+
 
   <div class="container-inner">
     <mat-grid-list cols="2" rowHeight="200px">
@@ -35,6 +35,8 @@
             </p>
 
             <div *ngIf="i == 0">
+
+              <button mat-button matStepperNext routerLink="/client/journey">Back To Evaluation</button>
               <button mat-button matStepperNext>Next</button>
             </div>
             <div *ngIf="i > 0 && i < len-1">
