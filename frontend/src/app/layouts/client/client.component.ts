@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
-import { UserResponse } from 'src/app/models/user';
+import { UserResponse, LoginResponse } from 'src/app/models/user';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-client',
@@ -8,26 +9,32 @@ import { UserResponse } from 'src/app/models/user';
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
-  ideas : string;
-  user_id : any;
-  userData:string;
-  user:string;
-  questions : any [];
-  constructor(private clientService:ClientService ) { 
-    this.userData=localStorage.getItem('id');
-    this.user = JSON.parse(this.userData);
-    this.getIdea(this.user_id);
+
+  loggedIn: boolean ; 
+  user: LoginResponse = {
+      id : 0,
+      first_name : '',
+      last_name : '',
+      email : ''  
+  };
+
+  constructor(private clientService:ClientService , private auth: AuthService ) { 
+    
+    this.loggedIn = this.auth.loggedIn ;
+  
   }
 
   ngOnInit() {
+    
+    if( this.loggedIn ) {
+      let verified = JSON.parse(sessionStorage.getItem("access_token"));
+        this.auth.verifyToken(verified.token ).subscribe( (res:UserResponse) => {
+          this.user = res.data;
+          console.log(this.user)
+  
+        });
+    }
   }
 
-  getIdea(user_id)
-  {
-    this.clientService.getIdeas(user_id).subscribe(data=>{
-      this.ideas = data
-      console.log(data);
-    })
-  }
 
 }

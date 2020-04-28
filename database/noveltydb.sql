@@ -12,7 +12,10 @@ DROP TABLE IF EXISTS documents;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS question_catergory;
+<<<<<<< HEAD
 DROP TABLE IF EXISTS tracking;
+=======
+>>>>>>> 4f5b1dfcc64adcbf681e011ee040e8ae9009a633
 DROP TABLE IF EXISTS allContent;
 -- Enable the foriegn keys on the parent tables.
 SET FOREIGN_KEY_CHECKS=1;
@@ -216,19 +219,19 @@ INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, 
             'System', now(), 'System', now(), 2);
 -- Inserting the default financial content
 INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
-            VALUES ('Funds for my business.',
-                    'Ideal to finance developmental projects, business expansion or business purchases. Loan repayment period up to 10 years. Flexi reserve facility to keep additional funds to be re-used in need. Inter-account transfers of available funds from flexi reserve facility. Auto-capitalisation to reduce outstanding capital to benefit from interest burden. Repayment frequencies: monthly, bi-monthly, quarterly, half-yearly and yearly', 
-                    'https://www.absa.co.za/business/starting-my-business/access-to-finance/',
+            VALUES ('Bank My Business',
+                    'You will need to have these documents to open a business account. Follow the link to create an account and compare the costs', 
+                    'https://www.absa.co.za/business/bank-my-business/daily-transacting-accounts/classic-business-account/',
                     'System', now(), 'System', now(), 3);
 INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
-            VALUES ('Business Account',
-                    'Opening a business account with the ABSA can be considered a bit challenging due to the necessary qualifications that are needed to meet approval requirements. Also, the demographical criteria is a big qualification requirement that rules a lot of business owners out of this equation. However, it is possible to open an ABSA business account without facing the stumbling blocks that cause most people to fail.', 
-                    'https://www.absa.co.za/business/bank-my-business/daily-transacting-accounts/explore/',
+            VALUES ('Fund My Business',
+                    'You need a business plan with emphasis on financial projections and proof of concept for your business idea.Proceed to ABSA', 
+                    'https://www.absa.co.za/business/starting-my-business/access-to-finance/sme-contract-financing/',
                     'System', now(), 'System', now(), 3);
 INSERT INTO allContent (title, content, link, createdby, createdat, modifiedby, modifiedat, id_cat) 
-            VALUES ('Financial Management',
-                    'You’ll need to understand the underlying financial flows of your business. That’s key to your understanding of how to manage your business. So what we’re going to do in this session is give you the tools of startup finance to help you manage and build your business.', 
-                    'https://www.absa.co.za/business/bank-my-business/cash-solutions/cash-self-service/',
+            VALUES ('Manage My Finances',
+                    'Financial literacy can make all the difference in the success of your business venture. Follow the link to get tips on how to manage your finances.', 
+                    'https://www.absa.co.za/ways-to-bank/atm/save-invest/',
                     'System', now(), 'System', now(), 3);
 -- Inserting the default Digital Marketing content
 INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifiedat, id_cat) 
@@ -272,7 +275,30 @@ INSERT INTO allContent (title, content, createdby, createdat, modifiedby, modifi
                     'We talked about creating a social content calendar way back at the beginning of this article. Once you have that calendar in place, you can create your social posts in advance and use scheduling tools to post them automatically at the right time. This allows you to dedicate one block of time per day or per week to creating your social content. It’s much more effective than letting social posting take you away from other tasks throughout the day.', 
                     'System', now(), 'System', now(), 4); 
 
+<<<<<<< HEAD
      
+=======
+ INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Copy of ID (per business member/individual member and or director).', 
+                    'System', now(), 'System', now(), 5); 
+
+ INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Proof of address(personal) and Proof of physical address of business.', 
+                    'System', now(), 'System', now(), 5); 
+
+ INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Business owner to submit three months bank account statements on a personal account.', 
+                    'System', now(), 'System', now(), 5); 
+                   
+ INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('Company registration documents (not required for sole proprietors).', 
+                    'System', now(), 'System', now(), 5); 
+
+ INSERT INTO allContent ( content, createdby, createdat, modifiedby, modifiedat, id_cat) 
+            VALUES ('A detailed business plan .', 
+                    'System', now(), 'System', now(), 5);                    
+
+>>>>>>> 4f5b1dfcc64adcbf681e011ee040e8ae9009a633
 -- Creating stored procedure.
 DELIMITER $$
 
@@ -284,6 +310,8 @@ DROP PROCEDURE IF EXISTS businessIdea $$
 DROP PROCEDURE IF EXISTS getIdeas $$
 DROP PROCEDURE IF EXISTS getQuestions $$
 DROP PROCEDURE IF EXISTS postAnswers $$
+DROP PROCEDURE IF EXISTS deleteIdea $$
+DROP PROCEDURE IF EXISTS updateAnswer $$
 DROP PROCEDURE IF EXISTS getContent $$
 DROP PROCEDURE IF EXISTS getUser $$
 DROP PROCEDURE IF EXISTS deleteIdea $$

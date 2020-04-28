@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule, MatStepperModule, MatDatepickerModule, MatNativeDateModule, MatToolbarModule } from '@angular/material';
+import { MatInputModule, MatStepperModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
@@ -48,8 +48,15 @@ import { JourneyComponent } from "src/app/components/journey/journey.component";
 import { RatingsComponent } from "src/app/components/ratings/ratings.component";
 import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
 import { BridgeSpinnerComponent } from '../../components/bridge-spinner/bridge-spinner.component';
+import { NavbarComponent } from "../../components/navbar/navbar.component";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatSidenavModule } from "@angular/material/sidenav";
 
 
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { EvaluateComponent } from '../../components/evaluate/evaluate.component';
+import { PlanningComponent } from '../../components/planning/planning.component';
 export function tokenGetter() {
   return sessionStorage.getItem("access_token");
 }
@@ -78,6 +85,8 @@ export function tokenGetter() {
     JourneyComponent,
     RatingsComponent,
     LegalJourneyComponent,
+    EvaluateComponent,
+    PlanningComponent,
     BridgeSpinnerComponent,
   ],
   imports: [
@@ -90,6 +99,9 @@ export function tokenGetter() {
     MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
+    MatMenuModule,
+    FlexLayoutModule,
+    MatSidenavModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,

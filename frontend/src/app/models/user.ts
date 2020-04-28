@@ -1,7 +1,7 @@
 export interface UserResponse {
     status : number,
     message : string,
-    data : []
+    data : LoginResponse
      
 }
 export interface LoginResponse {
