@@ -160,3 +160,46 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media screen and (max-width:414px) {
+  .container-outer {
+    height: 120%;
+  }
+
+  .container-inner {
+    height: 100%;
+    margin-bottom: 50px;
+  }
+
+  .container-card-dashboard {
+    height: 160%;
+    margin-top: -280px;
+    position: relative;
+  }
+
+  .w3-container {
+    font-size: 10px;
+    margin-top: -250px;
+  }
+
+  .display-4 {
+    font-size: x-large;
+    margin-top: -260px;
+  }
+
+  .lead {
+    font-size: small;
+  }
+
+  .image {
+    height: 150px;
+    width: 20;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-top: -300px;
+  }
+
+  .blockquote-footer {
+    font-size: 6px;
+  }
+}
