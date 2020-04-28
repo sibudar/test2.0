@@ -15,7 +15,8 @@ export class ClientComponent implements OnInit {
       id : 0,
       first_name : '',
       last_name : '',
-      email : ''  
+      email : '',
+      new_user: 1
   };
 
   constructor(private clientService:ClientService , private auth: AuthService ) { 
