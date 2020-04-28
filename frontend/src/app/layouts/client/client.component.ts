@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ["./client.component.scss"],
 })
 export class ClientComponent implements OnInit {
-  loggedIn: boolean;
+  loggedIn: boolean = false;
   user: LoginResponse = {
     id: 0,
     first_name: "",
