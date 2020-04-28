@@ -11,16 +11,20 @@
         <span class="menu-spacer"></span>
         
         <div fxShow="true" fxHide.lt-md>
-            <mat-menu #appMenu="matMenu">
-                <button mat-menu-item routerLink="/client/login" *ngIf="!loggedIn" >Login</button>
-                <button mat-menu-item routerLink="/client/login" *ngIf="loggedIn" >Logout</button>
-                <button mat-menu-item  routerLink="/client/register" >Register</button>
-              </mat-menu>
-              
-
-              <button mat-flat-button routerLink="/client">Home</button>
-              <button mat-flat-button>About</button>
-              <button mat-flat-button  [matMenuTriggerFor]="appMenu" >Account</button>
+          <mat-menu #appMenu="matMenu">
+            <button mat-menu-item routerLink="/client/login" *ngIf="!loggedIn">Login</button>
+            <button mat-menu-item routerLink="/client/login" *ngIf="loggedIn" (click)="logout()">Logout</button>
+            <button mat-menu-item routerLink="/client/register" *ngIf="!loggedIn">Register</button>
+          </mat-menu>
+        
+        
+          <button mat-flat-button routerLink="/client">Home</button>
+          <button mat-flat-button>About</button>
+          <button mat-flat-button [matMenuTriggerFor]="appMenu" *ngIf="!loggedIn">Account</button>
+          <button mat-flat-button [matMenuTriggerFor]="appMenu" *ngIf="loggedIn">
+            <span class="badge badge-warning mr-1 mb-3">Logged in as</span>
+            {{user.first_name}}
+          </button>
         </div>
       </mat-toolbar-row>
 
