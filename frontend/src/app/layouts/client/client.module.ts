@@ -46,6 +46,7 @@ import { EvaluationComponent } from 'src/app/components/evaluation/evaluation.co
 import { JourneyComponent } from "src/app/components/journey/journey.component";
 import { RatingsComponent } from "src/app/components/ratings/ratings.component";
 import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
+import { LegalfinanceComponent } from '../../components/legalfinance/legalfinance.component';
 
 
 export function tokenGetter() {
@@ -76,6 +77,7 @@ export function tokenGetter() {
     JourneyComponent,
     RatingsComponent,
     LegalJourneyComponent,
+    LegalfinanceComponent,
   ],
   imports: [
     CommonModule,

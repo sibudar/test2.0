@@ -1,0 +1,25 @@
+
+#partA{
+    display: flex;
+    justify-content: space-between;
+    height: 70vh;
+}
+.content{
+    padding: 10px;
+   
+    flex: 1;
+}
+.imgwrap{
+    height: 60vh;
+    margin: auto;
+    flex: 1;
+}
+.images{
+    padding: auto;
+    margin: 20px;
+    text-align: center;
+}
+.images img{
+    width: 50%;
+   
+}
