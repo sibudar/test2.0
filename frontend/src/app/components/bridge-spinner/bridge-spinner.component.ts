@@ -31,6 +31,7 @@ export class BridgeSpinnerComponent implements OnInit {
       if (this.verified.auth) {
         this.auth.verifyToken(this.verified.token).subscribe((data: LoginResponse) => {
           this.routeLastVisited(data);
+          this.update(data.id);
         });
       }
     }
@@ -41,7 +42,7 @@ export class BridgeSpinnerComponent implements OnInit {
       this.clientService.getLink(id.data.id).subscribe((data) => {
         this.checkLength = data;
         if(Object.keys(this.checkLength.data).length < 1) {
-          let first = { user_id: id.data.id, link: "client/bridge" };
+          let first = { user_id: id.data.id, link: "client/display" };
           this.clientService.start(first).subscribe((e) => {
             console.log(e);
           });
