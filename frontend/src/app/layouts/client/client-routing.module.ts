@@ -20,30 +20,37 @@ import { DevelopersComponent } from 'src/app/components/developers/developers.co
 import { LegalComponent } from 'src/app/components/legal/legal.component';
 import { FinanceComponent } from 'src/app/components/finance/finance.component';
 import { JourneyComponent } from 'src/app/components/journey/journey.component';
+import { ClientComponent } from './client.component';
 
 import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component'; //legal componet for journey
+import { EvaluateComponent } from 'src/app/components/evaluate/evaluate.component';
+import { PlanningComponent } from 'src/app/components/planning/planning.component';
 import { LegalfinanceComponent } from 'src/app/components/legalfinance/legalfinance.component';
 
 const routes: Routes = [
-  { path: "", component: LandingComponent },
-  { path: "register", component: RegisterComponent },
-  { path: "login", component: LoginComponent },
-  { path: "display", component: DisplayComponent },
-  { path: "home", component: LandingComponent },
-  { path: "forgotPassword", component: ForgotPasswordComponent },
-  { path: "resetPassword/:token", component: ResetPasswordComponent },
-  { path: "question", component: QuestionComponent },
-  { path: "digitalm", component: DMredesignComponent },
-  { path: "profile", component: ProfileComponent },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "digital", component: DigitalMarketComponent },
-  { path: "developers", component: DevelopersComponent },
-  { path: "ideas", component: IdeasComponent },
-  { path: "legal", component: LegalComponent },
-  { path: "finance", component: FinanceComponent },
-  { path: "journey", component: JourneyComponent },
-  { path: "legalJourney", component: LegalJourneyComponent },
-  { path: "legalfinance", component: LegalfinanceComponent }
+  { path: "", component: ClientComponent , children: [
+    { path: "register", component: RegisterComponent },
+    { path: "login", component: LoginComponent },
+    { path: "display", component: DisplayComponent },
+    { path: "", component: LandingComponent },
+    { path: "forgotPassword", component: ForgotPasswordComponent },
+    { path: "resetPassword/:token", component: ResetPasswordComponent },
+    { path: "question", component: QuestionComponent },
+    { path: "digitalm", component: DMredesignComponent},
+    { path: 'profile', component: ProfileComponent },
+    { path: "dashboard", component: DashboardComponent },
+    { path: "digital", component: DigitalMarketComponent },
+    { path: "developers", component: DevelopersComponent },
+    { path: "ideas", component: IdeasComponent },
+    { path: "legal", component: LegalComponent },
+    { path: "finance", component: FinanceComponent },
+    { path: "journey", component: JourneyComponent },
+    { path: "legalJourney", component: LegalJourneyComponent },
+    { path: "evaluate", component: EvaluateComponent },
+    { path: "planning", component: PlanningComponent },
+    { path: "legalfinance", component: LegalfinanceComponent }
+  ]},
+
 
 ];
 

@@ -1,50 +1,5 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div class=container-outer>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-        <div class="container">
-            <!-- Brand -->
-            <a class="navbar-brand">
-                <img src="./assets/img/logo.png" class="navbar-brand-img " alt="...">
-                Novelty
-            </a>
-
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Collapse -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-
-                <!-- Toggler -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fe fe-x"></i>
-                </button>
-
-                <!-- Navigation -->
-                <ul class="navbar-nav ml-auto">
-                    <a class="nav-link" routerLink="/landing" aria-haspopup="true" aria-expanded="true">
-                        Home
-                    </a>
-                    <li class="nav-item hovered">
-                        <a class="nav-link" routerLink="/client/display" aria-haspopup="true" aria-expanded="true">
-                            Journey
-                        </a>
-                    </li>
-                    <li class="nav-item hovered">
-                        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            About Novelty
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-
 <div class="wrapper">
     <div class="inside-wrap">
         <div class="header">
@@ -68,37 +23,22 @@
     <div class="headline">
         <h4>Here is a checklist of the documents you'll need.</h4>
         <ul>
-            <li>Copy of ID (per business member/individual member and or director).</li>
-            <li>Proof of address(personal) and Proof of physical address of business.</li>
-            <li>Business owner to submit three months' bank account statements on a personal account.</li>
-            <li>Company registration documents (not required for sole proprietors).</li>
-            <li>A detailed business plan .</li>
+            <li *ngFor="let doc of document">{{doc.content}}</li>
         </ul>
     </div>
-    <div class="divider">
-        <div class="card" style="width: 18rem;">
+    <div class="divider" >
+        <div class="card" style="width: 18rem;" *ngFor="let cont of financeContent">
             <div class="card-body">
-              <h5 class="card-title">Bank My Business</h5>
-              <p class="card-text">You will need to have these documents to open a business account. 
-                  Follow the link to create an account and compare the costs</p>
-              <a href="https://www.absa.co.za/business/bank-my-business/daily-transacting-accounts/classic-business-account/" class="card-link">Create with ABSA</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Fund My Business</h5>
-              <p class="card-text">You need a business plan with emphasis on
-                   financial projections and proof of concept for your business idea.Proceed to ABSA </p>
-              <a href="https://www.absa.co.za/business/starting-my-business/access-to-finance/sme-contract-financing/" class="card-link">Apply</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Manage My Finances</h5>
-              <p class="card-text">Financial literacy can make all the difference in the success of your business venture.
-                   Follow the link to get tips on how to manage your finances.</p>
-              <a href="#" class="card-link">Follow Me!</a>
+              <h5 class="card-title">{{cont.title}}</h5>
+              <p class="card-text">{{cont.content}}</p>
+              <a href="{{cont.link}}" target="_blank" class="card-link">Click here</a>
             </div>
           </div>
     </div>
+   
 </div>
+
+<div class="route-btn">
+    <button type="button" class="btn btn-secondary" routerLink="/client/legalJourney">Back</button>
+    <button type="button" class="btn btn-secondary" routerLink="/client/developers">Next</button>
+  </div>
