@@ -10,8 +10,6 @@ const connect = mysql.createConnection({
     database: 'noveltydb',
     password: 'novelty1234',
     port: 5506
-
-
 });
 // Connect to the database.
 connect.connect(err => {
