@@ -85,6 +85,7 @@ export function tokenGetter() {
     JourneyComponent,
     RatingsComponent,
     LegalJourneyComponent,
+    NavbarComponent,
     EvaluateComponent,
     PlanningComponent,
     BridgeSpinnerComponent,

@@ -11,7 +11,7 @@ import { ResetPasswordComponent } from 'src/app/components/reset-password/reset-
 import { QuestionComponent } from 'src/app/components/question/question.component';
 
 import { DMredesignComponent } from 'src/app/components/dmredesign/dmredesign.component';
-
+import { ClientComponent } from "./client.component";
 import { ProfileComponent } from 'src/app/components/profile/profile.component';
 import { DashboardComponent } from "src/app/components/dashboard/dashboard.component";
 import { IdeasComponent } from "src/app/components/ideas/ideas.component";
@@ -27,6 +27,7 @@ import { EvaluateComponent } from 'src/app/components/evaluate/evaluate.componen
 import { PlanningComponent } from 'src/app/components/planning/planning.component';
 
 const routes: Routes = [
+  { path: "", component: ClientComponent , children: [
   { path: "", component: LandingComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: "evaluate", component: EvaluateComponent },
   { path: "planning", component: PlanningComponent },
   { path: "bridge", component: BridgeSpinnerComponent }
+  ]}
 ];
 
 @NgModule({
