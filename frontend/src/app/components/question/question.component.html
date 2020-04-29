@@ -6,25 +6,15 @@
     </h2>
 
     <div *ngIf="!show" class="container d-flex">
-        <mat-card class="full-width">
-            <div class="d-flex justify-content-center" *ngIf="!show">
-                <h5 class="lead text-center mb-3">
-                    {{questions[index].q_name }}
-                </h5>
-            </div>
-            <br>
             <mat-form-field *ngIf="!show" class="example-full-width">
-                <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                <textarea matInput placeholder='{{questions[index].q_name}}'></textarea>
             </mat-form-field>
-
-
-            <div *ngIf="!done" class="d-flex ">
-                <button mat-flat-button color="primary" (click)="yesClick()">{{button}}</button>
-            </div>
-
-        </mat-card>
+    </div>
+    <div *ngIf="!done" >
+        <button mat-flat-button color="primary" (click)="yesClick()">{{button}}</button>
     </div>
 </div>
+
 <div *ngIf="show done" class="question">
     <h2 class="lead mb-2 h3 text-uppercase">
         <mat-icon class="text-primary">question_answer</mat-icon>
