@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS question_catergory;
 DROP TABLE IF EXISTS tracking;
 DROP TABLE IF EXISTS allContent;
+DROP TABLE IF EXISTS dashboard_keys;
 -- Enable the foriegn keys on the parent tables.
 SET FOREIGN_KEY_CHECKS=1;
 -- Create Users table.
@@ -140,6 +141,25 @@ CREATE TABLE IF NOT EXISTS tracking (
     id INT(11) NOT NULL AUTO_INCREMENT,
     id_user INT NOT NULL,
     link VARCHAR(255),
+    givenKeys INT DEFAULT 0,
+
+    createdby VARCHAR(255) DEFAULT NULL,
+    createdat DATETIME NOT NULL,
+    modifiedby VARCHAR(255) DEFAULT NULL,
+    modifiedat DATETIME NOT NULL,
+
+    PRIMARY KEY (id),
+    
+    INDEX (id_user),
+    
+
+    FOREIGN KEY (id_user) REFERENCES users(id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS dashboard_keys (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    id_user INT NOT NULL,
+    givenKeys INT DEFAULT 0,
 
     createdby VARCHAR(255) DEFAULT NULL,
     createdat DATETIME NOT NULL,
@@ -314,6 +334,29 @@ DROP PROCEDURE IF EXISTS tracking $$
 DROP PROCEDURE IF EXISTS notNewUser $$
 DROP PROCEDURE IF EXISTS startTrack $$
 DROP PROCEDURE IF EXISTS getLink $$
+DROP PROCEDURE IF EXISTS accessKeys $$
+DROP PROCEDURE IF EXISTS firstKeys $$
+DROP PROCEDURE IF EXISTS getKeys $$
+
+CREATE PROCEDURE getKeys(IN u_id INT)
+BEGIN
+    SELECT id, id_user, givenKeys
+    FROM dashboard_keys
+    WHERE dashboard_keys.id_user = u_id;
+END $$
+
+CREATE PROCEDURE firstKey(IN u_id INT, IN fKey INT)
+BEGIN
+    INSERT INTO dashboard_keys (id_user, givenKeys, createdby, createdat, modifiedby, modifiedat) 
+    VALUES (u_id, fKey, 'System', now(), u_id, now());
+END $$
+
+CREATE PROCEDURE accessKeys(IN u_id INT, IN selectedKey INT)
+BEGIN
+    UPDATE dashboard_keys
+    SET givenKeys = selectedKey, modifiedby = u_id, modifiedat = now()
+    WHERE dashboard_keys.id_user = u_id;
+END $$
 
 CREATE PROCEDURE startTrack(IN u_id INT, IN currentLink VARCHAR(50))
 BEGIN
