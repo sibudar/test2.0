@@ -191,7 +191,7 @@ async function start(data) {
  * @returns a queryResponse.
  */
 async function tracking(data) {
-  if(validate.validate(data.user_id)) {
+  if(validate.validate(data.id)) {
     return response(400, 'user id required');
   }
   if(validate.validate(data.link)) {
@@ -200,7 +200,7 @@ async function tracking(data) {
 
   let sql = "CALL tracking(?)";
 
-  return queryFunction(sql, [data.user_id, data.link]).then(result => {
+  return queryFunction(sql, [data.id, data.link]).then(result => {
       return response(200, 'Successfully updated.', data);
     }).catch(error => {
       return response(400, 'Unsuccessful, could not update.', error.sqlMessage);
@@ -214,13 +214,13 @@ async function tracking(data) {
  * @returns a queryResponse.
  */
 async function notNew(data) {
-  if(validate.validate(data.user_id)) {
+  if(validate.validate(data.id)) {
     return response(400, 'user id required');
   }
 
   let sql = "CALL notNewUser(?)";
 
-  return queryFunction(sql, data.user_id).then(result => {
+  return queryFunction(sql, [data.id]).then(result => {
       return response(200, 'Successfully updated.');
     }).catch(error => {
       return response(400, "Unsuccessful, could not update.", error.sqlMessage);
@@ -246,4 +246,67 @@ async function getLink(data) {
     });
 }
 
-module.exports = { register, login, forgot, reset, verify, start, getLink, tracking, notNew };
+/**
+ * Adds/insert the user's first key.
+ * @param {*} data 
+ * @returns a queryResponse.
+ */
+async function firstKey(data) {
+  if(validate.validate(data.id)) {
+    return response(400, 'user id required');
+  }
+  if(validate.validate(data.key)) {
+    return response(400, 'key required');
+  }
+
+  let sql = "CALL firstKey(?)";
+
+  return queryFunction(sql, [data.id, data.key]).then(result => {
+      return response(200, 'Successfully inserted, first key.', data);
+    }).catch(error => {
+      return response(400, 'Unsuccessful, could not insert.', error.sqlMessage);
+    });
+}
+
+/**
+ * Gets the key that the user have.
+ * @param {*} data 
+ * @returns a queryResponse.
+ */
+async function getKey(data) {
+  if(validate.validate(data.id)) {
+    return response(400, 'user id required');
+  }
+
+  let sql = "CALL getKeys(?)";
+
+  return queryFunction(sql, [data.id]).then(result => {
+      return response(200, "Successfully have a key to the user.", result[0]);
+    }).catch(error => {
+      return response(400, 'Unsuccessful, could not get any key.', error.sqlMessage);
+    });
+}
+
+/**
+ * Updates the key of the user.
+ * @param {*} data 
+ * @returns a queryResponse.
+ */
+async function accessKeys(data) {
+  if(validate.validate(data.id)) {
+    return response(400, 'user id required');
+  }
+  if(validate.validate(data.key)) {
+    return response(400, 'key required');
+  }
+
+  let sql = "CALL accessKeys(?)";
+
+  return queryFunction(sql, [data.id, data.key]).then(result => {
+      return response(200, 'Successfully updated, access another joureny.', data);
+    }).catch(error => {
+      return response(400, 'Unsuccessful, could not update.', error.sqlMessage);
+    });
+}
+
+module.exports = { register, login, forgot, reset, verify, start, getLink, tracking, notNew, firstKey, getKey, accessKeys };
