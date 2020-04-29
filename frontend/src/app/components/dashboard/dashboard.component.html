@@ -36,11 +36,12 @@
                             <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate"
                                 data-aos="fade-up">
                                 <!-- Card -->
-                                <a class="card bg-primary text-left h-100 transition-3d-hover"
+                                <div [ngStyle]="firstStyles()">
+                                <a class="card bg-primary text-left h-100 transition-3d-hover" 
                                     routerLink="/client/ideas"
                                     joyrideStep="ideaStep" 
-                                    title="Ideas" 
-                                    text="Card for your ideas, when you click on this idea card you'll be taken to the ideas page where you'll be able to add, evaluate and rate your ideas.">
+                                    title="Business Ideas" 
+                                    text="Access to business ideas page where you'll be able to add your ideas, evaluate and rate them.">
                                     <div class="card-body">
                                         <div class="mb-5">
                                             <h3 class="text-white">Ideas</h3>
@@ -55,19 +56,19 @@
                                         <span class="font-size-1 text-white font-weight-bold">Load ideas</span>
                                     </div>
                                 </a>
+                                </div>
                                 <!-- End Card -->
                             </div>
 
                             <div class="col-sm-6 col-lg-4 px-2 px-lg-3 aos-init aos-animate" data-aos="fade-up"
                                 data-aos-delay="200">
                                 <!-- Card -->
+                                <div [ngStyle]="secondStyles()">
                                 <a class="js-go-to card bg-warning text-left h-100" 
                                     routerLink="/client/developers"
                                     joyrideStep="developerStep" 
                                     title="Developers" 
-                                    text="Card to hire a developer, when you click on this developer card you'll be introduced to
-                                    developer who can help you reach clients you can't physically. Developers will achieve this by 
-                                    building platforms an entrepreneurs ordered/requested.">
+                                    text="You're on developers of your journey, and you'll be able  Developers will achieve this by building platforms an entrepreneurs ordered/requested.">
                                     <div class="card-body">
                                         <div class="mb-5">
                                             <h3 class="text-white">Developers</h3>
@@ -81,25 +82,24 @@
                                         <span class="font-size-1 text-white font-weight-bold">Let's build</span>
                                     </div>
                                 </a>
+                                </div>
                                 <!-- End Card -->
                             </div>
                             
                             <div class="col-sm-6 col-lg-4 px-2 px-lg-3 mb-3 mb-lg-0 aos-init aos-animate" data-aos="fade-up"
                             data-aos-delay="150">
                                 <!-- Card -->
+                                <div [ngStyle]="thirdStyles()">
                                 <a class="card bg-success text-left h-100 transition-3d-hover" 
                                     routerLink="/client/digital"
                                     joyrideStep="digitalMarketingStep" 
                                     title="Digital Marketing" 
-                                    text="Card for digital marketing, when you click on the digital marketing card you'll be presented 
-                                    with easier of using digital platform tools, tips on how to use them effectively to grow your
+                                    text="Easier ways of using digital platform tools, tips on how to use them effectively to grow your
                                     business in a digital world.">
                                     <div class="card-body">
                                         <div class="mb-5">
                                             <h3 class="text-white">Digital Marketing</h3>
-                                            <p class="text-white">This industry will be able to make you understand
-                                                the
-                                                factors influencing people's actions and purchases.</p>
+                                            <p class="text-white">Factors influencing people's actions and purchases.</p>
                                         </div>
                                         <img class="img-dashboard" src="assets/img/digital-icon.png" alt="Image Description">
                                     </div>
@@ -107,6 +107,7 @@
                                         <span class="font-size-1 text-white font-weight-bold">Start connecting</span>
                                     </div>
                                 </a>
+                                </div>
                                 <!-- End Card -->
                             </div>
 
