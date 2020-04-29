@@ -8,8 +8,8 @@ const connect = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     database: 'noveltydb',
-    password: '',
-    //port: ''
+    password: 'novelty1234',
+    port: '3307'
   
 
 });

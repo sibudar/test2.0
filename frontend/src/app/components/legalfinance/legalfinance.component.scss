@@ -1,12 +1,10 @@
 body{
     margin: 100px 150px;
 }
- 
 .inside-wrap{
     margin: 80px 150px ;
     display: flex;
     justify-content: space-between;
-  
   }
   span{
     color:blue;
@@ -22,3 +20,34 @@ body{
     height: 300px;
     margin-left: 20px;
   }
+
+  //styling the devider
+  .infor{
+      margin: 10px 250px;
+      background-color: rgba(84, 84, 206, 0.664);
+      text-align: center;
+      border-radius: 5px;
+  }
+  hr{
+      width: 60%;
+      margin:5px;
+      align-items: center;
+  }
+  //styling the card
+.tabs{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin:10px 180px;
+  }
+  .card{
+    margin: 10px;
+  }
+ .card img{
+      width: 100px;
+  }
+  .card h6{
+      margin-top: 10px;
+  }
+ 
+  
