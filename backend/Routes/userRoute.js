@@ -332,4 +332,113 @@ userRouter.get("/link/:id", async (req, res) => {
   res.status(result.status).send(result);
 });
 
+// [get] route to "/dashboard/:id" to get user's link.
+/**
+ * @swagger
+ * /users/dashboard/:id:
+ *  get:
+ *     tags:
+ *      - user
+ *     summary: Checks the key that the user have.
+ *     description: This gets the user's link.
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: id
+ *          description: Gets the user's key by an id.
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            user_id:         
+ *              type: integer
+ *     responses:
+ *        200:
+ *         description: Successfully have a key to the user.
+ *        401:
+ *         description: Unsuccessful, could not get any key.
+ */
+userRouter.get("/dashboard/:id", async (req, res) => {
+  let result = await userController.getKey(req.params);
+
+  res.status(result.status).send(result);
+});
+
+// [post] route to "/dashboard/first" to inserts a user's first key.
+/**
+ * @swagger
+ * /users/dashboard/first:
+ *  post:
+ *     tags:
+ *      - user
+ *     summary:  User's first key to access the application.
+ *     description: When a new user doesn't have a key, the application gives them one to start.
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: id
+ *          description: Inserts the user's key.
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            user_id:         
+ *              type: integer
+ *            key:
+ *              type: integer
+ *     responses:
+ *        200:
+ *         description: Successfully inserted, first key.
+ *        401:
+ *         description: Unsuccessful, couldn't insert key.
+ */
+userRouter.post("/dashboard/first", async (req, res) => {
+  let result = await userController.firstKey(req.body);
+
+  res.status(result.status).send(result);
+});
+
+// [post] route to "/dashboard/update" to update a user's key.
+/**
+ * @swagger
+ * /users/dashboard/update:
+ *  post:
+ *     tags:
+ *      - user
+ *     summary:  Updates user's key to access other parts of the application.
+ *     description: When a older user gets to another step of the journey, application updates the key.
+ *     consumes:
+ *        - application/json
+ *     produces:
+ *        - application/json
+ *     parameters:
+ *        - name: id
+ *          description: Update the user's key to access another step of the journey.
+ *          in: body
+ *          required: true 
+ *          schema: 
+ *           type: object
+ *           properties:
+ *            user_id:         
+ *              type: integer
+ *            key:
+ *              type: integer
+ *     responses:
+ *        200:
+ *         description: Successfully update, access another joureny.
+ *        401:
+ *         description: Unsuccessful, couldn't update.
+ */
+userRouter.post("/dashboard/update", async (req, res) => {
+  let result = await userController.accessKeys(req.body);
+
+  res.status(result.status).send(result);
+});
+
 module.exports = userRouter;
