@@ -130,4 +130,34 @@ export class ClientService {
   public getLink(data) {
     return this.http.get(this.url + "/users/link/" + data);
   }
+
+  /**
+   * Updates user's key.
+   * @param data an object that has what's required.
+   * @returns
+   * Updated user's key with a http request made to the server.
+   */
+  public accessKey(data) {
+    return this.http.post(this.url + "/users/dashboard/update", data);
+  }
+
+  /**
+   * Insert user's first key.
+   * @param data an object that has what's required.
+   * @returns
+   * Inserted user's key with a http request made to the server.
+   */
+  public firstKey(data) {
+    return this.http.post(this.url + "/users/dashboard/first", data);
+  }
+
+  /**
+   * Gets user's key.
+   * @param data an object that has what's required.
+   * @returns
+   * List user's key with a http request made to the server.
+   */
+  public getKey(data) {
+    return this.http.get(this.url + "/users/dashboard/" + data);
+  }
 }
