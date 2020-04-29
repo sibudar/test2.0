@@ -130,7 +130,7 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, AuthGuard, JourneyComponent, RatingsComponent],
+  providers: [AuthService, AuthGuard, JourneyComponent, RatingsComponent, ClientComponent],
   entryComponents: [DialogComponent, QuestionComponent, InstructionsComponent],
   bootstrap: [
     DashboardComponent,
