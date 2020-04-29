@@ -23,25 +23,25 @@ body{
 
   //styling the devider
   .infor{
-      margin: 10px 250px;
+      margin: 10px 350px;
       background-color: rgba(84, 84, 206, 0.664);
       text-align: center;
       border-radius: 5px;
   }
   hr{
       width: 60%;
-      margin:5px;
-      align-items: center;
+      margin:5px auto;
   }
   //styling the card
 .tabs{
     display: flex;
     justify-content: space-between;
     text-align: center;
-    margin:10px 180px;
+    margin:50px 180px;
   }
   .card{
-    margin: 10px;
+    margin: 5px;
+    padding: 5px;
   }
  .card img{
       width: 100px;
