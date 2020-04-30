@@ -340,7 +340,7 @@ DROP PROCEDURE IF EXISTS getKeys $$
 
 CREATE PROCEDURE getKeys(IN u_id INT)
 BEGIN
-    SELECT id, id_user, givenKeys
+    SELECT id_user, givenKeys
     FROM dashboard_keys
     WHERE dashboard_keys.id_user = u_id;
 END $$
