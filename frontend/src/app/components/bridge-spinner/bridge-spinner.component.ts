@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
@@ -17,7 +17,6 @@ export class BridgeSpinnerComponent implements OnInit {
   link: string;
   checkLength: any;
   brideKeys: any;
-  @HostBinding("class.dKey")
   dKey: number;
   first: any;
 
