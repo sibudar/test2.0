@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { LoginResponse } from 'src/app/models/user';
 import { filter } from "rxjs/operators";
+import { ClientComponent } from 'src/app/layouts/client/client.component';
 
 @Component({
   selector: "app-bridge-spinner",
@@ -22,42 +23,29 @@ export class BridgeSpinnerComponent implements OnInit {
 
   constructor(
     private clientService: ClientService,
-    private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private client: ClientComponent
   ) {
-    this.verifiedUser();
+    this.routeLastVisited(this.client.user);
+    this.update(this.client.user.id);
   }
 
   ngOnInit() {}
 
   /**
-   * Verifies a token.
+   * Tracking the user's route, stores it in the database.
+   * New user get's the current route and old user navigates to
+   * the one stored on the database.
+   * @param id user's details (object).
    */
-  verifiedUser() {
-    if (this.auth.loggedIn) {
-      this.verified = JSON.parse(sessionStorage.getItem("access_token"));
-      if (this.verified.auth) {
-        this.auth
-          .verifyToken(this.verified.token)
-          .subscribe((data: LoginResponse) => {
-            this.routeLastVisited(data);
-            this.update(data.id);
-          });
-      }
-    }
-  }
-
   routeLastVisited(id) {
-    if (id.data.new_user == 1) {
-      this.clientService.getLink(id.data.id).subscribe((data) => {
+    if (id.new_user == 1) {
+      this.clientService.getLink(id.id).subscribe((data) => {
         this.checkLength = data;
         if (Object.keys(this.checkLength.data).length < 1) {
-          let first = { id: id.data.id, link: "client/display" };
+          let first = { id: id.id, link: "client/display" };
           this.clientService.start(first).subscribe((e) => {
-            this.first = e;
-            this.update(this.first.data[0].id);
-            console.log(this.first.data[0].id), "first start.";
-            this.router.navigate(["client/display"]);
+            console.log(e);
           });
         } else {
           this.update(this.checkLength.data[0].id);
@@ -65,36 +53,39 @@ export class BridgeSpinnerComponent implements OnInit {
         }
       });
     } else {
-      this.keys(id.data.id);
+      this.keys(id.id);
       this.router.navigate(["client/dashboard"]);
     }
   }
 
+  /**
+   * Update the route as the user navigates the application.
+   * Stores the route to the database.
+   * @param id user's id
+   */
   update(id) {
-    this.router.events
-      .pipe(filter((e) => e instanceof NavigationEnd))
-      .subscribe((e: NavigationEnd) => {
-        this.link = e.url;
-        let data = {
-          user_id: id,
-          link: this.link,
-        };
-        this.clientService.tracking(data).subscribe((results) => {
-          console.log(results);
-        });
+    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((e: NavigationEnd) => {
+      this.link = e.url;
+      let data = { user_id: id, link: this.link };
+      this.clientService.tracking(data).subscribe((results) => {
+        console.log(results);
       });
+    });
   }
 
+  /**
+   * Giving access to the user's continue the journey.
+   * New user gets the first key and old user navigates gets
+   * the one stored on the database.
+   * @param id user's id.
+   */
   keys(id) {
     this.clientService.getKey(id).subscribe((data) => {
       this.checkLength = data;
       if (Object.keys(this.checkLength.data).length < 1) {
         let first = { id: id, key: 1 };
         this.clientService.firstKey(first).subscribe((e) => {
-          this.brideKeys = e;
-          console.log(this.brideKeys.data.key, "bridge key");
-          this.dKey = this.brideKeys.data.key;
-          console.log(this.dKey, "dKey bridge");
+          console.log(e);
         });
       }
       // else {
