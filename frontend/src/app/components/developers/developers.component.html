@@ -1,120 +1,102 @@
-<!-- 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Courgette|Neuton" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
-
-<div class=wraper>
-  <div class="header ">
-    <h1><span>Developers</span> site</h1>
-    <h5>Why Web Development Is Essential To Your Business?</h5>
-    <p >The rapidly changing business trends have made the business owners realize the importance of having a website and register their online presence.
-      Due to this, they are hiring the best web developers who can make the best sites for them and help them to expand their business from all the clients.
-     </p>
-  </div>
-  <h5>Here are some of the benefits of having an online presence:</h5>
-  <ul>
-    <li>It means your business can be accessed anytime</li>
-    <li>More people will be aware of the products as well as the services.</li>
-    <li>Clients can search and find your products online</li>
-
-  </ul>
+  <section class="pt-4 pt-md-11" id="section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-5 col-lg-6 order-md-2">
   
-</div>
-<form >
-<div class="box">
-  <h5>Check Domain Availability</h5>
-  <div class="container-1">
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" formControlName="domain" placeholder="Search..." />
-      <button class="btn btn-primary1" (click)="postDomain()"><i class="fa fa-search"></i></button>
-  </div>
-</div>
-</form>
+          <!-- Image -->
+          <img src="assets/img/illustration-2.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 aos-init aos-animate " alt="..." data-aos="fade-up" data-aos-delay="100">
+  
+        </div>
+        <div class="col-12 col-md-7 col-lg-6 order-md-1 aos-init aos-animate " data-aos="fade-up">
+  
+          <!-- Heading -->
+          <h1 class="display-3 text-center text-md-left" >
+           Have a <span class="text-primary">Website</span> <br>
+          <h2  class="lead text-center text-md-left text-muted mb-6 mb-lg-8"> <b>A website is a great way to provide value added service to your customers and clients.</b></h2>
+           
+          </h1>
+          <!-- Text -->
+          
+            
+        <p class="lead text-center text-md-left text-muted mb-6 mb-lg-8">
+          It is a great way to keep them coming back to your website anytime when they need your products or services.
+          <br><br>
+            Have the best web developers who can make the best
+            sites  and help you to expand your business from all the
+            clients.
+          </p>
+  
+          <!-- Buttons -->
+          <div class="text-center text-md-left">
+            <a routerLink="/client/profile" class="btn btn-primary shadow lift mr-1">
+              select a developer <i class="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+            </a>
+          </div>
+  
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
 
-<div class="select">
-  <h3>Select the developer that best suit your business needs</h3>
-</div>
+  
 
 
-<div class="final-card">
 
-<div class="card" style="width: 17rem;">
-  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="title">
-      <h4>Sam Mcholo <h6>Frontend Developer</h6></h4>
-     <br>
-    </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" id="primary"  routerLink="/client/profile">View Profile</a>
-    <div class="socialm">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-  </div>
-</div>
 
-<div class="card" style="width: 17rem;">
-  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="title">
-      <h4>Gift Banda <h6>API developer</h6></h4>
-     <br>
-    </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" id="primary"  routerLink="/client/profile">View Profile</a>
-    <div class="socialm">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-  </div>
-</div>
 
-<div class="card" style="width: 17rem;">
-  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="title">
-      <h4>Andile Phula <h6>Data analyst</h6></h4>
-     <br>
-    </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" id="primary" routerLink="/client/profile">View Profile</a>
-    <div class="socialm">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-  </div>
-</div>
 
-<div class="card" style="width: 17rem;">
-  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="title">
-      <h4>Chamano Sid<h6>Software Developer</h6></h4>
-     <br>
-    </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" id="primary" routerLink="/client/profile">View Profile</a>
-    <div class="socialm">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-  </div>
-</div>
-</div>
 
-<div class="route-btn">
-  <button type="button" class="btn btn-secondary" routerLink="/client/finance">Back</button>
- -->
 
-<!-- bri -->
-<link
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--devs!-- bri -->
+<!-- <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
   rel="stylesheet"
   id="bootstrap-css"
@@ -125,9 +107,9 @@
   rel="stylesheet"
   href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 />
-<!------ Include the above in your HEAD tag ---------->
+ Include the above in your HEAD tag 
 
-<!-- for search button -->
+
 <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
   rel="stylesheet"
@@ -184,22 +166,7 @@
     </div>
   </div>
 
-  <!-- <div class="container h-100">
-    <div class="d-flex justify-content-center h-100">
-      <div class="searchbar">
-        <input
-          class="search_input"
-          id="search"
-          type="search"
-          formControlName="domain"
-          placeholder="Search for domain"
-        />
-        <a href="#" class="search_icon"
-          ><i class="fa fa-search" (click)="postDomain()"></i
-        ></a>
-      </div>
-    </div>
-  </div> -->
+ 
   <section class="our-webcoderskull padding-lg mt-2">
 
     <div class="select">
@@ -208,7 +175,7 @@
 
     <div class="container">
       <div class="row heading heading-icon">
-        <!-- <h2>Developers</h2> -->
+       
       </div>
       <ul class="row">
         <li class="col-12 col-md-6 col-lg-3">
@@ -337,4 +304,4 @@
       </ul>
     </div>
   </section>
-</div>
+</div> -->

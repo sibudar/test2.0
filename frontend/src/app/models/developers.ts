@@ -1,0 +1,55 @@
+export interface DeveloperResponse {
+  status: number;
+  message: string;
+  data: DeveloperProfile[];
+}
+
+export interface DeveloperProfile {
+  // experience
+  title: String;
+  company: String;
+  yearsOfExperience:number;
+  // current: boolean;
+  description: String;
+  skills:string;
+
+
+  //education
+  school: String;
+  degree: String;
+  fieldofstudy: String;
+
+  //social
+  twitter: String;
+  facebook: String;
+  
+}
+
+
+let devProfile : DeveloperProfile[];
+devProfile = [{ title:'Mr',company: 'Digital Academy' , yearsOfExperience:2 ,description: 'developing restful apis' , skills: 'html, css, angular,php, java, nodejs,Sql,mysql workbench' , school:'University Of Pretoria' , degree: 'Information Technology' , fieldofstudy: 'ICT' ,twitter:'link' ,facebook: 'link' },
+{ title:'Ms',company: 'Asolutions' , yearsOfExperience:4 ,description: 'designing responsive webistes asn applications' , skills: 'html, css, angular,php, java, nodejs,Sql,mysql workbench' , school:'University Of South Africa' , degree: 'Information Technology' , fieldofstudy: 'ICT' ,twitter:'link' ,facebook: 'link' },
+{ title:'Mr',company: 'ABSA' , yearsOfExperience:3 ,description: 'Specialising with developing online shopping(e-commerce) webpages' , skills: 'html, css,react,php, java, nodejs,mongo' , school:'WITS' , degree: 'Information Technology' , fieldofstudy: 'ICT' ,twitter:'link' ,facebook: 'link' }, 
+{ title:'Mr',company: 'Digital Academy' , yearsOfExperience:5 ,description: 'developing restful apis' , skills: 'html, css, angular,php, java,end-to-end testing, nodejs,Sql,mysql workbench' , school:'Tshwane University Of Technology' , degree: 'Information Technology' , fieldofstudy: 'ICT' ,twitter:'link' ,facebook: 'link' }
+
+];
+
+
+
+
+
+// export interface education {
+//   school: String;
+//   degree: String;
+//   fieldofstudy: String;
+//   from: String;
+//   to: Date;
+//   current: Date;
+//   description: String;
+// }
+
+
+// export interface social {
+//   twitter: String;
+//   facebook: String;
+// }
