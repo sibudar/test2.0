@@ -17,20 +17,11 @@
   rel="stylesheet"
   href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 />
- <!-- Include the above in your HEAD tag  -->
-
-
-<link
-  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-  rel="stylesheet"
-  id="bootstrap-css"
-/>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <!-- Include the above in your HEAD tag  --> 
 
 <div class="wraper">
   <div class="header">
-    <h1><span>Developers</span> site</h1>
+    
     <!-- <h5>Why Web Development Is Essential To Your Business?</h5>
     <p>
       The rapidly changing business trends have made the business owners realize
@@ -59,6 +50,26 @@
   </div>
 
   <br><br><br> -->
+  <div class='devInfo'>
+  <!-- Heading -->
+  <h1 class="display-3 text-center text-md-left" >
+    Have a <span class="text-primary">Website</span> <br>
+   <h2  class="lead text-center text-md-left text-muted mb-6 mb-lg-8"> <b>A website is a great way to provide value added service to your customers and clients.</b></h2>
+    
+   </h1>
+   <!-- Text -->
+   
+     
+ <p class="lead text-center text-md-left text-muted mb-6 mb-lg-8">
+   It is a great way to keep them coming back to your website anytime when they need your products or services.
+   <br><br>
+     Have the best web developers who can make the best
+     sites  and help you to expand your business from all the
+     clients.
+   </p>
+
+  </div>
+
 
   <h5>Check Domain Availability</h5>
   <div class="container h-100">
@@ -75,21 +86,21 @@
       </form>
     </div>
   </div>
-
+ 
  
   <section class="our-webcoderskull padding-lg mt-2">
 
     <div class="select">
-      <h3>Select the developer that best suits your business needs</h3>
+      <h3>Hire the developer that best suits your business needs</h3>
     </div>
 
     <div class="container">
       <div class="row heading heading-icon">
        
       </div>
-      <ul class="row">
-        <li class="col-12 col-md-6 col-lg-3">
-          <div class="cnt-block equal-hight" style="height: 425px;">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight"  style="height: 425px;"  *ngFor="let dev of devProfile">
             <div class="icon">
               <a routerLink="/client/profile">
               <span class="material-icons  menu">
@@ -104,9 +115,9 @@
                 alt=""
               />
             </figure>
-            <h3><a href="http://www.webcoderskull.com/">Sam Mcholo</a></h3>
-            <p>Freelance Web Developer</p>
-            <p class="card-text">Some quick example text to build on the card.</p>
+            <h3>{{dev.name}}</h3>
+            <p>{{dev.title}}</p>
+            <p class="card-text">With {{ dev.yearsOfExperience }} years of experience.</p>
             <ul class="follow-us clearfix">
               <li>
                 <a href="#"
@@ -123,95 +134,8 @@
               </li>
             </ul>
           </div>
-        </li>
-        <li class="col-12 col-md-6 col-lg-3">
-          <div class="cnt-block equal-hight" style="height: 425px;">
-            <figure>
-              <img
-                src="http://www.webcoderskull.com/img/team1.png"
-                class="img-responsive"
-                alt=""
-              />
-            </figure>
-            <h3><a  routerLink="/client/profile">Nomaseko Brilliant Mhlanga's Profile </a></h3>
-            <p>Freelance Web Developer</p>
-            <p class="card-text">Some quick example text to build on the card.</p>
-            <ul class="follow-us clearfix">
-              <li>
-                <a href="#"
-                  ><i class="fa fa-facebook" aria-hidden="true"></i
-                ></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa fa-linkedin" aria-hidden="true"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="col-12 col-md-6 col-lg-3">
-          <div class="cnt-block equal-hight" style="height: 425px;">
-            <figure>
-              <img
-                src="http://www.webcoderskull.com/img/team4.png"
-                class="img-responsive"
-                alt=""
-              />
-            </figure>
-            <h3><a href="http://www.webcoderskull.com/">Manish </a></h3>
-            <p>Freelance Web Developer</p>
-            <p class="card-text">Some quick example text to build on the card.</p>
-            <ul class="follow-us clearfix">
-              <li>
-                <a href="#"
-                  ><i class="fa fa-facebook" aria-hidden="true"></i
-                ></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa fa-linkedin" aria-hidden="true"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="col-12 col-md-6 col-lg-3">
-          <div class="cnt-block equal-hight" style="height: 425px;">
-            <figure>
-              <img
-                src="http://www.webcoderskull.com/img/team2.png"
-                class="img-responsive"
-                alt=""
-              />
-            </figure>
-            <h3><a href="http://www.webcoderskull.com/">Atul </a></h3>
-            <p>Freelance Web Developer</p>
-            <p class="card-text">Some quick example text to build on the card.</p>
-            <ul class="follow-us clearfix">
-              <li>
-                <a href="#"
-                  ><i class="fa fa-facebook" aria-hidden="true"></i
-                ></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa fa-linkedin" aria-hidden="true"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </section>
 </div> 
