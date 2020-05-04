@@ -11,7 +11,7 @@ import { ClientService } from 'src/app/services/client.service';
 export class DashboardComponent implements OnInit {
 
   key: any;
-  checkLength: Object;
+  checkLength: any;
 
   constructor(private joyride: JoyrideService, private bridge: ClientComponent, private clientService: ClientService) {
     this.getKey(this.bridge.user.id);
@@ -103,8 +103,7 @@ export class DashboardComponent implements OnInit {
   getKey(id) {
     this.clientService.getKey(id).subscribe((data) => {
       this.checkLength = data;
-      console.log(this.checkLength);
-      // this.key = this.checkLength.data[0].givenKeys;
+      this.key = this.checkLength.data[0].givenKeys;
       this.triggerKeys(this.key);
     });
   }
