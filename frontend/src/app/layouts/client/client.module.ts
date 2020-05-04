@@ -48,10 +48,10 @@ import { JourneyComponent } from "src/app/components/journey/journey.component";
 import { RatingsComponent } from "src/app/components/ratings/ratings.component";
 import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
 import { BridgeSpinnerComponent } from '../../components/bridge-spinner/bridge-spinner.component';
-import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatSidenavModule } from "@angular/material/sidenav";
+import { LegalfinanceComponent } from '../../components/legalfinance/legalfinance.component';
 
 
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -85,7 +85,7 @@ export function tokenGetter() {
     JourneyComponent,
     RatingsComponent,
     LegalJourneyComponent,
-    NavbarComponent,
+    LegalfinanceComponent,
     EvaluateComponent,
     PlanningComponent,
     BridgeSpinnerComponent,
