@@ -191,7 +191,7 @@ async function start(data) {
  * @returns a queryResponse.
  */
 async function tracking(data) {
-  if(validate.validate(data.id)) {
+  if(validate.validate(data.user_id)) {
     return response(400, 'user id required');
   }
   if(validate.validate(data.link)) {
@@ -200,7 +200,7 @@ async function tracking(data) {
 
   let sql = "CALL tracking(?)";
 
-  return queryFunction(sql, [data.id, data.link]).then(result => {
+  return queryFunction(sql, [data.user_id, data.link]).then(result => {
       return response(200, 'Successfully updated.', data);
     }).catch(error => {
       return response(400, 'Unsuccessful, could not update.', error.sqlMessage);
