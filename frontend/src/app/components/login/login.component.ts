@@ -1,12 +1,9 @@
 import { Router } from '@angular/router';
 import { ToasterService } from './../../services/toaster.service';
-import { UserResponse } from 'src/app/models/user';
-import { ClientService } from 'src/app/services/client.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
-import { first } from 'rxjs/operators';
 
 
 
@@ -43,7 +40,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.auth.login(this.form.value).subscribe((data) => {
       this.toastr.success('successfully logged in','novelty',2000);
-      this.router.navigate(['client/dashboard']); 
+      this.router.navigate(['client/bridge']); 
     },error =>{
       console.log(error);
       this.toastr.error('Unable to login, please try again later' ,'novelty',10000);
