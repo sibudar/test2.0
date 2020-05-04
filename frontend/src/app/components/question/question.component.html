@@ -5,13 +5,16 @@
         <span class="text-primary text-uppercase"> idea</span>
     </h2>
 
-    <div *ngIf="!show" class="container d-flex">
-            <mat-form-field *ngIf="!show" class="example-full-width">
-                <textarea matInput placeholder='{{questions[index].q_name}}'></textarea>
+    <form [formGroup]="formQuestion" >
+    <div  class="container d-flex">
+            <mat-form-field  class="example-full-width">
+                <textarea matInput placeholder='{{question.q_name}}' formControlName="answer"></textarea>
             </mat-form-field>
     </div>
+    </form>
+
     <div *ngIf="!done" >
-        <button mat-flat-button color="primary" (click)="yesClick()">{{button}}</button>
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="formQuestion.invalid">{{button}}</button>
     </div>
 </div>
 
