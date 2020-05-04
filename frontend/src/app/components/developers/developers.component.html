@@ -1,7 +1,5 @@
-
-
- <!--devs!-- bri -->
- <!-- <link
+<!--devs!-- bri -->
+<!-- <link
  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
  rel="stylesheet"
  id="bootstrap-css"
@@ -10,53 +8,66 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link
  rel="stylesheet"
- href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" -->
-/>
- <!-- Include the above in your HEAD tag  --> 
+ href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
 
-
+<!-- Include the above in your HEAD tag  -->
 
 <!-- profile -->
-        <div class="container-inner">
+<div class="container-inner">
+  <mat-grid-list cols="2" rowHeight="900px">
+    <mat-grid-tile>
+      <div class="img">
+        <img
+          class="image animated fadeInRight delay-0.5s"
+          src="assets/img/perfect.png"
+        />
+      </div>
+    </mat-grid-tile>
 
-            <mat-grid-list cols="2" rowHeight="900px">
-                <mat-grid-tile>
-                    <div class="img">
-                        <img class="image animated fadeInRight delay-0.5s" src="assets/img/perfect.png">
-                    </div>
-                </mat-grid-tile>
+    <mat-grid-tile class="text-inside-grid">
+      <div class="mb-5 mt-11 col-header">
+        <h1 class="display-4 mb-2">Work Experience</h1>
+        <p class="lead">{{ profile.name }}</p>
+        <p class="uk-text-meta uk-margin-remove-top">
+          <time datetime="June 2018" class="time">June 2018</time> - March 2019
+        </p>
+        <p class="lead">{{ profile.description }}</p>
 
+        <hr />
 
-                <mat-grid-tile class="text-inside-grid">
-                    <div class="mb-5 mt-11 col-header">
-                        <h1 class="display-4 mb-2">Work Experience</h1>
-                        <p class="lead">WeThinkCode
-                        </p>
-                        <p class="uk-text-meta uk-margin-remove-top">
-                            <time datetime="June 2018" class='time'>June 2018</time> - March 2019</p>
-                            <p>Lorem ipsum <a href= "#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                       <hr>
-    
-                       <h1 class="display-4 mb-2">Education</h1>
-                        <p class="lead">University Of City
-                        </p>
-                        <p class="uk-text-meta uk-margin-remove-top">
-                                
-                            <time datetime="June 2018" class='time'>June 2018</time> - March 2019</p>
-                            <p>Lorem ipsum <a href= "#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                       <hr>
-    
-                       <h1 class="display-4 mb-2">Skills</h1>
-                       <ul class="list">
-                        <li>Frontend:<h6>html, css, angular</h6></li>
-                        <li>Backtend:<h6>php, java, nodejs</h6></li>
-                        <li>Database:<h6>Sql,mysql workbench</h6></li>
-                        <li>DevOpps:<h6>Docker, deployment</h6></li>
-                    </ul>
-                      <hr>
-    
-                    </div> 
-                </mat-grid-tile>
-              </mat-grid-list>
-          </div>
-      
+        <h1 class="display-4 mb-2">Education</h1>
+        <p class="lead">University Of City</p>
+        <p class="uk-text-meta uk-margin-remove-top">
+          <time datetime="June 2018" class="time">June 2018</time> - March 2019
+        </p>
+        <p>
+          Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing
+          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua.
+        </p>
+        <hr />
+
+        <h1 class="display-4 mb-2">Skills</h1>
+        <ul class="list">
+          <li>
+            Frontend:
+            <h6>html, css, angular</h6>
+          </li>
+          <li>
+            Backtend:
+            <h6>php, java, nodejs</h6>
+          </li>
+          <li>
+            Database:
+            <h6>Sql,mysql workbench</h6>
+          </li>
+          <li>
+            DevOpps:
+            <h6>Docker, deployment</h6>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
