@@ -26,8 +26,10 @@ export class BridgeSpinnerComponent implements OnInit {
     private router: Router,
     private client: ClientComponent
   ) {
-    this.routeLastVisited(this.client.user);
-    this.update(this.client.user.id);
+    setTimeout(() => {
+      this.routeLastVisited(this.client.user);
+    }, 5000)
+    
   }
 
   ngOnInit() {}
@@ -39,16 +41,19 @@ export class BridgeSpinnerComponent implements OnInit {
    * @param id user's details (object).
    */
   routeLastVisited(id) {
-    if (id.new_user == 1) {
+    if(id.new_user == 1) {
       this.clientService.getLink(id.id).subscribe((data) => {
         this.checkLength = data;
-        if (Object.keys(this.checkLength.data).length < 1) {
-          let first = { id: id.id, link: "client/display" };
+        console.log(data);
+        if(Object.keys(this.checkLength.data).length < 1) {
+          let first = { user_id: id.id, link: "client/display" };
           this.clientService.start(first).subscribe((e) => {
             console.log(e);
+            this.router.navigate(["client/display"]);
           });
         } else {
-          this.update(this.checkLength.data[0].id);
+          this.update(this.checkLength.data[0].id_user);
+          console.log(this.checkLength.data[0].link)
           this.router.navigate([this.checkLength.data[0].link]);
         }
       });
@@ -67,6 +72,7 @@ export class BridgeSpinnerComponent implements OnInit {
     this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((e: NavigationEnd) => {
       this.link = e.url;
       let data = { user_id: id, link: this.link };
+      console.log(data)
       this.clientService.tracking(data).subscribe((results) => {
         console.log(results);
       });
