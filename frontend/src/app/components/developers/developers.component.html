@@ -27,44 +27,44 @@
     <mat-grid-tile class="text-inside-grid">
       <div class="mb-5 mt-11 col-header">
         <h1 class="display-4 mb-2">Work Experience</h1>
-        <p class="lead">{{ profile.name }}</p>
+        <p class="lead">{{ profile.company }}</p>
         <p class="uk-text-meta uk-margin-remove-top">
-          <time datetime="June 2018" class="time">June 2018</time> - March 2019
+          <time datetime="June 2018" class="time">{{ profile.workStart }}</time>
+          - {{ profile.workEnd }}
         </p>
         <p class="lead">{{ profile.description }}</p>
 
         <hr />
 
         <h1 class="display-4 mb-2">Education</h1>
-        <p class="lead">University Of City</p>
+        <p class="lead">{{ profile.school }}</p>
         <p class="uk-text-meta uk-margin-remove-top">
-          <time datetime="June 2018" class="time">June 2018</time> - March 2019
+          <time datetime="June 2018" class="time">{{
+            profile.educationStar
+          }}</time>
+          - {{ profile.educationStart }}
         </p>
-        <p>
-          Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua.
-        </p>
+        <p>Qualification : {{ profile.degree }}</p>
         <hr />
 
         <h1 class="display-4 mb-2">Skills</h1>
         <ul class="list">
           <li>
             Frontend:
-            <h6>html, css, angular</h6>
+            <h6>{{ profile.frontendSkills }}</h6>
           </li>
           <li>
             Backtend:
-            <h6>php, java, nodejs</h6>
+            <h6>{{ profile.backendSkills }}</h6>
           </li>
           <li>
             Database:
-            <h6>Sql,mysql workbench</h6>
+            <h6>{{ profile.databaseSkills }}</h6>
           </li>
-          <li>
+          <!-- <li>
             DevOpps:
-            <h6>Docker, deployment</h6>
-          </li>
+            <h6>Docker</h6>
+          </li> -->
         </ul>
         <hr />
       </div>
