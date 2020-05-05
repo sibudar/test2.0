@@ -37,8 +37,15 @@ export class QuestionComponent implements OnInit {
   Getquestions(): void {
     this.clientService.getQuestions(1).subscribe((data: QuestionsResponse) => {
     this.questions = data.data
+    // let i = 0; 
+    // this.questions.forEach(element => {
+    //   this.formQuestion.addControl(element.id, new FormControl('', Validators.required));
+    //   i++ ;
+    // });
     this.question = this.questions[this.index]
     console.log(this.questions) ;
+
+    
     })
   }
 
@@ -48,12 +55,14 @@ export class QuestionComponent implements OnInit {
   //  if(this.busID != undefined) {
   //     this.answerQuestion()
   //   }
-    // this.yesClick()
+     this.yesClick()
   }
 
   answerQuestion() {
-    let idUser = this.userID;
-    let idBus = this.busID;
+    
+    let local = JSON.parse(localStorage.getItem('Value'));
+    let idBus = local.id
+    let idUser = local.id_user
     let serviceClient = this.clientService;
     let fromQuiz: any = this.formQuestion.value
     
@@ -93,3 +102,8 @@ export class QuestionComponent implements OnInit {
     this.router.navigate(['client/legalJourney'])
   }
 }
+
+
+
+
+

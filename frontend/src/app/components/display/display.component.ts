@@ -42,7 +42,7 @@ export class DisplayComponent implements OnInit {
    */
   inserIdea(idea) {
     this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
-      localStorage.setItem('Value',JSON.stringify(idea));
+      localStorage.setItem('Value',JSON.stringify(data.data));
       this.router.navigate(['client/journey']);
  
       });
