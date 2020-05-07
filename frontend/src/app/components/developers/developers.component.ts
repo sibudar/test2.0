@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
 import { ClientService } from 'src/app/services/client.service';
 import { ToasterService } from 'src/app/services/toaster.service';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { LoginResponse } from 'src/app/models/user';
+import { LoginResponse, UserResponse } from 'src/app/models/user';
 
 @Component({
   selector: 'app-developers',
@@ -15,12 +14,19 @@ export class DevelopersComponent implements OnInit {
 
   form: FormGroup;
   verified: any;
+  user: LoginResponse = {
+    id: 0,
+    first_name: "",
+    last_name: "",
+    email: "",
+    new_user: 1,
+  };
 
   constructor(private clientService: ClientService, private formBuilder: FormBuilder, private toastr: ToasterService, private auth: AuthService) { 
-    this.verifiedUser();
   }
 
   ngOnInit() {
+    this.verifyUser();
     this.form = this.formBuilder.group({
       domain: new FormControl("", [Validators.required])
     });
@@ -36,21 +42,24 @@ export class DevelopersComponent implements OnInit {
   /**
    * Verifies a token.
    */
-  verifiedUser() {
-    if (this.auth.loggedIn) {
-      this.verified = JSON.parse(sessionStorage.getItem("access_token"));
-      if (this.verified.auth) {
-        this.auth.verifyToken(this.verified.token).subscribe((data: LoginResponse) => {
-          this.updateTrack(data.id);
-        });
-      }
+   verifyUser() {
+    if(this.auth.loggedIn) {
+      let verified = JSON.parse(sessionStorage.getItem("access_token"));
+      this.auth.verifyToken(verified.token).subscribe((res: UserResponse) => {
+        this.user = res.data;
+        this.updateTrack(this.user.id);
+        console.log(this.user);
+      });
     }
   }
 
+  /**
+   * Update that this is not a new user.
+   * @param id user's id.
+   */
   updateTrack(id) {
     this.clientService.notNewUers(id).subscribe((data) => {
       console.log(data);
     })
   }
-
 }
