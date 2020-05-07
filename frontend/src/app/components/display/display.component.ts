@@ -27,6 +27,8 @@ export class DisplayComponent implements OnInit {
     private router: Router
   ) {
     this.verifiedUser();
+     
+
   }
 
   ngOnInit() {
@@ -41,10 +43,10 @@ export class DisplayComponent implements OnInit {
    * @param idea inserted by the user.
    */
   inserIdea(idea) {
-    this.clientService
-      .insertBusinessIdea(idea)
-      .subscribe((data: UserResponse) => {
-        this.router.navigate(["client/journey"]);
+    this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
+      localStorage.setItem('Value',JSON.stringify(data.data));
+      this.router.navigate(['client/journey']);
+ 
       });
   }
 
@@ -70,4 +72,6 @@ export class DisplayComponent implements OnInit {
 
     this.inserIdea(idea);
   }
+
+
 }

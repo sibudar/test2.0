@@ -1,4 +1,5 @@
-<div class=container-outer>
+
+<!-- 
     <div class="container-inner">
         <mat-grid-list cols="1" rowHeight="230px">
             <mat-grid-tile class="text-inside-grid">
@@ -34,19 +35,33 @@
                 </div>
             </div>
              <div class="col">
-                <div *ngIf="evaluation">
-                    <app-question></app-question>
-                </div>
+               
                 <div *ngIf="!evaluation">
                     <p class="para-idea">
                         You've just entered a business idea, but how do you know it's going to work. We've located questions to assist you to know if your business ideas is most likely to succeed.
                         <br>Click your business idea to encounter more.
                     </p>
-                    <div class="img">
-                        <img class="image animated fadeInRight delay-0.5s" src="assets/img/ideas-header.png">
-                    </div>
+                  
                 </div>
                 
              </div>
         </div>
+    </div> -->
+
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-12 col-md-8 ">
+        <div *ngIf="evaluation">
+            <app-question></app-question>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+            <div class="img">
+            <img class="image animated fadeInRight delay-0.5s" src="assets/img/ideas-header.png">
+         </div>
+      </div>
     </div>
+    
+    
+  </div>

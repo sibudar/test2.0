@@ -43,7 +43,7 @@ async function addAnswer(data) {
 
     let sql = 'CALL postAnswers(?)'
     
-    return queryFunction(sql, [data.user_answer, data.id_user,data.id_que, data.id_bus, ]).then((result) => {
+    return queryFunction(sql, [data.user_answer, data.id_user, data.id_que, data.id_bus]).then((result) => {
         return response(201,'Thank you for answering');
     }).catch(error => {
         return response(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage );

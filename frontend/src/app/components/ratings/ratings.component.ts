@@ -18,6 +18,7 @@ export class RatingsComponent implements OnInit {
   descript: any;
   user_id: any;
   hide: boolean;
+  button: string = "Continue";
 
   constructor(private clientService: ClientService, private journey: JourneyComponent, private router: Router,private question: QuestionComponent, private location: Location
   ) {}

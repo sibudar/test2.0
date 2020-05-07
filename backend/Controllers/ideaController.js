@@ -22,17 +22,11 @@ async function addIdea(data) {
     }
 
     let sql = 'CALL businessIdea(?)'
-    
-    // return queryFunction(sql, [data.busin_idea, data.descript, data.id_user]).then(result => {
-    //     return response(201,'you have successfully added an idea');
 
-    //console.log(data.id_user, " im getting token or not?")
-    
-    
     return queryFunction(sql, [data.busin_idea, data.descript, data.id_user]).then(result => {
-        return response(201,'you have successfully added an idea');
+        return response(201,'you have successfully added an idea', result[0][0]);
     }).catch(error => {
-        return fieldResponse(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage );
+        return response(500, 'Oops! we\'re experiencing some problems on our servers, please try again later!', error.sqlMessage );
     });
 }
 
