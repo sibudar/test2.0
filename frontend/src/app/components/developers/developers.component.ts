@@ -58,7 +58,7 @@ export class DevelopersComponent implements OnInit {
    * @param id user's id.
    */
   updateTrack(id) {
-    this.clientService.notNewUers(id).subscribe((data) => {
+    this.clientService.notNewUers({user_id: id}).subscribe((data) => {
       console.log(data);
     })
   }

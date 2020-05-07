@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { QuestionsResponse } from 'src/app/models/questions';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from "rxjs/operators";
 
 @Component({
   selector: "app-journey",
@@ -21,13 +22,15 @@ export class JourneyComponent implements OnInit {
   selected: number = 0;
   hovered = 0;
   readonly = true;
+  link: string;
 
-  constructor(private clientService: ClientService, private auth: AuthService) {
-    this.verifiedUser();
+  constructor(private clientService: ClientService, private auth: AuthService, private router: Router) {
     this.change();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.verifiedUser();
+  }
 
   /**
    * Gets all the user's ideas that were added by them.
@@ -66,6 +69,7 @@ export class JourneyComponent implements OnInit {
           this.user = data;
           this.getUserIdeas();
           this.getQuestions(this.id_cat);
+          this.update(this.user.id);
         });
       }
     }
@@ -73,5 +77,23 @@ export class JourneyComponent implements OnInit {
 
   change() {
     this.evaluation = true;
+  }
+
+  /**
+   * Update the route as the user navigates the application.
+   * Stores the route to the database.
+   * @param id user's id
+   */
+  update(id) {
+    this.router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe((e: NavigationEnd) => {
+        this.link = e.url;
+        let data = { user_id: id, link: this.link };
+        console.log(data);
+        this.clientService.tracking(data).subscribe((results) => {
+          console.log(results);
+        });
+      });
   }
 }

@@ -214,13 +214,13 @@ async function tracking(data) {
  * @returns a queryResponse.
  */
 async function notNew(data) {
-  if(validate.validate(data.id)) {
+  if(validate.validate(data.user_id)) {
     return response(400, 'user id required');
   }
 
   let sql = "CALL notNewUser(?)";
 
-  return queryFunction(sql, [data.id]).then(result => {
+  return queryFunction(sql, [data.user_id]).then(result => {
       return response(200, 'Successfully updated.');
     }).catch(error => {
       return response(400, "Unsuccessful, could not update.", error.sqlMessage);
