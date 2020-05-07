@@ -41,21 +41,13 @@ export class QuestionComponent implements OnInit {
   Getquestions(): void {
     this.clientService.getQuestions(1).subscribe((data: QuestionsResponse) => {
       this.questions = data.data;
-      // let i = 0;
-      // this.questions.forEach(element => {
-      //   this.formQuestion.addControl(element.id, new FormControl('', Validators.required));
-      //   i++ ;
-      // });
       this.question = this.questions[this.index];
-      console.log(this.questions);
+     
     });
   }
 
   save() {
     this.answerQuestion();
-    //  if(this.busID != undefined) {
-    //     this.answerQuestion()
-    //   }
     this.yesClick();
   }
 
@@ -73,24 +65,38 @@ export class QuestionComponent implements OnInit {
     };
     console.log(data);
     this.clientService.postAnswers(data).subscribe((result) => {
-      console.log(result);
+      this.question = this.questions[this.index];
+      this.index++ ;
     });
   }
 
-  yesClick(): void {
-    if(this.index++ <= this.questions.length - 1) {
-      this.show = false;
-      this.button = "Next";
-    } else {
-      this.button = "Continue";
-      this.done = true;
-      this.show = true;
-    }
-  }
 
   continueToLegal() {
     this.router.navigate(["client/legalJourney"]);
   }
+
+  yesClick(): void {
+    
+    if( this.index <= this.questions.length -1 ) {
+
+      console.log('am done')
+      this.show = false;
+      this.button = "Next";
+     
+
+    } else {
+      console.log('still going')
+      
+      this.button = "Continue";
+      this.done = true;
+      this.show = true;
+      this.router.navigate(["client/journey"]);
+    }
+   
+  }
+
+
+ 
 }
 
 

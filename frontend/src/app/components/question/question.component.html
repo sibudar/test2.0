@@ -14,11 +14,16 @@
     </form>
 
     <div *ngIf="!done" >
-        <button mat-flat-button color="primary" (click)="save()" [disabled]="formQuestion.invalid">{{button}}</button>
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="formQuestion.invalid">Next</button>
     </div>
+
+    <div *ngIf="done" >
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="formQuestion.invalid">Continue</button>
+    </div>
+    
 </div>
 
-<div *ngIf="show done" class="question">
+<div *ngIf="show" class="question">
     <h2 class="lead mb-2 h3 text-uppercase">
         <mat-icon class="text-primary">question_answer</mat-icon>
         Evaluate your business
@@ -28,8 +33,7 @@
         <div *ngIf="show" class="d-flex justify-content-center">
             <app-ratings></app-ratings>
         </div>
+       
     </div>
-    <div *ngIf="done" class="d-flex justify-content-center">
-        <button mat-flat-button color="primary" (click)="continueToLegal()">{{button}}</button>
-    </div>
+    
 </div>
