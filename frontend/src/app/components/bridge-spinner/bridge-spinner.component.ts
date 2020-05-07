@@ -37,8 +37,11 @@ export class BridgeSpinnerComponent implements OnInit {
     this.verifyUser();;
   }
 
+  /**
+   * Verifies a token.
+   */
   verifyUser() {
-    if (this.auth.loggedIn) {
+    if(this.auth.loggedIn) {
       let verified = JSON.parse(sessionStorage.getItem("access_token"));
       this.auth.verifyToken(verified.token).subscribe((res: UserResponse) => {
         this.user = res.data;
