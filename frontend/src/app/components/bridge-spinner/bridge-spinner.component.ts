@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
-import { LoginResponse } from 'src/app/models/user';
+import { LoginResponse, UserResponse } from 'src/app/models/user';
 import { filter } from "rxjs/operators";
-import { ClientComponent } from 'src/app/layouts/client/client.component';
 
 @Component({
   selector: "app-bridge-spinner",
@@ -13,7 +12,13 @@ import { ClientComponent } from 'src/app/layouts/client/client.component';
 })
 export class BridgeSpinnerComponent implements OnInit {
   verified: any;
-  user: Object;
+  user: LoginResponse = {
+    id: 0,
+    first_name: "",
+    last_name: "",
+    email: "",
+    new_user: 1,
+  };
   trackLink: ArrayBuffer;
   link: string;
   checkLength: any;
@@ -24,15 +29,24 @@ export class BridgeSpinnerComponent implements OnInit {
   constructor(
     private clientService: ClientService,
     private router: Router,
-    private client: ClientComponent
+    private auth: AuthService
   ) {
-    setTimeout(() => {
-      this.routeLastVisited(this.client.user);
-    }, 5000)
-    
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.verifyUser();;
+  }
+
+  verifyUser() {
+    if (this.auth.loggedIn) {
+      let verified = JSON.parse(sessionStorage.getItem("access_token"));
+      this.auth.verifyToken(verified.token).subscribe((res: UserResponse) => {
+        this.user = res.data;
+        this.routeLastVisited(this.user);
+        console.log(this.user);
+      });
+    }
+  }
 
   /**
    * Tracking the user's route, stores it in the database.
@@ -41,11 +55,11 @@ export class BridgeSpinnerComponent implements OnInit {
    * @param id user's details (object).
    */
   routeLastVisited(id) {
-    if(id.new_user == 1) {
+    if (id.new_user == 1) {
       this.clientService.getLink(id.id).subscribe((data) => {
         this.checkLength = data;
         console.log(data);
-        if(Object.keys(this.checkLength.data).length < 1) {
+        if (Object.keys(this.checkLength.data).length < 1) {
           let first = { user_id: id.id, link: "client/display" };
           this.clientService.start(first).subscribe((e) => {
             console.log(e);
@@ -53,7 +67,7 @@ export class BridgeSpinnerComponent implements OnInit {
           });
         } else {
           this.update(this.checkLength.data[0].id_user);
-          console.log(this.checkLength.data[0].link)
+          console.log(this.checkLength.data[0].link);
           this.router.navigate([this.checkLength.data[0].link]);
         }
       });
@@ -69,14 +83,16 @@ export class BridgeSpinnerComponent implements OnInit {
    * @param id user's id
    */
   update(id) {
-    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((e: NavigationEnd) => {
-      this.link = e.url;
-      let data = { user_id: id, link: this.link };
-      console.log(data)
-      this.clientService.tracking(data).subscribe((results) => {
-        console.log(results);
+    this.router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe((e: NavigationEnd) => {
+        this.link = e.url;
+        let data = { user_id: id, link: this.link };
+        console.log(data);
+        this.clientService.tracking(data).subscribe((results) => {
+          console.log(results);
+        });
       });
-    });
   }
 
   /**

@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { JoyrideService } from "ngx-joyride";
 import { ClientComponent } from 'src/app/layouts/client/client.component';
 import { ClientService } from 'src/app/services/client.service';
+import { LoginResponse, UserResponse } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: "app-dashboard",
@@ -12,12 +14,30 @@ export class DashboardComponent implements OnInit {
 
   key: any;
   checkLength: any;
+  user: LoginResponse = {
+    id: 0,
+    first_name: "",
+    last_name: "",
+    email: "",
+    new_user: 1,
+  };
 
-  constructor(private joyride: JoyrideService, private bridge: ClientComponent, private clientService: ClientService) {
-    this.getKey(this.bridge.user.id);
+  constructor(private joyride: JoyrideService, private auth: AuthService, private clientService: ClientService) {
   }
 
   ngOnInit() {
+    this.verifyUser();
+  }
+
+  verifyUser() {
+    if(this.auth.loggedIn) {
+      let verified = JSON.parse(sessionStorage.getItem("access_token"));
+      this.auth.verifyToken(verified.token).subscribe((res: UserResponse) => {
+        this.user = res.data;
+        this.getKey(this.user.id);
+        console.log(this.user);
+      });
+    }
   }
 
   /**
