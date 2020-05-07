@@ -5,12 +5,10 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
-
-
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"]
+  styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
   userToken: any;
@@ -28,7 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       user_password: ["", Validators.required],
-      email: new FormControl("", [Validators.required, Validators.email])
+      email: new FormControl("", [Validators.required, Validators.email]),
     });
   }
 
