@@ -23,6 +23,8 @@ export class DisplayComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private clientService: ClientService, private auth: AuthService, private router: Router) {
     this.verifiedUser();
+     
+
   }
 
   ngOnInit() {
@@ -40,10 +42,15 @@ export class DisplayComponent implements OnInit {
    */
   inserIdea(idea) {
     this.clientService.insertBusinessIdea(idea).subscribe((data: UserResponse) => {
+      localStorage.setItem('Value',JSON.stringify(data.data));
       this.router.navigate(['client/journey']);
  
       });
   }
+
+
+ 
+
 
   /**
    * Verifies a token.
@@ -70,4 +77,6 @@ export class DisplayComponent implements OnInit {
 
     this.inserIdea(idea);
   }
+
+
 }

@@ -47,8 +47,14 @@ const routes: Routes = [
     { path: "journey", component: JourneyComponent },
     { path: "legalJourney", component: LegalJourneyComponent },
     { path: "evaluate", component: EvaluateComponent },
+<<<<<<< HEAD
     { path: "planning", component: PlanningComponent },
     { path: "legalfinance", component: LegalfinanceComponent }
+=======
+    { path: 'legal-journey', component: LegalJourneyComponent },
+    
+
+>>>>>>> 28e43e3a39e05ae5cbc3462ecc99c156b4d6b49a
   ]},
 
 
