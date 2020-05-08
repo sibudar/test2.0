@@ -25,6 +25,10 @@ import { ClientComponent } from "./client.component";
 import { LegalJourneyComponent } from "../../components/legal-journey/legal-journey.component"; //legal componet for journey
 import { EvaluateComponent } from "src/app/components/evaluate/evaluate.component";
 import { PlanningComponent } from "src/app/components/planning/planning.component";
+<<<<<<< HEAD
+=======
+import { LegalfinanceComponent } from "src/app/components/legalfinance/legalfinance.component";
+>>>>>>> 760a09529ee692d6da6836aa54d65d7b5ec2d499
 
 const routes: Routes = [
   {
@@ -42,7 +46,11 @@ const routes: Routes = [
       { path: "profile", component: ProfileComponent },
       { path: "dashboard", component: DashboardComponent },
       { path: "digital", component: DigitalMarketComponent },
+<<<<<<< HEAD
       { path: "profile/:id", component: DevelopersComponent },
+=======
+      { path: "developers", component: DevelopersComponent },
+>>>>>>> 760a09529ee692d6da6836aa54d65d7b5ec2d499
       { path: "ideas", component: IdeasComponent },
       { path: "legal", component: LegalComponent },
       { path: "finance", component: FinanceComponent },
@@ -50,6 +58,11 @@ const routes: Routes = [
       { path: "legalJourney", component: LegalJourneyComponent },
       { path: "evaluate", component: EvaluateComponent },
       { path: "planning", component: PlanningComponent },
+<<<<<<< HEAD
+=======
+      { path: "legalfinance", component: LegalfinanceComponent },
+      { path: "legal-journey", component: LegalJourneyComponent },
+>>>>>>> 760a09529ee692d6da6836aa54d65d7b5ec2d499
     ],
   },
 ];

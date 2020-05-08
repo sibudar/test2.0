@@ -337,6 +337,9 @@ CREATE PROCEDURE businessIdea(IN biz_idea VARCHAR(255), IN biz_descrip VARCHAR(2
 BEGIN 
      INSERT INTO business_idea(busin_idea, descript, rate, id_user, createdby, createdat, modifiedby, modifiedat)
      VALUES(biz_idea, biz_descrip, rate, iduser, 'System', now(), iduser, now());
+
+     SELECT * FROM business_idea WHERE business_idea.id_user = iduser  order by id desc limit 1;
+ 
 END $$
 
 CREATE PROCEDURE getIdeas(IN u_id INT)

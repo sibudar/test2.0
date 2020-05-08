@@ -30,7 +30,7 @@ async function register(data) {
 
   return queryFunction(sql, [data.first_name, data.last_name, data.email, data.user_password]).then( result => {
     //await mail.sendEmail(data.email, msg.registerMessage(result[0].first_name), msg.registerSubject());
-    return response(201, 'Successfully created an account.');
+    return response(201, 'Successfully created an account.' , data);
     })
     .catch(error => {
       //errno === 1062 is Duplicate entry 

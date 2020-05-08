@@ -49,6 +49,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LegalJourneyComponent } from '../../components/legal-journey/legal-journey.component';
+import { LegalfinanceComponent } from '../../components/legalfinance/legalfinance.component';
 
 
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -83,6 +84,7 @@ export function tokenGetter() {
     RatingsComponent,
     NavbarComponent,
     LegalJourneyComponent,
+    LegalfinanceComponent,
     EvaluateComponent,
     PlanningComponent,
   ],

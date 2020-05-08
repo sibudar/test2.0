@@ -34,7 +34,64 @@
         </p>
         <p class="lead">{{ profile.description }}</p>
 
+<<<<<<< HEAD
         <hr />
+=======
+  </ul>
+
+</div>
+<form [formGroup]="form">
+<div class="box">
+  <h5>Check Domain Availability</h5>
+  <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="search" id="search" formControlName="domain" placeholder="Search..." />
+      <button class="btn btn-primary1" (click)="postDomain()"><i class="fa fa-search"></i></button>
+  </div>
+</div>
+</form>
+
+<div class="select">
+  <h3>Select the developer that best suit your business needs</h3>
+</div>
+
+
+<div class="final-card">
+
+<div class="card" style="width: 17rem;">
+  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
+  <div class="card-body">
+    <div class="title">
+      <h4>Sam Mcholo <h6>Frontend Developer</h6></h4>
+     <br>
+    </div>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a class="btn btn-primary" id="primary"  routerLink="/client/profile">View Profile</a>
+    <div class="socialm">
+      <a>GitHub</a>
+      <a>Twitter</a>
+      <a>LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="width: 17rem;">
+  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
+  <div class="card-body">
+    <div class="title">
+      <h4>Gift Banda <h6>API developer</h6></h4>
+     <br>
+    </div>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a class="btn btn-primary" id="primary"  routerLink="/client/profile">View Profile</a>
+    <div class="socialm">
+      <a>GitHub</a>
+      <a>Twitter</a>
+      <a>LinkedIn</a>
+    </div>
+  </div>
+</div>
+>>>>>>> 760a09529ee692d6da6836aa54d65d7b5ec2d499
 
         <h1 class="display-4 mb-2">Education</h1>
         <p class="lead">{{ profile.school }}</p>

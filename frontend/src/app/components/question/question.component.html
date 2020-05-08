@@ -5,27 +5,25 @@
         <span class="text-primary text-uppercase"> idea</span>
     </h2>
 
-    <div *ngIf="!show" class="container d-flex">
-        <mat-card class="full-width">
-            <div class="d-flex justify-content-center" *ngIf="!show">
-                <h5 class="lead text-center mb-3">
-                    {{questions[index].q_name }}
-                </h5>
-            </div>
-            <br>
-            <mat-form-field *ngIf="!show" class="example-full-width">
-                <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    <form [formGroup]="formQuestion" >
+    <div  class="container d-flex">
+            <mat-form-field  class="example-full-width">
+                <textarea matInput placeholder='{{question.q_name}}' formControlName="answer"></textarea>
             </mat-form-field>
-
-
-            <div *ngIf="!done" class="d-flex ">
-                <button mat-flat-button color="primary" (click)="yesClick()">{{button}}</button>
-            </div>
-
-        </mat-card>
     </div>
+    </form>
+
+    <div *ngIf="!done" >
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="formQuestion.invalid">Next</button>
+    </div>
+
+    <div *ngIf="done" >
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="formQuestion.invalid">Continue</button>
+    </div>
+    
 </div>
-<div *ngIf="show done" class="question">
+
+<div *ngIf="show" class="question">
     <h2 class="lead mb-2 h3 text-uppercase">
         <mat-icon class="text-primary">question_answer</mat-icon>
         Evaluate your business
@@ -35,8 +33,7 @@
         <div *ngIf="show" class="d-flex justify-content-center">
             <app-ratings></app-ratings>
         </div>
+       
     </div>
-    <div *ngIf="done" class="d-flex justify-content-center">
-        <button mat-flat-button color="primary" (click)="continueToLegal()">{{button}}</button>
-    </div>
+    
 </div>
