@@ -1,16 +1,16 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <!-- Include the above in your HEAD tag  -->
 
 <div class="wraper">
   <div class="header">
     <div class="devInfo">
       <!-- Heading -->
-      <h3 class="display-3 text-center text-md-left">
-        Every Business needs a<span class="text-primary">Website</span> <br />
-      </h3>
-      <h5 class="lead text-center text-md-left text-muted mb-6 mb-lg-8">
-        <b>A website is a great way to provide value added service to your
-          customers and clients.</b>
+      <h5 class="display-3 text-center text-md-left">
+       Every <span class="text-primary">Business</span> <br> Needs a <span class="text-primary">Website</span> 
       </h5>
+      <h6 class="lead text-center text-md-left text-muted mb-6 mb-lg-8">
+        A website is a great way to provide value added service to your customers and clients.
+      </h6>
 
       <p class="lead text-center text-md-left text-muted mb-6 mb-lg-8">
         It is a great way to keep them coming back to your website anytime when
@@ -44,8 +44,8 @@
       <div class="container">
         <div class="row heading heading-icon"></div>
         <div class="row">
-          <div class="row" style="width: 100%;">
-            <div class="cnt-block equal-hight col" style="height: 475px; margin: 10px;" *ngFor="let dev of devProfile">
+          <div class="row"  >
+            <div class="cnt-block equal-hight col" style="width: 18rem;" style="height: 410px; margin: 4px;" *ngFor="let dev of devProfile">
               <div class="icon">
                 <a [routerLink]="['1']" [state]="dev">
                   <span class="material-icons menu">
@@ -53,25 +53,22 @@
                   </span>
                 </a>
               </div>
-              <figure>
+             
                 <img src="http://www.webcoderskull.com/img/team4.png" class="img-responsive" alt="" />
-              </figure>
-              <h2>{{ dev.name }}</h2>
-              <h4>{{ dev.title }}</h4>
-              <h4 class="card-text">
+             
+              <h4>{{ dev.name }}</h4>
+              <h6>{{ dev.title }}</h6>
+              <h6 class="card-text">
                 With {{ dev.yearsOfExperience }} years of experience.
-              </h4>
-              <ul class="follow-us clearfix">
-                <li>
-                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                </li>
-              </ul>
+              </h6>
+              <div id="social">
+                <a class="facebookBtn smGlobalBtn" href="#" ></a>
+                <a class="twitterBtn smGlobalBtn" href="#" ></a>
+                <a class="githubBtn smGlobalBtn" href="#" ></a>
+                <a class="linkedinBtn smGlobalBtn" href="#" ></a>
+              
+                
+              </div>
             </div>
           </div>
         </div>
