@@ -23,6 +23,7 @@ export class QuestionComponent implements OnInit {
   busID: any;
   userID: any;
   local: any;
+  bizName = "";
 
   constructor(
     private clientService: ClientService,
@@ -30,12 +31,15 @@ export class QuestionComponent implements OnInit {
     private router: Router
   ) {
     this.Getquestions();
+    this.local = JSON.parse(localStorage.getItem("Value"));
+    this.bizName = this.local.busin_idea
   }
 
   ngOnInit() {
     this.formQuestion = this.fb.group({
       answer: ["", []],
     });
+
   }
 
   Getquestions(): void {
@@ -52,7 +56,7 @@ export class QuestionComponent implements OnInit {
   }
 
   answerQuestion() {
-    this.local = JSON.parse(localStorage.getItem("Value"));
+    
     let idBus = this.local.id;
     let idUser = this.local.id_user;
     let answer = this.formQuestion.value;
