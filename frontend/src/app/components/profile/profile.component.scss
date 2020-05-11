@@ -1,5 +1,13 @@
 @import "~animate.css/animate.min";
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+$width:300px;
+$height:3rem;
+$color50:#ECEFF1;
+$color100:#CFD8DC;
+$color300:#90A4AE;
+$color700:#455A64;
+$color800:#37474F;
+$color900:#263238;
 .searchbar {
   margin-bottom: auto;
   margin-top: auto;
@@ -43,6 +51,56 @@
   color: white;
 }
 
+//search bar
+.box {
+  margin:auto;
+  width:$width;
+  height:$height;
+}
+.icon:hover {
+  cursor:pointer;
+}
+.container-4 {
+  position:relative;
+  width:$width;
+}
+.container-4 input#search {
+  box-sizing:border-box;
+  width:$width;
+  height:$height;
+  font-size:1rem;
+  line-height:1.5em;
+  border:1px solid $color900;
+  background:$color50;
+  color:$color900;
+  padding:0 3rem 0 1rem;
+  float:left;
+  -webkit-border-radius:1rem;
+  -moz-border-radius:1rem;
+  border-radius:1rem;
+}
+.container-4 button.icon {
+  position:absolute;
+  height:$height;
+  width:$height;
+  border:none;
+  background:$color900;
+  color:$color50;
+  font-size:1rem;
+  line-height:1.5em;
+  border-radius:0 1rem 1rem 0;
+  margin-left:-$height;
+
+}
+.container-4 input#search:hover,
+.container-4 input#search:focus,
+.container-4 input#search:active {
+  outline:none;
+}
+.h5{
+  text-align: center;
+  margin-bottom: 0;
+}
 // devs
 .row.heading h2 {
   color: #fff;
