@@ -44,6 +44,7 @@ const routes: Routes = [
       { path: "profile", component: ProfileComponent },
       { path: "dashboard", component: DashboardComponent },
       { path: "digital", component: DigitalMarketComponent },
+      { path: "profile/:id", component: DevelopersComponent },
       { path: "developers", component: DevelopersComponent },
       { path: "ideas", component: IdeasComponent },
       { path: "legal", component: LegalComponent },

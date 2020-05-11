@@ -1,19 +1,214 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl,
+} from "@angular/forms";
+import { ClientService } from "src/app/services/client.service";
+import { ToasterService } from "src/app/services/toaster.service";
+import { DeveloperProfile } from "src/app/models/developers";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: "app-profile",
+  templateUrl: "./profile.component.html",
+  styleUrls: ["./profile.component.scss"],
 })
 export class ProfileComponent implements OnInit {
+  devProfile: DeveloperProfile[] = [];
 
+  form: FormGroup;
 
- 
-  
-  constructor() { }
+  constructor(
+    private clientService: ClientService,
+    private formBuilder: FormBuilder,
+    private toastr: ToasterService,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.devProfile.push(
+      {
+        name: "Kagiso Marabe",
+        title: "Software Developer",
+        company: "Digital Academy",
+        yearsOfExperience: 1,
+        workStart: "Jan 2019",
+        workEnd: "May 2020",
+        description: "developing restful apis",
+        frontendSkills: "html, css, angular",
+        backendSkills: "php, java, nodejs",
+        databaseSkills: "mysql,workbench",
+        devopSkills: "",
+        school: "University Of Pretoria",
+        degree: "Information Technology",
+        fieldofstudy: "ICT",
+        educationStart: "Jan 2017",
+        educationEnd: "December 2019",
+        twitter: "link",
+        facebook: "link",
+      },
+      {
+        name: "Jaden Boikhutso",
+        title: "Frontend developer",
+        company: "Asolutions",
+        yearsOfExperience: 2,
+        workStart: "January 2017",
+        workEnd: "May 2019",
+        description: "designing responsive webistes and applications",
+        frontendSkills: "html, css, React",
+        backendSkills: "python ,Ruby",
+        databaseSkills: "mysql ",
+        devopSkills: "",
+        school: "University Of South Africa",
+        degree: "Information Technology",
+        fieldofstudy: "ICT",
+        educationStart: "January 2015",
+        educationEnd: "December 2017",
+        twitter: "link",
+        facebook: "link",
+      },
+      {
+        name: "Lesego Ntolo",
+        title: "Full-stack developer",
+        company: "ABSA",
+        yearsOfExperience: 2,
+        workStart: "March 2015",
+        workEnd: "May 2017",
+        description:
+          "Specialising with developing online shopping(e-commerce) webpages",
+        frontendSkills: "html, css, Vue",
+        backendSkills: "Groovy,Golang,PhP",
+        databaseSkills: "NoSql",
+        devopSkills: "",
+        school: "WITS",
+        degree: "Information Technology",
+        fieldofstudy: "ICT",
+        educationStart: "January 2011",
+        educationEnd: "December 2015",
+        twitter: "link",
+        facebook: "link",
+      },
+      {
+        name: "Given Smith",
+        title: "Backend developer",
+        company: "Digital Academy",
+        yearsOfExperience: 3,
+        workStart: "August 2015",
+        workEnd: "May 2017",
+        description: "developing restful apis",
+        frontendSkills: "html, css,Javascript,React",
+        backendSkills: "Scala,PHP,Nodejs",
+        databaseSkills: "mysql workbench",
+        devopSkills: "",
+        school: "Tshwane University Of Technology",
+        degree: "Information Technology",
+        fieldofstudy: "ICT",
+        educationStart: "January 2011",
+        educationEnd: "December 2015",
+        twitter: "link",
+        facebook: "link",
+      },
+
+      {
+        name: "Kagiso Marabe",
+        title: "Software Developer",
+        company: "Digital Academy",
+        yearsOfExperience: 1,
+        workStart: "Jan 2019",
+        workEnd: "May 2020",
+        description: "developing restful apis",
+        frontendSkills: "html, css, angular",
+        backendSkills: "php, java, nodejs",
+        databaseSkills: "mysql,workbench",
+        devopSkills: "",
+        school: "University Of Pretoria",
+        degree: "Information Technology",
+        fieldofstudy: "ICT",
+        educationStart: "Jan 2017",
+        educationEnd: "December 2019",
+        twitter: "link",
+        facebook: "link",
+      },
+      {
+        name: "Jaden Boikhutso",
+        title: "Frontend developer",
+        company: "Asolutions",
+        yearsOfExperience: 2,
+        workStart: "January 2017",
+        workEnd: "May 2019",
+        description: "designing responsive webistes and applications",
+        frontendSkills: "html, css, React",
+        backendSkills: "python ,Ruby",
+        databaseSkills: "mysql ",
+        devopSkills: "",
+        school: "University Of South Africa",
+        degree: "Information Technology",
+        fieldofstudy: "ICT",
+        educationStart: "January 2015",
+        educationEnd: "December 2017",
+        twitter: "link",
+        facebook: "link",
+      },
+      {
+        name: "Lesego Ntolo",
+        title: "Full-stack developer",
+        company: "ABSA",
+        yearsOfExperience: 2,
+        workStart: "March 2015",
+        workEnd: "May 2017",
+        description:
+          "Specialising with developing online shopping(e-commerce) webpages",
+        frontendSkills: "html, css, Vue",
+        backendSkills: "Groovy,Golang,PhP",
+        databaseSkills: "NoSql",
+        devopSkills: "",
+        school: "WITS",
+        degree: "Information Technology",
+        fieldofstudy: "ICT",
+        educationStart: "January 2011",
+        educationEnd: "December 2015",
+        twitter: "link",
+        facebook: "link",
+      },
+      {
+        name: "Given Smith",
+        title: "Backend developer",
+        company: "Digital Academy",
+        yearsOfExperience: 3,
+        workStart: "August 2015",
+        workEnd: "May 2017",
+        description: "developing restful apis",
+        frontendSkills: "html, css,Javascript,React",
+        backendSkills: "Scala,PHP,Nodejs",
+        databaseSkills: "mysql workbench",
+        devopSkills: "",
+        school: "Tshwane University Of Technology",
+        degree: "Information Technology",
+        fieldofstudy: "ICT",
+        educationStart: "January 2011",
+        educationEnd: "December 2015",
+        twitter: "link",
+        facebook: "link",
+      }
+    );
+
+    console.log(this.devProfile[0].name);
+    //domain form
+    this.form = this.formBuilder.group({
+      domain: new FormControl("", [Validators.required]),
+    });
   }
 
+  postDomain(): void {
+    this.clientService.postDomain(this.form.value).subscribe((res) => {
+      this.toastr.success(res.data.domain_Availability, res.data.domain, 6000);
+      console.log(res);
+    });
+  }
+
+  cardClick(dev): void {
+    this.router.navigateByUrl("/developers", { state: dev });
+  }
 }
