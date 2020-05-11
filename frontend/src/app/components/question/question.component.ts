@@ -42,7 +42,6 @@ export class QuestionComponent implements OnInit {
     this.clientService.getQuestions(1).subscribe((data: QuestionsResponse) => {
       this.questions = data.data;
       this.question = this.questions[this.index];
-
     });
   }
 
@@ -53,11 +52,11 @@ export class QuestionComponent implements OnInit {
 
   answerQuestion() {
     this.local = JSON.parse(localStorage.getItem("Value"));
-    let idBus = this.local.id;
-    let idUser = this.local.id_user;
-    let answer = this.formQuestion.value;
+    const idBus = this.local.id;
+    const idUser = this.local.id_user;
+    const answer = this.formQuestion.value;
 
-    let data = {
+    const data = {
       user_answer: answer.answer,
       id_user: idUser,
       id_que: this.question.id,
@@ -67,7 +66,7 @@ export class QuestionComponent implements OnInit {
     this.clientService.postAnswers(data).subscribe((result) => {
       this.question = this.questions[this.index];
       this.index++;
-      this.formQuestion.reset(); //clear the input box after an answer has been answered
+      this.formQuestion.reset(); //clear the input box after an answer has been submited
     });
   }
 
@@ -76,18 +75,15 @@ export class QuestionComponent implements OnInit {
     this.router.navigate(["client/legalJourney"]);
   }
 
+
   yesClick(): void {
 
-    if( this.index <= this.questions.length -1 ) {
-
+    if (this.index <= this.questions.length - 1) {
       console.log('am done')
       this.show = false;
       this.button = "Next";
-
-
     } else {
       console.log('still going')
-
       this.button = "Continue";
       this.done = true;
       this.show = true;
@@ -96,11 +92,4 @@ export class QuestionComponent implements OnInit {
 
   }
 
-
-
 }
-
-
-
-
-

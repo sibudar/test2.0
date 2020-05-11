@@ -18,11 +18,10 @@ export class RatingsComponent implements OnInit {
   descript: any;
   user_id: any;
   hide: boolean;
-  button: string = "Continue";
 
-  constructor(private clientService: ClientService, private journey: JourneyComponent, private router: Router,private question: QuestionComponent, private location: Location
-  ) {}
-  ngOnInit() {}
+  constructor(private clientService: ClientService, private journey: JourneyComponent, private router: Router, private question: QuestionComponent, private location: Location
+  ) { }
+  ngOnInit() { }
 
   /**
    * Updates the rating of a business idea.
@@ -46,7 +45,7 @@ export class RatingsComponent implements OnInit {
     this.hide = false;
 
     this.router.navigateByUrl("client/question", { skipLocationChange: true }).then(() => {
-        this.router.navigate([decodeURI(this.location.path())]);
-      });
+      this.router.navigate([decodeURI(this.location.path())]);
+    });
   }
 }

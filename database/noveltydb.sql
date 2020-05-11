@@ -358,8 +358,12 @@ END $$
 
 CREATE PROCEDURE postAnswers(IN answer_user VARCHAR(255), IN u_id INT, IN q_id INT, IN b_id INT)
 BEGIN
+
+    -- this needs some serious debuging. TODO 11/MAY/2020
      INSERT INTO answers(user_answer, createdby, createdat, modifiedby, modifiedat, id_user, id_que, id_bus)
-     VALUES(answer_user, u_id, now(), u_id, now(), u_id, q_id, b_id);
+     VALUES(answer_user, u_id, now(), u_id, now(), u_id, q_id, b_id)
+     ON DUPLICATE KEY UPDATE user_answer=answer_user, createdby=u_id, createdat=now(), modifiedby=u_id, modifiedat=now(), id_user=u_id, id_que=q_id, id_bus=b_id;
+    -- every time attempt to insert will previous inserted answer if it exist
 END $$
 
 CREATE PROCEDURE deleteIdea(IN b_id INT, IN u_id INT)
