@@ -57,6 +57,7 @@ import { LegalfinanceComponent } from '../../components/legalfinance/legalfinanc
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { EvaluateComponent } from '../../components/evaluate/evaluate.component';
 import { PlanningComponent } from '../../components/planning/planning.component';
+import { NavStepperComponent } from '../../components/nav-stepper/nav-stepper.component';
 export function tokenGetter() {
   return sessionStorage.getItem("access_token");
 }
@@ -89,6 +90,7 @@ export function tokenGetter() {
     EvaluateComponent,
     PlanningComponent,
     BridgeSpinnerComponent,
+    NavStepperComponent,
   ],
   imports: [
     CommonModule,

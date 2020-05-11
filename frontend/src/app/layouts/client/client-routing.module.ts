@@ -27,6 +27,7 @@ import { EvaluateComponent } from "src/app/components/evaluate/evaluate.componen
 import { PlanningComponent } from "src/app/components/planning/planning.component";
 import { LegalfinanceComponent } from "src/app/components/legalfinance/legalfinance.component";
 import { BridgeSpinnerComponent } from 'src/app/components/bridge-spinner/bridge-spinner.component';
+import { NavStepperComponent } from 'src/app/components/nav-stepper/nav-stepper.component';
 
 const routes: Routes = [
   {
@@ -56,7 +57,8 @@ const routes: Routes = [
       { path: "legalfinance", component: LegalfinanceComponent },
       { path: "legal-journey", component: LegalJourneyComponent },
       { path: "journey", component: JourneyComponent },
-      { path: "bridge", component: BridgeSpinnerComponent }
+      { path: "bridge", component: BridgeSpinnerComponent },
+      { path: "odyssey", component: NavStepperComponent },
     ],
   },
 ];
