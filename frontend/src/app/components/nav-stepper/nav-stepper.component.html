@@ -1,12 +1,11 @@
-<div class="container-outer">
-    <div class="container-inner">
+<div class="container-outer mt--5">
         <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear" class="mt-5">
             {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
         </button>
-        <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-horizontal-stepper [linear]="isLinear" #stepper class="mx-5 px-5">
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
-                    <ng-template matStepLabel>Fill out your name</ng-template>
+                    <ng-template matStepLabel>Start your Journey</ng-template>
                         <app-display></app-display>
                     <div>
                         <button mat-button matStepperNext class="btn">Next</button>
@@ -15,8 +14,38 @@
             </mat-step>
             <mat-step [stepControl]="secondFormGroup">
                 <form [formGroup]="secondFormGroup">
-                    <ng-template matStepLabel>Fill out your address</ng-template>
+                    <ng-template matStepLabel>Evaluate</ng-template>
                     <app-journey></app-journey>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext class="btn">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                    <ng-template matStepLabel>Legality</ng-template>
+                    <app-legal-journey></app-legal-journey>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext class="btn">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="fourthFormGroup">
+                <form [formGroup]="fourthFormGroup">
+                    <ng-template matStepLabel>Finance</ng-template>
+                    <app-finance></app-finance>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext class="btn">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="fifthFormGroup">
+                <form [formGroup]="fifthFormGroup">
+                    <ng-template matStepLabel>Developers</ng-template>
+                    <!-- <app-developers></app-developers> -->
                     <div>
                         <button mat-button matStepperPrevious>Back</button>
                         <button mat-button matStepperNext class="btn">Next</button>
@@ -32,5 +61,4 @@
                 </div>
             </mat-step>
         </mat-horizontal-stepper>
-    </div>
 </div>

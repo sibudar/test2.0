@@ -1,43 +1,43 @@
+@import "~animate.css/animate.min";
 
-    @import "~animate.css/animate.min";
-
-   
-    .mat-stroked-button[_ngcontent-tsc-c1] {
-      background: #007bff;
-      border-radius: 20px;
-      height: 40px;
-      width: 140px;
-      -webkit-box-align: center;
-      align-items: center;
-      margin: 0 auto;
-      color: white;
-    }
-       
-    #greeting {
-      margin-top: 2rem;
-      font-size: 2rem;
-    }#greeting {
-	margin-top: 2rem;
-	font-size: 2rem;
+.mat-stroked-button[_ngcontent-tsc-c1] {
+  background: #007bff;
+  border-radius: 20px;
+  height: 40px;
+  width: 140px;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
 }
 
-.text_container h3,h4,p{
-	text-align:center;
+#greeting {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+#greeting {
+  margin-top: 2rem;
+  font-size: 2rem;
 }
 
-.mat-stroked-button{
-	background:#007bff;
-	border-radius:20px;
-	height:40px;
-  width:140px;
+.text_container h3,
+h4,
+p {
+  text-align: center;
+}
+
+.mat-stroked-button {
+  background: #007bff;
+  border-radius: 20px;
+  height: 40px;
+  width: 140px;
   //  margin: auto;
-   align-items: center;
-   margin: 0 auto;
-  color:white;
-
+  align-items: center;
+  margin: 0 auto;
+  color: white;
 }
-.route{
-	text-align: center;
+.route {
+  text-align: center;
 }
 .container-outer {
   background-color: white;
@@ -46,11 +46,9 @@
   overflow: scroll;
 }
 .container-inner {
-  position: relative;
   width: 80%;
   height: 50%;
   margin: auto;
-  margin-top: 250px !important;
 }
 .img {
   margin-top: 10px;
@@ -71,7 +69,6 @@
 .example-full-width {
   width: 100%;
 }
-
 
 .mat-raised-button.mat-primary {
   background-color: #007bff;
