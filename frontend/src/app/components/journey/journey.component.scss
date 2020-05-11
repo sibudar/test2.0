@@ -60,13 +60,14 @@
 
 .img {
   margin-top: 10px;
+  //margin-left: 10px;
 }
 
 .image {
     height: 500px;
     width: 370;
-    margin-left: 20px;
-    margin-top: 10px;
+    margin-left: -150px;
+    margin-top: 20px;
 }
 
 .buttons {
@@ -211,6 +212,10 @@ svg {
   width: 100%;
 }
 
+.display-4 {
+  margin-top: 10px;
+}
+
 @media screen and (max-width:414px) {
   .card {
     width: 100%;
@@ -227,7 +232,7 @@ svg {
   .image {
     height: 100%;
     width: 100%;
-    // margin-left: 20px;
+    margin-left: 10px;
     margin-top: 10px;
   }
 

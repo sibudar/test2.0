@@ -42,7 +42,7 @@ export class QuestionComponent implements OnInit {
     this.clientService.getQuestions(1).subscribe((data: QuestionsResponse) => {
       this.questions = data.data;
       this.question = this.questions[this.index];
-     
+
     });
   }
 
@@ -56,7 +56,7 @@ export class QuestionComponent implements OnInit {
     let idBus = this.local.id;
     let idUser = this.local.id_user;
     let answer = this.formQuestion.value;
-    
+
     let data = {
       user_answer: answer.answer,
       id_user: idUser,
@@ -66,7 +66,8 @@ export class QuestionComponent implements OnInit {
     console.log(data);
     this.clientService.postAnswers(data).subscribe((result) => {
       this.question = this.questions[this.index];
-      this.index++ ;
+      this.index++;
+      this.formQuestion.reset(); //clear the input box after an answer has been answered
     });
   }
 
@@ -76,27 +77,27 @@ export class QuestionComponent implements OnInit {
   }
 
   yesClick(): void {
-    
+
     if( this.index <= this.questions.length -1 ) {
 
       console.log('am done')
       this.show = false;
       this.button = "Next";
-     
+
 
     } else {
       console.log('still going')
-      
+
       this.button = "Continue";
       this.done = true;
       this.show = true;
       this.router.navigate(["client/journey"]);
     }
-   
+
   }
 
 
- 
+
 }
 
 
