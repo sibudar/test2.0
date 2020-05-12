@@ -46,7 +46,7 @@ export class ProfileComponent implements OnInit {
         fieldofstudy: "ICT",
         educationStart: "Jan 2017",
         educationEnd: "December 2019",
-        devImg: "assets/img/gift.jpg",
+        devImg: "assets/img/gift1.jpeg",
         twitter: "link",
         facebook: "link",
       },
@@ -137,7 +137,7 @@ export class ProfileComponent implements OnInit {
         facebook: "link",
       },
       {
-        name: "Jaden Boikhutso",
+        name: "Jane Boikhutso",
         title: "Frontend developer",
         company: "Asolutions",
         yearsOfExperience: 2,
@@ -180,7 +180,7 @@ export class ProfileComponent implements OnInit {
         facebook: "link",
       },
       {
-        name: "Given Smith",
+        name: "Ingrid Smith",
         title: "Backend developer",
         company: "Digital Academy",
         yearsOfExperience: 3,
