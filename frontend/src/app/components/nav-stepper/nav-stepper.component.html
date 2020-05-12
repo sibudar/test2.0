@@ -1,8 +1,8 @@
 <div class="container-outer mt--5">
-        <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear" class="mt-5">
+        <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear" class="mt-5">
             {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-        </button>
-        <mat-horizontal-stepper [linear]="isLinear" #stepper class="mx-5 px-5">
+        </button> -->
+        <mat-horizontal-stepper [linear]="isLinear" #stepper class="mx-5 px-5" (selectionChange)="selectionChange($event)">
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
                     <ng-template matStepLabel>Start your Journey</ng-template>

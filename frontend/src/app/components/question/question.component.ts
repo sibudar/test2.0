@@ -94,7 +94,7 @@ export class QuestionComponent implements OnInit {
       this.button = "Continue";
       this.done = true;
       this.show = true;
-      this.router.navigate(["client/journey"]);
+      // this.router.navigate(["client/journey"]);
     }
    
   }

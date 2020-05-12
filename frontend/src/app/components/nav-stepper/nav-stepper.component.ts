@@ -13,6 +13,7 @@ export class NavStepperComponent implements OnInit {
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
   fifthFormGroup: FormGroup;
+  step: number = 3;
 
   constructor(private _formBuilder: FormBuilder) {}
 
@@ -24,13 +25,19 @@ export class NavStepperComponent implements OnInit {
       secondCtrl: ["", Validators.required],
     });
     this.thirdFormGroup = this._formBuilder.group({
-      secondCtrl: ["", Validators.required],
+      thirdCtrl: ["", Validators.required],
     });
     this.fourthFormGroup = this._formBuilder.group({
-      secondCtrl: ["", Validators.required],
+      fourthCtrl: ["", Validators.required],
     });
     this.fifthFormGroup = this._formBuilder.group({
-      secondCtrl: ["", Validators.required],
+      fifthCtrl: ["", Validators.required],
     });
+    // this.selectionChange(this.step);
+  }
+
+  selectionChange(selected) {
+    console.log(selected.selectedIndex);
+    selected.selectedIndex = this.step;
   }
 }
