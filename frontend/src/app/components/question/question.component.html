@@ -6,7 +6,7 @@
     </h2>
 
     <form [formGroup]="formQuestion" >
-      <p>Question <span class="badge badge-primary mb-2">{{index+1}}</span> of <span class="badge badge-primary mb-2">{{questions.length+1}}</span></p>
+      <p>Question <span class="badge badge-primary mb-2">{{index+1}}</span> of <span class="badge badge-primary mb-2">{{questions.length}}</span></p>
     <div  class="container d-flex">
             <mat-form-field  class="example-full-width">
                 <textarea matInput placeholder='{{question.q_name}}' formControlName="answer"></textarea>
