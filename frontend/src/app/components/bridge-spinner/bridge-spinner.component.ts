@@ -63,10 +63,10 @@ export class BridgeSpinnerComponent implements OnInit {
         this.checkLength = data;
         console.log(data);
         if (Object.keys(this.checkLength.data).length < 1) {
-          let first = { user_id: id.id, link: "client/display" };
+          let first = { user_id: id.id, link: "client/odyssey" };
           this.clientService.start(first).subscribe((e) => {
             console.log(e);
-            this.router.navigate(["client/display"]);
+            this.router.navigate(["client/odyssey"]);
           });
         } else {
           this.update(this.checkLength.data[0].id_user);
