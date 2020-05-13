@@ -1,9 +1,5 @@
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-  crossorigin="anonymous"
-/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 <!-- Include the above in your HEAD tag  -->
 
 <div class="wraper">
@@ -30,14 +26,14 @@
 
     <h5 class="h5">Check Domain Availability</h5>
 
-    <div class="box">
-      <div class="container-4">
-        <input type="text" id="search" placeholder="Search..." />
-        <button class="icon">
-          <i class="fa fa-search" (click)="postDomain()"></i>
-        </button>
+    <form [formGroup]="form">
+      <div class="box">
+        <div class="container-4">
+          <input type="text" id="search" formControlName="domain" placeholder="Search..." />
+          <button class="icon"><i class="fa fa-search" (click)="postDomain()"></i></button>
+        </div>
       </div>
-    </div>
+    </form>
 
     <section class="our-webcoderskull padding-lg mt-2">
       <div class="select">
@@ -48,12 +44,8 @@
         <div class="row heading heading-icon"></div>
         <div class="row">
           <div class="row">
-            <div
-              class="cnt-block equal-hight col"
-              style="width: 18rem;"
-              style="height: 410px; margin: 4px;"
-              *ngFor="let dev of devProfile"
-            >
+            <div class="cnt-block equal-hight col" style="width: 18rem;" style="height: 410px; margin: 4px;"
+              *ngFor="let dev of devProfile">
               <div class="icon">
                 <a [routerLink]="['1']" [state]="dev">
                   <span class="material-icons menu">

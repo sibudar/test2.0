@@ -4,6 +4,7 @@ import { ClientService } from "src/app/services/client.service";
 import { ToasterService } from "src/app/services/toaster.service";
 import { DeveloperProfile } from "src/app/models/developers";
 import { Router } from "@angular/router";
+import { MatProgressSpinnerModule } from '@angular/material'
 
 @Component({
   selector: "app-profile",
@@ -12,6 +13,7 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
   devProfile: DeveloperProfile[] = [];
+
   domainStatus: object;
   form: FormGroup;
 
@@ -23,6 +25,11 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+    this.form = this.formBuilder.group({
+      domain: new FormControl('', [Validators.required])
+    });
+
     this.devProfile.push(
       {
         name: "Gift Banda",
@@ -198,10 +205,6 @@ export class ProfileComponent implements OnInit {
     );
 
     console.log(this.devProfile[0].name);
-    //domain form
-    this.form = this.formBuilder.group({
-      domain: new FormControl("", [Validators.required]),
-    });
   }
 
   postDomain(): void {
