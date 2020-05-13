@@ -21,9 +21,9 @@
           <button mat-flat-button routerLink="/client">Home</button>
           <button mat-flat-button>About</button>
           <button mat-flat-button [matMenuTriggerFor]="appMenu" *ngIf="!loggedIn">Account</button>
-          <button mat-flat-button [matMenuTriggerFor]="appMenu" *ngIf="loggedIn">
-            <span class="badge badge-warning mr-1 mb-3">Logged in as</span>
-            {{user.first_name}}
+          <button mat-flat-button [matMenuTriggerFor]="appMenu" *ngIf="loggedIn">Account
+            <!-- <span class="badge badge-warning mr-1 mb-3">Logged in as</span>
+            {{user.first_name}} -->
           </button>
         </div>
       </mat-toolbar-row>
