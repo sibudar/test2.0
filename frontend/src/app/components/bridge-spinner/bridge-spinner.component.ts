@@ -58,20 +58,20 @@ export class BridgeSpinnerComponent implements OnInit {
    * @param id user's details (object).
    */
   routeLastVisited(id) {
-    if (id.new_user == 1) {
+    if(id.new_user == 1) {
       this.clientService.getLink(id.id).subscribe((data) => {
         this.checkLength = data;
         console.log(data);
-        if (Object.keys(this.checkLength.data).length < 1) {
-          let first = { user_id: id.id, link: "client/odyssey" };
+        if(Object.keys(this.checkLength.data).length < 1) {
+          let first = { user_id: id.id, step: 0 };
           this.clientService.start(first).subscribe((e) => {
             console.log(e);
             this.router.navigate(["client/odyssey"]);
           });
         } else {
-          this.update(this.checkLength.data[0].id_user);
-          console.log(this.checkLength.data[0].link);
-          this.router.navigate([this.checkLength.data[0].link]);
+          // this.update(this.checkLength.data[0].id_user);
+          this.router.navigate(["client/odyssey"]);
+          console.log(this.checkLength.data[0].step);
         }
       });
     } else {
@@ -85,18 +85,18 @@ export class BridgeSpinnerComponent implements OnInit {
    * Stores the route to the database.
    * @param id user's id
    */
-  update(id) {
-    this.router.events
-      .pipe(filter((e) => e instanceof NavigationEnd))
-      .subscribe((e: NavigationEnd) => {
-        this.link = e.url;
-        let data = { user_id: id, link: this.link };
-        console.log(data);
-        this.clientService.tracking(data).subscribe((results) => {
-          console.log(results);
-        });
-      });
-  }
+  // update(id) {
+  //   this.router.events
+  //     .pipe(filter((e) => e instanceof NavigationEnd))
+  //     .subscribe((e: NavigationEnd) => {
+  //       this.link = e.url;
+  //       let data = { user_id: id, link: this.link };
+  //       console.log(data);
+  //       this.clientService.tracking(data).subscribe((results) => {
+  //         console.log(results);
+  //       });
+  //     });
+  // }
 
   /**
    * Giving access to the user's continue the journey.
@@ -107,7 +107,7 @@ export class BridgeSpinnerComponent implements OnInit {
   keys(id) {
     this.clientService.getKey(id).subscribe((data) => {
       this.checkLength = data;
-      if (Object.keys(this.checkLength.data).length < 1) {
+      if(Object.keys(this.checkLength.data).length < 1) {
         let first = { id: id, key: 1 };
         this.clientService.firstKey(first).subscribe((e) => {
           console.log(e);
