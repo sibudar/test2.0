@@ -1,113 +1,75 @@
+<!--devs!-- bri -->
+<!-- <link
+ href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+ rel="stylesheet"
+ id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link
+ rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Courgette|Neuton" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+//side image -->
 
+<!-- Include the above in your HEAD tag  -->
 
-<div class=wraper>
-  <div class="header ">
-    <h1><span>Developers</span> site</h1>
-    <h5>Why Web Development Is Essential To Your Business?</h5>
-    <p >The rapidly changing business trends have made the business owners realize the importance of having a website and register their online presence.
-      Due to this, they are hiring the best web developers who can make the best sites for them and help them to expand their business from all the clients.
-     </p>
-  </div>
-  <h5>Here are some of the benefits of having an online presence:</h5>
-  <ul>
-    <li>It means your business can be accessed anytime</li>
-    <li>More people will be aware of the products as well as the services.</li>
-    <li>Clients can search and find your products online</li>
+<!-- profile -->
+<div class="container-inner">
+  <mat-grid-list cols="2" rowHeight="900px">
+    <mat-grid-tile>
+      <div class="img">
+        <img
+          class="image animated fadeInRight delay-0.5s"
+          src="{{ profile.devImg }}"
+        />
+      </div>
+    </mat-grid-tile>
 
-  </ul>
+    <mat-grid-tile class="text-inside-grid">
+      <div class="mb-5 mt-11 col-header">
+        <h1 class="display-4 mb-2">Work Experience</h1>
+        <p class="lead">{{ profile.company }}</p>
+        <p class="uk-text-meta uk-margin-remove-top">
+          <time datetime="June 2018" class="time">{{ profile.workStart }}</time>
+          - {{ profile.workEnd }}
+        </p>
+        <p class="lead">{{ profile.description }}</p>
 
-</div>
-<form [formGroup]="form">
-<div class="box">
-  <h5>Check Domain Availability</h5>
-  <div class="container-1">
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" formControlName="domain" placeholder="Search..." />
-      <button class="btn btn-primary1" (click)="postDomain()"><i class="fa fa-search"></i></button>
-  </div>
-</div>
-</form>
+        <hr />
 
-<div class="select">
-  <h3>Select the developer that best suit your business needs</h3>
-</div>
+        <h1 class="display-4 mb-2">Education</h1>
+        <p class="lead">{{ profile.school }}</p>
+        <p class="uk-text-meta uk-margin-remove-top">
+          <time datetime="June 2018" class="time">{{
+            profile.educationStart
+          }}</time>
+          - {{ profile.educationEnd }}
+        </p>
+        <p>Qualification : {{ profile.degree }}</p>
+        <hr />
 
-
-<div class="final-card">
-
-<div class="card" style="width: 17rem;">
-  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="title">
-      <h4>Sam Mcholo <h6>Frontend Developer</h6></h4>
-     <br>
-    </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" id="primary"  routerLink="/client/profile">View Profile</a>
-    <div class="socialm">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-  </div>
-</div>
-
-<div class="card" style="width: 17rem;">
-  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="title">
-      <h4>Gift Banda <h6>API developer</h6></h4>
-     <br>
-    </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" id="primary"  routerLink="/client/profile">View Profile</a>
-    <div class="socialm">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-  </div>
-</div>
-
-<div class="card" style="width: 17rem;">
-  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="title">
-      <h4>Andile Phula <h6>Data analyst</h6></h4>
-     <br>
-    </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" id="primary" routerLink="/client/profile">View Profile</a>
-    <div class="socialm">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-  </div>
-</div>
-
-<div class="card" style="width: 17rem;">
-  <img  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="title">
-      <h4>Chamano Sid<h6>Software Developer</h6></h4>
-     <br>
-    </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" id="primary" routerLink="/client/profile">View Profile</a>
-    <div class="socialm">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="route-btn">
-  <button type="button" class="btn btn-secondary" routerLink="/client/finance">Back</button>
+        <h1 class="display-4 mb-2">Skills</h1>
+        <ul class="list">
+          <li>
+            Frontend:
+            <h6>{{ profile.frontendSkills }}</h6>
+          </li>
+          <li>
+            Backtend:
+            <h6>{{ profile.backendSkills }}</h6>
+          </li>
+          <li>
+            Database:
+            <h6>{{ profile.databaseSkills }}</h6>
+          </li>
+          <!-- <li>
+            DevOpps:
+            <h6>Docker</h6>
+          </li> -->
+        </ul>
+        <hr />
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
