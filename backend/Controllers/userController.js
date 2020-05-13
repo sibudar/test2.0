@@ -171,13 +171,13 @@ async function start(data) {
   if(validate.validate(data.user_id)) {
     return response(400, 'user id required');
   }
-  if(validate.validate(data.link)) {
-    return response(400, 'link required');
+  if(validate.validate(data.step)) {
+    return response(400, "step required");
   }
 
   let sql = "CALL startTrack(?)";
 
-  return queryFunction(sql, [data.user_id, data.link]).then(result => {
+  return queryFunction(sql, [data.user_id, data.step]).then(result => {
       return response(200, 'Successfully updated.', data);
     }).catch(error => {
       return response(400, 'Unsuccessful, could not update.', error.sqlMessage);
@@ -194,13 +194,13 @@ async function tracking(data) {
   if(validate.validate(data.user_id)) {
     return response(400, 'user id required');
   }
-  if(validate.validate(data.link)) {
-    return response(400, 'link required');
+  if(validate.validate(data.step)) {
+    return response(400, "step required");
   }
 
   let sql = "CALL tracking(?)";
 
-  return queryFunction(sql, [data.user_id, data.link]).then(result => {
+  return queryFunction(sql, [data.user_id, data.step]).then(result => {
       return response(200, 'Successfully updated.', data);
     }).catch(error => {
       return response(400, 'Unsuccessful, could not update.', error.sqlMessage);
@@ -240,9 +240,9 @@ async function getLink(data) {
   let sql = "CALL getLink(?)";
 
   return queryFunction(sql, [data.id]).then(result => {
-      return response(200, "Successfully have a link to the user.", result[0]);
+      return response(200, "Successfully have a step to the user.", result[0]);
     }).catch(error => {
-      return response(400, 'Unsuccessful, could not get any links.', error.sqlMessage);
+      return response(400, 'Unsuccessful, could not get any step.', error.sqlMessage);
     });
 }
 
