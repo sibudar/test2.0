@@ -42,9 +42,10 @@
           Account
         </button>
         <button mat-flat-button [matMenuTriggerFor]="appMenu" *ngIf="loggedIn">
-          <span class="badge badge-warning mr-1 mt-3 mb-3">Logged in as</span>
-          {{ user.first_name }}
-        </button>
+          Account
+          <!-- <span class="badge badge-warning mr-1 mt-3 mb-3">Logged in as</span>
+          {{ user.first_name }} -->
+        </button> 
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
