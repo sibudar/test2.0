@@ -455,8 +455,19 @@ END $$
 
 CREATE PROCEDURE postAnswers(IN answer_user VARCHAR(255), IN u_id INT, IN q_id INT, IN b_id INT)
 BEGIN
-     INSERT INTO answers(user_answer, createdby, createdat, modifiedby, modifiedat, id_user, id_que, id_bus)
-     VALUES(answer_user, u_id, now(), u_id, now(), u_id, q_id, b_id);
+
+    IF (SELECT id FROM answers WHERE answers.id_que = q_id AND answers.id_bus = b_id) IS NULL THEN
+       -- else just insert into answers
+        INSERT INTO answers(user_answer, createdby, createdat, modifiedby, modifiedat, id_user, id_que, id_bus)
+        VALUES(answer_user, u_id, now(), u_id, now(), u_id, q_id, b_id);
+
+    ELSE
+     -- if the answers.id_que and answers.id_bus exist then update answers
+        UPDATE answers 
+        SET user_answer=answer_user, createdby=u_id, createdat=now(), modifiedby=u_id, modifiedat=now(), id_user=u_id, id_que=q_id, id_bus=b_id
+        WHERE answers.id_que = q_id AND answers.id_bus = b_id;
+    END IF;
+
 END $$
 
 CREATE PROCEDURE deleteIdea(IN b_id INT, IN u_id INT)

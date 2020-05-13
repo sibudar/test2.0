@@ -16,7 +16,10 @@ import { Router } from "@angular/router";
 })
 export class DevelopersComponent implements OnInit {
   form: FormGroup;
+  domainStatus: object;
   profile: any;
+
+  // constructor(private clientService: ClientService, private formBuilder: FormBuilder, private toastr: ToasterService) { }
 
   constructor(
     private clientService: ClientService,
@@ -28,5 +31,28 @@ export class DevelopersComponent implements OnInit {
     this.profile = this.router.getCurrentNavigation().extras.state;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      domain: new FormControl('', [Validators.required])
+    });
+  }
+
+  postDomain(): void {
+    this.clientService.postDomain(this.form.value).subscribe(
+      (res) => {
+        if (res.data.isAvailable) {
+          this.toastr.success(res.data.domain_Availability, res.data.domain, 6000);
+        } else {
+          this.toastr.warning(res.data.domain_Availability, res.data.domain, 6000);
+        }
+        console.log(res);
+      }, (error) => {
+        this.toastr.error('Unable to check for domain, an error has ocured', 'novelty', 10000);
+        console.log(error);
+      });
+
+    }
+
+
+
 }
