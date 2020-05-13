@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS allContent (
 CREATE TABLE IF NOT EXISTS tracking (
     id INT(11) NOT NULL AUTO_INCREMENT,
     id_user INT NOT NULL,
-    link VARCHAR(255),
+    step INT NOT NULL,
     givenKeys INT DEFAULT 0,
 
     createdby VARCHAR(255) DEFAULT NULL,
@@ -358,22 +358,22 @@ BEGIN
     WHERE dashboard_keys.id_user = u_id;
 END $$
 
-CREATE PROCEDURE startTrack(IN u_id INT, IN currentLink VARCHAR(50))
+CREATE PROCEDURE startTrack(IN u_id INT, IN currentStep INT)
 BEGIN
-    INSERT INTO tracking (id_user, link, createdby, createdat, modifiedby, modifiedat)
-    VALUES (u_id, currentLink, 'System', now(), u_id, now());
+    INSERT INTO tracking (id_user, step, createdby, createdat, modifiedby, modifiedat)
+    VALUES (u_id, currentStep, 'System', now(), u_id, now());
 END $$
 
-CREATE PROCEDURE tracking(IN u_id INT, IN currentLink VARCHAR(50))
+CREATE PROCEDURE tracking(IN u_id INT, IN currentStep INT)
 BEGIN
     UPDATE tracking
-    SET link = currentLink, modifiedby = u_id, modifiedat = now()
+    SET step = currentStep, modifiedby = u_id, modifiedat = now()
     WHERE tracking.id_user = u_id;
 END $$
 
 CREATE PROCEDURE getLink(IN u_id INT)
 BEGIN
-    SELECT id, id_user,link
+    SELECT id_user, step
     FROM tracking
     WHERE tracking.id_user = u_id;
 END $$
