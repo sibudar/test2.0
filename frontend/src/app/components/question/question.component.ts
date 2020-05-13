@@ -56,14 +56,13 @@ export class QuestionComponent implements OnInit {
       user_answer: answer.answer,
       id_user: idUser,
       id_que: this.question.id,
-      id_bus: idBus,
-
+      id_bus: idBus
     };
 
     console.log('user_answer: ' + data.user_answer, 'id_user: ' + data.id_user, 'id_que: ' + data.id_que, 'id_bus: ' + data.id_bus);
     this.clientService.postAnswers(data).subscribe((result) => {
-      this.question = this.questions[this.index];
       this.index++;
+      this.question = this.questions[this.index];
       this.formQuestion.reset(); // clear the input box after an answer has been submitted
     });
   }
@@ -79,7 +78,6 @@ export class QuestionComponent implements OnInit {
       this.show = false;
       this.button = 'Next';
     } else {
-      this.button = 'Continue';
       this.done = true;
       this.show = true;
       this.router.navigate(['client/journey']);
