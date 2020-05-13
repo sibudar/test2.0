@@ -1,13 +1,13 @@
 @import "~animate.css/animate.min";
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-$width:300px;
-$height:3rem;
-$color50:#ECEFF1;
-$color100:#CFD8DC;
-$color300:#90A4AE;
-$color700:#455A64;
-$color800:#37474F;
-$color900:#263238;
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+$width: 300px;
+$height: 3rem;
+$color50: #eceff1;
+$color100: #cfd8dc;
+$color300: #90a4ae;
+$color700: #455a64;
+$color800: #37474f;
+$color900: #263238;
 .searchbar {
   margin-bottom: auto;
   margin-top: auto;
@@ -53,51 +53,50 @@ $color900:#263238;
 
 //search bar
 .box {
-  margin:auto;
-  width:$width;
-  height:$height;
+  margin: auto;
+  width: $width;
+  height: $height;
 }
 .icon:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
 .container-4 {
-  position:relative;
-  width:$width;
+  position: relative;
+  width: $width;
 }
 .container-4 input#search {
-  box-sizing:border-box;
-  width:$width;
-  height:$height;
-  font-size:1rem;
-  line-height:1.5em;
-  border:1px solid $color900;
-  background:$color50;
-  color:$color900;
-  padding:0 3rem 0 1rem;
-  float:left;
-  -webkit-border-radius:1rem;
-  -moz-border-radius:1rem;
-  border-radius:1rem;
+  box-sizing: border-box;
+  width: $width;
+  height: $height;
+  font-size: 1rem;
+  line-height: 1.5em;
+  border: 1px solid $color900;
+  background: $color50;
+  color: $color900;
+  padding: 0 3rem 0 1rem;
+  float: left;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
 }
 .container-4 button.icon {
-  position:absolute;
-  height:$height;
-  width:$height;
-  border:none;
-  background:$color900;
-  color:$color50;
-  font-size:1rem;
-  line-height:1.5em;
-  border-radius:0 1rem 1rem 0;
-  margin-left:-$height;
-
+  position: absolute;
+  height: $height;
+  width: $height;
+  border: none;
+  background: $color900;
+  color: $color50;
+  font-size: 1rem;
+  line-height: 1.5em;
+  border-radius: 0 1rem 1rem 0;
+  margin-left: -$height;
 }
 .container-4 input#search:hover,
 .container-4 input#search:focus,
 .container-4 input#search:active {
-  outline:none;
+  outline: none;
 }
-.h5{
+.h5 {
   text-align: center;
   margin-bottom: 0;
 }
@@ -215,128 +214,128 @@ ul {
 }
 
 //for menu icon
-.icon{
+.icon {
   margin: 0 0px 0px 120px;
   padding: 0;
 }
 
-.menu{
-    border-radius: 50%;
-    border-style: solid;
-    border-color: #3f51b5;
-    color: #3f51b5;
-    background-color: white;
-    font-size: 24px;
-    margin: 0px;
-    padding: 8px;
+.menu {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #3f51b5;
+  color: #3f51b5;
+  background-color: white;
+  font-size: 24px;
+  margin: 0px;
+  padding: 8px;
 }
 //star icon
 .star {
-  margin-bottom:5px;
+  margin-bottom: 5px;
   // color: #3f51b5;
 }
 
-
-.wraper{
-  margin:100px 150px ;
+.wraper {
+  margin: 100px 150px;
 }
-.select{
-  margin:10px 50px;
+.select {
+  margin: 10px 50px;
   text-align: center;
 }
 
 .devInfo {
-  margin: 50px 0px ;
+  margin: 50px 0px;
 }
-.devInfo h5{
+.devInfo h5 {
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
 //social ions
 
-
 #social {
   margin: 20px 10px;
   text-align: center;
 }
 
-.smGlobalBtn{ /* global button class */
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    width: 35px;
-    height: 35px;
-    box-shadow: 0 2px 2px #999;
-    padding: 5px;
-    margin: 3px;
-    text-decoration: none;
-    text-align: center;
-    color: #fff;
-    font-size: 25px;
-    font-weight: normal;
-    line-height: 1em;
-    border-radius: 25px;
-    -moz-border-radius:25px;
-    -webkit-border-radius:25px;
+.smGlobalBtn {
+  /* global button class */
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  box-shadow: 0 2px 2px #999;
+  padding: 5px;
+  margin: 3px;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 1em;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
 }
 
 /* facebook button class*/
-.facebookBtn{
-    background: #4060A5;
+.facebookBtn {
+  background: #4060a5;
 }
 
-.facebookBtn:before{ /* use :before to add the relevant icons */
-    font-family: "FontAwesome";
-    content: "\f09a"; /* add facebook icon */
+.facebookBtn:before {
+  /* use :before to add the relevant icons */
+  font-family: "FontAwesome";
+  content: "\f09a"; /* add facebook icon */
 }
 
-.facebookBtn:hover{
-    color: #4060A5;
-    background: #fff;
+.facebookBtn:hover {
+  color: #4060a5;
+  background: #fff;
 }
 
 /* twitter button class*/
-.twitterBtn{
-    background: #00ABE3;
+.twitterBtn {
+  background: #00abe3;
 }
 
-.twitterBtn:before{
-      font-family: "FontAwesome";
-      content: "\f099"; /* add twitter icon */
+.twitterBtn:before {
+  font-family: "FontAwesome";
+  content: "\f099"; /* add twitter icon */
 }
 
-.twitterBtn:hover{
-      color: #00ABE3;
-      background: #fff;
+.twitterBtn:hover {
+  color: #00abe3;
+  background: #fff;
 }
 
 /* google plus button class*/
-.githubBtn{
-    background: #e64522;
+.githubBtn {
+  background: #e64522;
 }
 
-.githubBtn:before{
-      font-family: "FontAwesome";
-      content: "\f0d5"; /* add googleplus icon */
+.githubBtn:before {
+  font-family: "FontAwesome";
+  content: "\f0d5"; /* add googleplus icon */
 }
 
-.githubBtn:hover{
-      color: #e64522;
-      background: #fff;
+.githubBtn:hover {
+  color: #e64522;
+  background: #fff;
 }
 
 /* linkedin button class*/
-.linkedinBtn{
-    background: #0094BC;
+.linkedinBtn {
+  background: #0094bc;
 }
 
-.linkedinBtn:before{
-      font-family: "FontAwesome";
-      content: "\f0e1"; /* add linkedin icon */
+.linkedinBtn:before {
+  font-family: "FontAwesome";
+  content: "\f0e1"; /* add linkedin icon */
 }
 
-.linkedinBtn:hover{
-      color: #0094BC;
-      background: #fff;
+.linkedinBtn:hover {
+  color: #0094bc;
+  background: #fff;
 }

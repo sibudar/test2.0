@@ -27,6 +27,7 @@ export interface DeveloperProfile {
   educationStart: String;
   educationEnd: String;
 
+  devImg: String;
   //social
   twitter: String;
   facebook: String;
