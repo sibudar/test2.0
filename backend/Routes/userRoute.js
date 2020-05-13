@@ -211,8 +211,8 @@ userRouter.get("/me", async (req, res) => {
  *           properties:
  *            user_id:         
  *              type: integer
- *            link:
- *              type: string
+ *            step:
+ *              type: integer
  *     responses:
  *        200:
  *         description: Successfully updated.
@@ -248,8 +248,8 @@ userRouter.post("/start", async (req, res) => {
  *           properties:
  *            user_id:         
  *              type: integer
- *            link:
- *              type: string
+ *            step:
+ *              type: integer
  *     responses:
  *        200:
  *         description: Successfully updated.
@@ -297,22 +297,22 @@ userRouter.post("/notnew", async (req, res) => {
   res.status(result.status).send(result);
 });
 
-// [get] route to "/link" to get user's link.
+// [get] route to "/link" to get user's step.
 /**
  * @swagger
- * /users/link:
+ * /users/step:
  *  get:
  *     tags:
  *      - user
- *     summary: Checks the link that the user have.
- *     description: This gets the user's link.
+ *     summary: Checks the step that the user have.
+ *     description: This gets the user's step.
  *     consumes:
  *        - application/json
  *     produces:
  *        - application/json
  *     parameters:
  *        - name: id
- *          description: Gets the user's link by an id.
+ *          description: Gets the user's step by an id.
  *          in: body
  *          required: true 
  *          schema: 
@@ -322,9 +322,9 @@ userRouter.post("/notnew", async (req, res) => {
  *              type: integer
  *     responses:
  *        200:
- *         description: Successfully have a link to the user.
+ *         description: Successfully have a step to the user.
  *        401:
- *         description: Unsuccessful, could not get any links..
+ *         description: Unsuccessful, could not get any steps..
  */
 userRouter.get("/link/:id", async (req, res) => {
   let result = await userController.getLink(req.params);
