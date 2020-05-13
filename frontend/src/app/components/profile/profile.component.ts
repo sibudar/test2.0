@@ -1,10 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-} from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
 import { ClientService } from "src/app/services/client.service";
 import { ToasterService } from "src/app/services/toaster.service";
 import { DeveloperProfile } from "src/app/models/developers";
@@ -17,7 +12,7 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
   devProfile: DeveloperProfile[] = [];
-
+  domainStatus: object;
   form: FormGroup;
 
   constructor(
@@ -210,10 +205,18 @@ export class ProfileComponent implements OnInit {
   }
 
   postDomain(): void {
-    this.clientService.postDomain(this.form.value).subscribe((res) => {
-      this.toastr.success(res.data.domain_Availability, res.data.domain, 6000);
-      console.log(res);
-    });
+    this.clientService.postDomain(this.form.value).subscribe(
+      (res) => {
+        if (res.data.isAvailable) {
+          this.toastr.success(res.data.domain_Availability, res.data.domain, 6000);
+        } else {
+          this.toastr.warning(res.data.domain_Availability, res.data.domain, 6000);
+        }
+        console.log(res);
+      }, (error) => {
+        this.toastr.error('Unable to check for domain, an error has ocured', 'novelty', 10000);
+        console.log(error);
+      });
   }
 
   cardClick(dev): void {
