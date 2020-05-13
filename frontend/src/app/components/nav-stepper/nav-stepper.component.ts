@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { StepperSelectionEvent } from '@angular/cdk/stepper';
 
 @Component({
   selector: "app-nav-stepper",
@@ -13,7 +14,8 @@ export class NavStepperComponent implements OnInit {
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
   fifthFormGroup: FormGroup;
-  step: number = 3;
+  selectedIndex = 3;
+  
 
   constructor(private _formBuilder: FormBuilder) {}
 
@@ -36,8 +38,10 @@ export class NavStepperComponent implements OnInit {
     // this.selectionChange(this.step);
   }
 
-  selectionChange(selected) {
-    console.log(selected.selectedIndex);
-    selected.selectedIndex = this.step;
+  selectionChange($event?: StepperSelectionEvent): void {
+    console.log('stepper.selectedIndex: ' + this.selectedIndex 
+        + '; $event.selectedIndex: ' + $event.selectedIndex);
+    $event.selectedIndex = this.selectedIndex;
+    console.log($event.selectedIndex, 'changed');
   }
 }
