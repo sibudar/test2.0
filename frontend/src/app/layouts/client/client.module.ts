@@ -58,6 +58,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { EvaluateComponent } from '../../components/evaluate/evaluate.component';
 import { PlanningComponent } from '../../components/planning/planning.component';
 import { NavStepperComponent } from '../../components/nav-stepper/nav-stepper.component';
+import { LandComponent } from '../../components/land/land.component';
 export function tokenGetter() {
   return sessionStorage.getItem("access_token");
 }
@@ -91,6 +92,7 @@ export function tokenGetter() {
     PlanningComponent,
     BridgeSpinnerComponent,
     NavStepperComponent,
+    LandComponent,
   ],
   imports: [
     CommonModule,
