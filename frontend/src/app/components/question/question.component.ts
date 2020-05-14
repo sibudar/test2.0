@@ -78,7 +78,7 @@ export class QuestionComponent implements OnInit {
 
 
   yesClick(): void {
-    if (this.index <= this.questions.length - 1) {
+    if (this.index < this.questions.length - 1) {
       this.show = false;
       this.button = 'Next';
     } else {
