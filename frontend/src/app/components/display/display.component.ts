@@ -19,6 +19,7 @@ export class DisplayComponent implements OnInit {
   userName = "";
   form: FormGroup;
   link: unknown;
+  saved = false ;
 
   constructor(
     private fb: FormBuilder,
@@ -71,6 +72,7 @@ export class DisplayComponent implements OnInit {
     idea.id_user = this.user.data.id;
 
     this.inserIdea(idea);
+    this.saved = true ;
   }
 
 
