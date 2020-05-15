@@ -76,7 +76,7 @@ export class BridgeSpinnerComponent implements OnInit {
       });
     } else {
       this.keys(id.id);
-      this.router.navigate(["client/dashboard"]);
+      this.router.navigate(["client/land"]);
     }
   }
 
