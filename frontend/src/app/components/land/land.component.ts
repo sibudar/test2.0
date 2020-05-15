@@ -3,11 +3,8 @@ import { ClientService } from '../../services/client.service';
 import { QuestionsResponse, Questions } from 'src/app/models/questions';
 import { AuthService } from '../../services/auth.service';
 import { UserResponse, LoginResponse } from 'src/app/models/user';
+import { AnswerResponse } from 'src/app/models/answers';
 
-interface Food {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-land',
@@ -21,6 +18,9 @@ export class LandComponent implements OnInit {
   ideas: any ; 
   hovered = 0;
   selected: any ; 
+  name = "" ;
+  answers: any ;
+  
   constructor(private clientService: ClientService,private auth: AuthService) {
     
 
@@ -32,22 +32,26 @@ export class LandComponent implements OnInit {
       let verified = JSON.parse(sessionStorage.getItem("access_token"));
       this.auth.verifyToken(verified.token).subscribe((res: UserResponse) => {
         this.user = res.data;
-      
+        this.name = this.user.first_name ; 
         this.clientService.getIdeas(this.user.id).subscribe(res => {
           this.ideas = res.data ;
           this.selected = this.ideas[0].id ;
+          this.getAnswer() ;
           console.log(this.ideas)
         }) ;
       });
     }
   }
 
-  // getAnswer() {
-  //   this.clientService.get
-  // }
+  getAnswer() {
+    this.clientService.getAnswers(this.selected).subscribe((res:AnswerResponse) => {
+      this.answers = res.data ; 
+    }) ; 
+  }
 
   selectIdea(e) {
     this.selected = e.value ; 
+    this.getAnswer() ; 
     console.log(this.selected)
   }
 

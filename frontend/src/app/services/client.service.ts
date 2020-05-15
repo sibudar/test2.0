@@ -60,6 +60,10 @@ export class ClientService {
     return this.http.post(this.url + "/questions/answers", data);
   }
 
+  public getAnswers(id) {
+    return this.http.get(this.url + "/questions/answers/" + id)
+  }
+
   /**
    * Gets content.
    * @param data an object that has what's required.

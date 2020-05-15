@@ -17,7 +17,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4" style="
           margin-top: 20px">
-            <h1 class="h3 mb-0 text-gray-800">Welcome , {{user.first_name}}!</h1>
+            <h1 class="h3 mb-0 text-gray-800">Welcome Back {{name}}!</h1>
             
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Add More Ideas</a>
           </div>
@@ -48,7 +48,7 @@
               <div class="card border-left-primary shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">My Ideas</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Evaluation</h6>
                  
                 </div>
                 <!-- Card Body -->
@@ -67,7 +67,7 @@
                   
                       <div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                          Small businesses not having online presence              
+                          {{answers[i].user_answer}}         
                         </div>         
                       </div>
                     </div>
