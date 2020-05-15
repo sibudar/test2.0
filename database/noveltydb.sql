@@ -337,6 +337,7 @@ DROP PROCEDURE IF EXISTS getLink $$
 DROP PROCEDURE IF EXISTS accessKeys $$
 DROP PROCEDURE IF EXISTS firstKeys $$
 DROP PROCEDURE IF EXISTS getKeys $$
+DROP PROCEDURE IF EXISTS getAnswers $$
 
 CREATE PROCEDURE getKeys(IN u_id INT)
 BEGIN
@@ -482,6 +483,13 @@ BEGIN
     UPDATE answers
     SET user_answer = answer_user, modifiedby = u_id, modifiedat = now()
     WHERE answers.id = u_id;
+END $$
+
+CREATE PROCEDURE getAnswers(IN b_id INT)
+BEGIN 
+    SELECT * 
+    FROM answers  
+    WHERE answers.id_bus = b_id ;
 END $$
 
 DELIMITER ;
