@@ -8,3 +8,13 @@ export interface Content {
     title: string;
     content:string
 }
+
+export interface AnswerResponse {
+    status: number;
+    message: string;
+    data: Answer [];
+}
+export interface Answer {
+    id : number  ;
+    user_answer: string ;
+}

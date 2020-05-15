@@ -3,7 +3,8 @@ import { ClientService } from '../../services/client.service';
 import { QuestionsResponse, Questions } from 'src/app/models/questions';
 import { AuthService } from '../../services/auth.service';
 import { UserResponse, LoginResponse } from 'src/app/models/user';
-import { AnswerResponse } from 'src/app/models/answers';
+import { AnswerResponse } from 'src/app/models/content';
+
 
 
 @Component({
