@@ -77,4 +77,24 @@ async function modifyAnswer(data) {
     });
 }
 
-module.exports = { getQuestions, addAnswer , modifyAnswer };
+
+
+/**
+ * Gets answers from DB.
+ * @returns the data stored in the answers table.
+ */ 
+async function getAnswers(data){
+    
+    if(validate.validate(data.id)){
+        return response(400,"Business id is required.", data);
+    }
+
+    const sql = "CALL getAnswers(?)";
+
+    return queryFunction(sql, [data.id]).then((result) => {
+        return response(200, 'Here are your answers .', result[0]);
+    }).catch(error => {
+        return response(400, 'Could not get answers requested.', error.sqlMessage);
+    })
+}
+module.exports = { getQuestions, addAnswer , modifyAnswer ,getAnswers };

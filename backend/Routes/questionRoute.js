@@ -110,4 +110,11 @@ userRouter.get("/:id", async(req, res) => {
     res.status(result.status).send(result);
   });
 
+
+  userRouter.get("/answers/:id", async(req, res) => {
+    result = await questionController.getAnswers(req.params);
+  
+    res.status(result.status).send(result);
+  });
+
   module.exports = userRouter;
