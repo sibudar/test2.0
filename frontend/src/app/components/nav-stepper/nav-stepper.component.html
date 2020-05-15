@@ -45,7 +45,7 @@
             <mat-step [stepControl]="fifthFormGroup">
                 <form [formGroup]="fifthFormGroup">
                     <ng-template matStepLabel>Developers</ng-template>
-                    <app-developers></app-developers>
+                    <!-- <app-developers></app-developers> -->
                     <div>
                         <button mat-button matStepperPrevious>Back</button>
                         <button mat-button matStepperNext class="btn">Next</button>
@@ -57,7 +57,7 @@
                 <p>You are now done.</p>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button (click)="stepper.reset()">Reset</button>
+                    <button mat-button routerLink="/land" >Add More Ideas</button>
                 </div>
             </mat-step>
         </mat-horizontal-stepper>

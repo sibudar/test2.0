@@ -72,8 +72,13 @@ export class NavStepperComponent implements OnInit, AfterViewInit {
     let updateStep = { user_id: this.user.id, step: $event.selectedIndex };
     if($event.selectedIndex > this.step) {
       this.clientService.tracking(updateStep).subscribe((data) => {
-      console.log(data)
-    }); 
+        console.log(data)
+      }); 
+    }
+    if($event.selectedIndex == 5) {
+      this.clientService.notNewUers(this.user.id).subscribe((data) => {
+        console.log(data);
+      })
     }
     
   }
