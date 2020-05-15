@@ -52,7 +52,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { LegalfinanceComponent } from '../../components/legalfinance/legalfinance.component';
-
+import {MatSelectModule} from '@angular/material/select';
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { EvaluateComponent } from '../../components/evaluate/evaluate.component';
@@ -100,6 +100,7 @@ export function tokenGetter() {
     MatButtonModule,
     MatSliderModule,
     MatCardModule,
+    MatSelectModule,
     MatDialogModule,
     MatToolbarModule,
     MatGridListModule,
