@@ -21,6 +21,7 @@ export class LandComponent implements OnInit {
   selected: any ; 
   name = "" ;
   answers: any ;
+  found=false ;
   
   constructor(private clientService: ClientService,private auth: AuthService) {
     
@@ -46,14 +47,16 @@ export class LandComponent implements OnInit {
 
   getAnswer() {
     this.clientService.getAnswers(this.selected).subscribe((res:AnswerResponse) => {
-      this.answers = res.data ; 
+      this.answers = res.data ;
+      this.found =true ; 
     }) ; 
   }
 
   selectIdea(e) {
+    this.found = false
     this.selected = e.value ; 
     this.getAnswer() ; 
-    console.log(this.selected)
+    console.log(this.selected);
   }
 
   ngOnInit() {
