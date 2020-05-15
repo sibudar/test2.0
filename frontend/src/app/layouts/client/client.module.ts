@@ -143,6 +143,7 @@ export function tokenGetter() {
     LegalComponent,
     DigitalMarketComponent,
     LegalJourneyComponent,
+    NavStepperComponent
   ],
   exports: [IdeasComponent],
 })

@@ -76,9 +76,9 @@ export class NavStepperComponent implements OnInit, AfterViewInit {
       }); 
     }
     if($event.selectedIndex == 5) {
-      this.clientService.notNewUers(this.user.id).subscribe((data) => {
+      this.clientService.notNewUers({user_id: this.user.id}).subscribe((data) => {
         console.log(data);
-      })
+      });
     }
     
   }
