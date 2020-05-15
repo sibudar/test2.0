@@ -17,20 +17,13 @@ interface Food {
 export class LandComponent implements OnInit {
 
   questions: Questions[] ;
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ]; 
   user: LoginResponse;
   ideas: any ; 
   hovered = 0;
+  selected: any ; 
   constructor(private clientService: ClientService,private auth: AuthService) {
     
-    this.verifyUser() ;
-    this.clientService.getQuestions(1).subscribe((res:QuestionsResponse) => {
-      this.questions = res.data ;
-    })
+
 
    }
 
@@ -42,6 +35,7 @@ export class LandComponent implements OnInit {
       
         this.clientService.getIdeas(this.user.id).subscribe(res => {
           this.ideas = res.data ;
+          this.selected = this.ideas[0].id ;
           console.log(this.ideas)
         }) ;
       });
@@ -52,11 +46,16 @@ export class LandComponent implements OnInit {
   //   this.clientService.get
   // }
 
-  selectedIdea(e) {
-    console.log(e) ;
+  selectIdea(e) {
+    this.selected = e.value ; 
+    console.log(this.selected)
   }
 
   ngOnInit() {
+    this.verifyUser() ;
+    this.clientService.getQuestions(1).subscribe((res:QuestionsResponse) => {
+      this.questions = res.data ;
+    })
   }
 
 }
