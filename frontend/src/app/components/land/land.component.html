@@ -27,7 +27,7 @@
             <div class="col-xl-12 col-md-6 mb-4">
               <p>Now viewing <mat-form-field>
                 <mat-label>My ideas</mat-label>
-                <mat-select (selectionChange)="selectedIdea($event)">
+                <mat-select (selectionChange)="selectIdea($event)" [(value)]="selected">
                   <mat-option *ngFor="let idea of ideas" [value]="idea.id">
                     {{idea.busin_idea}}
                   </mat-option>
